@@ -93,6 +93,17 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onTapLoginWithSender:" destination="thf-FK-8Ci" eventType="touchUpInside" id="x0T-9M-9E0"/>
                                         </connections>
@@ -136,7 +147,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="gBf-cP-tSK" id="e5i-SW-obS"/>
                         <outlet property="passTextField" destination="uTc-wo-lYT" id="UJz-Da-reJ"/>
-                        <outlet property="submitButton" destination="ieh-QO-07r" id="ycP-W9-zIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eef-KJ-e5K" userLabel="First Responder" sceneMemberID="firstResponder"/>

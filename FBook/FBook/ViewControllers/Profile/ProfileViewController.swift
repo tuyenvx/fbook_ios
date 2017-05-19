@@ -31,9 +31,13 @@ class ProfileViewController: UIViewController {
         self.avatarImage.layer.borderColor = AppColors.tintColor.cgColor
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }
 
-extension ProfileViewController : UITableViewDataSource {
+extension ProfileViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return RowProfile.rowCount.rawValue
@@ -63,10 +67,9 @@ extension ProfileViewController : UITableViewDataSource {
         
         return cell
     }
-}
-
-extension ProfileViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 }
+
