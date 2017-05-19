@@ -31,11 +31,11 @@ class TabBarController: UITabBarController {
     
     private func setTabBarItem() {
         
-        let tintColor = AppConfig.Color.tintColor
+        let tintColor = AppColors.tintColor
 //        let normalColor = AppConfig.Color.normalColor
         
         self.tabBar.isTranslucent = false
-        self.tabBar.barTintColor = AppConfig.Color.barTintColor
+        self.tabBar.barTintColor = AppColors.barTintColor
         self.tabBar.tintColor = tintColor
         
         if let items = self.tabBar.items {

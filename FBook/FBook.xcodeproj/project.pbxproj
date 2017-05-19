@@ -18,8 +18,9 @@
 		8495B6DB1ECD6E2F0057B7BA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6DA1ECD6E2F0057B7BA /* TabBarController.swift */; };
 		8495B6DD1ECD70B90057B7BA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6DC1ECD70B90057B7BA /* UIColor+Extension.swift */; };
 		8495B6E01ECD715E0057B7BA /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6DF1ECD715E0057B7BA /* AppConfig.swift */; };
-		8495B6E21ECD77460057B7BA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6E11ECD77460057B7BA /* Strings.swift */; };
 		8495B6E41ECD778C0057B7BA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6E31ECD778C0057B7BA /* UIViewController+Extension.swift */; };
+		8495B6E61ECD7F220057B7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6E51ECD7F220057B7BA /* HomeViewController.swift */; };
+		8495B6E91ECD8BDD0057B7BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6E81ECD8BDD0057B7BA /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,9 @@
 		8495B6DA1ECD6E2F0057B7BA /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8495B6DC1ECD70B90057B7BA /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8495B6DF1ECD715E0057B7BA /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
-		8495B6E11ECD77460057B7BA /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8495B6E31ECD778C0057B7BA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		8495B6E51ECD7F220057B7BA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8495B6E81ECD8BDD0057B7BA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				8495B6DA1ECD6E2F0057B7BA /* TabBarController.swift */,
+				8495B6E71ECD8BD10057B7BA /* Profile */,
 				8495B6D11ECD43DE0057B7BA /* Home */,
 				8495B6D21ECD43DE0057B7BA /* Login */,
 			);
@@ -142,6 +145,7 @@
 		8495B6D11ECD43DE0057B7BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8495B6E51ECD7F220057B7BA /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -168,9 +172,16 @@
 			isa = PBXGroup;
 			children = (
 				8495B6DF1ECD715E0057B7BA /* AppConfig.swift */,
-				8495B6E11ECD77460057B7BA /* Strings.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		8495B6E71ECD8BD10057B7BA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8495B6E81ECD8BDD0057B7BA /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +290,9 @@
 				8495B6E41ECD778C0057B7BA /* UIViewController+Extension.swift in Sources */,
 				8495B6D41ECD440F0057B7BA /* LoginViewController.swift in Sources */,
 				8495B6D91ECD578C0057B7BA /* UITextField+Extension.swift in Sources */,
-				8495B6E21ECD77460057B7BA /* Strings.swift in Sources */,
 				8495B6CF1ECD42F80057B7BA /* Book.swift in Sources */,
+				8495B6E61ECD7F220057B7BA /* HomeViewController.swift in Sources */,
+				8495B6E91ECD8BDD0057B7BA /* ProfileViewController.swift in Sources */,
 				8495B6E01ECD715E0057B7BA /* AppConfig.swift in Sources */,
 				8495B6DD1ECD70B90057B7BA /* UIColor+Extension.swift in Sources */,
 				8495B6DB1ECD6E2F0057B7BA /* TabBarController.swift in Sources */,
@@ -473,6 +485,7 @@
 				8495B6C21ECD34B60057B7BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8495B6C31ECD34B60057B7BA /* Build configuration list for PBXNativeTarget "FBookTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +494,7 @@
 				8495B6C51ECD34B60057B7BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

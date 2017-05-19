@@ -29,21 +29,15 @@ class LoginViewController: UIViewController {
     @IBAction func onTapLogin(sender: AnyObject) {
         if let email = emailTextField.text, let pass = passTextField.text {
             if email.isEmpty {
-                self.showAlert(message: AlertVC.AlertMessage.emailEmpty, andTitle: AlertVC.AlertTitle.error.description)
+                self.showAlert(message: AppStrings.AlertMessage.emailEmpty.rawValue, andTitle: AppStrings.AlertTitle.error.rawValue)
             }
             else if pass.isEmpty {
-                self.showAlert(message: AlertVC.AlertMessage.passEmpty
-                    , andTitle: AlertVC.AlertTitle.error.description)
+                self.showAlert(message: AppStrings.AlertMessage.passEmpty.rawValue
+                    , andTitle: AppStrings.AlertTitle.error.rawValue)
             }
             else {
-                self.gotoHomeScreen()
+                
             }
-        }
-    }
-    
-    private func gotoHomeScreen() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.showHomeScreen()
         }
     }
 }
