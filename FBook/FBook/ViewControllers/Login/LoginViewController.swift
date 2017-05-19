@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
-    @IBOutlet weak var submitButton: UIButton!
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -20,10 +19,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        submitButton.layer.cornerRadius = 5
-        submitButton.layer.borderWidth = 1
-        submitButton.layer.borderColor = UIColor.white.cgColor
     }
 
     @IBAction func onTapLogin(sender: AnyObject) {
