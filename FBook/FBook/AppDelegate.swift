@@ -18,16 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-    
-    func showHomeScreen() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        self.window?.rootViewController = storyboard.instantiateInitialViewController()
-    }
-    
-    func showLoginScreen() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        self.window?.rootViewController = storyboard.instantiateInitialViewController()
-    }
 
     // MARK: - App life cycle
     
