@@ -41,3 +41,7 @@ struct AppColors {
     static let tintColor = UIColor(netHex: 0xec5356)
     static let normalColor = UIColor.white
 }
+
+struct AppStoryboardSegue {
+    static let identifierShowBookDetail = "showBookDetail"
+}

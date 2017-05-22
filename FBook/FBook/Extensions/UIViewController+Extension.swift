@@ -21,5 +21,12 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showNoTitleBackButton() {
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icon_back"), style: .done, target: self, action: #selector(self.popToPreviousViewController))
+    }
     
+    func popToPreviousViewController() {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
 }

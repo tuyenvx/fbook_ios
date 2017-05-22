@@ -92,7 +92,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let tabBarController = self.tabBarController as? TabBarController {
+            tabBarController.performSegue(withIdentifier: AppStoryboardSegue.identifierShowBookDetail, sender: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
