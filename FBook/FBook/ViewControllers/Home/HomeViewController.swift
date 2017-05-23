@@ -37,6 +37,10 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         return 5
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return HeaderSectionBooksView.height
     }
@@ -93,7 +97,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let tabBarController = self.tabBarController as? TabBarController {
-            tabBarController.performSegue(withIdentifier: AppStoryboardSegue.identifierShowBookDetail, sender: nil)
+            if indexPath.section == SectionHome.sectionBook.rawValue {
+                tabBarController.performSegue(withIdentifier: AppStoryboardSegue.identifierShowBookDetail, sender: nil)
+            }
+            else {
+                tabBarController.performSegue(withIdentifier: AppStoryboardSegue.identifierShowListBook, sender: nil)
+            }
+            
         }
     }
     

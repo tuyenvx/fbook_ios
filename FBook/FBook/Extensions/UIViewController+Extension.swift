@@ -29,4 +29,16 @@ extension UIViewController {
     func popToPreviousViewController() {
         let _ = self.navigationController?.popViewController(animated: true)
     }
+    
+    func showNavigationBarTraparent() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    func showNavigationBarDefault() {
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
 }
