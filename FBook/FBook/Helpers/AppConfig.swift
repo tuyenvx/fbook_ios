@@ -15,6 +15,10 @@ struct AppConfig {
 
 struct AppStrings {
     
+    enum Title: String {
+        case filter = "Filter"
+    }
+    
     enum ProfileViewController: String {
         case myBookshare = "My Bookshare"
         case myWaitingBook = "My Waiting Book"
@@ -42,7 +46,9 @@ struct AppColors {
     static let normalColor = UIColor.white
 }
 
-struct AppStoryboardSegue {
-    static let identifierShowBookDetail = "showBookDetail"
-    static let identifierShowListBook = "showListBook"
+struct AppStoryboards {
+    static let storyboardLogin = "Login"
+    static let segueIdentifierShowBookDetail = "showBookDetail"
+    static let segueIdentifierShowListBook = "showListBook"
+    static let segueIdentifierShowChooseFilter = "showChooseFilter"
 }

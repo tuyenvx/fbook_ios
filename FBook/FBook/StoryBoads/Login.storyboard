@@ -117,6 +117,17 @@
                                             <action selector="onTapLoginWithSender:" destination="thf-FK-8Ci" eventType="touchUpInside" id="x0T-9M-9E0"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1l-Ca-PIF">
+                                        <rect key="frame" x="0.0" y="20" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Spk-Mf-oUP"/>
+                                            <constraint firstAttribute="height" constant="44" id="xsf-8x-pSK"/>
+                                        </constraints>
+                                        <state key="normal" image="icon_cancel"/>
+                                        <connections>
+                                            <action selector="onTapCancelWithSender:" destination="thf-FK-8Ci" eventType="touchUpInside" id="9ii-Hd-fxT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -125,6 +136,7 @@
                                     <constraint firstItem="uTc-wo-lYT" firstAttribute="centerY" secondItem="h8L-fV-Zok" secondAttribute="centerY" id="7On-ii-LOi"/>
                                     <constraint firstItem="uTc-wo-lYT" firstAttribute="leading" secondItem="W2B-rc-d4U" secondAttribute="leading" id="7fR-X6-sUF"/>
                                     <constraint firstItem="vaT-9Y-YK4" firstAttribute="top" secondItem="qid-y4-1xC" secondAttribute="bottom" id="8LH-vi-eco"/>
+                                    <constraint firstItem="G1l-Ca-PIF" firstAttribute="leading" secondItem="h8L-fV-Zok" secondAttribute="leading" id="B7A-Hg-GBs"/>
                                     <constraint firstItem="gXU-e1-aMN" firstAttribute="trailing" secondItem="uTc-wo-lYT" secondAttribute="trailing" id="CjI-oa-5D5"/>
                                     <constraint firstItem="W2B-rc-d4U" firstAttribute="top" secondItem="gBf-cP-tSK" secondAttribute="bottom" constant="1" id="D2x-zS-09K"/>
                                     <constraint firstItem="uTc-wo-lYT" firstAttribute="trailing" secondItem="W2B-rc-d4U" secondAttribute="trailing" id="EPk-H5-1hu"/>
@@ -144,6 +156,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="h8L-fV-Zok" firstAttribute="leading" secondItem="BPM-rf-N1Y" secondAttribute="leading" id="2J9-aA-whG"/>
+                            <constraint firstItem="G1l-Ca-PIF" firstAttribute="top" secondItem="Umj-aH-vM4" secondAttribute="bottom" id="4Eh-7U-4gB"/>
                             <constraint firstItem="J2N-iP-oln" firstAttribute="trailing" secondItem="BPM-rf-N1Y" secondAttribute="trailing" id="82f-Js-17e"/>
                             <constraint firstItem="h8L-fV-Zok" firstAttribute="top" secondItem="BPM-rf-N1Y" secondAttribute="top" id="C34-Xi-0W4"/>
                             <constraint firstItem="J2N-iP-oln" firstAttribute="leading" secondItem="BPM-rf-N1Y" secondAttribute="leading" id="KcU-WL-QFE"/>
@@ -169,6 +182,7 @@
     </scenes>
     <resources>
         <image name="background_login" width="566" height="377"/>
+        <image name="icon_cancel" width="16" height="16"/>
         <image name="logo_framgia" width="100" height="100"/>
     </resources>
 </document>

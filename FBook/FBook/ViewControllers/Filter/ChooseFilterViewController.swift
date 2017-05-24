@@ -1,5 +1,5 @@
 //
-//  ListFilterViewController.swift
+//  ChooseFilterViewController.swift
 //  FBook
 //
 //  Created by admin on 5/23/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListFilterViewController: UIViewController {
+class ChooseFilterViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -16,26 +16,21 @@ class ListFilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = AppStrings.Title.filter.rawValue
-    }
-    
-    @IBAction func onTapCancel(sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func onTapSubmit(sender: AnyObject) {
+        
+        self.showNoTitleBackButton()
         
     }
+
 }
 
-extension ListFilterViewController : UITableViewDataSource, UITableViewDelegate {
+extension ChooseFilterViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemFilterCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemChooseFilterCell", for: indexPath)
         
         return cell
     }
