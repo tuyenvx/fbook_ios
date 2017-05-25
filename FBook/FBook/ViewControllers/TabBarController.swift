@@ -14,13 +14,15 @@ class TabBarController: UITabBarController {
         case TAB_HOME = 0, TAB_USER
     }
     
+    var isLogin = false
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.delegate = self
         self.setTabBarItem()
     }
 
@@ -67,5 +69,28 @@ class TabBarController: UITabBarController {
             }
         }
     }
+    
+    func showLogin() {
+        if let vc = UIStoryboard(name: AppStoryboards.storyboardLogin, bundle: nil).instantiateInitialViewController() {
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
 
+}
+
+extension TabBarController : UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if tabBarController.viewControllers?.index(of: viewController) == TabBarIndex.TAB_USER.rawValue {
+            if isLogin == false {
+                isLogin = true
+                self.showLogin()
+                return false
+            }
+            else {
+                return true
+            }
+            
+        }
+        return true
+    }
 }

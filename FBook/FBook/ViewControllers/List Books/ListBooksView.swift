@@ -141,12 +141,13 @@ extension ListBooksView: UICollectionViewDataSource, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let spaceForItem = (collectionView.frame.width - ItemBookCollectionViewCell.size.width * CGFloat(numberOfItemsInLine)) / CGFloat(numberOfItemsInLine + 1)
-        return UIEdgeInsets(top: spaceForItem, left: spaceForItem, bottom: 0, right: spaceForItem)
+        return UIEdgeInsets(top: ItemBookCollectionViewCell.spaceForItem, left: ItemBookCollectionViewCell.spaceForItem, bottom: 0, right: ItemBookCollectionViewCell.spaceForItem)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return ItemBookCollectionViewCell.size
+        let width = (collectionView.frame.width - ItemBookCollectionViewCell.spaceForItem * CGFloat(numberOfItemsInLine + 1)) / CGFloat(numberOfItemsInLine)
+        let height = width * 1.8
+        return CGSize(width: width, height: height)
     }
     
 }

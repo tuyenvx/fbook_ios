@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func onTapCancel(sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     @IBAction func onTapLogin(sender: AnyObject) {
         if let email = emailTextField.text, let pass = passTextField.text {
@@ -31,7 +35,7 @@ class LoginViewController: UIViewController {
                     , andTitle: AppStrings.AlertTitle.error.rawValue)
             }
             else {
-                
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

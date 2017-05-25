@@ -21,6 +21,8 @@
 		847AB49C1ECEAF57008C6CFA /* HeaderSectionBooksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AB49A1ECEAF57008C6CFA /* HeaderSectionBooksView.xib */; };
 		847AB4A11ECECBCC008C6CFA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AB4A01ECECBCC008C6CFA /* UIView+Extension.swift */; };
 		847AB4A41ECEDC85008C6CFA /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AB4A31ECEDC85008C6CFA /* BookDetailViewController.swift */; };
+		848093D11ED3E7BE00257F07 /* ListFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848093D01ED3E7BE00257F07 /* ListFilterViewController.swift */; };
+		848093D31ED4110B00257F07 /* ChooseFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848093D21ED4110B00257F07 /* ChooseFilterViewController.swift */; };
 		8495B6A71ECD34B60057B7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6A61ECD34B60057B7BA /* AppDelegate.swift */; };
 		8495B6AE1ECD34B60057B7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8495B6AD1ECD34B60057B7BA /* Assets.xcassets */; };
 		8495B6BC1ECD34B60057B7BA /* FBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495B6BB1ECD34B60057B7BA /* FBookTests.swift */; };
@@ -61,6 +63,8 @@
 		847AB49A1ECEAF57008C6CFA /* HeaderSectionBooksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderSectionBooksView.xib; sourceTree = "<group>"; };
 		847AB4A01ECECBCC008C6CFA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		847AB4A31ECEDC85008C6CFA /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		848093D01ED3E7BE00257F07 /* ListFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFilterViewController.swift; sourceTree = "<group>"; };
+		848093D21ED4110B00257F07 /* ChooseFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFilterViewController.swift; sourceTree = "<group>"; };
 		8495B6A31ECD34B60057B7BA /* FBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8495B6A61ECD34B60057B7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8495B6AD1ECD34B60057B7BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 		848093CD1ED3E75000257F07 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				848093D01ED3E7BE00257F07 /* ListFilterViewController.swift */,
+				848093D21ED4110B00257F07 /* ChooseFilterViewController.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				8495B6E41ECD778C0057B7BA /* UIViewController+Extension.swift in Sources */,
 				846F67A01ED2C42E00794965 /* LoadingCollectionReusableView.swift in Sources */,
 				846F67981ED2C3ED00794965 /* ItemBookCollectionViewCell.swift in Sources */,
+				848093D11ED3E7BE00257F07 /* ListFilterViewController.swift in Sources */,
 				847AB49B1ECEAF57008C6CFA /* HeaderSectionBooksView.swift in Sources */,
 				846F67931ED2B71200794965 /* PageList.swift in Sources */,
 				8495B6D41ECD440F0057B7BA /* LoginViewController.swift in Sources */,
@@ -394,6 +401,7 @@
 				8495B6E91ECD8BDD0057B7BA /* ProfileViewController.swift in Sources */,
 				8495B6DD1ECD70B90057B7BA /* UIColor+Extension.swift in Sources */,
 				8495B6DB1ECD6E2F0057B7BA /* TabBarController.swift in Sources */,
+				848093D31ED4110B00257F07 /* ChooseFilterViewController.swift in Sources */,
 				846F679A1ED2C3ED00794965 /* ListBooksView.swift in Sources */,
 				8495B6A71ECD34B60057B7BA /* AppDelegate.swift in Sources */,
 				847AB4901ECEAEE3008C6CFA /* ItemSectionBooksTableViewCell.swift in Sources */,

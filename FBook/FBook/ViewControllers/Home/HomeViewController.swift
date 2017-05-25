@@ -98,10 +98,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let tabBarController = self.tabBarController as? TabBarController {
             if indexPath.section == SectionHome.sectionBook.rawValue {
-                tabBarController.performSegue(withIdentifier: AppStoryboardSegue.identifierShowBookDetail, sender: nil)
+                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: nil)
             }
             else {
-                tabBarController.performSegue(withIdentifier: AppStoryboardSegue.identifierShowListBook, sender: nil)
+                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowListBook, sender: nil)
             }
             
         }
