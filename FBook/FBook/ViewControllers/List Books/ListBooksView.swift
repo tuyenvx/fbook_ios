@@ -11,6 +11,8 @@ import UIKit
 protocol ListBooksViewDelegate: class {
     func listBookViewShouldLoadMore() -> Bool
     func listBookViewLoadMore()
+    func listBookViewShouldPullToRefresh() -> Bool
+    func listBookViewPullToRefresh()
     
     // optional
     func listBookViewDidSelect(_ book: Book)
@@ -39,9 +41,18 @@ class ListBooksView: UIView {
         collectionView.delegate = self
     }
 
-    private var pageList: PageList<Book>?
+    fileprivate var pageList: PageList<Book>?
     
-    weak var delegate: ListBooksViewDelegate?
+    weak var delegate: ListBooksViewDelegate? {
+        didSet {
+            if let delegate = delegate, delegate.listBookViewShouldPullToRefresh() {
+                collectionView.setupPullToRefresh()
+                collectionView.mj_header.refreshingBlock = { [weak self] in
+                    self?.delegate?.listBookViewPullToRefresh()
+                }
+            }
+        }
+    }
     
     var numberOfItemsInLine = 3
     
@@ -54,21 +65,18 @@ class ListBooksView: UIView {
         }
     }
     
-    var totalPage: Int {
+    var totalItems: Int {
         get {
-            return pageList?.totalPage ?? 0
+            return pageList?.totalItems ?? 0
         }
         set {
-            pageList?.totalPage = newValue
+            pageList?.totalItems = newValue
         }
     }
     
-    var nextPage: Int {
+    var nextPage: Int? {
         get {
-            if let currentPage = pageList?.currentPage {
-                return currentPage + 1
-            }
-            return 1
+            return pageList?.nextPage
         }
     }
     
@@ -80,7 +88,7 @@ class ListBooksView: UIView {
         guard let pageList = self.pageList else {
             return false
         }
-        return pageList.currentPage < pageList.totalPage
+        return pageList.nextPage != nil
     }
     
     func setData(_ pageList: PageList<Book>) {
@@ -89,12 +97,24 @@ class ListBooksView: UIView {
 
     func appendData(_ pageList: PageList<Book>) {
         if let currentPageList = self.pageList {
+            currentPageList.totalItems = pageList.totalItems
             currentPageList.currentPage = pageList.currentPage
-            currentPageList.totalPage = pageList.totalPage
+            currentPageList.nextPage = pageList.nextPage
+            currentPageList.prevPage = pageList.prevPage
             currentPageList.models.append(contentsOf: pageList.models)
         }
         else {
             self.pageList = pageList
+        }
+    }
+    
+    func reloadData() {
+        self.collectionView.reloadData()
+    }
+    
+    func endRefreshing() {
+        if let mj_header = self.collectionView.mj_header {
+            mj_header.endRefreshing()
         }
     }
 }
@@ -106,21 +126,23 @@ extension ListBooksView: UICollectionViewDataSource, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return self.itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemBookCollectionViewCell.identifier, for: indexPath)
         
-        if let bookCell = cell as? ItemBookCollectionViewCell {
-            
+        if let cell = cell as? ItemBookCollectionViewCell {
+            cell.book = self.pageList?.models[indexPath.row]
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let book = self.pageList?.models[indexPath.row] {
+            self.delegate?.listBookViewDidSelect(book)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

@@ -75,6 +75,16 @@ class TabBarController: UITabBarController {
             self.present(vc, animated: true, completion: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AppStoryboards.segueIdentifierShowListBook {
+            if let vc = segue.destination as? ListBooksViewController {
+                if let sectionBook = sender as? SectionBook {
+                    vc.listBooksType = ListBooksViewController.ListBooksType.section(key: sectionBook.key, title: sectionBook.title)
+                }
+            }
+        }
+    }
 
 }
 

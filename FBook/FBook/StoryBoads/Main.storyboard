@@ -249,6 +249,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="listBookView" destination="PTs-v2-TMd" id="MWX-4v-Qrc"/>
+                        <segue destination="ms8-02-alZ" kind="show" identifier="showBookDetail" id="T4D-ie-jFd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rC-5V-XrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -796,6 +800,7 @@
         <image name="thumb_doraemon" width="332" height="475"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="98s-Ws-UyM"/>
+        <segue reference="TMV-wg-ozZ"/>
+        <segue reference="T4D-ie-jFd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,15 @@ import PKHUD
 
 extension UIViewController {
     
+    func showAlertError(error: Error, title: String = "") {
+        if let error = error as? ResponseError {
+            self.showAlert(message: error.description, andTitle: title)
+        }
+        else {
+            self.showAlert(message: error.localizedDescription , andTitle: title)
+        }
+    }
+    
     func showAlert(message: String) {
         showAlert(message: message, andTitle: "")
     }
