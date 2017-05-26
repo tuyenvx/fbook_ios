@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class PageList<Model: NSObject>: NSObject {
+class PageList<Model: Mappable>: Mappable {
     
     var currentPage : Int
     var totalPage : Int
     var models : [Model]
     
-    override init() {
+    init() {
         currentPage = 0
         totalPage = 0
         models = []
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        
     }
 }

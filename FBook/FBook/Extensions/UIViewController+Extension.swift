@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 extension UIViewController {
     
@@ -40,5 +41,17 @@ extension UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.shadowImage = nil
         self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    func showLoading()  {
+        DispatchQueue.main.async {
+            HUD.show(HUDContentType.rotatingImage(#imageLiteral(resourceName: "icon_loading")))
+        }
+    }
+    
+    func hideLoading() {
+        DispatchQueue.main.async {
+            HUD.hide(animated: true)
+        }
     }
 }

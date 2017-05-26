@@ -557,7 +557,7 @@
         <scene sceneID="DZE-vx-yL9">
             <objects>
                 <navigationController id="uKZ-Gb-ub6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3cu-si-aG3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3cu-si-aG3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -579,7 +579,7 @@
             <objects>
                 <navigationController id="BKq-Re-j3Q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="p8g-dN-PfJ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FiH-EN-sj5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FiH-EN-sj5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -600,7 +600,7 @@
         <scene sceneID="E7Y-8J-7qo">
             <objects>
                 <navigationController id="2ic-rM-zaI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="d5C-mZ-j13">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d5C-mZ-j13">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

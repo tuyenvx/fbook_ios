@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         case sectionBook = 0, sectionViewAll, sectionCount
     }
     
+    var sectionsBook: [SectionBook]?
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -23,18 +25,35 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: HeaderSectionBooksView.identifier, bundle: nil),
+        self.tableView.register(UINib(nibName: HeaderSectionBooksView.identifier, bundle: nil),
                            forHeaderFooterViewReuseIdentifier: HeaderSectionBooksView.identifier)
+        self.tableView.setupPullToRefresh()
+        self.tableView.mj_header.refreshingBlock = { [weak self] in
+            self?.loadData()
+        }
+        self.loadData()
     }
 
-    
-
+    func loadData() {
+        self.showLoading()
+        let input = GetHomePageInput()
+        let apiService = BookAPIService()
+        apiService.getHomePage(input) { [weak self] (output, error) in
+            self?.hideLoading()
+            self?.tableView.mj_header.endRefreshing()
+            
+            if let output = output {
+                self?.sectionsBook = output.sectionsBook
+                self?.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return sectionsBook?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -47,6 +66,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderSectionBooksView.identifier) as? HeaderSectionBooksView
+        view?.titleLabel.text = sectionsBook?[section].title ?? ""
         return view
     }
     
@@ -73,7 +93,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == SectionHome.sectionBook.rawValue {
-            return 5
+            return sectionsBook?[section].books?.count ?? 0
         }
         return 1
     }
@@ -84,7 +104,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemBookCollectionViewCell.identifier, for: indexPath)
             
             if let bookCell = cell as? ItemBookCollectionViewCell {
-                
+                bookCell.book = sectionsBook?[indexPath.section].books?[indexPath.row]
             }
             return cell
         }
