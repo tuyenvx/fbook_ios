@@ -9,5 +9,7 @@
 import UIKit
 
 class BookAPIService: APIService {
-    
+    func getHomePage<T:GetHomePageOutput>(_ input: GetHomePageInput, completion:@escaping (_ value: T?,_ error: Error?) -> Void) {
+        return self.request(input, completion: completion)
+    }
 }

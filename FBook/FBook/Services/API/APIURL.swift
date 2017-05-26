@@ -10,7 +10,7 @@ import UIKit
 
 struct APIURL {
     
-    static let base = ""
+    static let base = "http://api-book.framgia.vn/api/v0"
     
     // BOOK
     static let getHomePage = base + "/home"

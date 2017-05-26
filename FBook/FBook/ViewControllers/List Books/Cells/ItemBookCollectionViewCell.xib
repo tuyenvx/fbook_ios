@@ -20,24 +20,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-IR-uYe">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb_doraemon" translatesAutoresizingMaskIntoConstraints="NO" id="eAe-HY-oSS">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="135"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb_book" translatesAutoresizingMaskIntoConstraints="NO" id="eAe-HY-oSS">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fujiko F. Fujio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-JF-BZU">
-                                <rect key="frame" x="0.0" y="155" width="100" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="L2E-nx-SeA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-JF-BZU">
+                                <rect key="frame" x="0.0" y="149" width="100" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doraemon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yw-sq-Fpk">
-                                <rect key="frame" x="0.0" y="140" width="100" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="0Fo-tH-WEb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yw-sq-Fpk">
+                                <rect key="frame" x="0.0" y="135" width="100" height="12"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -50,9 +44,9 @@
                             <constraint firstAttribute="trailing" secondItem="6yw-sq-Fpk" secondAttribute="trailing" id="Il7-0h-nda"/>
                             <constraint firstItem="6yw-sq-Fpk" firstAttribute="top" secondItem="eAe-HY-oSS" secondAttribute="bottom" constant="5" id="M2M-m8-g6o"/>
                             <constraint firstItem="Cdn-JF-BZU" firstAttribute="leading" secondItem="uUY-IR-uYe" secondAttribute="leading" id="NXz-j9-wKz"/>
-                            <constraint firstAttribute="bottom" secondItem="eAe-HY-oSS" secondAttribute="bottom" constant="45" id="TSd-sP-kv6"/>
+                            <constraint firstAttribute="bottom" secondItem="eAe-HY-oSS" secondAttribute="bottom" constant="50" id="TSd-sP-kv6"/>
                             <constraint firstAttribute="trailing" secondItem="Cdn-JF-BZU" secondAttribute="trailing" id="bMu-kf-t4Q"/>
-                            <constraint firstItem="Cdn-JF-BZU" firstAttribute="top" secondItem="6yw-sq-Fpk" secondAttribute="bottom" id="pA2-eQ-B0W"/>
+                            <constraint firstItem="Cdn-JF-BZU" firstAttribute="top" secondItem="6yw-sq-Fpk" secondAttribute="bottom" constant="2" id="pA2-eQ-B0W"/>
                             <constraint firstItem="eAe-HY-oSS" firstAttribute="top" secondItem="uUY-IR-uYe" secondAttribute="top" id="vwq-8Q-hp5"/>
                         </constraints>
                     </view>
@@ -66,10 +60,15 @@
                 <constraint firstAttribute="trailing" secondItem="uUY-IR-uYe" secondAttribute="trailing" id="meO-LB-gfK"/>
             </constraints>
             <size key="customSize" width="105" height="150"/>
+            <connections>
+                <outlet property="authorLabel" destination="Cdn-JF-BZU" id="LbG-Qh-azz"/>
+                <outlet property="thumbImageView" destination="eAe-HY-oSS" id="Il8-sH-T4d"/>
+                <outlet property="titleLabel" destination="6yw-sq-Fpk" id="fJV-y1-mvH"/>
+            </connections>
             <point key="canvasLocation" x="54" y="88"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="thumb_doraemon" width="332" height="475"/>
+        <image name="thumb_book" width="150" height="150"/>
     </resources>
 </document>

@@ -10,6 +10,8 @@ import UIKit
 
 class HeaderSectionBooksView: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     class var identifier: String {
         return "HeaderSectionBooksView"
     }
@@ -22,5 +24,8 @@ class HeaderSectionBooksView: UITableViewHeaderFooterView {
         super.awakeFromNib()
     }
 
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.titleLabel.text = ""
+    }
 }
