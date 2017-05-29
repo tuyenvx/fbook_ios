@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         self.loadData()
     }
 
-    func loadData() {
+    private func loadData() {
         self.showLoading()
         let input = GetHomePageInput()
         let apiService = BookAPIService()
@@ -45,6 +45,9 @@ class HomeViewController: UIViewController {
             if let output = output {
                 self?.sectionsBook = output.sectionsBook
                 self?.tableView.reloadData()
+            }
+            if let error = error {
+                self?.showAlertError(error: error)
             }
         }
     }
@@ -80,7 +83,9 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemSectionBooksTableViewCell.identifier, for: indexPath)
-        
+        if let cell = cell as? ItemSectionBooksTableViewCell {
+            cell.collectionView.tag = indexPath.section
+        }
         return cell
     }
 }
@@ -103,8 +108,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if indexPath.section == SectionHome.sectionBook.rawValue {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemBookCollectionViewCell.identifier, for: indexPath)
             
-            if let bookCell = cell as? ItemBookCollectionViewCell {
-                bookCell.book = sectionsBook?[indexPath.section].books?[indexPath.row]
+            if let cell = cell as? ItemBookCollectionViewCell {
+                cell.book = sectionsBook?[indexPath.section].books?[indexPath.row]
             }
             return cell
         }
@@ -121,7 +126,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: nil)
             }
             else {
-                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowListBook, sender: nil)
+                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowListBook, sender: sectionsBook?[collectionView.tag])
             }
             
         }

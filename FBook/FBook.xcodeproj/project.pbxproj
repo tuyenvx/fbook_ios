@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		841DFB621ED6BAD600ACC562 /* UITableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DFB611ED6BAD600ACC562 /* UITableViewController+Extension.swift */; };
+		844027BD1ED7C34F0008EDF9 /* GetListBookOfSectionIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844027BC1ED7C34F0008EDF9 /* GetListBookOfSectionIO.swift */; };
+		844027BF1ED7FF8B0008EDF9 /* UICollectionViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844027BE1ED7FF8B0008EDF9 /* UICollectionViewController+Extension.swift */; };
 		846F678F1ED2A01F00794965 /* ListBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F678E1ED2A01F00794965 /* ListBooksViewController.swift */; };
 		846F67931ED2B71200794965 /* PageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F67921ED2B71200794965 /* PageList.swift */; };
 		846F67981ED2C3ED00794965 /* ItemBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F67951ED2C3ED00794965 /* ItemBookCollectionViewCell.swift */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		32D09B318B3BFCC4B01CD9C7 /* Pods-FBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.debug.xcconfig"; sourceTree = "<group>"; };
 		841DFB611ED6BAD600ACC562 /* UITableViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extension.swift"; sourceTree = "<group>"; };
+		844027BC1ED7C34F0008EDF9 /* GetListBookOfSectionIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListBookOfSectionIO.swift; sourceTree = "<group>"; };
+		844027BE1ED7FF8B0008EDF9 /* UICollectionViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+Extension.swift"; sourceTree = "<group>"; };
 		846F678E1ED2A01F00794965 /* ListBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBooksViewController.swift; sourceTree = "<group>"; };
 		846F67921ED2B71200794965 /* PageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageList.swift; sourceTree = "<group>"; };
 		846F67951ED2C3ED00794965 /* ItemBookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBookCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			children = (
 				84769BF51ED673B800DC60C3 /* BookAPIService.swift */,
 				84769BF71ED6780E00DC60C3 /* GetHomePageIO.swift */,
+				844027BC1ED7C34F0008EDF9 /* GetListBookOfSectionIO.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				847AB4A01ECECBCC008C6CFA /* UIView+Extension.swift */,
 				8475F3B71ED530FB0023B8F1 /* Mappable+Extension.swift */,
 				841DFB611ED6BAD600ACC562 /* UITableViewController+Extension.swift */,
+				844027BE1ED7FF8B0008EDF9 /* UICollectionViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,9 +554,11 @@
 				846F679A1ED2C3ED00794965 /* ListBooksView.swift in Sources */,
 				8475F3AE1ED52AD20023B8F1 /* APIURL.swift in Sources */,
 				8495B6A71ECD34B60057B7BA /* AppDelegate.swift in Sources */,
+				844027BD1ED7C34F0008EDF9 /* GetListBookOfSectionIO.swift in Sources */,
 				8475F3BC1ED532DF0023B8F1 /* ResponseError.swift in Sources */,
 				841DFB621ED6BAD600ACC562 /* UITableViewController+Extension.swift in Sources */,
 				8475F3B01ED52B1E0023B8F1 /* APIService.swift in Sources */,
+				844027BF1ED7FF8B0008EDF9 /* UICollectionViewController+Extension.swift in Sources */,
 				847AB4901ECEAEE3008C6CFA /* ItemSectionBooksTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

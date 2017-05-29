@@ -11,13 +11,15 @@ import ObjectMapper
 
 class PageList<Model: Mappable>: Mappable {
     
+    var totalItems : Int
     var currentPage : Int
-    var totalPage : Int
+    var nextPage : Int?
+    var prevPage : Int?
     var models : [Model]
     
     init() {
+        totalItems = 0
         currentPage = 0
-        totalPage = 0
         models = []
     }
     
@@ -26,6 +28,10 @@ class PageList<Model: Mappable>: Mappable {
     }
     
     func mapping(map: Map) {
-        
+        totalItems <- map["total"]
+        currentPage <- map["current_page"]
+        nextPage <- map["next_page"]
+        prevPage <- map["prev_page"]
+        models <- map["data"]
     }
 }

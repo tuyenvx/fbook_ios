@@ -14,6 +14,7 @@ struct APIURL {
     
     // BOOK
     static let getHomePage = base + "/home"
+    static let getBooks = base + "/books"
     
     // USER
     static let login = base + "/login"
