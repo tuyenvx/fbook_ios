@@ -104,6 +104,16 @@ class ListBooksViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AppStoryboards.segueIdentifierShowBookDetail {
+            if let vc = segue.destination as? BookDetailViewController {
+                if let book = sender as? Book {
+                    vc.book = book
+                }
+            }
+        }
+    }
 }
 
 extension ListBooksViewController: ListBooksViewDelegate {
@@ -125,7 +135,7 @@ extension ListBooksViewController: ListBooksViewDelegate {
     }
     
     func listBookViewDidSelect(_ book: Book) {
-        self.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: nil)
+        self.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: book)
     }
     
 }

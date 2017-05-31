@@ -27,6 +27,11 @@ struct AppStrings {
         case logout = "Log out"
     }
     
+    enum BookDetailViewController: String {
+        case totalView = "Views: "
+        case totalPage = "Pages: "
+    }
+    
     enum AlertTitle: String {
         case title = "Alert"
         case error = "Error"

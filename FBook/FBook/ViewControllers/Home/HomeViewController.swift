@@ -98,7 +98,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == SectionHome.sectionBook.rawValue {
-            return sectionsBook?[section].books?.count ?? 0
+            return sectionsBook?[collectionView.tag].books?.count ?? 0
         }
         return 1
     }
@@ -109,7 +109,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemBookCollectionViewCell.identifier, for: indexPath)
             
             if let cell = cell as? ItemBookCollectionViewCell {
-                cell.book = sectionsBook?[indexPath.section].books?[indexPath.row]
+                cell.book = sectionsBook?[collectionView.tag].books?[indexPath.row]
             }
             return cell
         }
@@ -123,7 +123,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let tabBarController = self.tabBarController as? TabBarController {
             if indexPath.section == SectionHome.sectionBook.rawValue {
-                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: nil)
+                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: sectionsBook?[collectionView.tag].books?[indexPath.row])
             }
             else {
                 tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowListBook, sender: sectionsBook?[collectionView.tag])

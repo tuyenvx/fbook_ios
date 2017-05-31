@@ -29,7 +29,7 @@ class ListBooksView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: GradientShadowAtBottomCollectionViewFlowLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = UIColor.clear
         self.addSubview(collectionView)

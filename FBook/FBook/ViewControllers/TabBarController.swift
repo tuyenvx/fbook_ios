@@ -84,6 +84,13 @@ class TabBarController: UITabBarController {
                 }
             }
         }
+        else if segue.identifier == AppStoryboards.segueIdentifierShowBookDetail {
+            if let vc = segue.destination as? BookDetailViewController {
+                if let book = sender as? Book {
+                    vc.book = book
+                }
+            }
+        }
     }
 
 }
