@@ -16,4 +16,8 @@ class BookAPIService: APIService {
     func getListBookOfSection<T:GetListBookOfSectionOutput>(_ input: GetListBookOfSectionInput, completion:@escaping (_ value: T?,_ error: Error?) -> Void) {
         return self.request(input, completion: completion)
     }
+    
+    func getBookDetail<T:GetBookDetailOutput>(_ input: GetBookDetailInput, completion:@escaping (_ value: T?,_ error: Error?) -> Void) {
+        return self.request(input, completion: completion)
+    }
 }

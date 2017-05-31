@@ -45,7 +45,7 @@ class ItemBookCollectionViewCell: UICollectionViewCell {
                 self.titleLabel.text = book.title
                 self.authorLabel.text = book.author
                 if let url = URL(string: book.thumbnail) {
-                    self.thumbImageView.kf.setImage(with: url)
+                    self.thumbImageView.kf.setImage(with: url, options: [KingfisherOptionsInfoItem.cacheMemoryOnly]);
                 }
             }
         }
