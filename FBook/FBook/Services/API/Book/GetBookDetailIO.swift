@@ -12,7 +12,7 @@ import ObjectMapper
 class GetBookDetailInput: APIInputBase {
     
     init(bookID : Int) {
-        let urlString = APIURL.getBooks + "/\(bookID)"
+        let urlString = APIURL.books + "/\(bookID)"
         super.init(urlString: urlString,
                    parameters: nil,
                    requestType: .get)

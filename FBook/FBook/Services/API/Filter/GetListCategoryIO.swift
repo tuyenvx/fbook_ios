@@ -1,30 +1,30 @@
 //
-//  GetHomePageIO.swift
+//  GetListCategoryIO.swift
 //  FBook
 //
-//  Created by admin on 5/25/17.
+//  Created by admin on 5/31/17.
 //  Copyright © 2017 Framgia. All rights reserved.
 //
 
 import UIKit
 import ObjectMapper
 
-class GetHomePageInput: APIInputBase {
+class GetListCategoryInput: APIInputBase {
     
     init() {
-        super.init(urlString: APIURL.homePage,
+        super.init(urlString: APIURL.categories,
                    parameters: nil,
                    requestType: .get)
     }
     
 }
 
-class GetHomePageOutput: APIOutputBase {
+class GetListCategoryOutput: APIOutputBase {
     
-    var sectionsBook: [SectionBook]
+    var categories: [Category]
     
     private override init() {
-        sectionsBook = [SectionBook]()
+        categories = [Category]()
         super.init()
     }
     
@@ -34,6 +34,6 @@ class GetHomePageOutput: APIOutputBase {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        sectionsBook <- map["items"]
+        categories <- map["items"]
     }
 }

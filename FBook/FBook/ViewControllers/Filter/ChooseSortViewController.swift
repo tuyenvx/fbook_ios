@@ -1,15 +1,14 @@
 //
-//  ChooseFilterViewController.swift
+//  ChooseSortViewController.swift
 //  FBook
 //
-//  Created by admin on 5/23/17.
+//  Created by admin on 6/1/17.
 //  Copyright © 2017 Framgia. All rights reserved.
 //
 
 import UIKit
-import ObjectMapper
 
-class ChooseFilterViewController: UIViewController {
+class ChooseSortViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,7 +40,7 @@ class ChooseFilterViewController: UIViewController {
         
         self.loadData()
     }
-
+    
     private func loadData() {
         switch filterType {
         case .office:
@@ -86,7 +85,7 @@ class ChooseFilterViewController: UIViewController {
     }
 }
 
-extension ChooseFilterViewController : UITableViewDataSource, UITableViewDelegate {
+extension ChooseSortViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list?.count ?? 0
