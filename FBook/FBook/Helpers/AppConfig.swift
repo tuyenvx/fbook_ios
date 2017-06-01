@@ -19,6 +19,18 @@ struct AppStrings {
         case filter = "Filter"
     }
     
+    enum AlertTitle: String {
+        case title = "Alert"
+        case error = "Error"
+        case ok = "OK"
+        case cancel = "Cancel"
+    }
+    
+    enum AlertMessage: String {
+        case  emailEmpty = "Email is empty"
+        case  passEmpty = "Password is empty"
+    }
+    
     enum ProfileViewController: String {
         case myBookshare = "My Bookshare"
         case myWaitingBook = "My Waiting Book"
@@ -32,16 +44,10 @@ struct AppStrings {
         case totalPage = "Pages: "
     }
     
-    enum AlertTitle: String {
-        case title = "Alert"
-        case error = "Error"
-        case ok = "OK"
-        case cancel = "Cancel"
-    }
-    
-    enum AlertMessage: String {
-        case  emailEmpty = "Email is empty"
-        case  passEmpty = "Password is empty"
+    enum FilterViewController: String {
+        case office = "Office"
+        case category = "Category"
+        case sort = "Sort By"
     }
 }
 

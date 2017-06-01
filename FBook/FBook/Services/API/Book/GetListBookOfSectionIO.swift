@@ -16,7 +16,7 @@ class GetListBookOfSectionInput: APIInputBase {
             "field": key,
             "page": page
         ]
-        super.init(urlString: APIURL.getBooks,
+        super.init(urlString: APIURL.books,
                    parameters: params,
                    requestType: .get)
     }
