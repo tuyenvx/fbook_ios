@@ -11,10 +11,13 @@ import ObjectMapper
 
 class GetHomePageInput: APIInputBase {
     
-    init() {
+    init(filter : FilterSelected) {
+        let params : [String: Any] =  [
+            "filters": filter.toFilterJson()
+        ]
         super.init(urlString: APIURL.homePage,
-                   parameters: nil,
-                   requestType: .get)
+                   parameters: params,
+                   requestType: .post)
     }
     
 }

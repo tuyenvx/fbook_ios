@@ -10,7 +10,7 @@ import UIKit
 
 protocol ListFilterViewControllerDelegate: class {
     func listFilterViewControllerCanSort() -> Bool
-    func listFilterViewControllerDidSelectSort() -> Sort?
+    func listFilterViewControllerDidSelect(_ filter : FilterSelected)
 }
 
 class ListFilterViewController: UIViewController {
@@ -29,6 +29,8 @@ class ListFilterViewController: UIViewController {
     
     weak var delegate: ListFilterViewControllerDelegate?
     
+    var filterSelected : FilterSelected!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -45,9 +47,11 @@ class ListFilterViewController: UIViewController {
                     switch index {
                     case RowsOfFilter.rowOffice.rawValue:
                         vc.filterType = .office
+                        vc.listSelect = filterSelected.offices
                         break
                     case RowsOfFilter.rowCategory.rawValue:
                         vc.filterType = .category
+                        vc.listSelect = filterSelected.categories
                         break
                     default: break
                     }
@@ -55,8 +59,9 @@ class ListFilterViewController: UIViewController {
             }
         }
         else if segue.identifier == AppStoryboards.segueIdentifierShowChooseSort {
-            if let vc = segue.destination as? ChooseSortViewController, let sort = self.delegate?.listFilterViewControllerDidSelectSort() {
-                vc.listSortSelect.append(sort)
+            if let vc = segue.destination as? ChooseSortViewController, let sort = self.filterSelected.sort {
+                vc.sortSelected = sort
+                vc.orderSelected = self.filterSelected.order
             }
         }
     }
@@ -66,10 +71,9 @@ class ListFilterViewController: UIViewController {
     }
     
     @IBAction func onTapSubmit(sender: AnyObject) {
-        
+        self.delegate?.listFilterViewControllerDidSelect(filterSelected)
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 extension ListFilterViewController : UITableViewDataSource, UITableViewDelegate {

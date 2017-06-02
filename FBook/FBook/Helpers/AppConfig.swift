@@ -10,7 +10,7 @@ import UIKit
 
 struct AppConfig {
 
-    
+    static var filter = FilterSelected()
 }
 
 struct AppStrings {

@@ -20,7 +20,7 @@ class ChooseFilterViewController: UIViewController {
     
     var filterType : FilterType = .office
     
-    var list: [Any]?
+    fileprivate var list: [Any]?
     var listSelect = [Any]()
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +42,24 @@ class ChooseFilterViewController: UIViewController {
         self.loadData()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let vc = self.navigationController?.viewControllers.first as? ListFilterViewController {
+            switch filterType {
+            case .office:
+                if let offices = listSelect as? [Office] {
+                    vc.filterSelected.offices.removeAll()
+                    vc.filterSelected.offices.append(contentsOf: offices)
+                }
+            case .category:
+                if let categories = listSelect as? [Category] {
+                    vc.filterSelected.categories.removeAll()
+                    vc.filterSelected.categories.append(contentsOf: categories)
+                }
+            }
+        }
+    }
+    
     private func loadData() {
         switch filterType {
         case .office:

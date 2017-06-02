@@ -11,14 +11,15 @@ import ObjectMapper
 
 class GetListBookOfSectionInput: APIInputBase {
     
-    init(key : String, page : Int) {
+    init(filter : FilterSelected, page : Int) {
+        let urlString = APIURL.booksCondition + "?field=\(filter.sort?.key ?? "")&page=\(page)"
         let params : [String: Any] =  [
-            "field": key,
-            "page": page
+            "filters" : filter.toFilterJson(),
+            "sort" : filter.toSortJson()
         ]
-        super.init(urlString: APIURL.books,
+        super.init(urlString: urlString,
                    parameters: params,
-                   requestType: .get)
+                   requestType: .post)
     }
     
 }
