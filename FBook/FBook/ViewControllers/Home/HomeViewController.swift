@@ -69,7 +69,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderSectionBooksView.identifier) as? HeaderSectionBooksView
-        view?.titleLabel.text = sectionsBook?[section].title ?? ""
+        view?.titleLabel.text = sectionsBook?[section].sort.title ?? ""
         return view
     }
     

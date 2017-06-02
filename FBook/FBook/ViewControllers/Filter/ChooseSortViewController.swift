@@ -12,15 +12,15 @@ class ChooseSortViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    enum FilterType {
-        case office
-        case category
+    enum Sections: Int {
+        case sectionSort = 0, sectionOrder, sectionCount
     }
     
-    var filterType : FilterType = .office
+    var listSort: [Sort]?
+    var listSortSelect = [Sort]()
     
-    var list: [Any]?
-    var listSelect = [Any]()
+    var listOrder = [Sort.sortDesc(),Sort.sortAsc()]
+    var listOrderSelect = [Sort]()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,51 +31,24 @@ class ChooseSortViewController: UIViewController {
         
         self.showNoTitleBackButton()
         
-        switch filterType {
-        case .office:
-            self.navigationItem.title = AppStrings.FilterViewController.office.rawValue
-        case .category:
-            self.navigationItem.title = AppStrings.FilterViewController.category.rawValue
+        self.navigationItem.title = AppStrings.FilterViewController.sort.rawValue
+        
+        if let sort = listOrder.first {
+            listOrderSelect.append(sort)
         }
         
         self.loadData()
     }
     
     private func loadData() {
-        switch filterType {
-        case .office:
-            self.loadDataOffice()
-        case .category:
-            self.loadDataCategory()
-        }
-    }
-    
-    private func loadDataOffice() {
         self.showLoading()
-        let input = GetListOfficeInput()
+        let input = GetListSortInput()
         let apiService = FilterAPIService()
-        apiService.getListOffice(input) { [weak self] (output, error) in
+        apiService.getListSort(input) { [weak self] (output, error) in
             self?.hideLoading()
             
             if let output = output {
-                self?.list = output.offices
-                self?.tableView.reloadData()
-            }
-            if let error = error {
-                self?.showAlertError(error: error)
-            }
-        }
-    }
-    
-    private func loadDataCategory() {
-        self.showLoading()
-        let input = GetListCategoryInput()
-        let apiService = FilterAPIService()
-        apiService.getListCategory(input) { [weak self] (output, error) in
-            self?.hideLoading()
-            
-            if let output = output {
-                self?.list = output.categories
+                self?.listSort = output.sorts
                 self?.tableView.reloadData()
             }
             if let error = error {
@@ -87,47 +60,68 @@ class ChooseSortViewController: UIViewController {
 
 extension ChooseSortViewController : UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let count = listSort?.count, count > 0 {
+            return Sections.sectionCount.rawValue
+        }
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list?.count ?? 0
+        switch section {
+        case Sections.sectionSort.rawValue:
+            return listSort?.count ?? 0
+        case Sections.sectionOrder.rawValue:
+            return listOrder.count
+        default: return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemChooseFilterCell", for: indexPath)
-        switch filterType {
-        case .office:
-            if let item = list?[indexPath.row] as? Office {
-                cell.textLabel?.text = item.name
-                if listSelect.contains(where: {($0 as! Office).id == item.id}) {
+        
+        switch indexPath.section {
+        case Sections.sectionSort.rawValue:
+            if let item = listSort?[indexPath.row] {
+                cell.textLabel?.text = item.title
+                if listSortSelect.contains(where: { $0.key == item.key }) {
                     cell.accessoryType = .checkmark
                 }
                 else {
                     cell.accessoryType = .none
                 }
             }
-        case .category:
-            if let item = list?[indexPath.row] as? Category {
-                cell.textLabel?.text = item.name
-                if listSelect.contains(where: {($0 as! Category).id == item.id}) {
-                    cell.accessoryType = .checkmark
-                }
-                else {
-                    cell.accessoryType = .none
-                }
+            break
+        case Sections.sectionOrder.rawValue:
+            let item = listOrder[indexPath.row]
+            cell.textLabel?.text = item.title
+            if listOrderSelect.contains(where: { $0.key == item.key }) {
+                cell.accessoryType = .checkmark
             }
+            else {
+                cell.accessoryType = .none
+            }
+            break
+        default: break
         }
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let item = list?[indexPath.row] as? Office, let index = listSelect.index(where: {($0 as! Office).id == item.id}) {
-            listSelect.remove(at: index)
+        switch indexPath.section {
+        case Sections.sectionSort.rawValue:
+            listSortSelect.removeAll()
+            if let item = listSort?[indexPath.row] {
+                listSortSelect.append(item)
+            }
+            break
+        case Sections.sectionOrder.rawValue:
+            listOrderSelect.removeAll()
+            listOrderSelect.append(listOrder[indexPath.row])
+            break
+        default: break
         }
-        else if let item = list?[indexPath.row] as? Category, let index = listSelect.index(where: {($0 as! Category).id == item.id}) {
-            listSelect.remove(at: index)
-        }
-        else if let item = list?[indexPath.row] {
-            listSelect.append(item)
-        }
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        tableView.reloadData()
     }
 }

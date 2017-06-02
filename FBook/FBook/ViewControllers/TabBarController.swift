@@ -80,7 +80,7 @@ class TabBarController: UITabBarController {
         if segue.identifier == AppStoryboards.segueIdentifierShowListBook {
             if let vc = segue.destination as? ListBooksViewController {
                 if let sectionBook = sender as? SectionBook {
-                    vc.listBooksType = ListBooksViewController.ListBooksType.section(key: sectionBook.key, title: sectionBook.title)
+                    vc.listBooksType = ListBooksViewController.ListBooksType.section(key: sectionBook.sort.key, title: sectionBook.sort.title)
                 }
             }
         }
