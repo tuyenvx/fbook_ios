@@ -19,6 +19,7 @@ struct APIURL {
     // FILTER
     static let categories = base + "/categories"
     static let office = base + "/offices"
+    static let sort = base + "/books/condition-sort"
     
     // USER
     static let login = base + "/login"

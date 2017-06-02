@@ -12,7 +12,12 @@ class FilterAPIService: APIService {
     func getListOffice<T:GetListOfficeOutput>(_ input: GetListOfficeInput, completion:@escaping (_ value: T?,_ error: Error?) -> Void) {
         return self.request(input, completion: completion)
     }
+    
     func getListCategory<T:GetListCategoryOutput>(_ input: GetListCategoryInput, completion:@escaping (_ value: T?,_ error: Error?) -> Void) {
+        return self.request(input, completion: completion)
+    }
+    
+    func getListSort<T:GetListSortOutput>(_ input: GetListSortInput, completion:@escaping (_ value: T?,_ error: Error?) -> Void) {
         return self.request(input, completion: completion)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol ListFilterViewControllerDelegate: class {
     func listFilterViewControllerCanSort() -> Bool
+    func listFilterViewControllerDidSelectSort() -> Sort?
 }
 
 class ListFilterViewController: UIViewController {
@@ -51,6 +52,11 @@ class ListFilterViewController: UIViewController {
                     default: break
                     }
                 }
+            }
+        }
+        else if segue.identifier == AppStoryboards.segueIdentifierShowChooseSort {
+            if let vc = segue.destination as? ChooseSortViewController, let sort = self.delegate?.listFilterViewControllerDidSelectSort() {
+                vc.listSortSelect.append(sort)
             }
         }
     }
@@ -122,7 +128,7 @@ extension ListFilterViewController : UITableViewDataSource, UITableViewDelegate 
             self.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowChooseFilter, sender: indexPath.row)
             break
         case Sections.sectionSort.rawValue:
-            
+            self.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowChooseSort, sender: nil)
             break
         default: break
         }

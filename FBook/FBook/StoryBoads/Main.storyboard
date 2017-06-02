@@ -205,7 +205,7 @@
                         <barButtonItem key="leftBarButtonItem" image="icon_search_white" id="iNb-eG-Rly"/>
                         <barButtonItem key="rightBarButtonItem" image="icon_filter" id="Pjb-CP-e9d">
                             <connections>
-                                <segue destination="g53-CU-4Ix" kind="presentation" id="T36-sL-BXA"/>
+                                <segue destination="g53-CU-4Ix" kind="presentation" identifier="showFilter" id="T36-sL-BXA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -245,7 +245,7 @@
                     <navigationItem key="navigationItem" id="mtz-4t-A1H">
                         <barButtonItem key="rightBarButtonItem" image="icon_filter" id="xhy-4u-xEp">
                             <connections>
-                                <segue destination="g53-CU-4Ix" kind="presentation" id="Ez8-9I-KxQ"/>
+                                <segue destination="g53-CU-4Ix" kind="presentation" identifier="showFilter" id="Ez8-9I-KxQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

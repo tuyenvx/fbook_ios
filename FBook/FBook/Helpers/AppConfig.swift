@@ -61,5 +61,7 @@ struct AppStoryboards {
     static let storyboardLogin = "Login"
     static let segueIdentifierShowBookDetail = "showBookDetail"
     static let segueIdentifierShowListBook = "showListBook"
+    static let segueIdentifierShowFilter = "showFilter"
     static let segueIdentifierShowChooseFilter = "showChooseFilter"
+    static let segueIdentifierShowChooseSort = "showChooseSort"
 }

@@ -10,13 +10,12 @@ import UIKit
 import ObjectMapper
 
 class SectionBook: Mappable {
-    var title : String
-    var key : String
+    
+    var sort : Sort
     var books : [Book]?
     
     init() {
-        title = ""
-        key = ""
+        sort = Sort()
     }
     
     required convenience init?(map: Map) {
@@ -24,8 +23,8 @@ class SectionBook: Mappable {
     }
     
     func mapping(map: Map) {
-        title <- map["title"]
-        key <- map["key"]
+        sort.title <- map["title"]
+        sort.key <- map["key"]
         books <- map["data"]
     }
 }

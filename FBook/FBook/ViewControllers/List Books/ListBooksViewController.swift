@@ -113,6 +113,21 @@ class ListBooksViewController: UIViewController {
                 }
             }
         }
+        else if segue.identifier == AppStoryboards.segueIdentifierShowFilter {
+            if let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? ListFilterViewController {
+                vc.delegate = self
+            }
+        }
+    }
+}
+
+extension ListBooksViewController : ListFilterViewControllerDelegate {
+    func listFilterViewControllerCanSort() -> Bool {
+        return true
+    }
+    
+    func listFilterViewControllerDidSelectSort() -> Sort? {
+        return Sort(title: listBooksType.title, key: listBooksType.key)
     }
 }
 

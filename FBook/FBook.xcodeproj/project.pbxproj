@@ -14,6 +14,8 @@
 		844027C41ED825980008EDF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844027C31ED825980008EDF9 /* User.swift */; };
 		844027C61ED826290008EDF9 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844027C51ED826290008EDF9 /* Review.swift */; };
 		84667CD71EDFA24E007971A4 /* ChooseSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84667CD61EDFA24E007971A4 /* ChooseSortViewController.swift */; };
+		84667CD91EDFA811007971A4 /* GetListSortIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84667CD81EDFA811007971A4 /* GetListSortIO.swift */; };
+		84667CDB1EDFA837007971A4 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84667CDA1EDFA837007971A4 /* Sort.swift */; };
 		846F678F1ED2A01F00794965 /* ListBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F678E1ED2A01F00794965 /* ListBooksViewController.swift */; };
 		846F67931ED2B71200794965 /* PageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F67921ED2B71200794965 /* PageList.swift */; };
 		846F67981ED2C3ED00794965 /* ItemBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F67951ED2C3ED00794965 /* ItemBookCollectionViewCell.swift */; };
@@ -86,6 +88,8 @@
 		844027C31ED825980008EDF9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		844027C51ED826290008EDF9 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		84667CD61EDFA24E007971A4 /* ChooseSortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSortViewController.swift; sourceTree = "<group>"; };
+		84667CD81EDFA811007971A4 /* GetListSortIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListSortIO.swift; sourceTree = "<group>"; };
+		84667CDA1EDFA837007971A4 /* Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		846F678E1ED2A01F00794965 /* ListBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBooksViewController.swift; sourceTree = "<group>"; };
 		846F67921ED2B71200794965 /* PageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageList.swift; sourceTree = "<group>"; };
 		846F67951ED2C3ED00794965 /* ItemBookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBookCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				8489F7711EDE800B0042D656 /* FilterAPIService.swift */,
 				8489F7731EDE803A0042D656 /* GetListCategoryIO.swift */,
 				8489F7751EDE80480042D656 /* GetListOfficeIO.swift */,
+				84667CD81EDFA811007971A4 /* GetListSortIO.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				844027C51ED826290008EDF9 /* Review.swift */,
 				8489F76C1EDE78460042D656 /* Office.swift */,
 				8489F76E1EDE78890042D656 /* Category.swift */,
+				84667CDA1EDFA837007971A4 /* Sort.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				846F67A41ED2D1EC00794965 /* AppConfig.swift in Sources */,
 				8495B6E41ECD778C0057B7BA /* UIViewController+Extension.swift in Sources */,
 				846F67A01ED2C42E00794965 /* LoadingCollectionReusableView.swift in Sources */,
+				84667CD91EDFA811007971A4 /* GetListSortIO.swift in Sources */,
 				8475F3B41ED52B430023B8F1 /* APIOutputBase.swift in Sources */,
 				8489F7721EDE800B0042D656 /* FilterAPIService.swift in Sources */,
 				849750651EDBEE780097058D /* ItemUserWaitingTableViewCell.swift in Sources */,
@@ -605,6 +612,7 @@
 				8495B6D41ECD440F0057B7BA /* LoginViewController.swift in Sources */,
 				8475F3B21ED52B360023B8F1 /* APIInputBase.swift in Sources */,
 				847AB4A11ECECBCC008C6CFA /* UIView+Extension.swift in Sources */,
+				84667CDB1EDFA837007971A4 /* Sort.swift in Sources */,
 				8495B6D91ECD578C0057B7BA /* UITextField+Extension.swift in Sources */,
 				8475F3BA1ED5318D0023B8F1 /* DataTransform.swift in Sources */,
 				844027C41ED825980008EDF9 /* User.swift in Sources */,
