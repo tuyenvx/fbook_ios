@@ -66,6 +66,7 @@
 		849750621EDBC1E80097058D /* GradientCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849750611EDBC1E80097058D /* GradientCollectionReusableView.swift */; };
 		849750651EDBEE780097058D /* ItemUserWaitingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849750641EDBEE780097058D /* ItemUserWaitingTableViewCell.swift */; };
 		849750671EDBEF470097058D /* ItemReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849750661EDBEF470097058D /* ItemReviewTableViewCell.swift */; };
+		84D311C71EE1033600F2DD0B /* FilterSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D311C61EE1033600F2DD0B /* FilterSelected.swift */; };
 		ED7FF225769EB1E3E5E22BD5 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A91EB4CFD982C2F1F44309 /* Pods_FBook.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		849750611EDBC1E80097058D /* GradientCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientCollectionReusableView.swift; sourceTree = "<group>"; };
 		849750641EDBEE780097058D /* ItemUserWaitingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemUserWaitingTableViewCell.swift; sourceTree = "<group>"; };
 		849750661EDBEF470097058D /* ItemReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemReviewTableViewCell.swift; sourceTree = "<group>"; };
+		84D311C61EE1033600F2DD0B /* FilterSelected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSelected.swift; sourceTree = "<group>"; };
 		9490F3CE9EFE9B2560AF9519 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
 		C3A91EB4CFD982C2F1F44309 /* Pods_FBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -346,6 +348,7 @@
 				8489F76C1EDE78460042D656 /* Office.swift */,
 				8489F76E1EDE78890042D656 /* Category.swift */,
 				84667CDA1EDFA837007971A4 /* Sort.swift */,
+				84D311C61EE1033600F2DD0B /* FilterSelected.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				847AB49B1ECEAF57008C6CFA /* HeaderSectionBooksView.swift in Sources */,
 				844027C21ED81F9A0008EDF9 /* GetBookDetailIO.swift in Sources */,
 				84769BF61ED673B800DC60C3 /* BookAPIService.swift in Sources */,
+				84D311C71EE1033600F2DD0B /* FilterSelected.swift in Sources */,
 				846F67931ED2B71200794965 /* PageList.swift in Sources */,
 				84769BF81ED6780E00DC60C3 /* GetHomePageIO.swift in Sources */,
 				8495B6D41ECD440F0057B7BA /* LoginViewController.swift in Sources */,

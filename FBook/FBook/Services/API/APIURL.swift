@@ -13,10 +13,11 @@ struct APIURL {
     static let base = "http://api-book.framgia.vn/api/v0"
     
     // BOOK
-    static let homePage = base + "/home"
+    static let homePage = base + "/home/filters"
     static let books = base + "/books"
     
     // FILTER
+    static let booksCondition = base + "/books/filters"
     static let categories = base + "/categories"
     static let office = base + "/offices"
     static let sort = base + "/books/condition-sort"

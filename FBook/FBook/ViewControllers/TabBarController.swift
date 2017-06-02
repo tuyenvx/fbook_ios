@@ -79,8 +79,8 @@ class TabBarController: UITabBarController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == AppStoryboards.segueIdentifierShowListBook {
             if let vc = segue.destination as? ListBooksViewController {
-                if let sectionBook = sender as? SectionBook {
-                    vc.listBooksType = ListBooksViewController.ListBooksType.section(key: sectionBook.sort.key, title: sectionBook.sort.title)
+                if let sort = AppConfig.filter.sort {
+                    vc.listBooksType = ListBooksViewController.ListBooksType.section(key: sort.key, title: sort.title)
                 }
             }
         }

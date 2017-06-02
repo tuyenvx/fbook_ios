@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
         case sectionBook = 0, sectionViewAll, sectionCount
     }
     
-    var sectionsBook: [SectionBook]?
+    fileprivate var sectionsBook: [SectionBook]?
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,9 +34,18 @@ class HomeViewController: UIViewController {
         self.loadData()
     }
 
-    private func loadData() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AppStoryboards.segueIdentifierShowFilter {
+            if let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? ListFilterViewController {
+                vc.delegate = self
+                vc.filterSelected = AppConfig.filter
+            }
+        }
+    }
+    
+    fileprivate func loadData() {
         self.showLoading()
-        let input = GetHomePageInput()
+        let input = GetHomePageInput(filter: AppConfig.filter)
         let apiService = BookAPIService()
         apiService.getHomePage(input) { [weak self] (output, error) in
             self?.hideLoading()
@@ -50,6 +59,17 @@ class HomeViewController: UIViewController {
                 self?.showAlertError(error: error)
             }
         }
+    }
+}
+
+extension HomeViewController : ListFilterViewControllerDelegate {
+    func listFilterViewControllerCanSort() -> Bool {
+        return false
+    }
+    
+    func listFilterViewControllerDidSelect(_ filter: FilterSelected) {
+        AppConfig.filter = filter
+        loadData()
     }
 }
 
@@ -85,6 +105,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemSectionBooksTableViewCell.identifier, for: indexPath)
         if let cell = cell as? ItemSectionBooksTableViewCell {
             cell.collectionView.tag = indexPath.section
+            cell.collectionView.reloadData()
         }
         return cell
     }
@@ -126,7 +147,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowBookDetail, sender: sectionsBook?[collectionView.tag].books?[indexPath.row])
             }
             else {
-                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowListBook, sender: sectionsBook?[collectionView.tag])
+                AppConfig.filter.sort = sectionsBook?[collectionView.tag].sort
+                tabBarController.performSegue(withIdentifier: AppStoryboards.segueIdentifierShowListBook, sender: nil)
             }
             
         }

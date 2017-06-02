@@ -62,7 +62,7 @@ class ListBooksViewController: UIViewController {
         }
         self.isLoadingData = true
         self.showLoading()
-        let input = GetListBookOfSectionInput(key: listBooksType.key, page: 0)
+        let input = GetListBookOfSectionInput(filter: AppConfig.filter, page: 0)
         let apiService = BookAPIService()
         apiService.getListBookOfSection(input) { [weak self] (output, error) in
             self?.isLoadingData = false
@@ -90,7 +90,7 @@ class ListBooksViewController: UIViewController {
             return
         }
         self.isLoadingData = true
-        let input = GetListBookOfSectionInput(key: listBooksType.key, page: nextPage)
+        let input = GetListBookOfSectionInput(filter: AppConfig.filter, page: nextPage)
         let apiService = BookAPIService()
         apiService.getListBookOfSection(input) { [weak self] (output, error) in
             self?.isLoadingData = false
@@ -116,6 +116,7 @@ class ListBooksViewController: UIViewController {
         else if segue.identifier == AppStoryboards.segueIdentifierShowFilter {
             if let nav = segue.destination as? UINavigationController, let vc = nav.viewControllers.first as? ListFilterViewController {
                 vc.delegate = self
+                vc.filterSelected = AppConfig.filter
             }
         }
     }
@@ -126,8 +127,9 @@ extension ListBooksViewController : ListFilterViewControllerDelegate {
         return true
     }
     
-    func listFilterViewControllerDidSelectSort() -> Sort? {
-        return Sort(title: listBooksType.title, key: listBooksType.key)
+    func listFilterViewControllerDidSelect(_ filter: FilterSelected) {
+        AppConfig.filter = filter
+        self.loadData()
     }
 }
 

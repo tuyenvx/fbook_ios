@@ -16,11 +16,11 @@ class ChooseSortViewController: UIViewController {
         case sectionSort = 0, sectionOrder, sectionCount
     }
     
-    var listSort: [Sort]?
-    var listSortSelect = [Sort]()
+    fileprivate var listSort: [Sort]?
+    var sortSelected = Sort()
     
-    var listOrder = [Sort.sortDesc(),Sort.sortAsc()]
-    var listOrderSelect = [Sort]()
+    fileprivate var listOrder = [Sort.sortDesc(),Sort.sortAsc()]
+    var orderSelected = Sort()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,11 +33,16 @@ class ChooseSortViewController: UIViewController {
         
         self.navigationItem.title = AppStrings.FilterViewController.sort.rawValue
         
-        if let sort = listOrder.first {
-            listOrderSelect.append(sort)
-        }
-        
         self.loadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let vc = self.navigationController?.viewControllers.first as? ListFilterViewController {
+            vc.filterSelected.sort = sortSelected
+            vc.filterSelected.order = orderSelected
+        }
+
     }
     
     private func loadData() {
@@ -84,7 +89,7 @@ extension ChooseSortViewController : UITableViewDataSource, UITableViewDelegate 
         case Sections.sectionSort.rawValue:
             if let item = listSort?[indexPath.row] {
                 cell.textLabel?.text = item.title
-                if listSortSelect.contains(where: { $0.key == item.key }) {
+                if item.key == sortSelected.key {
                     cell.accessoryType = .checkmark
                 }
                 else {
@@ -95,7 +100,7 @@ extension ChooseSortViewController : UITableViewDataSource, UITableViewDelegate 
         case Sections.sectionOrder.rawValue:
             let item = listOrder[indexPath.row]
             cell.textLabel?.text = item.title
-            if listOrderSelect.contains(where: { $0.key == item.key }) {
+            if item.key == orderSelected.key {
                 cell.accessoryType = .checkmark
             }
             else {
@@ -111,14 +116,12 @@ extension ChooseSortViewController : UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case Sections.sectionSort.rawValue:
-            listSortSelect.removeAll()
             if let item = listSort?[indexPath.row] {
-                listSortSelect.append(item)
+                sortSelected = item
             }
             break
         case Sections.sectionOrder.rawValue:
-            listOrderSelect.removeAll()
-            listOrderSelect.append(listOrder[indexPath.row])
+            orderSelected = listOrder[indexPath.row]
             break
         default: break
         }
