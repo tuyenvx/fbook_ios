@@ -1,0 +1,15 @@
+disabled_rules: # rule identifiers to exclude from running
+  - todo
+  - file_length
+
+excluded: # paths to ignore during linting. overridden by `included`.
+  - Carthage
+  - Pods
+
+identifier_name:
+  max_length: 60
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
