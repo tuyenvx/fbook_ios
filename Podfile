@@ -21,6 +21,7 @@ target 'FBook' do
   pod 'Permission/Location', '2.0.4'
   pod 'RxSwift', '3.6.1'
   pod 'RxCocoa', '3.6.1'
+  pod 'SwiftHEXColors'
 
   # Pods for FBook
 
