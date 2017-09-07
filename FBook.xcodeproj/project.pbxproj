@@ -15,6 +15,13 @@
 		22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
 		6F6909735A1B5F94B195D69D /* Pods_FBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */; };
+		77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2611F60E27A00C68BA8 /* Book.swift */; };
+		77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2631F60E7DB00C68BA8 /* Review.swift */; };
+		77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2651F60EB4300C68BA8 /* Category.swift */; };
+		77F4E2681F60F02500C68BA8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2671F60F02500C68BA8 /* Media.swift */; };
+		77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2691F60F28E00C68BA8 /* SectionBook.swift */; };
+		77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E26B1F60F32100C68BA8 /* HomeProvider.swift */; };
+		77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E26D1F60F73E00C68BA8 /* BookProvider.swift */; };
 		77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59FE51F5F9B1F0074A5DB /* AppDelegate.swift */; };
 		77F59FE81F5F9B1F0074A5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F59FE71F5F9B1F0074A5DB /* ViewController.swift */; };
 		77F59FEB1F5F9B1F0074A5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F59FE91F5F9B1F0074A5DB /* Main.storyboard */; };
@@ -60,6 +67,13 @@
 		22C480621F6043F800DB7A4C /* BaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProvider.swift; sourceTree = "<group>"; };
 		22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
 		280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
+		77F4E2611F60E27A00C68BA8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		77F4E2631F60E7DB00C68BA8 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		77F4E2651F60EB4300C68BA8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		77F4E2671F60F02500C68BA8 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		77F4E2691F60F28E00C68BA8 /* SectionBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBook.swift; sourceTree = "<group>"; };
+		77F4E26B1F60F32100C68BA8 /* HomeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProvider.swift; sourceTree = "<group>"; };
+		77F4E26D1F60F73E00C68BA8 /* BookProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookProvider.swift; sourceTree = "<group>"; };
 		77F59FE21F5F9B1F0074A5DB /* FBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F59FE51F5F9B1F0074A5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F59FE71F5F9B1F0074A5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +229,8 @@
 				22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */,
 				224C0F281F604808007BEA04 /* UsersProvider.swift */,
 				224C0F2C1F604C10007BEA04 /* OfficeProvider.swift */,
+				77F4E26B1F60F32100C68BA8 /* HomeProvider.swift */,
+				77F4E26D1F60F73E00C68BA8 /* BookProvider.swift */,
 				77F5A0251F5FDF340074A5DB /* NetworkReachability.swift */,
 			);
 			path = API;
@@ -226,6 +242,11 @@
 				77F5A0231F5FDEC50074A5DB /* ObjectResponse.swift */,
 				22C480601F6040A400DB7A4C /* User.swift */,
 				224C0F2A1F604B86007BEA04 /* Office.swift */,
+				77F4E2691F60F28E00C68BA8 /* SectionBook.swift */,
+				77F4E2611F60E27A00C68BA8 /* Book.swift */,
+				77F4E2631F60E7DB00C68BA8 /* Review.swift */,
+				77F4E2651F60EB4300C68BA8 /* Category.swift */,
+				77F4E2671F60F02500C68BA8 /* Media.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -595,6 +616,8 @@
 			files = (
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
 				77F59FE81F5F9B1F0074A5DB /* ViewController.swift in Sources */,
+				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
+				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
 				224C0F2B1F604B86007BEA04 /* Office.swift in Sources */,
 				77F5A0311F5FE0630074A5DB /* BaseViewController.swift in Sources */,
@@ -602,11 +625,16 @@
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
 				77F5A0241F5FDEC50074A5DB /* ObjectResponse.swift in Sources */,
+				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
+				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
 				77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */,
+				77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
 				22C480611F6040A400DB7A4C /* User.swift in Sources */,
+				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
+				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
 				77F5A0411F60071B0074A5DB /* API.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,

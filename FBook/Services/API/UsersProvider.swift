@@ -25,7 +25,7 @@ final class UsersProvider: BaseProvider {
     }
 
     static func getOtherUserProfile(userId: Int) -> UserSignal {
-        return requestJSON(api: .getOtherUserPprofile(userId)).flatMap(.merge, { object -> UserSignal in
+        return requestJSON(api: .getOtherUserProfile(userId)).flatMap(.merge, { object -> UserSignal in
             if let value = object?.value as? [String: Any], let item = value[kItem] as? [String: Any],
                 let user = User(JSON: item) {
                 return UserSignal(value: user)

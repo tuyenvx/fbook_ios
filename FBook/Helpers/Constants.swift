@@ -14,6 +14,7 @@ let appDelegate = application.delegate as? AppDelegate
 let userDefaults = UserDefaults.standard
 
 let kDateServerFormat = "yyyy-MM-dd HH:mm:ss"
+let kDateFormatYMD = "yyyy-MM-dd"
 
 // Constants for UserDefaults
 let kAccessTokenKey = "com.framgia.fbook.access_token"

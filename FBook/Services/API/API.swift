@@ -15,8 +15,9 @@ public enum API {
     case home
     case homeFilter
     case getUserProfile
-    case getOtherUserPprofile(Int)
+    case getOtherUserProfile(Int)
     case getListOffice
+    case getBookDetail(Int)
 
 }
 
@@ -43,10 +44,12 @@ extension API: TargetType {
             return "/home/filters"
         case .getUserProfile:
             return "/user-profile"
-        case .getOtherUserPprofile(let userId):
+        case .getOtherUserProfile(let userId):
             return "/users/\(userId)"
         case .getListOffice:
             return "/offices"
+        case .getBookDetail(let bookId):
+            return "/books/\(bookId)"
         }
     }
 
