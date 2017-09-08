@@ -69,7 +69,7 @@
                     </view>
                     <connections>
                         <outlet property="headerAccountView" destination="VbY-vZ-W6k" id="njM-5g-bhC"/>
-                        <outlet property="userAvatarImage" destination="gMl-RD-CzX" id="nic-6K-M9C"/>
+                        <outlet property="userAvatarImage" destination="gMl-RD-CzX" id="h8A-ns-X3J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gds-mN-Hae" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,6 +280,13 @@
                             <constraint firstItem="QeT-5t-XpQ" firstAttribute="leading" secondItem="J5I-mb-YaX" secondAttribute="leadingMargin" id="zlW-Bj-AYp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codeLabel" destination="2oK-bv-uhC" id="PXj-Dm-xj0"/>
+                        <outlet property="emailLabel" destination="QId-wp-ptR" id="cbu-kg-geO"/>
+                        <outlet property="nameLabel" destination="POm-f6-s0c" id="8m9-jl-ymh"/>
+                        <outlet property="phoneLabel" destination="cFI-Pf-F12" id="g9k-tn-4us"/>
+                        <outlet property="positionLabel" destination="uUh-YU-gnC" id="SVQ-33-HYt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le8-kN-72m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
