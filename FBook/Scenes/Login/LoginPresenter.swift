@@ -11,27 +11,65 @@ import ReactiveSwift
 import RxSwift
 
 protocol LoginView: class {
-    func showLoginResult(user: User?, error: Error?)
+    func endEditing()
+    func showLoginSuccessful()
+    func showLoginError(message: String)
 }
 
-struct LoginPresenter {
+protocol LoginPresenter {
+    var router: LoginViewRouter? { get }
+    func login(email: String, password: String)
+    func didSelectClose()
+    func didSelectForgotPassword()
+    func openTabBarController()
+}
 
-    unowned let view: LoginView
+class LoginPresenterImplementation {
+
+    private(set) var router: LoginViewRouter?
+    fileprivate weak var view: LoginView?
+
+    init(view: LoginView, router: LoginViewRouter?) {
+        self.view = view
+        self.router = router
+    }
+
+}
+
+extension LoginPresenterImplementation: LoginPresenter {
 
     func login(email: String, password: String) {
+        view?.endEditing()
+        AlertHelper.showLoading()
         AuthenticationProvider.login(email: email, password: password).on(failed: { error in
-            self.view.showLoginResult(user: nil, error: error)
+            AlertHelper.hideLoading()
+            self.view?.showLoginError(message: error.message)
         }, completed: {
         }, value: { accessToken in
             ApiProvider.accessToken = accessToken
             UsersProvider.getUserProfile().on(failed: { error in
-                self.view.showLoginResult(user: nil, error: error)
+                AlertHelper.hideLoading()
+                self.view?.showLoginError(message: error.message)
             }, completed: {
             }, value: { user in
                 User.currentUser = user
-                self.view.showLoginResult(user: user, error: nil)
+                AlertHelper.hideLoading()
+                self.view?.showLoginSuccessful()
             }).start()
         }).start()
+    }
+
+    func didSelectClose() {
+        router?.dismiss()
+    }
+
+    func didSelectForgotPassword() {
+        view?.endEditing()
+        router?.presentForgotPassword()
+    }
+
+    func openTabBarController() {
+        router?.showTabBarController()
     }
 
 }
