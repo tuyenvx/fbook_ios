@@ -13,8 +13,13 @@
 		22C480611F6040A400DB7A4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480601F6040A400DB7A4C /* User.swift */; };
 		22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480621F6043F800DB7A4C /* BaseProvider.swift */; };
 		22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */; };
+		22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A11F61BDD000869A05 /* String+Extensions.swift */; };
+		22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A51F61D15300869A05 /* Error+Extensions.swift */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
 		6F6909735A1B5F94B195D69D /* Pods_FBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */; };
+		77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DECCB51F623E31007E32F5 /* Login.storyboard */; };
+		77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DECCB61F623E31007E32F5 /* LoginPresenter.swift */; };
+		77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DECCB71F623E31007E32F5 /* LoginViewController.swift */; };
 		77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2611F60E27A00C68BA8 /* Book.swift */; };
 		77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2631F60E7DB00C68BA8 /* Review.swift */; };
 		77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F4E2651F60EB4300C68BA8 /* Category.swift */; };
@@ -70,7 +75,12 @@
 		22C480601F6040A400DB7A4C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22C480621F6043F800DB7A4C /* BaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProvider.swift; sourceTree = "<group>"; };
 		22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		22E076A11F61BDD000869A05 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		22E076A51F61D15300869A05 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
+		77DECCB51F623E31007E32F5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		77DECCB61F623E31007E32F5 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		77DECCB71F623E31007E32F5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77F4E2611F60E27A00C68BA8 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		77F4E2631F60E7DB00C68BA8 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		77F4E2651F60EB4300C68BA8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -141,6 +151,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22E076A01F61BDC300869A05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22E076A11F61BDD000869A05 /* String+Extensions.swift */,
+				22E076A51F61D15300869A05 /* Error+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		33D3A30A1C72233E5E849755 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +171,24 @@
 				FEF6286C009F1B08335662F4 /* Pods-FBookUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		77DECCB31F623E31007E32F5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				77DECCB41F623E31007E32F5 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		77DECCB41F623E31007E32F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				77DECCB51F623E31007E32F5 /* Login.storyboard */,
+				77DECCB61F623E31007E32F5 /* LoginPresenter.swift */,
+				77DECCB71F623E31007E32F5 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		77F59FD91F5F9B1F0074A5DB = {
@@ -184,6 +221,8 @@
 				D5C64AB01F614CB7003BFC2B /* Storyboards */,
 				77F59FE51F5F9B1F0074A5DB /* AppDelegate.swift */,
 				77F59FE71F5F9B1F0074A5DB /* ViewController.swift */,
+				77DECCB31F623E31007E32F5 /* Scenes */,
+				22E076A01F61BDC300869A05 /* Extensions */,
 				77F5A02D1F5FE03C0074A5DB /* BaseController */,
 				77F5A0221F5FDEBC0074A5DB /* Models */,
 				77F5A0181F5FDAA40074A5DB /* Services */,
@@ -428,6 +467,7 @@
 				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
+				77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */,
 				77F59FEB1F5F9B1F0074A5DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,15 +705,19 @@
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
 				77F5A0241F5FDEC50074A5DB /* ObjectResponse.swift in Sources */,
 				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
+				77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */,
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
 				77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */,
 				77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
+				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
 				22C480611F6040A400DB7A4C /* User.swift in Sources */,
+				22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */,
 				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
 				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
+				77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */,
 				77F5A0411F60071B0074A5DB /* API.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,

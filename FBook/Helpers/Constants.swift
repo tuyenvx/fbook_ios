@@ -19,6 +19,7 @@ let kDateFormatYMD = "yyyy-MM-dd"
 // Constants for UserDefaults
 let kAccessTokenKey = "com.framgia.fbook.access_token"
 let kRefreshTokenKey = "com.framgia.fbook.refresh_token"
+let kCurrentUserKey = "com.framgia.fbook.currentUser"
 
 let kAccessToken = "access_token"
 let kRefreshToken = "refresh_token"

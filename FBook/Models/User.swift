@@ -24,6 +24,22 @@ struct User: Mappable {
     var deletedAt: Date?
     var avatar = ""
 
+    fileprivate static var _currentUser: User?
+    static var currentUser: User? {
+        get {
+            if _currentUser != nil {
+                return _currentUser
+            } else if let userJSONString = userDefaults.value(forKey: kCurrentUserKey) as? String {
+                _currentUser = User(JSONString: userJSONString)
+            }
+            return _currentUser
+        }
+        set {
+            _currentUser = newValue
+            userDefaults.set(newValue?.toJSONString(), forKey: kCurrentUserKey)
+        }
+    }
+
     init?(map: Map) {
         mapping(map: map)
     }
