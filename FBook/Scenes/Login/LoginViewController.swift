@@ -17,12 +17,13 @@ class LoginViewController: BaseViewController {
     @IBOutlet fileprivate weak var passwordTextField: UITextField?
     @IBOutlet fileprivate weak var loginButton: UIButton?
 
-    fileprivate var loginPresenter: LoginPresenter?
+    var loginPresenter: LoginPresenter?
+    var loginConfigurator = LoginConfiguratorImplementation()
     fileprivate let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginPresenter = LoginPresenter(view: self)
+        loginConfigurator.configure(loginViewController: self)
         updateUI()
         addObserverUpdateUI()
     }
@@ -49,30 +50,31 @@ class LoginViewController: BaseViewController {
         guard let email = emailTextField?.text, let password = passwordTextField?.text else {
             return
         }
-        view.endEditing(true)
-        SVProgressHUD.show()
         loginPresenter?.login(email: email, password: password)
     }
 
     @IBAction fileprivate func forgotPasswordButtonTapped(_ sender: Any) {
-        // TODO: show forgot password screen
+        loginPresenter?.didSelectForgotPassword()
     }
 
     @IBAction fileprivate func closeButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        loginPresenter?.didSelectClose()
     }
 
 }
 
 extension LoginViewController: LoginView {
 
-    func showLoginResult(user: User?, error: Error?) {
-        SVProgressHUD.dismiss()
-        if let error = error {
-            Utility.shared.showMessage(inViewController: self, message: error.message, completion: nil)
-        } else if user != nil {
-            // TODO show tabBar screen
-        }
+    func endEditing() {
+        view.endEditing(true)
+    }
+
+    func showLoginSuccessful() {
+        loginPresenter?.openTabBarController()
+    }
+
+    func showLoginError(message: String) {
+        Utility.shared.showMessage(inViewController: self, message: message, completion: nil)
     }
 
 }
