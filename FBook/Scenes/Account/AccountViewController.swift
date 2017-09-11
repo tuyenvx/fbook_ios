@@ -10,16 +10,23 @@ import UIKit
 import SwiftHEXColors
 import RxSwift
 import RxCocoa
+import Kingfisher
 
-class AccountViewController: BaseViewController {
+class AccountViewController: BaseViewController, AccountView {
+
+    var presenter: AccountPresenter?
+    var configurator = AccountConfiguratorImplementation()
 
     @IBOutlet weak var userAvatarImage: UIImageView!
     @IBOutlet weak var headerAccountView: UIView!
+    @IBOutlet weak var avatarImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradientLayer()
         userAvatarImage.layer.zPosition = 1
+        configurator.configure(accountViewController: self)
+        presenter?.updateUserInfo()
     }
 
     func createGradientLayer() {
@@ -30,7 +37,14 @@ class AccountViewController: BaseViewController {
         self.headerAccountView.layer.addSublayer(gradientLayer)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func displayUserInfo(user: User) {
+        if user.avatar != "" {
+            let avatarUrl = URL(string: user.avatar)
+            userAvatarImage.kf.setImage(with: avatarUrl)
+        } else {
+            userAvatarImage.image = UIImage(named: "icon_user")
+        }
+        userAvatarImage.layer.masksToBounds = true
+        userAvatarImage.layer.cornerRadius = userAvatarImage.frame.height/2
     }
 }
