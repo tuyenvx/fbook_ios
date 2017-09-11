@@ -21,6 +21,9 @@ class AccountViewController: BaseViewController, AccountView {
     @IBOutlet weak var headerAccountView: UIView!
     @IBOutlet weak var avatarImage: UIImageView!
 
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var favoriteCategoriesView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradientLayer()
@@ -46,5 +49,30 @@ class AccountViewController: BaseViewController, AccountView {
         }
         userAvatarImage.layer.masksToBounds = true
         userAvatarImage.layer.cornerRadius = userAvatarImage.frame.height/2
+    }
+
+    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var categoriesButton: UIButton!
+
+    @IBAction func onButtonProfileClicked(_ sender: Any) {
+        presenter?.selectProfileButton()
+    }
+
+    @IBAction func onButtonCategoriesClicked(_ sender: Any) {
+        presenter?.selectCategoriesButton()
+    }
+
+    func displayProfileTab() {
+        profileView.isHidden = false
+        profileButton.setBackgroundImage(UIImage(named: "background_button_select"), for: .normal)
+        categoriesButton.setBackgroundImage(UIImage(named: "background_button_deselect"), for: .normal)
+        self.favoriteCategoriesView.isHidden = true
+    }
+
+    func displayCategoriesTab() {
+        profileView.isHidden = true
+        profileButton.setBackgroundImage(UIImage(named: "background_button_deselect"), for: .normal)
+        categoriesButton.setBackgroundImage(UIImage(named: "background_button_select"), for: .normal)
+        self.favoriteCategoriesView.isHidden = false
     }
 }
