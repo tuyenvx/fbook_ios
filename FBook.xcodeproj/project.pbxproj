@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11076EA81F62867D002AA6D5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EA71F62867D002AA6D5 /* SearchViewController.swift */; };
+		11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EAB1F6286A4002AA6D5 /* SearchPresenter.swift */; };
+		11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EAD1F6286B4002AA6D5 /* SearchViewRouter.swift */; };
+		11076EB01F6286C0002AA6D5 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EAF1F6286C0002AA6D5 /* SearchConfigurator.swift */; };
+		11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11076EB11F628A07002AA6D5 /* Search.storyboard */; };
+		11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EB31F6299DE002AA6D5 /* SearchBookCell.swift */; };
 		224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F281F604808007BEA04 /* UsersProvider.swift */; };
 		224C0F2B1F604B86007BEA04 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F2A1F604B86007BEA04 /* Office.swift */; };
 		224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F2C1F604C10007BEA04 /* OfficeProvider.swift */; };
@@ -79,6 +85,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11076EA71F62867D002AA6D5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		11076EAB1F6286A4002AA6D5 /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		11076EAD1F6286B4002AA6D5 /* SearchViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewRouter.swift; sourceTree = "<group>"; };
+		11076EAF1F6286C0002AA6D5 /* SearchConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
+		11076EB11F628A07002AA6D5 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		11076EB31F6299DE002AA6D5 /* SearchBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookCell.swift; sourceTree = "<group>"; };
 		16187A60E72AAEC10C6BDADA /* Pods-FBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBookUITests/Pods-FBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		224C0F281F604808007BEA04 /* UsersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersProvider.swift; sourceTree = "<group>"; };
 		224C0F2A1F604B86007BEA04 /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
@@ -173,6 +185,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11076EA61F6285AD002AA6D5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				11076EB11F628A07002AA6D5 /* Search.storyboard */,
+				11076EA71F62867D002AA6D5 /* SearchViewController.swift */,
+				11076EAB1F6286A4002AA6D5 /* SearchPresenter.swift */,
+				11076EAD1F6286B4002AA6D5 /* SearchViewRouter.swift */,
+				11076EAF1F6286C0002AA6D5 /* SearchConfigurator.swift */,
+				11076EB31F6299DE002AA6D5 /* SearchBookCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		22E076A01F61BDC300869A05 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				D543F05C1F6249BA005EB1A3 /* Account */,
+				11076EA61F6285AD002AA6D5 /* Search */,
 				77DECCB41F623E31007E32F5 /* Login */,
 				77DECCC21F624F9B007E32F5 /* ForgotPassword */,
 			);
@@ -492,6 +518,7 @@
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
 				77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */,
+				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
 				77F59FEB1F5F9B1F0074A5DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +752,7 @@
 				77DECCC81F625022007E32F5 /* ForgotPasswordViewRouter.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
 				224C0F2B1F604B86007BEA04 /* Office.swift in Sources */,
+				11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */,
 				77F5A0311F5FE0630074A5DB /* BaseViewController.swift in Sources */,
 				224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */,
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
@@ -738,6 +766,8 @@
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
 				77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */,
 				77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */,
+				11076EA81F62867D002AA6D5 /* SearchViewController.swift in Sources */,
+				11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */,
 				77DECCCA1F625030007E32F5 /* ForgotPasswordConfigurator.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
@@ -753,6 +783,8 @@
 				D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				D56313C81F629B9100BEDFE4 /* AccountPresenter.swift in Sources */,
+				11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */,
+				11076EB01F6286C0002AA6D5 /* SearchConfigurator.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				D5DB475F1F5FCF090042B809 /* ProfileViewController.swift in Sources */,
