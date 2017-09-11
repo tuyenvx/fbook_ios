@@ -23,6 +23,7 @@ struct User: Mappable {
     var updatedAt: Date?
     var deletedAt: Date?
     var avatar = ""
+    var favoriteCategories = [Category]()
 
     fileprivate static var _currentUser: User?
     static var currentUser: User? {
@@ -59,6 +60,7 @@ struct User: Mappable {
         updatedAt <- (map["updated_at"], dateTransform)
         deletedAt <- (map["deleted_at"], dateTransform)
         avatar <- map["avatar"]
+        favoriteCategories <- map["categories"]
     }
 
 }

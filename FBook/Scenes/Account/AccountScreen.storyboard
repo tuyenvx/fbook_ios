@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Qz-E0-hQ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oYn-j9-1yJ">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="736.23188405797111" y="-192.39130434782609"/>
         </scene>
-        <!--Kind Of Book View Controller-->
+        <!--Favorite Categories View Controller-->
         <scene sceneID="cYN-ZY-LXv">
             <objects>
-                <viewController id="oYn-j9-1yJ" customClass="KindOfBookViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oYn-j9-1yJ" customClass="FavoriteCategoriesViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tjr-PF-Aak"/>
                         <viewControllerLayoutGuide type="bottom" id="MR7-eH-mic"/>
@@ -87,12 +87,56 @@
                     <view key="view" contentMode="scaleToFill" id="fao-3b-4Ol">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WuW-Z8-LXb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="436"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="70" id="xnp-5K-QTT" customClass="CategoryTableViewCell" customModule="FBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xnp-5K-QTT" id="dMx-v5-vzT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTI-n9-VxR">
+                                                    <rect key="frame" x="33" y="24" width="220" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Maz-WU-eY7"/>
+                                                        <constraint firstAttribute="width" constant="220" id="eFG-Xd-YCK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cTI-n9-VxR" firstAttribute="centerY" secondItem="dMx-v5-vzT" secondAttribute="centerY" id="iwv-GW-TgP"/>
+                                                <constraint firstItem="cTI-n9-VxR" firstAttribute="leading" secondItem="dMx-v5-vzT" secondAttribute="leadingMargin" constant="25" id="mty-iu-si7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryNameLabel" destination="cTI-n9-VxR" id="eCA-kp-HeS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MR7-eH-mic" firstAttribute="top" secondItem="WuW-Z8-LXb" secondAttribute="bottom" id="2aH-dk-F4x"/>
+                            <constraint firstItem="WuW-Z8-LXb" firstAttribute="top" secondItem="Tjr-PF-Aak" secondAttribute="bottom" id="2aN-r5-SUC"/>
+                            <constraint firstItem="WuW-Z8-LXb" firstAttribute="leading" secondItem="fao-3b-4Ol" secondAttribute="leading" id="buk-MD-bmK"/>
+                            <constraint firstAttribute="trailing" secondItem="WuW-Z8-LXb" secondAttribute="trailing" id="fLf-AE-WYT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="favoriteCategoriesTableView" destination="WuW-Z8-LXb" id="zyZ-0G-bjW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RsE-gT-WyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-313"/>
+            <point key="canvasLocation" x="1456.521739130435" y="-313.04347826086956"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="0yk-M1-GAE">

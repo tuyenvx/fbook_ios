@@ -13,6 +13,7 @@ import ObjectMapper
 final class UsersProvider: BaseProvider {
 
     typealias UserSignal = SignalProducer<User, ErrorResponse>
+    typealias CategorySignal = SignalProducer<[Category], ErrorResponse>
 
     static func getUserProfile() -> UserSignal {
         return requestJSON(api: .getUserProfile).flatMap(.merge, { object -> UserSignal in
@@ -31,6 +32,16 @@ final class UsersProvider: BaseProvider {
                 return UserSignal(value: user)
             }
             return UserSignal(error: .errorJsonFormat)
+        })
+    }
+
+    static func getFavoriteCategoriesOfCurrentUser(userId: Int) -> CategorySignal {
+        return requestJSON(api: .getOtherUserProfile(userId)).flatMap(.merge, { object -> CategorySignal in
+            if let value = object?.value as? [String: Any], let item = value[kItem] as? [String: Any],
+                let user = User(JSON: item) {
+                return CategorySignal(value: user.favoriteCategories)
+            }
+            return CategorySignal(error: .errorJsonFormat)
         })
     }
 
