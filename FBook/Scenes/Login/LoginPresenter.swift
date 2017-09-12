@@ -41,20 +41,21 @@ extension LoginPresenterImplementation: LoginPresenter {
     func login(email: String, password: String) {
         view?.endEditing()
         AlertHelper.showLoading()
+        weak var weakSelf = self
         AuthenticationProvider.login(email: email, password: password).on(failed: { error in
             AlertHelper.hideLoading()
-            self.view?.showLoginError(message: error.message)
+            weakSelf?.view?.showLoginError(message: error.message)
         }, completed: {
         }, value: { accessToken in
             ApiProvider.accessToken = accessToken
             UsersProvider.getUserProfile().on(failed: { error in
                 AlertHelper.hideLoading()
-                self.view?.showLoginError(message: error.message)
+                weakSelf?.view?.showLoginError(message: error.message)
             }, completed: {
             }, value: { user in
                 User.currentUser = user
                 AlertHelper.hideLoading()
-                self.view?.showLoginSuccessful()
+                weakSelf?.view?.showLoginSuccessful()
             }).start()
         }).start()
     }

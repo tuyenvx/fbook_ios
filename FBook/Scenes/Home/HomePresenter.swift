@@ -62,13 +62,14 @@ extension HomePresenterImplementation: HomePresenter {
 
     func getListSectionBook() {
         AlertHelper.showLoading()
+        weak var weakSelf = self
         HomeProvider.getListSectionBook().on(failed: { error in
             AlertHelper.hideLoading()
-            self.handleLoadBookError(error)
+            weakSelf?.handleLoadBookError(error)
         }, completed: {
             AlertHelper.hideLoading()
         }, value: { sectionBooks in
-            self.handleLoadBookSuccess(sectionBooks)
+            weakSelf?.handleLoadBookSuccess(sectionBooks)
         }).start()
     }
 
