@@ -23,7 +23,29 @@
 		22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A51F61D15300869A05 /* Error+Extensions.swift */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
 		6F6909735A1B5F94B195D69D /* Pods_FBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */; };
+		772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614851F661EC8004D6943 /* UITableView+Extensions.swift */; };
+		772614881F661ED4004D6943 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */; };
+		7726148A1F661F14004D6943 /* UINib+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614891F661F14004D6943 /* UINib+Extensions.swift */; };
+		7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7726148B1F6625AE004D6943 /* UIView+Extensions.swift */; };
+		772614941F6637AD004D6943 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772614931F6637AD004D6943 /* Home.storyboard */; };
+		772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614951F6660BB004D6943 /* UIImageView+Extensions.swift */; };
+		772614A81F669259004D6943 /* HomeCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614A01F669259004D6943 /* HomeCellConfigurator.swift */; };
+		772614A91F669259004D6943 /* HomeCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614A11F669259004D6943 /* HomeCellPresenter.swift */; };
+		772614AA1F669259004D6943 /* HomeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614A21F669259004D6943 /* HomeHeader.xib */; };
+		772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614A31F669259004D6943 /* HomeHeaderConfigurator.swift */; };
+		772614AC1F669259004D6943 /* HomeHeaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614A41F669259004D6943 /* HomeHeaderPresenter.swift */; };
+		772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614A51F669259004D6943 /* HomeHeaderView.swift */; };
+		772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614A61F669259004D6943 /* HomeTableViewCell.swift */; };
+		772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614A71F669259004D6943 /* HomeTableViewCell.xib */; };
+		772614B41F669264004D6943 /* BookCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614B01F669264004D6943 /* BookCellConfigurator.swift */; };
+		772614B51F669264004D6943 /* BookCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614B11F669264004D6943 /* BookCellPresenter.swift */; };
+		772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614B21F669264004D6943 /* BookCollectionViewCell.swift */; };
+		772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614B31F669264004D6943 /* BookCollectionViewCell.xib */; };
 		77A76E451F627EB1008601E2 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A76E441F627EB1008601E2 /* AlertHelper.swift */; };
+		77A76EEC1F629602008601E2 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A76EE81F629602008601E2 /* HomeConfigurator.swift */; };
+		77A76EED1F629602008601E2 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A76EE91F629602008601E2 /* HomePresenter.swift */; };
+		77A76EEE1F629602008601E2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A76EEA1F629602008601E2 /* HomeViewController.swift */; };
+		77A76EEF1F629602008601E2 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A76EEB1F629602008601E2 /* HomeViewRouter.swift */; };
 		77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DECCB51F623E31007E32F5 /* Login.storyboard */; };
 		77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DECCB61F623E31007E32F5 /* LoginPresenter.swift */; };
 		77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DECCB71F623E31007E32F5 /* LoginViewController.swift */; };
@@ -101,7 +123,29 @@
 		22E076A11F61BDD000869A05 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		22E076A51F61D15300869A05 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
+		772614851F661EC8004D6943 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		772614891F661F14004D6943 /* UINib+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINib+Extensions.swift"; sourceTree = "<group>"; };
+		7726148B1F6625AE004D6943 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		772614931F6637AD004D6943 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		772614951F6660BB004D6943 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		772614A01F669259004D6943 /* HomeCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCellConfigurator.swift; sourceTree = "<group>"; };
+		772614A11F669259004D6943 /* HomeCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCellPresenter.swift; sourceTree = "<group>"; };
+		772614A21F669259004D6943 /* HomeHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeader.xib; sourceTree = "<group>"; };
+		772614A31F669259004D6943 /* HomeHeaderConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderConfigurator.swift; sourceTree = "<group>"; };
+		772614A41F669259004D6943 /* HomeHeaderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderPresenter.swift; sourceTree = "<group>"; };
+		772614A51F669259004D6943 /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		772614A61F669259004D6943 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		772614A71F669259004D6943 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		772614B01F669264004D6943 /* BookCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCellConfigurator.swift; sourceTree = "<group>"; };
+		772614B11F669264004D6943 /* BookCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCellPresenter.swift; sourceTree = "<group>"; };
+		772614B21F669264004D6943 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		772614B31F669264004D6943 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		77A76E441F627EB1008601E2 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		77A76EE81F629602008601E2 /* HomeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		77A76EE91F629602008601E2 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		77A76EEA1F629602008601E2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		77A76EEB1F629602008601E2 /* HomeViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 		77DECCB51F623E31007E32F5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		77DECCB61F623E31007E32F5 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		77DECCB71F623E31007E32F5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +247,11 @@
 			children = (
 				22E076A11F61BDD000869A05 /* String+Extensions.swift */,
 				22E076A51F61D15300869A05 /* Error+Extensions.swift */,
+				772614851F661EC8004D6943 /* UITableView+Extensions.swift */,
+				772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */,
+				772614891F661F14004D6943 /* UINib+Extensions.swift */,
+				7726148B1F6625AE004D6943 /* UIView+Extensions.swift */,
+				772614951F6660BB004D6943 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,13 +269,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		772614971F666BAD004D6943 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				772614B01F669264004D6943 /* BookCellConfigurator.swift */,
+				772614B11F669264004D6943 /* BookCellPresenter.swift */,
+				772614B21F669264004D6943 /* BookCollectionViewCell.swift */,
+				772614B31F669264004D6943 /* BookCollectionViewCell.xib */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		77A76EDF1F62956F008601E2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				772614931F6637AD004D6943 /* Home.storyboard */,
+				77A76EEA1F629602008601E2 /* HomeViewController.swift */,
+				77A76EE81F629602008601E2 /* HomeConfigurator.swift */,
+				77A76EE91F629602008601E2 /* HomePresenter.swift */,
+				77A76EEB1F629602008601E2 /* HomeViewRouter.swift */,
+				77A76EF41F629D1D008601E2 /* Cells */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77A76EF41F629D1D008601E2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				772614A61F669259004D6943 /* HomeTableViewCell.swift */,
+				772614A71F669259004D6943 /* HomeTableViewCell.xib */,
+				772614A11F669259004D6943 /* HomeCellPresenter.swift */,
+				772614A01F669259004D6943 /* HomeCellConfigurator.swift */,
+				772614A21F669259004D6943 /* HomeHeader.xib */,
+				772614A31F669259004D6943 /* HomeHeaderConfigurator.swift */,
+				772614A41F669259004D6943 /* HomeHeaderPresenter.swift */,
+				772614A51F669259004D6943 /* HomeHeaderView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				D543F05C1F6249BA005EB1A3 /* Account */,
 				11076EA61F6285AD002AA6D5 /* Search */,
+				77A76EDF1F62956F008601E2 /* Home */,
 				77DECCB41F623E31007E32F5 /* Login */,
 				77DECCC21F624F9B007E32F5 /* ForgotPassword */,
+				772614971F666BAD004D6943 /* Book */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -516,10 +606,14 @@
 			files = (
 				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
+				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
+				772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
 				77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */,
 				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
 				77F59FEB1F5F9B1F0074A5DB /* Main.storyboard in Resources */,
+				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
+				772614AA1F669259004D6943 /* HomeHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,14 +839,19 @@
 			files = (
 				77A76E451F627EB1008601E2 /* AlertHelper.swift in Sources */,
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
+				772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */,
 				D5DB47611F5FCF5A0042B809 /* KindOfBookViewController.swift in Sources */,
 				77F59FE81F5F9B1F0074A5DB /* ViewController.swift in Sources */,
 				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
 				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
+				77A76EEC1F629602008601E2 /* HomeConfigurator.swift in Sources */,
 				77DECCC81F625022007E32F5 /* ForgotPasswordViewRouter.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
 				224C0F2B1F604B86007BEA04 /* Office.swift in Sources */,
+				772614AC1F669259004D6943 /* HomeHeaderPresenter.swift in Sources */,
 				11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */,
+				7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */,
+				772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */,
 				77F5A0311F5FE0630074A5DB /* BaseViewController.swift in Sources */,
 				224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */,
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
@@ -762,13 +861,17 @@
 				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
 				77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */,
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
+				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
+				772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */,
 				77DECCC11F6247C7007E32F5 /* LoginViewRouter.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
+				77A76EEF1F629602008601E2 /* HomeViewRouter.swift in Sources */,
 				77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */,
 				77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */,
 				11076EA81F62867D002AA6D5 /* SearchViewController.swift in Sources */,
 				11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */,
 				77DECCCA1F625030007E32F5 /* ForgotPasswordConfigurator.swift in Sources */,
+				77A76EED1F629602008601E2 /* HomePresenter.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
@@ -776,16 +879,25 @@
 				22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */,
 				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
 				D56313C41F62938F00BEDFE4 /* ProfileConfigurator.swift in Sources */,
+				772614881F661ED4004D6943 /* UICollectionView+Extensions.swift in Sources */,
 				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
+				7726148A1F661F14004D6943 /* UINib+Extensions.swift in Sources */,
 				77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */,
 				77F5A0411F60071B0074A5DB /* API.swift in Sources */,
 				77DECCC41F624FFC007E32F5 /* ForgotPasswordViewController.swift in Sources */,
 				D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
+				772614B51F669264004D6943 /* BookCellPresenter.swift in Sources */,
+				772614A81F669259004D6943 /* HomeCellConfigurator.swift in Sources */,
 				D56313C81F629B9100BEDFE4 /* AccountPresenter.swift in Sources */,
+				772614A91F669259004D6943 /* HomeCellPresenter.swift in Sources */,
+				772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */,
 				11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */,
 				11076EB01F6286C0002AA6D5 /* SearchConfigurator.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,
+				77A76EEE1F629602008601E2 /* HomeViewController.swift in Sources */,
+				772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */,
+				772614B41F669264004D6943 /* BookCellConfigurator.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				D5DB475F1F5FCF090042B809 /* ProfileViewController.swift in Sources */,
 				77DECCBF1F62478B007E32F5 /* LoginConfigurator.swift in Sources */,
