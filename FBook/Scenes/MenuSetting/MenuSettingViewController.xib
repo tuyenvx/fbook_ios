@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuSettingViewController" customModule="FBook" customModuleProvider="target">
+            <connections>
+                <outlet property="toplayoutConstraint" destination="Zpa-gl-Y2U" id="CvJ-gw-pCU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-wr-Cg8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="hwg-Zy-1Gs"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZq-5Z-wU4">
+                    <rect key="frame" x="170" y="60" width="200" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZj-ff-urj">
+                            <rect key="frame" x="6" y="6" width="188" height="41"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Feedback">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="feedbackButtonTapped:" destination="-1" eventType="touchUpInside" id="lWI-me-BTU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-9H-Ksg">
+                            <rect key="frame" x="6" y="53" width="188" height="41"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="More tools">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="moreToolsButtonTapped:" destination="-1" eventType="touchUpInside" id="t8F-x8-F32"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="2ei-9H-Ksg" firstAttribute="centerX" secondItem="dZj-ff-urj" secondAttribute="centerX" id="0HS-AF-eZF"/>
+                        <constraint firstAttribute="bottom" secondItem="2ei-9H-Ksg" secondAttribute="bottom" constant="6" id="7a0-0m-SDu"/>
+                        <constraint firstAttribute="trailing" secondItem="dZj-ff-urj" secondAttribute="trailing" constant="6" id="9qV-df-SyZ"/>
+                        <constraint firstItem="2ei-9H-Ksg" firstAttribute="top" secondItem="dZj-ff-urj" secondAttribute="bottom" constant="6" id="ChP-uG-T69"/>
+                        <constraint firstItem="2ei-9H-Ksg" firstAttribute="height" secondItem="dZj-ff-urj" secondAttribute="height" id="Iye-fr-UpG"/>
+                        <constraint firstItem="dZj-ff-urj" firstAttribute="top" secondItem="uZq-5Z-wU4" secondAttribute="top" constant="6" id="Ljk-9e-FHz"/>
+                        <constraint firstItem="dZj-ff-urj" firstAttribute="leading" secondItem="uZq-5Z-wU4" secondAttribute="leading" constant="6" id="R8b-D9-w6w"/>
+                        <constraint firstItem="2ei-9H-Ksg" firstAttribute="width" secondItem="dZj-ff-urj" secondAttribute="width" id="eAT-YA-xAN"/>
+                        <constraint firstAttribute="width" constant="200" id="hNR-ld-sgi"/>
+                        <constraint firstAttribute="height" constant="100" id="yjZ-9s-7YE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pOf-wr-Cg8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SDA-X3-RDa"/>
+                <constraint firstItem="uZq-5Z-wU4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Zpa-gl-Y2U"/>
+                <constraint firstAttribute="bottom" secondItem="pOf-wr-Cg8" secondAttribute="bottom" id="d0H-WJ-S74"/>
+                <constraint firstAttribute="trailing" secondItem="pOf-wr-Cg8" secondAttribute="trailing" id="hgR-BN-VZV"/>
+                <constraint firstAttribute="trailing" secondItem="uZq-5Z-wU4" secondAttribute="trailing" constant="5" id="yDK-Fz-Cb1"/>
+                <constraint firstItem="pOf-wr-Cg8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yEC-i5-HDz"/>
+            </constraints>
+            <point key="canvasLocation" x="-118.5" y="11.5"/>
+        </view>
+    </objects>
+</document>

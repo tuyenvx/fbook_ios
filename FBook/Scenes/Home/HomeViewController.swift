@@ -12,15 +12,15 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet fileprivate weak var tableView: UITableView!
 
-    var presenter: HomePresenter!
+    var presenter: HomePresenter?
     var configurator: HomeConfigurator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator = HomeConfiguratorImplementation()
         configurator?.configure(viewController: self)
-        presenter.configure(tableView: tableView)
-        presenter.getListSectionBook()
+        presenter?.configure(tableView: tableView)
+        presenter?.getListSectionBook()
     }
 
 }
