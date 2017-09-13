@@ -13,7 +13,7 @@ protocol HomeView: class {
     func showLoadBooksError(message: String)
 }
 
-protocol HomePresenter: UITableViewDelegate {
+protocol HomePresenter {
     func getListSectionBook()
     func configure(tableView: UITableView)
 }
