@@ -27,7 +27,7 @@ class FavoriteCategoriesPresenterImplementation: NSObject {
         self.view = view
     }
 
-    fileprivate func handleLoadBookError(_ error: Error) {
+    fileprivate func handleLoadCategoriesError(_ error: Error) {
         view?.showLoadCategoriesError(message: error.message)
     }
 
@@ -47,12 +47,15 @@ extension FavoriteCategoriesPresenterImplementation: FavoriteCategoriesPresenter
 
     func getFavoriteCategories() {
         guard let user = User.currentUser else {return}
+        AlertHelper.showLoading()
+        weak var weakSelf = self
         UsersProvider.getFavoriteCategoriesOfCurrentUser(userId: user.id).on(failed: { error in
-                self.handleLoadBookError(error)
+            AlertHelper.hideLoading()
+                weakSelf?.handleLoadCategoriesError(error)
             }, completed: {
+                AlertHelper.hideLoading()
             }, value: { categories in
-                self.sectionCategories.append(contentsOf: categories)
-                self.handleLoadCategoriesSuccess(self.sectionCategories)
+                weakSelf?.handleLoadCategoriesSuccess(categories)
             }).start()
     }
 }

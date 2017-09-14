@@ -41,12 +41,7 @@ class AccountViewController: BaseViewController, AccountView {
     }
 
     func displayUserInfo(user: User) {
-        if user.avatar != "" {
-            let avatarUrl = URL(string: user.avatar)
-            userAvatarImage.kf.setImage(with: avatarUrl)
-        } else {
-            userAvatarImage.image = UIImage(named: "icon_user")
-        }
+        userAvatarImage.setImage(urlString: user.avatar, placeHolder: kDefaultAvatar)
         userAvatarImage.layer.masksToBounds = true
         userAvatarImage.layer.cornerRadius = userAvatarImage.frame.height/2
     }
