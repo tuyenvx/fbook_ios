@@ -9,13 +9,22 @@
 import Foundation
 
 protocol SearchViewRouter {
+
+    func showDetail(book: Book)
 }
 
-class SearchViewRouterImplementation: SearchViewRouter {
+class SearchViewRouterImplementation {
 
     fileprivate var viewController: SearchViewController?
 
     init(viewController: SearchViewController) {
         self.viewController = viewController
+    }
+}
+
+extension SearchViewRouterImplementation: SearchViewRouter {
+
+    func showDetail(book: Book) {
+        // TODO: Show detail of book
     }
 }
