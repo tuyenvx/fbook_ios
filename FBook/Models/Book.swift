@@ -22,6 +22,8 @@ struct Book: Mappable {
     var totalView = 0
     var thumbnail: String?
 
+    init() {}
+
     init?(map: Map) {
         mapping(map: map)
     }
