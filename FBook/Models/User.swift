@@ -18,7 +18,7 @@ struct User: Mappable {
     var code = ""
     var position = ""
     var role = ""
-    var officeId = ""
+    var officeId: Int?
     var createdAt: Date?
     var updatedAt: Date?
     var deletedAt: Date?

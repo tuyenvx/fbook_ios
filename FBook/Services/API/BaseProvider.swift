@@ -8,14 +8,16 @@
 
 import Foundation
 import ReactiveSwift
+import Moya
 
 class BaseProvider {
 
     typealias BaseSignal = SignalProducer<ObjectResponse?, ErrorResponse>
 
     static func requestJSON(api: API) -> BaseSignal {
+        var request: Cancellable?
         return BaseSignal { signal, _ in
-            ApiProvider.shared.request(api) { result in
+            request = ApiProvider.shared.request(api) { result in
                 var response: ObjectResponse? = nil
                 var message: MessageResponse? = nil
                 var isSuccess = false
@@ -42,7 +44,9 @@ class BaseProvider {
                     signal.send(error: ErrorResponse(value: response?.value, errorMessage: message))
                 }
             }
-        }
+        }.on(disposed: {
+            request?.cancel()
+        })
     }
 
 }
