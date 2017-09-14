@@ -6,7 +6,11 @@
 //  Copyright © 2017 Framgia. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import RxSwift
+import ReactiveSwift
+
+// MARK: - Enums
 
 enum SearchType: Int {
 
@@ -32,21 +36,13 @@ enum SearchStore: Int {
     case google
 }
 
+// MARK: - Views
+
 protocol SearchView: class {
 
+    var searchBar: UISearchBar! { get }
+    var tableView: UITableView! { get }
     func updateSearchType(_ type: SearchType)
-}
-
-protocol SearchPresenter: class {
-
-    var numberOfBooks: Int { get }
-    var router: SearchViewRouter { get }
-    func configure(cell: SearchBookCellView, forRow row: Int)
-    func select(row: Int)
-    func change(searchType rawValue: Int)
-    func change(store rawValue: Int)
-    func change(searchText text: String)
-    func search()
 }
 
 protocol SearchBookCellView {
@@ -54,40 +50,60 @@ protocol SearchBookCellView {
     func display(book: Book?)
 }
 
-class SearchPresenterImplementation: SearchPresenter {
+// MARK: - Presenter
 
-    fileprivate weak var view: SearchView?
-    fileprivate var books: [Book] = []
-    fileprivate var searchType: SearchType = .title
-    fileprivate var store: SearchStore = .internal
-    fileprivate var searchText: String = ""
-    var router: SearchViewRouter
-    var numberOfBooks: Int {
-        return books.count
+protocol SearchPresenter: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+
+    var view: SearchView! { get }
+    func configureSearchBar()
+    func configureTableView()
+    func configureObserver()
+    func change(searchType rawValue: Int)
+    func change(store rawValue: Int)
+    func dismissKeyboard()
+}
+
+extension SearchPresenter {
+
+    func configureTableView() {
+        view.tableView.delegate = self
+        view.tableView.dataSource = self
     }
+
+    func configureSearchBar() {
+        view.searchBar.delegate = self
+    }
+}
+
+class SearchPresenterImplementation: NSObject, SearchPresenter {
+
+    weak var view: SearchView!
+    fileprivate var listBooks = ListItems<Book>()
+    fileprivate var store: SearchStore = .internal
+    fileprivate var router: SearchViewRouter
+    fileprivate var searchParams = SearchBookParams()
+    fileprivate var searchText = Variable<String>("")
+    fileprivate var bag = DisposeBag()
+    fileprivate var request: ReactiveSwift.Disposable?
 
     init(view: SearchView, router: SearchViewRouter) {
         self.view = view
         self.router = router
+        super.init()
     }
 
-    func configure(cell: SearchBookCellView, forRow row: Int) {
-        if row >= 0 && row < books.count {
-            let book = books[row]
-            cell.display(book: book)
-        } else {
-            cell.display(book: nil)
-        }
-    }
-
-    func select(row: Int) {
-        // TODO: Implementation when select cell
+    func configureObserver() {
+        self.searchText.asObservable().throttle(1.0, scheduler: MainScheduler.instance)
+                .subscribe(onNext: { [weak self] _ in
+            self?.search()
+        }).addDisposableTo(bag)
     }
 
     func change(searchType rawValue: Int) {
-        if let type = SearchType(rawValue: rawValue), searchType != type {
-            searchType = type
-            view?.updateSearchType(type)
+        if let type = SearchType(rawValue: rawValue), searchParams.type != type {
+            searchParams.type = type
+            view.updateSearchType(type)
+            search()
         }
     }
 
@@ -97,11 +113,85 @@ class SearchPresenterImplementation: SearchPresenter {
         }
     }
 
-    func change(searchText text: String) {
-        searchText = text
+    func search(_ page: Int = 1) {
+        searchParams.keyword = searchText.value
+        guard searchText.value != "" else {
+            listBooks = ListItems<Book>()
+            view.tableView.reloadData()
+            return
+        }
+        request?.dispose()
+        request = BookProvider.searchBook(officeId: Office.currentId, page: page, params: searchParams)
+                .on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+        }, value: { [weak self] (listBooks) in
+            if page == 1 {
+                self?.listBooks = listBooks
+            } else {
+                self?.listBooks.append(listBooks)
+            }
+            self?.view.tableView.reloadData()
+        }).start()
     }
 
-    func search() {
-        // TODO: Code to search here
+    func dismissKeyboard() {
+        if view.searchBar.isFirstResponder {
+            view.searchBar.resignFirstResponder()
+        }
+    }
+
+}
+
+extension SearchPresenterImplementation: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listBooks.data.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as?
+                SearchBookCell else {
+            return UITableViewCell()
+        }
+        let row = indexPath.row
+        if row >= 0 && row < listBooks.data.count {
+            let book = listBooks.data[row]
+            cell.display(book: book)
+        } else {
+            cell.display(book: nil)
+        }
+        return cell
+    }
+}
+
+extension SearchPresenterImplementation: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if row >= 0 && row < listBooks.data.count {
+            let book = listBooks.data[row]
+            router.showDetail(book: book)
+        }
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == listBooks.data.count - 1, let nextPage = listBooks.nextPage {
+            search(nextPage)
+        }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        dismissKeyboard()
+    }
+}
+
+extension SearchPresenterImplementation: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchText.value = searchText
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.searchBar.resignFirstResponder()
     }
 }

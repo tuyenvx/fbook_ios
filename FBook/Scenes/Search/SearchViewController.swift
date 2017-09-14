@@ -12,10 +12,11 @@ import RxCocoa
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet fileprivate weak var descriptionOptionButton: UIButton!
     @IBOutlet fileprivate weak var authorOptionButton: UIButton!
     @IBOutlet fileprivate weak var titleOptionButton: UIButton!
-    @IBOutlet fileprivate weak var searchBar: UISearchBar!
     @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
     fileprivate var configurator = SearchConfiguratorImplementation()
     var presenter: SearchPresenter?
@@ -23,6 +24,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(viewController: self)
+        presenter?.configureTableView()
+        presenter?.configureSearchBar()
+        presenter?.configureObserver()
     }
 
     @IBAction func onSearchTypeTapped(_ sender: UIButton) {
@@ -32,6 +36,11 @@ class SearchViewController: UIViewController {
     @IBAction func onStoreChanged(_ sender: UISegmentedControl) {
         presenter?.change(store: sender.selectedSegmentIndex)
     }
+
+    @IBAction func onScreenTapped(_ sender: Any) {
+        presenter?.dismissKeyboard()
+    }
+
 }
 
 extension SearchViewController: SearchView {
@@ -48,39 +57,5 @@ extension SearchViewController: SearchView {
         case .description:
             descriptionOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_on"), for: .normal)
         }
-    }
-}
-
-extension SearchViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.numberOfBooks ?? 0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as?
-                SearchBookCell else {
-            return UITableViewCell()
-        }
-        presenter?.configure(cell: cell, forRow: indexPath.row)
-        return cell
-    }
-}
-
-extension SearchViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.select(row: indexPath.row)
-    }
-}
-
-extension SearchViewController: UISearchBarDelegate {
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter?.change(searchText: searchText)
-    }
-
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        presenter?.search()
     }
 }
