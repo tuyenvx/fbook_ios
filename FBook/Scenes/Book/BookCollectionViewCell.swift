@@ -11,6 +11,14 @@ import Kingfisher
 
 class BookCollectionViewCell: UICollectionViewCell {
 
+    static func fitSizeItem(withSize size: CGSize) -> CGSize {
+        let beautyWidth: CGFloat = 120
+        let space: CGFloat = 10
+        let numberCollum = Int((size.width - 2 * space) / beautyWidth)
+        let widthCell = (size.width - space) / CGFloat(numberCollum) - 10
+        return CGSize(width: widthCell, height: widthCell * 1.3 + 30)
+    }
+
     var presenter: BookCellPresenter?
     var configurator: BookCellConfigurator?
 

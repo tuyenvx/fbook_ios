@@ -23,6 +23,7 @@ protocol MenuSettingPresenter {
     func didSelectDismiss()
     func didSelectFeedback()
     func didSelectMoreTools()
+    func didSelectWorkspace()
 }
 
 class MenuSettingPresenterImplementation {
@@ -57,4 +58,8 @@ extension MenuSettingPresenterImplementation: MenuSettingPresenter {
         router?.dismiss()
     }
 
+    func didSelectWorkspace() {
+        delegate?.didSelectWorkspace()
+        router?.dismiss()
+    }
 }

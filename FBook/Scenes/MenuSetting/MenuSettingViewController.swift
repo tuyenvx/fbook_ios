@@ -32,6 +32,9 @@ class MenuSettingViewController: UIViewController {
         presenter?.didSelectDismiss()
     }
 
+    @IBAction fileprivate func workspaceButtonTapped(_ seder: Any) {
+        presenter?.didSelectWorkspace()
+    }
 }
 
 extension MenuSettingViewController: MenuSettingView {
