@@ -9,7 +9,7 @@ import Foundation
 import ReactiveSwift
 import Moya
 
-public enum API {
+enum API {
 
     case login(String, String)
     case home
@@ -18,12 +18,12 @@ public enum API {
     case getOtherUserProfile(Int)
     case getListOffice
     case getBookDetail(Int)
-
+    case searchBook(Int?, Int, SearchBookParams)
 }
 
 extension API: TargetType {
 
-    static var debugMode = true
+    static var debugMode = false
     static let baseURLStringProd = "http://api-book.framgia.vn/api/v0"
     static let baseURLStringDebug = "http://private-anon-040374aa5d-apibookframgiavn.apiary-mock.com/api/v0"
 
@@ -50,12 +50,18 @@ extension API: TargetType {
             return "/offices"
         case .getBookDetail(let bookId):
             return "/books/\(bookId)"
+        case .searchBook(let officeId, let page, _):
+            var path = "/search?page=\(page)"
+            if let id = officeId {
+                path.append("&office_id=\(id)")
+            }
+            return path
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login, .homeFilter:
+        case .login, .homeFilter, .searchBook:
             return .post
         default:
             return .get
@@ -66,6 +72,8 @@ extension API: TargetType {
         switch self {
         case .login(let email, let password):
             return ["email": email, "password": password]
+        case .searchBook(_, _, let params):
+            return params.toRequestJSON()
         default:
             return nil
         }

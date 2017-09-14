@@ -13,6 +13,17 @@ enum SearchType: Int {
     case title = 100
     case author
     case description
+
+    func toString() -> String {
+        switch self {
+        case .title:
+            return "Title"
+        case .author:
+            return "Author"
+        case .description:
+            return "Description"
+        }
+    }
 }
 
 enum SearchStore: Int {

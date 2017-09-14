@@ -22,6 +22,7 @@ let kImageDefaultName = "image_default"
 let kAccessTokenKey = "com.framgia.fbook.access_token"
 let kRefreshTokenKey = "com.framgia.fbook.refresh_token"
 let kCurrentUserKey = "com.framgia.fbook.currentUser"
+let kCurrentOfficeIdKey = "com.framgia.fbook.currentOfficeId"
 
 let kAccessToken = "access_token"
 let kRefreshToken = "refresh_token"

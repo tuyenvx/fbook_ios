@@ -13,8 +13,7 @@ import Alamofire
 
 public struct ApiProvider {
 
-    fileprivate static var endpointClosure = {
-        (target: API) -> Endpoint<API> in
+    fileprivate static var endpointClosure = { (target: API) -> Endpoint<API> in
         return Endpoint<API>(
             url: url(target),
             sampleResponseClosure: { .networkResponse(200, target.sampleData) },
@@ -23,28 +22,18 @@ public struct ApiProvider {
             parameterEncoding: target.parameterEncoding)
     }
 
-    fileprivate static var networkActivityClosure = {
-        (change: NetworkActivityChangeType) -> Void in
+    fileprivate static var networkActivityClosure = { (change: NetworkActivityChangeType) -> Void in
         UIApplication.shared.isNetworkActivityIndicatorVisible = (change == .began)
     }
 
-    fileprivate static func getDefaultProvider() -> MoyaProvider<API> {
-        let plugins: [PluginType] = [
+    fileprivate static func getProvider(_ token: String?) -> MoyaProvider<API> {
+        var plugins: [PluginType] = [
             NetworkLoggerPlugin(verbose: true),
             NetworkActivityPlugin(networkActivityClosure: networkActivityClosure)
         ]
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 15
-        let newManager = Alamofire.SessionManager(configuration: configuration)
-        return MoyaProvider<API>(endpointClosure: endpointClosure, manager: newManager, plugins: plugins)
-    }
-
-    fileprivate static func getAuthenticatedProvider(_ token: String) -> MoyaProvider<API> {
-        let plugins: [PluginType] = [
-            NetworkLoggerPlugin(verbose: true),
-            NetworkActivityPlugin(networkActivityClosure: networkActivityClosure),
-            AccessTokenPlugin(token: token)
-        ]
+        if let token = token {
+            plugins.append(AccessTokenPlugin(token: token))
+        }
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 15
         let newManager = Alamofire.SessionManager(configuration: configuration)
@@ -52,15 +41,15 @@ public struct ApiProvider {
     }
 
     fileprivate static var authenticatedProvider: MoyaProvider<API>?
-    fileprivate static let defaultProvider = getDefaultProvider()
+    fileprivate static let defaultProvider = getProvider(nil)
 
-    public static var accessToken: String? {
+    static var accessToken: String? {
         get {
             return userDefaults.value(forKey: kAccessTokenKey) as? String
         }
         set {
             if let value = newValue {
-                authenticatedProvider = getAuthenticatedProvider(value)
+                authenticatedProvider = getProvider(value)
             } else {
                 authenticatedProvider = nil
             }
@@ -69,11 +58,11 @@ public struct ApiProvider {
         }
     }
 
-    public static var shared: MoyaProvider<API> {
+    static var shared: MoyaProvider<API> {
         if let authenticatedProvider = authenticatedProvider {
             return authenticatedProvider
         } else if let accessToken = accessToken {
-            authenticatedProvider = getAuthenticatedProvider(accessToken)
+            authenticatedProvider = getProvider(accessToken)
             return authenticatedProvider ?? defaultProvider
         }
         return defaultProvider
@@ -81,6 +70,6 @@ public struct ApiProvider {
 
 }
 
-public func url(_ route: TargetType) -> String {
-    return route.baseURL.appendingPathComponent(route.path).absoluteString
+func url(_ route: TargetType) -> String {
+    return route.baseURL.absoluteString + route.path
 }
