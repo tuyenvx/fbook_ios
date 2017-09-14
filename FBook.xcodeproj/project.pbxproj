@@ -23,6 +23,14 @@
 		22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */; };
 		22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A11F61BDD000869A05 /* String+Extensions.swift */; };
 		22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A51F61D15300869A05 /* Error+Extensions.swift */; };
+		4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8089C81F6A854B0072E0BB /* TimeFormatter.swift */; };
+		4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BD51F6A633900B74769 /* UserReviewTableViewCell.swift */; };
+		4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F9BD61F6A633900B74769 /* UserReviewTableViewCell.xib */; };
+		4B8F9BDB1F6A711100B74769 /* BasicDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BD91F6A711100B74769 /* BasicDetailTableViewCell.swift */; };
+		4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F9BDA1F6A711100B74769 /* BasicDetailTableViewCell.xib */; };
+		4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BDD1F6A75BF00B74769 /* Array+Extensions.swift */; };
+		4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BE01F6A7AF200B74769 /* BookDetailHeaderView.swift */; };
+		4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F9BE21F6A7B5700B74769 /* BookDetailHeaderView.xib */; };
 		4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB823E1F678E4000E52FB1 /* BookDetailViewController.swift */; };
 		4BAB82411F678E5900E52FB1 /* BookDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82401F678E5900E52FB1 /* BookDetailPresenter.swift */; };
 		4BAB82431F678E8D00E52FB1 /* BookDetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */; };
@@ -141,6 +149,14 @@
 		22E076A11F61BDD000869A05 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		22E076A51F61D15300869A05 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
+		4B8089C81F6A854B0072E0BB /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		4B8F9BD51F6A633900B74769 /* UserReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReviewTableViewCell.swift; sourceTree = "<group>"; };
+		4B8F9BD61F6A633900B74769 /* UserReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserReviewTableViewCell.xib; sourceTree = "<group>"; };
+		4B8F9BD91F6A711100B74769 /* BasicDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDetailTableViewCell.swift; sourceTree = "<group>"; };
+		4B8F9BDA1F6A711100B74769 /* BasicDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicDetailTableViewCell.xib; sourceTree = "<group>"; };
+		4B8F9BDD1F6A75BF00B74769 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		4B8F9BE01F6A7AF200B74769 /* BookDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailHeaderView.swift; sourceTree = "<group>"; };
+		4B8F9BE21F6A7B5700B74769 /* BookDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailHeaderView.xib; sourceTree = "<group>"; };
 		4BAB823E1F678E4000E52FB1 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		4BAB82401F678E5900E52FB1 /* BookDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailPresenter.swift; sourceTree = "<group>"; };
 		4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewRouter.swift; sourceTree = "<group>"; };
@@ -292,6 +308,7 @@
 				772614891F661F14004D6943 /* UINib+Extensions.swift */,
 				7726148B1F6625AE004D6943 /* UIView+Extensions.swift */,
 				772614951F6660BB004D6943 /* UIImageView+Extensions.swift */,
+				4B8F9BDD1F6A75BF00B74769 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,9 +326,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4B8F9BD41F6A632300B74769 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B8F9BD51F6A633900B74769 /* UserReviewTableViewCell.swift */,
+				4B8F9BD61F6A633900B74769 /* UserReviewTableViewCell.xib */,
+				4B8F9BD91F6A711100B74769 /* BasicDetailTableViewCell.swift */,
+				4B8F9BDA1F6A711100B74769 /* BasicDetailTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4B8F9BDF1F6A79F900B74769 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4B8F9BE01F6A7AF200B74769 /* BookDetailHeaderView.swift */,
+				4B8F9BE21F6A7B5700B74769 /* BookDetailHeaderView.xib */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		4BACDBBD1F67703900881AA0 /* BookDetail */ = {
 			isa = PBXGroup;
 			children = (
+				4B8F9BDF1F6A79F900B74769 /* Headers */,
+				4B8F9BD41F6A632300B74769 /* Cells */,
 				4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */,
 				4BAB823E1F678E4000E52FB1 /* BookDetailViewController.swift */,
 				4BAB82401F678E5900E52FB1 /* BookDetailPresenter.swift */,
@@ -473,6 +512,7 @@
 				77F5A0191F5FDAC80074A5DB /* Constants.swift */,
 				77F5A01B1F5FDB2D0074A5DB /* Utility.swift */,
 				77A76E441F627EB1008601E2 /* AlertHelper.swift */,
+				4B8089C81F6A854B0072E0BB /* TimeFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -686,13 +726,16 @@
 			files = (
 				77A6EACB1F68C05300EE384B /* MenuSettingViewController.xib in Resources */,
 				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
+				4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */,
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
 				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
 				772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
 				4BACDBBF1F67704A00881AA0 /* BookDetail.storyboard in Resources */,
 				77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */,
+				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
 				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
+				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
 				772614AA1F669259004D6943 /* HomeHeader.xib in Resources */,
 			);
@@ -921,10 +964,10 @@
 				77A76E451F627EB1008601E2 /* AlertHelper.swift in Sources */,
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
 				772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */,
-				D5DB47611F5FCF5A0042B809 /* KindOfBookViewController.swift in Sources */,
 				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
 				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
 				77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */,
+				4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */,
 				77A76EEC1F629602008601E2 /* HomeConfigurator.swift in Sources */,
 				77DECCC81F625022007E32F5 /* ForgotPasswordViewRouter.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
@@ -945,9 +988,11 @@
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
+				4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */,
 				772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */,
 				4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */,
 				77DECCC11F6247C7007E32F5 /* LoginViewRouter.swift in Sources */,
+				4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
 				77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */,
 				77A76EEF1F629602008601E2 /* HomeViewRouter.swift in Sources */,
@@ -961,6 +1006,7 @@
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				77A6EACA1F68C05300EE384B /* MenuSettingViewController.swift in Sources */,
 				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
+				4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
 				22C480611F6040A400DB7A4C /* User.swift in Sources */,
 				22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */,
@@ -997,6 +1043,7 @@
 				772614B41F669264004D6943 /* BookCellConfigurator.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				D5DB475F1F5FCF090042B809 /* ProfileViewController.swift in Sources */,
+				4B8F9BDB1F6A711100B74769 /* BasicDetailTableViewCell.swift in Sources */,
 				77DECCBF1F62478B007E32F5 /* LoginConfigurator.swift in Sources */,
 				D5DB475C1F5FCABC0042B809 /* AccountViewController.swift in Sources */,
 			);
@@ -1145,6 +1192,7 @@
 			baseConfigurationReference = B416ACA6FFCD9220F9B75A51 /* Pods-FBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1153,6 +1201,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1161,6 +1210,7 @@
 			baseConfigurationReference = 280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1169,6 +1219,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

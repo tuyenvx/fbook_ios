@@ -16,7 +16,8 @@ let userDefaults = UserDefaults.standard
 let kDateServerFormat = "yyyy-MM-dd HH:mm:ss"
 let kDateFormatYMD = "yyyy-MM-dd"
 
-let kImageDefaultName = "image_default"
+let kDefaultPlaceHolder = #imageLiteral(resourceName: "image_default")
+let kDefaultAvatar = #imageLiteral(resourceName: "default_avatar")
 
 // Constants for UserDefaults
 let kAccessTokenKey = "com.framgia.fbook.access_token"
