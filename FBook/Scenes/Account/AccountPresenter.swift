@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AccountView: class {
     func displayUserInfo(user: User)
+    func displayProfileTab()
+    func displayCategoriesTab()
 }
 
 protocol AccountPresenter {
     func updateUserInfo()
+    func selectProfileButton()
+    func selectCategoriesButton()
 }
 
 class AccountPresenterImplementation: AccountPresenter {
@@ -26,5 +31,13 @@ class AccountPresenterImplementation: AccountPresenter {
     func updateUserInfo() {
         guard let currentUser = User.currentUser else {return}
         view?.displayUserInfo(user: currentUser)
+    }
+
+    func selectProfileButton() {
+        view?.displayProfileTab()
+    }
+
+    func selectCategoriesButton() {
+        view?.displayCategoriesTab()
     }
 }
