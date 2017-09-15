@@ -37,6 +37,8 @@
 		4BAB82431F678E8D00E52FB1 /* BookDetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */; };
 		4BAB82451F678EA300E52FB1 /* BookDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */; };
 		4BACDBBF1F67704A00881AA0 /* BookDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */; };
+		4BD94DB21F6B657000C0A7F5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */; };
+		4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
 		6F6909735A1B5F94B195D69D /* Pods_FBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */; };
 		7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */; };
@@ -174,6 +176,8 @@
 		4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewRouter.swift; sourceTree = "<group>"; };
 		4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailConfigurator.swift; sourceTree = "<group>"; };
 		4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
+		4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		772614851F661EC8004D6943 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
@@ -358,6 +362,8 @@
 				4B8F9BD61F6A633900B74769 /* UserReviewTableViewCell.xib */,
 				4B8F9BD91F6A711100B74769 /* BasicDetailTableViewCell.swift */,
 				4B8F9BDA1F6A711100B74769 /* BasicDetailTableViewCell.xib */,
+				4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */,
+				4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -786,6 +792,7 @@
 				4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */,
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
 				D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */,
+				4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */,
 				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
 				772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
@@ -1081,6 +1088,7 @@
 				D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */,
 				77B45D1A1F693486001CB466 /* SectionBookViewController.swift in Sources */,
 				114F9C351F68C5A60098674E /* ListItems.swift in Sources */,
+				4BD94DB21F6B657000C0A7F5 /* UserTableViewCell.swift in Sources */,
 				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
 				77B45D1E1F6934A1001CB466 /* SectionBookConfigurator.swift in Sources */,
 				D56313C41F62938F00BEDFE4 /* ProfileConfigurator.swift in Sources */,
