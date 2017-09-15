@@ -20,7 +20,7 @@ enum API {
     case getBookDetail(Int)
     case searchBook(Int?, Int, SearchBookParams)
     case getBookInSection(Int?, Int, SectionBook)
-
+    case getListNotifications
 }
 
 extension API: TargetType {
@@ -60,6 +60,8 @@ extension API: TargetType {
             return path
         case .getBookInSection:
             return "/books"
+        case .getListNotifications:
+            return "/notifications"
         }
     }
 
