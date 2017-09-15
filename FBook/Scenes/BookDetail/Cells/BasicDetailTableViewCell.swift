@@ -20,17 +20,17 @@ class BasicDetailTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var createdTimeLabel: UILabel!
     @IBOutlet fileprivate weak var viewsLabel: UILabel!
 
-    func updateUI(detail: BookDetail) {
-        thumbnailImageView.setImage(urlString: detail.media?.first?.thumbnailPath)
-        titleLabel.text = detail.title
-        authorLabel.text = "by \(detail.author ?? "")"
-        ratingView.rating = detail.averageStar
-        ratingView.text = "(\(detail.reviews?.count ?? 0))"
-        descriptionLabel.text = detail.description
-        pagesLabel.text = "\(detail.totalPage)"
-        createdTimeLabel.text = TimeFormatter.default.string(from: detail.createdAt ?? Date(),
+    func updateUI(book: Book) {
+        thumbnailImageView.setImage(urlString: book.detail?.media?.first?.thumbnailPath)
+        titleLabel.text = book.title
+        authorLabel.text = "by \(book.author ?? "")"
+        ratingView.rating = book.averageStar
+        ratingView.text = "(\(book.detail?.reviews?.count ?? 0))"
+        descriptionLabel.text = book.description
+        pagesLabel.text = "\(book.totalPage)"
+        createdTimeLabel.text = TimeFormatter.default.string(from: book.detail?.createdAt ?? Date(),
             outputFormat: kDateServerFormat)
-        viewsLabel.text = "\(detail.totalView)"
+        viewsLabel.text = "\(book.totalView)"
     }
 
 }

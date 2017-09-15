@@ -38,8 +38,7 @@ class BookDetailPresenterImplementation: NSObject {
     private(set) var router: BookDetailViewRouter?
     fileprivate weak var view: BookDetailView?
 
-    fileprivate let book: Book
-    fileprivate var detail: BookDetail?
+    fileprivate var book: Book
 
     init(view: BookDetailView, router: BookDetailViewRouter, book: Book) {
         self.view = view
@@ -69,9 +68,9 @@ extension BookDetailPresenterImplementation: BookDetailPresenter {
             // TODO: Handle error when fetch book detail failed
         }, completed: {
             AlertHelper.hideLoading()
-        }, value: { bookDetail in
+        }, value: { book in
             weakSelf?.view?.showHideView(true)
-            weakSelf?.detail = bookDetail
+            weakSelf?.book.appendDetail(from: book)
             weakSelf?.view?.updateUI()
         }).start()
     }
@@ -87,7 +86,7 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case Section.basic.rawValue: return 1
-        case Section.detail.rawValue: return detail?.reviews?.count ?? 0
+        case Section.detail.rawValue: return book.detail?.reviews?.count ?? 0
         default: return 0
         }
     }
@@ -95,15 +94,14 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case Section.basic.rawValue:
-            guard let cell = tableView.dequeueReusableNibCell(type: BasicDetailTableViewCell.self),
-                  let detail = detail else {
+            guard let cell = tableView.dequeueReusableNibCell(type: BasicDetailTableViewCell.self) else {
                 return UITableViewCell()
             }
-            cell.updateUI(detail: detail)
+            cell.updateUI(book: book)
             return cell
         case Section.detail.rawValue:
             guard let cell = tableView.dequeueReusableNibCell(type: UserReviewTableViewCell.self),
-                  let review = detail?.reviews?[safe: indexPath.row] else {
+                  let review = book.detail?.reviews?[safe: indexPath.row] else {
                 return UITableViewCell()
             }
             cell.updateUI(review: review)

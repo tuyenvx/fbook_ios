@@ -13,6 +13,7 @@ import Moya
 class BaseProvider {
 
     typealias BaseSignal = SignalProducer<ObjectResponse?, ErrorResponse>
+    typealias BooleanSignal = SignalProducer<Bool, ErrorResponse>
 
     static func requestJSON(api: API) -> BaseSignal {
         var request: Cancellable?
@@ -47,6 +48,13 @@ class BaseProvider {
         }.on(disposed: {
             request?.cancel()
         })
+    }
+
+    static let mapBoolean = { (object: ObjectResponse?) -> BooleanSignal in
+        if let status = object?.message?.status {
+            return BooleanSignal(value: status)
+        }
+        return BooleanSignal(error: .errorJsonFormat)
     }
 
 }

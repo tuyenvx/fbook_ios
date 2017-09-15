@@ -32,12 +32,7 @@ class SearchBookCell: UITableViewCell {
 extension SearchBookCell: SearchBookCellView {
 
     func display(book: Book?) {
-        if let urlString = book?.thumbnail, let url = URL(string: urlString) {
-            photoImageView.kf.setImage(with: url)
-        } else {
-            photoImageView.kf.cancelDownloadTask()
-            photoImageView.image = nil
-        }
+        photoImageView.setImage(urlString: book?.thumbnail, placeHolder: nil)
         nameLabel.text = book?.title
         authorLabel.text = book?.author
         viewCountLabel.text = "\(book?.totalView ?? 0)"

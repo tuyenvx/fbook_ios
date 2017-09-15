@@ -45,6 +45,6 @@ enum SortType: String {
 
 enum OrderBy: String {
 
-    case desc = "desc"
-    case asc = "asc"
+    case desc
+    case asc
 }
