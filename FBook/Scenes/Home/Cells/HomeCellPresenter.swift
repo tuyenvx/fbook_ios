@@ -34,10 +34,6 @@ class HomeCellPresenterImplementation: NSObject {
         self.delegate = delegate
     }
 
-    fileprivate func configBookCell(bookCellView: BookCellView, atIndex index: Int) {
-        let configurator = BookCellConfiguratorImplementation(book: books[index])
-        bookCellView.displayConfigurator(configurator)
-    }
 }
 
 extension HomeCellPresenterImplementation: HomeCellPresenter {
@@ -74,11 +70,11 @@ extension HomeCellPresenterImplementation: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
         -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableNibCell(type: BookCollectionViewCell.self,
-                atIndex: indexPath) else {
+        guard let cell = collectionView.dequeueReusableNibCell(type: BookCollectionViewCell.self, atIndex: indexPath),
+                let book = books[safe: indexPath.row] else {
             return UICollectionViewCell()
         }
-        configBookCell(bookCellView: cell, atIndex: indexPath.row)
+        cell.displayBook(book: book)
         return cell
     }
 

@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol BookCellView: class {
+    func displayBook(book: Book)
+}
+
 class BookCollectionViewCell: UICollectionViewCell {
 
     static func fitSizeItem(withSize size: CGSize) -> CGSize {
@@ -19,9 +23,6 @@ class BookCollectionViewCell: UICollectionViewCell {
         return CGSize(width: widthCell, height: widthCell * 1.3 + 30)
     }
 
-    var presenter: BookCellPresenter?
-    var configurator: BookCellConfigurator?
-
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var thumbnailImageView: UIImageView!
     @IBOutlet fileprivate weak var totalViewLabel: UILabel!
@@ -30,12 +31,6 @@ class BookCollectionViewCell: UICollectionViewCell {
 }
 
 extension BookCollectionViewCell: BookCellView {
-
-    func displayConfigurator(_ configurator: BookCellConfigurator) {
-        self.configurator = configurator
-        self.configurator?.configure(cell: self)
-        presenter?.loadBook()
-    }
 
     func displayBook(book: Book) {
         nameLabel.text = book.title

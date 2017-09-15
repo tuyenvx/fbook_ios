@@ -26,11 +26,22 @@ struct HomeViewRouterImplementation {
 extension HomeViewRouterImplementation: HomeViewRouter {
 
     func showDetailBook(_ book: Book) {
-        // TODO: Show detail book here
+        guard let detailViewController = UIStoryboard.bookDetail.instantiateInitialViewController()
+                as? BookDetailViewController else {
+            return
+        }
+        detailViewController.configurator = BookDetailConfiguratorImplementation(book: book)
+        viewController?.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
     func showSeeMoreSectionBook(_ sectionBook: SectionBook) {
-        // TODO: show see more here
+        guard let sectionBookViewController = UIStoryboard.home
+                .instantiateViewController(withIdentifier: "SectionBookViewController")
+                as? SectionBookViewController else {
+            return
+        }
+        sectionBookViewController.configurator = SectionBookConfiguratorImplementation(sectionBook: sectionBook)
+        viewController?.navigationController?.pushViewController(sectionBookViewController, animated: true)
     }
 
 }
