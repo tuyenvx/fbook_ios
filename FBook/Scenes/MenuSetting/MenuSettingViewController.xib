@@ -27,10 +27,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZq-5Z-wU4">
-                    <rect key="frame" x="170" y="60" width="200" height="100"/>
+                    <rect key="frame" x="170" y="60" width="200" height="150"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZj-ff-urj">
-                            <rect key="frame" x="6" y="6" width="188" height="41"/>
+                            <rect key="frame" x="6" y="6" width="188" height="42"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" title="Feedback">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,7 +40,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-9H-Ksg">
-                            <rect key="frame" x="6" y="53" width="188" height="41"/>
+                            <rect key="frame" x="6" y="54" width="188" height="42"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" title="More tools">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,19 +49,33 @@
                                 <action selector="moreToolsButtonTapped:" destination="-1" eventType="touchUpInside" id="t8F-x8-F32"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aov-Pd-LYl">
+                            <rect key="frame" x="6" y="102" width="188" height="42"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Workspace">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="workspaceButtonTapped:" destination="-1" eventType="touchUpInside" id="VNC-PE-nyW"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="2ei-9H-Ksg" firstAttribute="centerX" secondItem="dZj-ff-urj" secondAttribute="centerX" id="0HS-AF-eZF"/>
-                        <constraint firstAttribute="bottom" secondItem="2ei-9H-Ksg" secondAttribute="bottom" constant="6" id="7a0-0m-SDu"/>
+                        <constraint firstAttribute="bottom" secondItem="Aov-Pd-LYl" secondAttribute="bottom" constant="6" id="8Ea-bl-aRw"/>
                         <constraint firstAttribute="trailing" secondItem="dZj-ff-urj" secondAttribute="trailing" constant="6" id="9qV-df-SyZ"/>
                         <constraint firstItem="2ei-9H-Ksg" firstAttribute="top" secondItem="dZj-ff-urj" secondAttribute="bottom" constant="6" id="ChP-uG-T69"/>
+                        <constraint firstItem="Aov-Pd-LYl" firstAttribute="top" secondItem="2ei-9H-Ksg" secondAttribute="bottom" constant="6" id="Dwq-xa-S5w"/>
                         <constraint firstItem="2ei-9H-Ksg" firstAttribute="height" secondItem="dZj-ff-urj" secondAttribute="height" id="Iye-fr-UpG"/>
                         <constraint firstItem="dZj-ff-urj" firstAttribute="top" secondItem="uZq-5Z-wU4" secondAttribute="top" constant="6" id="Ljk-9e-FHz"/>
                         <constraint firstItem="dZj-ff-urj" firstAttribute="leading" secondItem="uZq-5Z-wU4" secondAttribute="leading" constant="6" id="R8b-D9-w6w"/>
+                        <constraint firstItem="Aov-Pd-LYl" firstAttribute="centerX" secondItem="dZj-ff-urj" secondAttribute="centerX" id="Ue8-Tx-Qg8"/>
                         <constraint firstItem="2ei-9H-Ksg" firstAttribute="width" secondItem="dZj-ff-urj" secondAttribute="width" id="eAT-YA-xAN"/>
                         <constraint firstAttribute="width" constant="200" id="hNR-ld-sgi"/>
-                        <constraint firstAttribute="height" constant="100" id="yjZ-9s-7YE"/>
+                        <constraint firstItem="Aov-Pd-LYl" firstAttribute="height" secondItem="dZj-ff-urj" secondAttribute="height" id="hQz-Sr-x87"/>
+                        <constraint firstItem="Aov-Pd-LYl" firstAttribute="width" secondItem="dZj-ff-urj" secondAttribute="width" id="y5L-bo-9lK"/>
+                        <constraint firstAttribute="height" constant="150" id="yjZ-9s-7YE"/>
                     </constraints>
                 </view>
             </subviews>

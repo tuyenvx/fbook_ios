@@ -19,6 +19,8 @@ enum API {
     case getListOffice
     case getBookDetail(Int)
     case searchBook(Int?, Int, SearchBookParams)
+    case getBookInSection(Int?, Int, SectionBook)
+
 }
 
 extension API: TargetType {
@@ -56,6 +58,8 @@ extension API: TargetType {
                 path.append("&office_id=\(id)")
             }
             return path
+        case .getBookInSection:
+            return "/books"
         }
     }
 
@@ -74,6 +78,12 @@ extension API: TargetType {
             return ["email": email, "password": password]
         case .searchBook(_, _, let params):
             return params.toRequestJSON()
+        case .getBookInSection(let officeId, let page, let sectionBook):
+            var parameters: [String : Any] = ["page": page, "field": sectionBook.key]
+            if let officeId = officeId {
+                parameters["office_id"] = officeId
+            }
+            return parameters
         default:
             return nil
         }

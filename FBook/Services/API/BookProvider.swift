@@ -34,4 +34,14 @@ final class BookProvider: BaseProvider {
             return BookListSignal(error: .errorJsonFormat)
         })
     }
+
+    static func getBooks(inSection section: SectionBook, page: Int, officeId: Int?) -> BookListSignal {
+        return requestJSON(api: .getBookInSection(officeId, page, section)).flatMap(.merge, { object -> BookListSignal in
+            if let value = object?.value as? [String: Any], let item = value[kItem] as? [String: Any],
+                let listItems = ListItems<Book>(JSON: item) {
+                return BookListSignal(value: listItems)
+            }
+            return BookListSignal(error: .errorJsonFormat)
+        })
+    }
 }

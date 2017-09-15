@@ -58,7 +58,10 @@ extension HomeCellPresenterImplementation: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: collectionView.frame.size.height - 20.0)
+        let sizeCollection = collectionView.frame.size
+        let cellBookSize = BookCollectionViewCell.fitSizeItem(withSize: CGSize(width: sizeCollection.width - 40,
+            height: sizeCollection.height))
+        return CGSize(width: cellBookSize.width, height: collectionView.frame.size.height - 20.0)
     }
 
 }

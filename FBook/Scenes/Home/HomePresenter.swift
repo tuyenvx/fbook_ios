@@ -78,7 +78,10 @@ extension HomePresenterImplementation: HomePresenter {
 extension HomePresenterImplementation: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        let sizeTable = tableView.frame.size
+        let cellBookSize = BookCollectionViewCell.fitSizeItem(withSize: CGSize(width: sizeTable.width - 40,
+            height: sizeTable.height))
+        return cellBookSize.height + 20
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
