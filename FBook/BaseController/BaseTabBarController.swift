@@ -10,4 +10,8 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for: .normal)
+    }
 }
