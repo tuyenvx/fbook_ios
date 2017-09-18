@@ -20,10 +20,7 @@ class BasicDetailTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var createdTimeLabel: UILabel!
     @IBOutlet fileprivate weak var viewsLabel: UILabel!
 
-    func updateUI(book: Book?) {
-        guard let book = book else {
-            return
-        }
+    func updateUI(book: Book) {
         thumbnailImageView.setImage(urlString: book.detail?.media?.first?.thumbnailPath)
         titleLabel.text = book.title
         authorLabel.text = "by \(book.author ?? "")"

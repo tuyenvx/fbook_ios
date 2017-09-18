@@ -52,7 +52,7 @@ class BookDetailPresenterImplementation: NSObject {
     private(set) var router: BookDetailViewRouter?
     fileprivate weak var view: BookDetailView?
 
-    fileprivate var book: Book?
+    fileprivate var book: Book
     fileprivate var currentDetailType = DetailType.reviews
 
     init(view: BookDetailView, router: BookDetailViewRouter, book: Book) {
@@ -75,9 +75,6 @@ extension BookDetailPresenterImplementation: BookDetailPresenter {
     }
 
     func fetchBookDetail() {
-        guard let book = self.book else {
-            return
-        }
         AlertHelper.showLoading()
         weak var weakSelf = self
         BookProvider.getBookDetail(bookId: book.id).on(starting: {
@@ -89,7 +86,7 @@ extension BookDetailPresenterImplementation: BookDetailPresenter {
             AlertHelper.hideLoading()
         }, value: { book in
             weakSelf?.view?.showHideView(true)
-            weakSelf?.book? = book
+            weakSelf?.book = book
             weakSelf?.view?.updateUI()
         }).start()
     }
@@ -108,11 +105,11 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
         case Section.detail.rawValue:
             switch currentDetailType {
             case .reviews:
-                return book?.detail?.reviews?.count ?? 0
+                return book.detail?.reviews?.count ?? 0
             case .readingUsers:
-                return book?.users?.reading?.count ?? 0
+                return book.users?.reading?.count ?? 0
             case .waitingUsers:
-                return book?.users?.waiting?.count ?? 0
+                return book.users?.waiting?.count ?? 0
             }
         default: return 0
         }
@@ -130,21 +127,21 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
             switch currentDetailType {
             case .reviews:
                 guard let cell = tableView.dequeueReusableNibCell(type: UserReviewTableViewCell.self),
-                      let review = book?.detail?.reviews?[safe: indexPath.row] else {
+                      let review = book.detail?.reviews?[safe: indexPath.row] else {
                     return UITableViewCell()
                 }
                 cell.updateUI(review: review)
                 return cell
             case .readingUsers:
                 guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                      let user = book?.users?.reading?[safe: indexPath.row] else {
+                      let user = book.users?.reading?[safe: indexPath.row] else {
                     return UITableViewCell()
                 }
                 cell.updateUI(user: user, status: "reading")
                 return cell
             case .waitingUsers:
                 guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                      let user = book?.users?.waiting?[safe: indexPath.row] else {
+                      let user = book.users?.waiting?[safe: indexPath.row] else {
                     return UITableViewCell()
                 }
                 cell.updateUI(user: user, status: "waiting")
