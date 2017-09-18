@@ -50,6 +50,7 @@
 		4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
 		6F6909735A1B5F94B195D69D /* Pods_FBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */; };
+		7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */; };
 		7703B35A1F6A587A00CDF69D /* ChooseWorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3581F6A587A00CDF69D /* ChooseWorkspaceViewController.swift */; };
 		7703B35B1F6A587A00CDF69D /* ChooseWorkspaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7703B3591F6A587A00CDF69D /* ChooseWorkspaceViewController.xib */; };
 		7703B35D1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B35C1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift */; };
@@ -57,7 +58,6 @@
 		7703B3611F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3601F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift */; };
 		7703B3631F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3621F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift */; };
 		7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7703B3651F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib */; };
-		7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */; };
 		772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614851F661EC8004D6943 /* UITableView+Extensions.swift */; };
 		772614881F661ED4004D6943 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */; };
 		7726148A1F661F14004D6943 /* UINib+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614891F661F14004D6943 /* UINib+Extensions.swift */; };
@@ -74,6 +74,12 @@
 		772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614A71F669259004D6943 /* HomeTableViewCell.xib */; };
 		772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614B21F669264004D6943 /* BookCollectionViewCell.swift */; };
 		772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614B31F669264004D6943 /* BookCollectionViewCell.xib */; };
+		7751978D1F6FA6E4005042D9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7751978C1F6FA6E4005042D9 /* CategoryViewController.swift */; };
+		7751978F1F6FA6F0005042D9 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7751978E1F6FA6F0005042D9 /* Category.storyboard */; };
+		775197911F6FA786005042D9 /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197901F6FA785005042D9 /* CategoryPresenter.swift */; };
+		775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197921F6FA79B005042D9 /* CategoryConfigurator.swift */; };
+		775197951F6FA7A8005042D9 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197941F6FA7A8005042D9 /* CategoryRouter.swift */; };
+		775197971F6FB113005042D9 /* CategoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197961F6FB113005042D9 /* CategoryProvider.swift */; };
 		77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6EAC21F68C05300EE384B /* MenuSettingConfigurator.swift */; };
 		77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6EAC31F68C05300EE384B /* MenuSettingPresenter.swift */; };
 		77A6EAC91F68C05300EE384B /* MenuSettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6EAC41F68C05300EE384B /* MenuSettingRouter.swift */; };
@@ -205,6 +211,9 @@
 		4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewRouter.swift; sourceTree = "<group>"; };
 		4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailConfigurator.swift; sourceTree = "<group>"; };
 		4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
+		4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		7703B3581F6A587A00CDF69D /* ChooseWorkspaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceViewController.swift; sourceTree = "<group>"; };
 		7703B3591F6A587A00CDF69D /* ChooseWorkspaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseWorkspaceViewController.xib; sourceTree = "<group>"; };
 		7703B35C1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspacePresenter.swift; sourceTree = "<group>"; };
@@ -212,9 +221,6 @@
 		7703B3601F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceRouter.swift; sourceTree = "<group>"; };
 		7703B3621F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceTableViewCell.swift; sourceTree = "<group>"; };
 		7703B3651F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseWorkspaceTableViewCell.xib; sourceTree = "<group>"; };
-		4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
-		7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		772614851F661EC8004D6943 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		772614891F661F14004D6943 /* UINib+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINib+Extensions.swift"; sourceTree = "<group>"; };
@@ -231,6 +237,12 @@
 		772614A71F669259004D6943 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		772614B21F669264004D6943 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		772614B31F669264004D6943 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		7751978C1F6FA6E4005042D9 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		7751978E1F6FA6F0005042D9 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		775197901F6FA785005042D9 /* CategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
+		775197921F6FA79B005042D9 /* CategoryConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigurator.swift; sourceTree = "<group>"; };
+		775197941F6FA7A8005042D9 /* CategoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
+		775197961F6FB113005042D9 /* CategoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryProvider.swift; sourceTree = "<group>"; };
 		77A6EAC21F68C05300EE384B /* MenuSettingConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSettingConfigurator.swift; sourceTree = "<group>"; };
 		77A6EAC31F68C05300EE384B /* MenuSettingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSettingPresenter.swift; sourceTree = "<group>"; };
 		77A6EAC41F68C05300EE384B /* MenuSettingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSettingRouter.swift; sourceTree = "<group>"; };
@@ -501,6 +513,18 @@
 			path = Book;
 			sourceTree = "<group>";
 		};
+		7751978B1F6FA615005042D9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7751978E1F6FA6F0005042D9 /* Category.storyboard */,
+				7751978C1F6FA6E4005042D9 /* CategoryViewController.swift */,
+				775197901F6FA785005042D9 /* CategoryPresenter.swift */,
+				775197921F6FA79B005042D9 /* CategoryConfigurator.swift */,
+				775197941F6FA7A8005042D9 /* CategoryRouter.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		77A6EAC11F68C05300EE384B /* MenuSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +579,7 @@
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7751978B1F6FA615005042D9 /* Categories */,
 				7703B3571F6A584400CDF69D /* Workspace */,
 				77B45D181F6933FD001CB466 /* SectionBook */,
 				D5CD98F51F6A13840074BC01 /* Notification */,
@@ -683,6 +708,7 @@
 				224C0F2C1F604C10007BEA04 /* OfficeProvider.swift */,
 				77F4E26B1F60F32100C68BA8 /* HomeProvider.swift */,
 				77F4E26D1F60F73E00C68BA8 /* BookProvider.swift */,
+				775197961F6FB113005042D9 /* CategoryProvider.swift */,
 				77F5A0251F5FDF340074A5DB /* NetworkReachability.swift */,
 			);
 			path = API;
@@ -927,6 +953,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7751978F1F6FA6F0005042D9 /* Category.storyboard in Resources */,
 				77A6EACB1F68C05300EE384B /* MenuSettingViewController.xib in Resources */,
 				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
 				4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */,
@@ -1198,6 +1225,7 @@
 				77F5A0311F5FE0630074A5DB /* BaseViewController.swift in Sources */,
 				118038491F6F9EBE00945648 /* ApproveBookParams.swift in Sources */,
 				224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */,
+				775197971F6FB113005042D9 /* CategoryProvider.swift in Sources */,
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
 				D56313C61F62943900BEDFE4 /* ProfilePresenter.swift in Sources */,
@@ -1210,6 +1238,7 @@
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */,
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,
+				775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */,
 				118038651F6FB68F00945648 /* WaitingRequestViewRouter.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
 				4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */,
@@ -1227,6 +1256,7 @@
 				77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */,
 				11076EA81F62867D002AA6D5 /* SearchViewController.swift in Sources */,
 				11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */,
+				7751978D1F6FA6E4005042D9 /* CategoryViewController.swift in Sources */,
 				77DECCCA1F625030007E32F5 /* ForgotPasswordConfigurator.swift in Sources */,
 				77A76EED1F629602008601E2 /* HomePresenter.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
@@ -1242,6 +1272,7 @@
 				77A6EAC91F68C05300EE384B /* MenuSettingRouter.swift in Sources */,
 				D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */,
 				77B45D1A1F693486001CB466 /* SectionBookViewController.swift in Sources */,
+				775197951F6FA7A8005042D9 /* CategoryRouter.swift in Sources */,
 				114F9C351F68C5A60098674E /* ListItems.swift in Sources */,
 				4BD94DB21F6B657000C0A7F5 /* UserTableViewCell.swift in Sources */,
 				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
@@ -1279,7 +1310,6 @@
 				D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */,
 				77A76EEE1F629602008601E2 /* HomeViewController.swift in Sources */,
 				772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */,
-				772614B41F669264004D6943 /* BookCellConfigurator.swift in Sources */,
 				7703B35D1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */,
@@ -1287,6 +1317,7 @@
 				7703B35F1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift in Sources */,
 				4B8F9BDB1F6A711100B74769 /* BasicDetailTableViewCell.swift in Sources */,
 				77DECCBF1F62478B007E32F5 /* LoginConfigurator.swift in Sources */,
+				775197911F6FA786005042D9 /* CategoryPresenter.swift in Sources */,
 				D5DB475C1F5FCABC0042B809 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

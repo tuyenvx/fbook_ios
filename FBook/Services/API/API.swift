@@ -26,6 +26,8 @@ enum API {
     case getListWaitingApprovedBook
     case getBookApproveDetail(Int)
     case approveBook(Int, ApproveBookParams)
+    case getCategories
+    case getBooksInCategory(Int)
 }
 
 extension API: TargetType {
@@ -77,6 +79,10 @@ extension API: TargetType {
             return "/user/\(bookId)/approve/detail"
         case .approveBook(let bookId, _):
             return "/books/approve/\(bookId)"
+        case .getCategories:
+            return "/categories"
+        case .getBooksInCategory(let categoryId):
+            return "/books/category/\(categoryId)"
         }
     }
 
@@ -105,6 +111,11 @@ extension API: TargetType {
             return params.toRequestJSON()
         case .approveBook(_, let params):
             return params.toRequestJSON()
+        case .getBooksInCategory:
+            if let officeId = Office.currentId {
+                return ["office_id": officeId]
+            }
+            return nil
         default:
             return nil
         }
