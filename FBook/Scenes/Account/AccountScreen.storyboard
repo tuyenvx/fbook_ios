@@ -39,6 +39,18 @@
                                     <constraint firstAttribute="height" constant="300" id="zOG-hB-e1g"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSy-Y9-Ijt">
+                                <rect key="frame" x="0.0" y="363" width="414" height="373"/>
+                                <connections>
+                                    <segue destination="m4Y-C3-4ZO" kind="embed" id="JUt-aK-r35"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-sM-dGM">
+                                <rect key="frame" x="0.0" y="363" width="414" height="373"/>
+                                <connections>
+                                    <segue destination="Op8-iB-UpF" kind="embed" id="hqS-sN-ehS"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-X3-onO">
                                 <rect key="frame" x="0.0" y="363" width="414" height="373"/>
                                 <connections>
@@ -54,53 +66,54 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jLD-p0-3n0">
                                 <rect key="frame" x="0.0" y="299" width="414" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od7-Kr-KY1">
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od7-Kr-KY1">
                                         <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Profile" backgroundImage="background_button_select">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Profile" backgroundImage="background_button_deselect">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="background_button_select"/>
                                         <connections>
                                             <action selector="onButtonProfileClicked:" destination="4Qz-E0-hQ7" eventType="touchUpInside" id="hGc-el-seL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-ad-MW7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-ad-MW7">
                                         <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="64"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Favorite Categories" backgroundImage="background_button_deselect">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="background_button_select"/>
                                         <connections>
                                             <action selector="onButtonCategoriesClicked:" destination="4Qz-E0-hQ7" eventType="touchUpInside" id="xRP-pO-nb1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgF-Bc-Msa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgF-Bc-Msa">
                                         <rect key="frame" x="207.00000000000003" y="0.0" width="103.66666666666671" height="64"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Followers" backgroundImage="background_button_deselect">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="background_button_select"/>
+                                        <connections>
+                                            <action selector="onButtonFollowersClicked:" destination="4Qz-E0-hQ7" eventType="touchUpInside" id="lAp-uT-S6P"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3q3-CB-bcH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3q3-CB-bcH">
                                         <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="64"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Following" backgroundImage="background_button_deselect">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="background_button_select"/>
+                                        <connections>
+                                            <action selector="onButtonFollowingClicked:" destination="4Qz-E0-hQ7" eventType="touchUpInside" id="L4X-Y2-R8a"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSy-Y9-Ijt">
-                                <rect key="frame" x="0.0" y="363" width="414" height="373"/>
-                                <connections>
-                                    <segue destination="m4Y-C3-4ZO" kind="embed" id="JUt-aK-r35"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-sM-dGM">
-                                <rect key="frame" x="0.0" y="363" width="414" height="373"/>
-                                <connections>
-                                    <segue destination="Op8-iB-UpF" kind="embed" id="hqS-sN-ehS"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -132,8 +145,10 @@
                     <connections>
                         <outlet property="categoriesButton" destination="dJp-ad-MW7" id="PYR-4U-Kgj"/>
                         <outlet property="favoriteCategoriesView" destination="i9v-X3-onO" id="mdf-X4-6Zu"/>
-                        <outlet property="followersView" destination="ySF-sM-dGM" id="9U4-Ws-az5"/>
-                        <outlet property="followingView" destination="RSy-Y9-Ijt" id="GBa-0a-1hr"/>
+                        <outlet property="followersButton" destination="kgF-Bc-Msa" id="LaS-WZ-O9X"/>
+                        <outlet property="followersView" destination="RSy-Y9-Ijt" id="yKo-Nr-Inb"/>
+                        <outlet property="followingButton" destination="3q3-CB-bcH" id="Rzc-kl-yEE"/>
+                        <outlet property="followingView" destination="ySF-sM-dGM" id="zP5-58-fhj"/>
                         <outlet property="headerAccountView" destination="VbY-vZ-W6k" id="njM-5g-bhC"/>
                         <outlet property="profileButton" destination="od7-Kr-KY1" id="Jxg-1U-GdE"/>
                         <outlet property="profileView" destination="UPc-P1-wvk" id="6CK-fh-TKD"/>
@@ -168,10 +183,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTI-n9-VxR">
-                                                    <rect key="frame" x="33" y="24" width="220" height="20"/>
+                                                    <rect key="frame" x="33" y="24" width="350" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Maz-WU-eY7"/>
-                                                        <constraint firstAttribute="width" constant="220" id="eFG-Xd-YCK"/>
+                                                        <constraint firstAttribute="width" constant="350" id="eFG-Xd-YCK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -439,6 +454,10 @@
         <scene sceneID="0AL-wD-wfM">
             <objects>
                 <viewController id="m4Y-C3-4ZO" customClass="FollowersViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="snA-c4-tqO"/>
+                        <viewControllerLayoutGuide type="bottom" id="bez-RC-Kma"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JmT-Dh-snS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="373"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -507,6 +526,10 @@
         <scene sceneID="D02-sq-hEG">
             <objects>
                 <viewController id="Op8-iB-UpF" customClass="FollowingViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l0H-Fj-9dh"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Cc-xh-QGP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zYU-pp-CS8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="373"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

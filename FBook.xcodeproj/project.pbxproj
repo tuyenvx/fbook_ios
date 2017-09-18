@@ -140,6 +140,11 @@
 		D5915F9A1F6F68110058E546 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F991F6F68110058E546 /* FollowersViewController.swift */; };
 		D5915F9C1F6F69180058E546 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */; };
 		D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */; };
+		D5915FA41F6F85050058E546 /* FollowingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */; };
+		D5915FA61F6F85140058E546 /* FollowingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA51F6F85140058E546 /* FollowingPresenter.swift */; };
+		D5915FA81F6F85290058E546 /* FollowersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */; };
+		D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */; };
+		D5915FAC1F6FAD7D0058E546 /* FollowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */; };
 		D5CD98F71F6A14170074BC01 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */; };
 		D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CD98F81F6A14310074BC01 /* Notification.storyboard */; };
 		D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */; };
@@ -314,6 +319,11 @@
 		D5915F991F6F68110058E546 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowersViewController.swift; path = FBook/Scenes/Account/Followers/FollowersViewController.swift; sourceTree = SOURCE_ROOT; };
 		D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingConfigurator.swift; sourceTree = "<group>"; };
+		D5915FA51F6F85140058E546 /* FollowingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingPresenter.swift; sourceTree = "<group>"; };
+		D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersConfigurator.swift; sourceTree = "<group>"; };
+		D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersPresenter.swift; sourceTree = "<group>"; };
+		D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowInfo.swift; sourceTree = "<group>"; };
 		D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		D5CD98F81F6A14310074BC01 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -727,6 +737,7 @@
 				77F4E2671F60F02500C68BA8 /* Media.swift */,
 				114F9C341F68C5A60098674E /* ListItems.swift */,
 				D5CD99031F6A8A020074BC01 /* Notification.swift */,
+				D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -784,6 +795,8 @@
 			isa = PBXGroup;
 			children = (
 				D5915F991F6F68110058E546 /* FollowersViewController.swift */,
+				D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */,
+				D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */,
 			);
 			path = Followers;
 			sourceTree = "<group>";
@@ -792,6 +805,8 @@
 			isa = PBXGroup;
 			children = (
 				D5915F971F6F67F70058E546 /* FollowingViewController.swift */,
+				D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */,
+				D5915FA51F6F85140058E546 /* FollowingPresenter.swift */,
 			);
 			path = Following;
 			sourceTree = "<group>";
@@ -1202,6 +1217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5915FAC1F6FAD7D0058E546 /* FollowInfo.swift in Sources */,
 				D5915F981F6F67F70058E546 /* FollowingViewController.swift in Sources */,
 				77A76E451F627EB1008601E2 /* AlertHelper.swift in Sources */,
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
@@ -1249,7 +1265,9 @@
 				118038631F6FB67100945648 /* WaitingRequestConfigurator.swift in Sources */,
 				4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
+				D5915FA61F6F85140058E546 /* FollowingPresenter.swift in Sources */,
 				77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */,
+				D5915FA81F6F85290058E546 /* FollowersConfigurator.swift in Sources */,
 				77A76EEF1F629602008601E2 /* HomeViewRouter.swift in Sources */,
 				77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */,
 				4BAB82451F678EA300E52FB1 /* BookDetailConfigurator.swift in Sources */,
@@ -1270,6 +1288,7 @@
 				118038591F6FB18900945648 /* NoDataView.swift in Sources */,
 				22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */,
 				77A6EAC91F68C05300EE384B /* MenuSettingRouter.swift in Sources */,
+				D5915FA41F6F85050058E546 /* FollowingConfigurator.swift in Sources */,
 				D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */,
 				77B45D1A1F693486001CB466 /* SectionBookViewController.swift in Sources */,
 				775197951F6FA7A8005042D9 /* CategoryRouter.swift in Sources */,
@@ -1290,6 +1309,7 @@
 				77F5A0411F60071B0074A5DB /* API.swift in Sources */,
 				77DECCC41F624FFC007E32F5 /* ForgotPasswordViewController.swift in Sources */,
 				D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */,
+				D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				77A6EAD11F68C06500EE384B /* BaseViewPresenter.swift in Sources */,
 				772614A81F669259004D6943 /* HomeCellConfigurator.swift in Sources */,

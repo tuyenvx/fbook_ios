@@ -8,11 +8,21 @@
 
 import UIKit
 
-class FollowingViewController: UIViewController {
+class FollowingViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var presenter: FollowingPresenter?
+    var configurator = FollowingConfiguratorImplementation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurator.configure(followingViewCotroller: self)
+        presenter?.getListFollowingUser(tableView: tableView)
+    }
+}
+
+extension FollowingViewController:  FollowingView {
+    func showLoadFollowingError(message: String) {
+        Utility.shared.showMessage(message: message, completion: nil)
     }
 }
