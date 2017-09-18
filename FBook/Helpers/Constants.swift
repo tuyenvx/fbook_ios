@@ -18,6 +18,7 @@ let kDateFormatYMD = "yyyy-MM-dd"
 
 let kDefaultPlaceHolder = #imageLiteral(resourceName: "image_default")
 let kDefaultAvatar = #imageLiteral(resourceName: "default_avatar")
+let kZeroFloat: CGFloat = 0.0001
 
 // Constants for UserDefaults
 let kAccessTokenKey = "com.framgia.fbook.access_token"

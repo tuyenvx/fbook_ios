@@ -32,6 +32,9 @@
                         <segment title="Read users"/>
                         <segment title="Waiting users"/>
                     </segments>
+                    <connections>
+                        <action selector="segmentedControlValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="GxP-k7-b7v"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <constraints>
