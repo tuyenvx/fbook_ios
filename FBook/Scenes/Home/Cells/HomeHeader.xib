@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,32 +19,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNJ-uS-QuS">
-                    <rect key="frame" x="10" y="0.0" width="286" height="56"/>
+                    <rect key="frame" x="10" y="0.0" width="305" height="56"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="700" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afi-KQ-Opn">
-                    <rect key="frame" x="306" y="0.0" width="69" height="56"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="See More..."/>
+                    <rect key="frame" x="325" y="0.0" width="42" height="56"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                    <state key="normal" title="See All">
+                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="seeMoreButtonTapped:" destination="-1" eventType="touchUpInside" id="uBs-QO-DA4"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_more_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="UTb-eV-jcN">
+                    <rect key="frame" x="367" y="18" width="10" height="20"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="KtE-ew-A3R"/>
+                        <constraint firstAttribute="width" constant="10" id="kvk-Vt-ntR"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="gNJ-uS-QuS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="6Tz-Nj-ztp"/>
                 <constraint firstAttribute="bottom" secondItem="afi-KQ-Opn" secondAttribute="bottom" id="6zT-Ky-nwt"/>
+                <constraint firstAttribute="trailing" secondItem="UTb-eV-jcN" secondAttribute="trailing" constant="8" id="7TL-aT-tcV"/>
+                <constraint firstItem="UTb-eV-jcN" firstAttribute="leading" secondItem="afi-KQ-Opn" secondAttribute="trailing" id="Kai-Sn-ndn"/>
                 <constraint firstItem="afi-KQ-Opn" firstAttribute="leading" secondItem="gNJ-uS-QuS" secondAttribute="trailing" constant="10" id="OTK-PQ-ODk"/>
-                <constraint firstAttribute="trailing" secondItem="afi-KQ-Opn" secondAttribute="trailing" constant="10" id="PGf-E7-PSd"/>
+                <constraint firstItem="UTb-eV-jcN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OX2-2N-svH"/>
                 <constraint firstItem="gNJ-uS-QuS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RpI-9r-UwJ"/>
                 <constraint firstAttribute="bottom" secondItem="gNJ-uS-QuS" secondAttribute="bottom" id="Rvj-3m-C9p"/>
                 <constraint firstItem="afi-KQ-Opn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hxg-og-ueL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-295" y="-117"/>
+            <point key="canvasLocation" x="-295.5" y="-117"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_more_right_arrow" width="50" height="50"/>
+    </resources>
 </document>

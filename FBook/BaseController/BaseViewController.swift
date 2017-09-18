@@ -20,24 +20,9 @@ class BaseViewController: UIViewController {
     }
 
     func setDefaultRightButtons() {
-        guard let heightNavigationBar = navigationController?.navigationBar.frame.height else {
-            return
-        }
-        let widthItems: CGFloat = 30.0
-        let workSpaceButton = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: widthItems,
-            height: heightNavigationBar)))
-        workSpaceButton.setImage(#imageLiteral(resourceName: "ic_workspace"), for: .normal)
-        workSpaceButton.addTarget(self, action: #selector(workSpaceButtonTapped(_:)), for: .touchUpInside)
-        let menuButton = UIButton(frame: CGRect(origin: CGPoint(x: workSpaceButton.frame.width, y: 0),
-            size: CGSize(width: widthItems, height: heightNavigationBar)))
-        menuButton.setImage(#imageLiteral(resourceName: "ic_more"), for: .normal)
-        menuButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
-        let leftViewSize = CGSize(width: menuButton.frame.origin.x + menuButton.frame.width,
-            height: heightNavigationBar)
-        let leftView = UIView(frame: CGRect(origin: .zero, size: leftViewSize))
-        leftView.addSubview(workSpaceButton)
-        leftView.addSubview(menuButton)
-        navigationItem.rightBarButtonItems = [getSpacer(width: -10), UIBarButtonItem(customView: leftView)]
+        let menuButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_more"), style: .plain, target: self,
+            action: #selector(menuButtonTapped(_:)))
+        navigationItem.rightBarButtonItems = [getSpacer(), menuButton]
     }
 
     func setBackButton() {
@@ -60,10 +45,6 @@ class BaseViewController: UIViewController {
             senderFrame = senderView.convert(senderView.frame, to: window)
         }
         basePresenter?.menuButtonTapped(senderFrame: senderFrame)
-    }
-
-    func workSpaceButtonTapped(_ sender: Any) {
-        basePresenter?.workspaceButtonTapped()
     }
 
     func backButtonTapped(_ sender: UIBarButtonItem) {

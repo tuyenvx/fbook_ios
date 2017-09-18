@@ -14,7 +14,6 @@ protocol BaseView: class {
 
 protocol BasePresenter {
     func menuButtonTapped(senderFrame: CGRect)
-    func workspaceButtonTapped()
     func backButtonTapped()
 }
 
@@ -34,10 +33,6 @@ extension BasePresenterImplementation: BasePresenter {
 
     func menuButtonTapped(senderFrame: CGRect) {
         router?.showMenuSetting(delegate: self, senderFrame: senderFrame)
-    }
-
-    func workspaceButtonTapped() {
-        router?.showWorkspace()
     }
 
     func backButtonTapped() {
