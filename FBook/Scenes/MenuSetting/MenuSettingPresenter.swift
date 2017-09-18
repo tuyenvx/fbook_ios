@@ -49,17 +49,17 @@ extension MenuSettingPresenterImplementation: MenuSettingPresenter {
     }
 
     func didSelectFeedback() {
-        delegate?.didSelectFeedback()
         router?.dismiss()
+        delegate?.didSelectFeedback()
     }
 
     func didSelectMoreTools() {
-        delegate?.didSelectMoreTools()
         router?.dismiss()
+        delegate?.didSelectMoreTools()
     }
 
     func didSelectWorkspace() {
-        delegate?.didSelectWorkspace()
         router?.dismiss()
+        delegate?.didSelectWorkspace()
     }
 }

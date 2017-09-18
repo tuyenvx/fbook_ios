@@ -41,6 +41,13 @@
 		4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
 		6F6909735A1B5F94B195D69D /* Pods_FBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */; };
+		7703B35A1F6A587A00CDF69D /* ChooseWorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3581F6A587A00CDF69D /* ChooseWorkspaceViewController.swift */; };
+		7703B35B1F6A587A00CDF69D /* ChooseWorkspaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7703B3591F6A587A00CDF69D /* ChooseWorkspaceViewController.xib */; };
+		7703B35D1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B35C1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift */; };
+		7703B35F1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B35E1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift */; };
+		7703B3611F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3601F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift */; };
+		7703B3631F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3621F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift */; };
+		7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7703B3651F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib */; };
 		7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */; };
 		772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614851F661EC8004D6943 /* UITableView+Extensions.swift */; };
 		772614881F661ED4004D6943 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614871F661ED4004D6943 /* UICollectionView+Extensions.swift */; };
@@ -180,6 +187,13 @@
 		4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewRouter.swift; sourceTree = "<group>"; };
 		4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailConfigurator.swift; sourceTree = "<group>"; };
 		4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
+		7703B3581F6A587A00CDF69D /* ChooseWorkspaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceViewController.swift; sourceTree = "<group>"; };
+		7703B3591F6A587A00CDF69D /* ChooseWorkspaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseWorkspaceViewController.xib; sourceTree = "<group>"; };
+		7703B35C1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspacePresenter.swift; sourceTree = "<group>"; };
+		7703B35E1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceConfigurator.swift; sourceTree = "<group>"; };
+		7703B3601F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceRouter.swift; sourceTree = "<group>"; };
+		7703B3621F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseWorkspaceTableViewCell.swift; sourceTree = "<group>"; };
+		7703B3651F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseWorkspaceTableViewCell.xib; sourceTree = "<group>"; };
 		4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
@@ -399,6 +413,20 @@
 			path = BookDetail;
 			sourceTree = "<group>";
 		};
+		7703B3571F6A584400CDF69D /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				7703B3581F6A587A00CDF69D /* ChooseWorkspaceViewController.swift */,
+				7703B3591F6A587A00CDF69D /* ChooseWorkspaceViewController.xib */,
+				7703B35C1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift */,
+				7703B35E1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift */,
+				7703B3601F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift */,
+				7703B3621F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift */,
+				7703B3651F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
 		772614971F666BAD004D6943 /* Book */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +490,7 @@
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7703B3571F6A584400CDF69D /* Workspace */,
 				77B45D181F6933FD001CB466 /* SectionBook */,
 				D5CD98F51F6A13840074BC01 /* Notification */,
 				4BACDBBD1F67703900881AA0 /* BookDetail */,
@@ -842,6 +871,9 @@
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
 				4BACDBBF1F67704A00881AA0 /* BookDetail.storyboard in Resources */,
 				77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */,
+				7703B35B1F6A587A00CDF69D /* ChooseWorkspaceViewController.xib in Resources */,
+				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
+				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
 				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
@@ -1099,6 +1131,7 @@
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
 				D56313C61F62943900BEDFE4 /* ProfilePresenter.swift in Sources */,
+				7703B3631F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift in Sources */,
 				D5915F9A1F6F68110058E546 /* FollowersViewController.swift in Sources */,
 				77F5A0241F5FDEC50074A5DB /* ObjectResponse.swift in Sources */,
 				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
@@ -1126,6 +1159,7 @@
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				77B45D201F6934B5001CB466 /* SectionBookRouter.swift in Sources */,
 				77A6EACA1F68C05300EE384B /* MenuSettingViewController.swift in Sources */,
+				7703B35A1F6A587A00CDF69D /* ChooseWorkspaceViewController.swift in Sources */,
 				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
 				4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
@@ -1161,6 +1195,7 @@
 				772614A91F669259004D6943 /* HomeCellPresenter.swift in Sources */,
 				772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */,
 				11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */,
+				7703B3611F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift in Sources */,
 				11076EB01F6286C0002AA6D5 /* SearchConfigurator.swift in Sources */,
 				4BAB82411F678E5900E52FB1 /* BookDetailPresenter.swift in Sources */,
 				D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */,
@@ -1168,9 +1203,12 @@
 				D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */,
 				77A76EEE1F629602008601E2 /* HomeViewController.swift in Sources */,
 				772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */,
+				772614B41F669264004D6943 /* BookCellConfigurator.swift in Sources */,
+				7703B35D1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */,
 				D5DB475F1F5FCF090042B809 /* ProfileViewController.swift in Sources */,
+				7703B35F1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift in Sources */,
 				4B8F9BDB1F6A711100B74769 /* BasicDetailTableViewCell.swift in Sources */,
 				77DECCBF1F62478B007E32F5 /* LoginConfigurator.swift in Sources */,
 				D5DB475C1F5FCABC0042B809 /* AccountViewController.swift in Sources */,
