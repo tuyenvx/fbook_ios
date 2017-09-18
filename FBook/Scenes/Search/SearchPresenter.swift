@@ -42,7 +42,7 @@ protocol SearchView: class {
 
     var searchBar: UISearchBar! { get }
     var tableView: UITableView! { get }
-    func hideNoResultView(_ show: Bool)
+    func hideNoDataView(_ show: Bool)
 }
 
 protocol SearchBookCellView {
@@ -130,9 +130,9 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
                 self?.listBooks.append(listBooks)
             }
             if let count = self?.listBooks.data.count, count > 0 {
-                self?.view.hideNoResultView(true)
+                self?.view.hideNoDataView(true)
             } else {
-                self?.view.hideNoResultView(false)
+                self?.view.hideNoDataView(false)
             }
             self?.view.tableView.reloadData()
         }).start()

@@ -12,7 +12,7 @@ import RxCocoa
 
 class SearchViewController: UIViewController {
 
-    @IBOutlet weak var noResultView: UIView!
+    @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
@@ -43,7 +43,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: SearchView {
 
-    func hideNoResultView(_ hide: Bool) {
-        noResultView.isHidden = hide
+    func hideNoDataView(_ hide: Bool) {
+        noDataView.isHidden = hide
     }
 }

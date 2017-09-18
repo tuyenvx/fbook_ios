@@ -191,29 +191,9 @@
                                     <outlet property="delegate" destination="yUa-ZF-k7f" id="5Oe-AS-Yrz"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuE-15-HzY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuE-15-HzY" customClass="NoDataView" customModule="FBook" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="168" width="414" height="567.33333333333337"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN6-io-vbi">
-                                        <rect key="frame" x="170.66666666666666" y="174" width="72.666666666666686" height="119.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjk-1c-Wfy">
-                                        <rect key="frame" x="170" y="293.66666666666669" width="74" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="eN6-io-vbi" firstAttribute="centerX" secondItem="zuE-15-HzY" secondAttribute="centerX" id="RmV-bJ-THn"/>
-                                    <constraint firstItem="kjk-1c-Wfy" firstAttribute="centerX" secondItem="zuE-15-HzY" secondAttribute="centerX" id="oGL-GH-lav"/>
-                                    <constraint firstItem="eN6-io-vbi" firstAttribute="centerY" secondItem="zuE-15-HzY" secondAttribute="centerY" constant="-50" id="v2Q-Bm-c9D"/>
-                                    <constraint firstItem="kjk-1c-Wfy" firstAttribute="top" secondItem="eN6-io-vbi" secondAttribute="bottom" id="vdP-nQ-6fw"/>
-                                </constraints>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -244,7 +224,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="noResultView" destination="zuE-15-HzY" id="Erv-hh-ns4"/>
+                        <outlet property="noDataView" destination="zuE-15-HzY" id="sGg-Da-0c7"/>
                         <outlet property="searchBar" destination="bpf-uI-VC0" id="VIr-F1-Otm"/>
                         <outlet property="segmentControl" destination="2YI-Dn-4fz" id="enD-9S-x4A"/>
                         <outlet property="tableView" destination="9CQ-L2-lXb" id="nPS-GB-CHn"/>
