@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct ListItems<T: Mappable>: Mappable {
+class ListItems<T: Mappable>: Mappable {
 
     var total = 0
     var perPage = 0
@@ -21,10 +21,11 @@ struct ListItems<T: Mappable>: Mappable {
     init() {
     }
 
-    init?(map: Map) {
+    required convenience init?(map: Map) {
+        self.init()
     }
 
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         total <- map["total"]
         perPage <- map["per_page"]
         currentPage <- map["current_page"]
@@ -33,12 +34,19 @@ struct ListItems<T: Mappable>: Mappable {
         data <- map["data"]
     }
 
-    mutating func append(_ listItem: ListItems<T>) {
+    func append(_ listItem: ListItems<T>) {
         total = listItem.total
         perPage = listItem.perPage
         currentPage = listItem.currentPage
         nextPage = listItem.nextPage
         prevPage = listItem.prevPage
         data.append(contentsOf: listItem.data)
+    }
+}
+
+class ListItemsCategory: ListItems<Book> {
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        data <- map["category.data"]
     }
 }
