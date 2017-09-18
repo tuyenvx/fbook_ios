@@ -21,6 +21,7 @@ enum API {
     case searchBook(Int?, Int, SearchBookParams)
     case getBookInSection(Int?, Int, SectionBook)
     case getListNotifications
+    case bookingBook(BookingBookParams)
 }
 
 extension API: TargetType {
@@ -62,12 +63,14 @@ extension API: TargetType {
             return "/books"
         case .getListNotifications:
             return "/notifications"
+        case .bookingBook:
+            return "/books/booking"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login, .homeFilter, .searchBook:
+        case .login, .homeFilter, .searchBook, .bookingBook:
             return .post
         default:
             return .get
@@ -86,6 +89,8 @@ extension API: TargetType {
                 parameters["office_id"] = officeId
             }
             return parameters
+        case .bookingBook(let params):
+            return params.toRequestJSON()
         default:
             return nil
         }
