@@ -10,7 +10,6 @@ import UIKit
 
 class FollowingViewController: UIViewController {
 
-    
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {

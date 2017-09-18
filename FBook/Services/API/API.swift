@@ -23,6 +23,9 @@ enum API {
     case getListNotifications
     case bookingBook(BookingBookParams)
     case getFollowInfoOfUser(Int)
+    case getListWaitingApprovedBook
+    case getBookApproveDetail(Int)
+    case approveBook(Int, ApproveBookParams)
 }
 
 extension API: TargetType {
@@ -68,12 +71,18 @@ extension API: TargetType {
             return "/books/booking"
         case .getFollowInfoOfUser(let userId):
             return "users/follow/info/\(userId)"
+        case .getListWaitingApprovedBook:
+            return "/user/books/waiting_approve"
+        case .getBookApproveDetail(let bookId):
+            return "/user/\(bookId)/approve/detail"
+        case .approveBook(let bookId, _):
+            return "/books/approve/\(bookId)"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login, .homeFilter, .searchBook, .bookingBook:
+        case .login, .homeFilter, .searchBook, .bookingBook, .approveBook:
             return .post
         default:
             return .get
@@ -93,6 +102,8 @@ extension API: TargetType {
             }
             return parameters
         case .bookingBook(let params):
+            return params.toRequestJSON()
+        case .approveBook(_, let params):
             return params.toRequestJSON()
         default:
             return nil
