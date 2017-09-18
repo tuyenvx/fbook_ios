@@ -17,6 +17,14 @@
 		11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11712DB81F6A0E260093C5FF /* SearchBookParams.swift */; };
 		117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117162B51F6B89600045A59E /* BookingBookParams.swift */; };
 		118038491F6F9EBE00945648 /* ApproveBookParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038481F6F9EBE00945648 /* ApproveBookParams.swift */; };
+		1180384F1F6FA7DB00945648 /* BookRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180384E1F6FA7DB00945648 /* BookRequest.storyboard */; };
+		118038541F6FB00500945648 /* BookWaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038531F6FB00500945648 /* BookWaitingCell.swift */; };
+		118038571F6FB17200945648 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118038561F6FB17200945648 /* NoDataView.xib */; };
+		118038591F6FB18900945648 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038581F6FB18900945648 /* NoDataView.swift */; };
+		1180385E1F6FB61500945648 /* WaitingRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180385D1F6FB61500945648 /* WaitingRequestViewController.swift */; };
+		118038611F6FB64300945648 /* WaitingRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038601F6FB64300945648 /* WaitingRequestPresenter.swift */; };
+		118038631F6FB67100945648 /* WaitingRequestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038621F6FB67100945648 /* WaitingRequestConfigurator.swift */; };
+		118038651F6FB68F00945648 /* WaitingRequestViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038641F6FB68F00945648 /* WaitingRequestViewRouter.swift */; };
 		224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F281F604808007BEA04 /* UsersProvider.swift */; };
 		224C0F2B1F604B86007BEA04 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F2A1F604B86007BEA04 /* Office.swift */; };
 		224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F2C1F604C10007BEA04 /* OfficeProvider.swift */; };
@@ -166,6 +174,14 @@
 		11712DB81F6A0E260093C5FF /* SearchBookParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookParams.swift; sourceTree = "<group>"; };
 		117162B51F6B89600045A59E /* BookingBookParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingBookParams.swift; sourceTree = "<group>"; };
 		118038481F6F9EBE00945648 /* ApproveBookParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproveBookParams.swift; sourceTree = "<group>"; };
+		1180384E1F6FA7DB00945648 /* BookRequest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookRequest.storyboard; sourceTree = "<group>"; };
+		118038531F6FB00500945648 /* BookWaitingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookWaitingCell.swift; sourceTree = "<group>"; };
+		118038561F6FB17200945648 /* NoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
+		118038581F6FB18900945648 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		1180385D1F6FB61500945648 /* WaitingRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingRequestViewController.swift; sourceTree = "<group>"; };
+		118038601F6FB64300945648 /* WaitingRequestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingRequestPresenter.swift; sourceTree = "<group>"; };
+		118038621F6FB67100945648 /* WaitingRequestConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingRequestConfigurator.swift; sourceTree = "<group>"; };
+		118038641F6FB68F00945648 /* WaitingRequestViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingRequestViewRouter.swift; sourceTree = "<group>"; };
 		16187A60E72AAEC10C6BDADA /* Pods-FBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBookUITests/Pods-FBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		224C0F281F604808007BEA04 /* UsersProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersProvider.swift; sourceTree = "<group>"; };
 		224C0F2A1F604B86007BEA04 /* Office.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
@@ -350,6 +366,52 @@
 			path = RequestModels;
 			sourceTree = "<group>";
 		};
+		1180384D1F6FA7DB00945648 /* BookRequest */ = {
+			isa = PBXGroup;
+			children = (
+				1180385F1F6FB62400945648 /* ApproveRequest */,
+				1180385C1F6FB60400945648 /* WaitingRequest */,
+				118038501F6FAFC800945648 /* Cells */,
+				1180384E1F6FA7DB00945648 /* BookRequest.storyboard */,
+			);
+			path = BookRequest;
+			sourceTree = "<group>";
+		};
+		118038501F6FAFC800945648 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				118038531F6FB00500945648 /* BookWaitingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		118038551F6FB16400945648 /* NoResultView */ = {
+			isa = PBXGroup;
+			children = (
+				118038561F6FB17200945648 /* NoDataView.xib */,
+				118038581F6FB18900945648 /* NoDataView.swift */,
+			);
+			path = NoResultView;
+			sourceTree = "<group>";
+		};
+		1180385C1F6FB60400945648 /* WaitingRequest */ = {
+			isa = PBXGroup;
+			children = (
+				1180385D1F6FB61500945648 /* WaitingRequestViewController.swift */,
+				118038601F6FB64300945648 /* WaitingRequestPresenter.swift */,
+				118038621F6FB67100945648 /* WaitingRequestConfigurator.swift */,
+				118038641F6FB68F00945648 /* WaitingRequestViewRouter.swift */,
+			);
+			path = WaitingRequest;
+			sourceTree = "<group>";
+		};
+		1180385F1F6FB62400945648 /* ApproveRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApproveRequest;
+			sourceTree = "<group>";
+		};
 		22E076A01F61BDC300869A05 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +559,7 @@
 				77B45D181F6933FD001CB466 /* SectionBook */,
 				D5CD98F51F6A13840074BC01 /* Notification */,
 				4BACDBBD1F67703900881AA0 /* BookDetail */,
+				1180384D1F6FA7DB00945648 /* BookRequest */,
 				D543F05C1F6249BA005EB1A3 /* Account */,
 				11076EA61F6285AD002AA6D5 /* Search */,
 				77A76EDF1F62956F008601E2 /* Home */,
@@ -591,6 +654,7 @@
 		77F5A0151F5FDA400074A5DB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				118038551F6FB16400945648 /* NoResultView */,
 				77F5A0191F5FDAC80074A5DB /* Constants.swift */,
 				77F5A01B1F5FDB2D0074A5DB /* Utility.swift */,
 				77A76E441F627EB1008601E2 /* AlertHelper.swift */,
@@ -867,9 +931,11 @@
 				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
 				4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */,
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
+				118038571F6FB17200945648 /* NoDataView.xib in Resources */,
 				D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */,
 				4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */,
 				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
+				1180384F1F6FA7DB00945648 /* BookRequest.storyboard in Resources */,
 				772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
 				4BACDBBF1F67704A00881AA0 /* BookDetail.storyboard in Resources */,
@@ -1144,11 +1210,14 @@
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */,
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,
+				118038651F6FB68F00945648 /* WaitingRequestViewRouter.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
 				4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */,
 				772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */,
 				4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */,
+				118038541F6FB00500945648 /* BookWaitingCell.swift in Sources */,
 				77DECCC11F6247C7007E32F5 /* LoginViewRouter.swift in Sources */,
+				118038631F6FB67100945648 /* WaitingRequestConfigurator.swift in Sources */,
 				4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
 				77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */,
@@ -1168,6 +1237,7 @@
 				4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
 				22C480611F6040A400DB7A4C /* User.swift in Sources */,
+				118038591F6FB18900945648 /* NoDataView.swift in Sources */,
 				22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */,
 				77A6EAC91F68C05300EE384B /* MenuSettingRouter.swift in Sources */,
 				D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */,
@@ -1197,11 +1267,13 @@
 				D56313C81F629B9100BEDFE4 /* AccountPresenter.swift in Sources */,
 				D5CD98FD1F6A15000074BC01 /* NotificationConfigurator.swift in Sources */,
 				772614A91F669259004D6943 /* HomeCellPresenter.swift in Sources */,
+				1180385E1F6FB61500945648 /* WaitingRequestViewController.swift in Sources */,
 				772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */,
 				11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */,
 				7703B3611F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift in Sources */,
 				11076EB01F6286C0002AA6D5 /* SearchConfigurator.swift in Sources */,
 				4BAB82411F678E5900E52FB1 /* BookDetailPresenter.swift in Sources */,
+				118038611F6FB64300945648 /* WaitingRequestPresenter.swift in Sources */,
 				D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,
 				D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */,
