@@ -114,6 +114,10 @@
 		D57D40E11F665449009F0801 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D40E01F665449009F0801 /* CategoryTableViewCell.swift */; };
 		D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */; };
 		D57D40E51F666DA3009F0801 /* FavoriteCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */; };
+		D5915F981F6F67F70058E546 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F971F6F67F70058E546 /* FollowingViewController.swift */; };
+		D5915F9A1F6F68110058E546 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F991F6F68110058E546 /* FollowersViewController.swift */; };
+		D5915F9C1F6F69180058E546 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */; };
+		D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */; };
 		D5CD98F71F6A14170074BC01 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */; };
 		D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CD98F81F6A14310074BC01 /* Notification.storyboard */; };
 		D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */; };
@@ -254,14 +258,18 @@
 		B416ACA6FFCD9220F9B75A51 /* Pods-FBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.debug.xcconfig"; sourceTree = "<group>"; };
 		CDA0389DECFAD21548DD9198 /* Pods-FBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D54028AF1F6B73D60065F937 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCategoriesViewController.swift; sourceTree = "<group>"; };
-		D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
-		D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesViewController.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
+		D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileConfigurator.swift; path = FBook/Scenes/Account/Profile/ProfileConfigurator.swift; sourceTree = SOURCE_ROOT; };
+		D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = FBook/Scenes/Account/Profile/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		D56313C71F629B9100BEDFE4 /* AccountPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		D56313C91F629DD600BEDFE4 /* AccountConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfigurator.swift; sourceTree = "<group>"; };
 		D57D40E01F665449009F0801 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCategoriesConfigurator.swift; sourceTree = "<group>"; };
-		D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCategoriesPresenter.swift; sourceTree = "<group>"; };
+		D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesConfigurator.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesConfigurator.swift; sourceTree = SOURCE_ROOT; };
+		D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesPresenter.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesPresenter.swift; sourceTree = SOURCE_ROOT; };
+		D5915F971F6F67F70058E546 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingViewController.swift; path = FBook/Scenes/Account/Following/FollowingViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5915F991F6F68110058E546 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowersViewController.swift; path = FBook/Scenes/Account/Followers/FollowersViewController.swift; sourceTree = SOURCE_ROOT; };
+		D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		D5CD98F81F6A14310074BC01 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -270,7 +278,7 @@
 		D5CD99031F6A8A020074BC01 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		D5DB47581F5FCA7A0042B809 /* AccountScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountScreen.storyboard; sourceTree = "<group>"; };
 		D5DB475A1F5FCABC0042B809 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = FBook/Scenes/Account/Profile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF6286C009F1B08335662F4 /* Pods-FBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBookUITests/Pods-FBookUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -627,17 +635,15 @@
 		D543F05C1F6249BA005EB1A3 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				D5915FA21F6F720E0058E546 /* FavoriteCategories */,
+				D5915FA11F6F71AC0058E546 /* Profile */,
+				D5915FA01F6F71680058E546 /* Following */,
+				D5915F9F1F6F70EB0058E546 /* Followers */,
 				D559AF3B1F67898800F0ABF7 /* Cells */,
 				D5DB475A1F5FCABC0042B809 /* AccountViewController.swift */,
 				D5DB47581F5FCA7A0042B809 /* AccountScreen.storyboard */,
-				D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */,
-				D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */,
-				D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */,
 				D56313C71F629B9100BEDFE4 /* AccountPresenter.swift */,
 				D56313C91F629DD600BEDFE4 /* AccountConfigurator.swift */,
-				D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */,
-				D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */,
-				D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -646,8 +652,46 @@
 			isa = PBXGroup;
 			children = (
 				D57D40E01F665449009F0801 /* CategoryTableViewCell.swift */,
+				D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */,
+				D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D5915F9F1F6F70EB0058E546 /* Followers */ = {
+			isa = PBXGroup;
+			children = (
+				D5915F991F6F68110058E546 /* FollowersViewController.swift */,
+			);
+			path = Followers;
+			sourceTree = "<group>";
+		};
+		D5915FA01F6F71680058E546 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				D5915F971F6F67F70058E546 /* FollowingViewController.swift */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
+		D5915FA11F6F71AC0058E546 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */,
+				D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */,
+				D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D5915FA21F6F720E0058E546 /* FavoriteCategories */ = {
+			isa = PBXGroup;
+			children = (
+				D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */,
+				D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */,
+				D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */,
+			);
+			path = FavoriteCategories;
 			sourceTree = "<group>";
 		};
 		D5CD98F51F6A13840074BC01 /* Notification */ = {
@@ -1030,10 +1074,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5915F981F6F67F70058E546 /* FollowingViewController.swift in Sources */,
 				77A76E451F627EB1008601E2 /* AlertHelper.swift in Sources */,
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
 				772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */,
 				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
+				D5915F9C1F6F69180058E546 /* FollowingTableViewCell.swift in Sources */,
 				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
 				77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */,
 				4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */,
@@ -1053,6 +1099,7 @@
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
 				D56313C61F62943900BEDFE4 /* ProfilePresenter.swift in Sources */,
+				D5915F9A1F6F68110058E546 /* FollowersViewController.swift in Sources */,
 				77F5A0241F5FDEC50074A5DB /* ObjectResponse.swift in Sources */,
 				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
 				77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */,
@@ -1118,6 +1165,7 @@
 				4BAB82411F678E5900E52FB1 /* BookDetailPresenter.swift in Sources */,
 				D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,
+				D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */,
 				77A76EEE1F629602008601E2 /* HomeViewController.swift in Sources */,
 				772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,

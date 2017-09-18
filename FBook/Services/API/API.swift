@@ -22,6 +22,7 @@ enum API {
     case getBookInSection(Int?, Int, SectionBook)
     case getListNotifications
     case bookingBook(BookingBookParams)
+    case getFollowInfoOfUser(Int)
 }
 
 extension API: TargetType {
@@ -65,6 +66,8 @@ extension API: TargetType {
             return "/notifications"
         case .bookingBook:
             return "/books/booking"
+        case .getFollowInfoOfUser(let userId):
+            return "users/follow/info/\(userId)"
         }
     }
 
