@@ -15,6 +15,7 @@ final class UsersProvider: BaseProvider {
     typealias UserSignal = SignalProducer<User, ErrorResponse>
     typealias CategorySignal = SignalProducer<[Category], ErrorResponse>
     typealias NotificationSignal = SignalProducer<[NotificationDetail], ErrorResponse>
+    typealias FollowInfoSignal = SignalProducer<[User], ErrorResponse>
 
     static func getUserProfile() -> UserSignal {
         return requestJSON(api: .getUserProfile).flatMap(.merge, { object -> UserSignal in
@@ -54,6 +55,28 @@ final class UsersProvider: BaseProvider {
                 return NotificationSignal(value: notificationModel.data)
             }
             return NotificationSignal(error: .errorJsonFormat)
+        })
+    }
+
+    static func getFollowersOfUser(userId: Int) -> FollowInfoSignal {
+        return requestJSON(api: .getFollowInfoOfUser(userId)).flatMap(.merge, { object -> FollowInfoSignal in
+            if let value = object?.value as? [String: Any],
+                let items = value[kItems] as? [String: Any],
+                let followers = items["followedBy"] as? [User] {
+                return FollowInfoSignal(value: followers)
+            }
+            return FollowInfoSignal(error: .errorJsonFormat)
+        })
+    }
+
+    static func getFollowingOfUser(userId: Int) -> FollowInfoSignal {
+        return requestJSON(api: .getFollowInfoOfUser(userId)).flatMap(.merge, { object -> FollowInfoSignal in
+            if let value = object?.value as? [String: Any],
+                let items = value[kItems] as? [String: Any],
+                let following = items["following"] as? [User] {
+                return FollowInfoSignal(value: following)
+            }
+            return FollowInfoSignal(error: .errorJsonFormat)
         })
     }
 

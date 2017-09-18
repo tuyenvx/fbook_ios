@@ -24,6 +24,8 @@ class AccountViewController: BaseViewController, AccountView {
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var favoriteCategoriesView: UIView!
 
+    @IBOutlet weak var followersView: UIView!
+    @IBOutlet weak var followingView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradientLayer()
@@ -69,5 +71,13 @@ class AccountViewController: BaseViewController, AccountView {
         profileButton.setBackgroundImage(UIImage(named: "background_button_deselect"), for: .normal)
         categoriesButton.setBackgroundImage(UIImage(named: "background_button_select"), for: .normal)
         self.favoriteCategoriesView.isHidden = false
+    }
+
+    func displayFollowersTab() {
+
+    }
+
+    func displayFollowingTab() {
+
     }
 }
