@@ -14,7 +14,7 @@ import ReactiveSwift
 
 enum SearchType: Int {
 
-    case title = 100
+    case title = 0
     case author
     case description
 
@@ -42,7 +42,7 @@ protocol SearchView: class {
 
     var searchBar: UISearchBar! { get }
     var tableView: UITableView! { get }
-    func updateSearchType(_ type: SearchType)
+    func hideNoResultView(_ show: Bool)
 }
 
 protocol SearchBookCellView {
@@ -102,7 +102,6 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
     func change(searchType rawValue: Int) {
         if let type = SearchType(rawValue: rawValue), searchParams.type != type {
             searchParams.type = type
-            view.updateSearchType(type)
             search()
         }
     }
@@ -129,6 +128,11 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
                 self?.listBooks = listBooks
             } else {
                 self?.listBooks.append(listBooks)
+            }
+            if let count = self?.listBooks.data.count, count > 0 {
+                self?.view.hideNoResultView(true)
+            } else {
+                self?.view.hideNoResultView(false)
             }
             self?.view.tableView.reloadData()
         }).start()

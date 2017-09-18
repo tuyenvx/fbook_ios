@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1F-bD-DAF">
                         <rect key="frame" x="0.0" y="142" width="159" height="35"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_total_view" translatesAutoresizingMaskIntoConstraints="NO" id="Kze-gV-2vd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_eye" translatesAutoresizingMaskIntoConstraints="NO" id="Kze-gV-2vd">
                                 <rect key="frame" x="8" y="10" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="h6x-U0-ewY"/>
@@ -32,19 +32,19 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="8z3-T2-Lju">
-                                <rect key="frame" x="83" y="10.5" width="13" height="13"/>
+                                <rect key="frame" x="83" y="11" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8z3-T2-Lju" secondAttribute="height" id="9fG-Ai-h81"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgS-iZ-JCI">
-                                <rect key="frame" x="27" y="10.5" width="8" height="14.5"/>
+                                <rect key="frame" x="27" y="10" width="8" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu9-al-NgJ">
-                                <rect key="frame" x="100" y="10" width="8" height="14.5"/>
+                                <rect key="frame" x="100" y="10" width="8" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVD-GT-5vv">
-                        <rect key="frame" x="3.5" y="106" width="151" height="33.5"/>
+                        <rect key="frame" x="4" y="105" width="151" height="34"/>
                         <string key="text">Labeládasd
 asdasdasd</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -108,7 +108,7 @@ asdasdasd</string>
     </objects>
     <resources>
         <image name="bg_gradient" width="120" height="50"/>
+        <image name="ic_eye" width="16" height="16"/>
         <image name="ic_star" width="25" height="24"/>
-        <image name="ic_total_view" width="25" height="25"/>
     </resources>
 </document>

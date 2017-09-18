@@ -12,11 +12,9 @@ import RxCocoa
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var noResultView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet fileprivate weak var descriptionOptionButton: UIButton!
-    @IBOutlet fileprivate weak var authorOptionButton: UIButton!
-    @IBOutlet fileprivate weak var titleOptionButton: UIButton!
     @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
     fileprivate var configurator = SearchConfiguratorImplementation()
     var presenter: SearchPresenter?
@@ -29,8 +27,8 @@ class SearchViewController: UIViewController {
         presenter?.configureObserver()
     }
 
-    @IBAction func onSearchTypeTapped(_ sender: UIButton) {
-        presenter?.change(searchType: sender.tag)
+    @IBAction func onSearchTypeChange(_ sender: UISegmentedControl) {
+        presenter?.change(searchType: sender.selectedSegmentIndex)
     }
 
     @IBAction func onStoreChanged(_ sender: UISegmentedControl) {
@@ -45,17 +43,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: SearchView {
 
-    func updateSearchType(_ type: SearchType) {
-        titleOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_off"), for: .normal)
-        authorOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_off"), for: .normal)
-        descriptionOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_off"), for: .normal)
-        switch type {
-        case .title:
-            titleOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_on"), for: .normal)
-        case .author:
-            authorOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_on"), for: .normal)
-        case .description:
-            descriptionOptionButton.setImage(#imageLiteral(resourceName: "ic_radio_on"), for: .normal)
-        }
+    func hideNoResultView(_ hide: Bool) {
+        noResultView.isHidden = hide
     }
 }
