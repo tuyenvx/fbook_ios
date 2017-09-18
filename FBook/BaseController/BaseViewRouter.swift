@@ -38,7 +38,10 @@ extension BaseViewRouterImplementation: BaseViewRouter {
     }
 
     func showWorkspace() {
-        // TODO: show work space
+        let workspace = ChooseWorkspaceViewController(nibName: "ChooseWorkspaceViewController", bundle: nil)
+        workspace.configurator = ChooseWorkspaceConfiguratorImplementation(delegate: nil)
+        workspace.modalPresentationStyle = .overFullScreen
+        view?.present(workspace, animated: false, completion: nil)
     }
 
     func back() {
