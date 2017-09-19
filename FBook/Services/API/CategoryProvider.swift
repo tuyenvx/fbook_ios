@@ -15,8 +15,8 @@ final class CategoryProvider: BaseProvider {
     typealias CategorySignal = SignalProducer<[Category], ErrorResponse>
     typealias BookListSignal = SignalProducer<ListItemsCategory, ErrorResponse>
 
-    static func getBooks(inCategory categoryId: Int) -> BookListSignal {
-        return requestJSON(api: .getBooksInCategory(categoryId)).flatMap(.merge, { object -> BookListSignal in
+    static func getBooks(inCategory categoryId: Int, page: Int) -> BookListSignal {
+        return requestJSON(api: .getBooksInCategory(categoryId, page)).flatMap(.merge, { object -> BookListSignal in
             if let value = object?.value as? [String: Any], let json = value[kItem] as? [String: Any],
                     let listBooks = Mapper<ListItemsCategory>().map(JSON: json) {
                 return BookListSignal(value: listBooks)
