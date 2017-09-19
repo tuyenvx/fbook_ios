@@ -24,4 +24,9 @@ class CategoryViewController: BaseViewController {
 
 extension CategoryViewController: CategoryView {
 
+    func displayLoading(isLoading: Bool) {
+        // TODO: custom loading if need
+        application.isNetworkActivityIndicatorVisible = isLoading
+    }
+
 }
