@@ -1,5 +1,5 @@
 //
-//  WaitingRequestPresenter.swift
+//  WaitingBooksPresenter.swift
 //  FBook
 //
 //  Created by Huy Pham on 9/18/17.
@@ -8,21 +8,21 @@
 
 import UIKit
 
-protocol WaitingRequestView: class {
+protocol WaitingBooksView: class {
 
     var tableView: UITableView! { get }
     func hideNoDataView(_ hide: Bool)
 }
 
-protocol WaitingRequestPresenter: UITableViewDataSource, UITableViewDelegate {
+protocol WaitingBooksPresenter: UITableViewDataSource, UITableViewDelegate {
 
-    var view: WaitingRequestView! { get }
+    var view: WaitingBooksView! { get }
     func configureTableView()
     func fetchWaitingBook(_ page: Int)
     func showAllRequest(for selectedCell: UITableViewCell)
 }
 
-extension WaitingRequestPresenter {
+extension WaitingBooksPresenter {
 
     func configureTableView() {
         view.tableView.dataSource = self
@@ -30,15 +30,15 @@ extension WaitingRequestPresenter {
     }
 }
 
-class WaitingRequestPresenterImplementation: NSObject {
+class WaitingBooksPresenterImplementation: NSObject {
 
-    weak var view: WaitingRequestView!
-    fileprivate var router: WaitingRequestViewRouter
+    weak var view: WaitingBooksView!
+    fileprivate var router: WaitingBooksViewRouter
     fileprivate var listBooks = ListItems<Book>()
     fileprivate var refreshControl = UIRefreshControl()
     fileprivate var isLoading = false
 
-    init(view: WaitingRequestView, router: WaitingRequestViewRouter) {
+    init(view: WaitingBooksView, router: WaitingBooksViewRouter) {
         self.view = view
         self.router = router
         super.init()
@@ -47,7 +47,7 @@ class WaitingRequestPresenterImplementation: NSObject {
     }
 }
 
-extension WaitingRequestPresenterImplementation: WaitingRequestPresenter {
+extension WaitingBooksPresenterImplementation: WaitingBooksPresenter {
 
     func fetchWaitingBook(_ page: Int = 1) {
         guard !isLoading else {
@@ -82,15 +82,15 @@ extension WaitingRequestPresenterImplementation: WaitingRequestPresenter {
     }
 }
 
-extension WaitingRequestPresenterImplementation: UITableViewDataSource {
+extension WaitingBooksPresenterImplementation: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listBooks.data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "BookWaitingCell", for: indexPath)
-                as? BookWaitingCell, let book = listBooks.data[safe: indexPath.row] {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingBookCell", for: indexPath)
+                as? WaitingBookCell, let book = listBooks.data[safe: indexPath.row] {
             cell.presenter = self
             cell.configure(book)
             return cell
@@ -99,7 +99,7 @@ extension WaitingRequestPresenterImplementation: UITableViewDataSource {
     }
 }
 
-extension WaitingRequestPresenterImplementation: UITableViewDelegate {
+extension WaitingBooksPresenterImplementation: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == listBooks.data.count - 1, let nextPage = listBooks.nextPage {

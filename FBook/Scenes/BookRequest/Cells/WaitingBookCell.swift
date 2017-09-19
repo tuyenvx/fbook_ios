@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 
-class BookWaitingCell: UITableViewCell {
+class WaitingBookCell: UITableViewCell {
 
     @IBOutlet fileprivate weak var bookPhoto: UIImageView!
     @IBOutlet fileprivate weak var ownersLabel: UILabel!
@@ -17,7 +17,7 @@ class BookWaitingCell: UITableViewCell {
     @IBOutlet fileprivate weak var authorLabel: UILabel!
     @IBOutlet fileprivate weak var descriptionLabel: UILabel!
     @IBOutlet fileprivate weak var ratingView: CosmosView!
-    weak var presenter: WaitingRequestPresenter?
+    weak var presenter: WaitingBooksPresenter?
 
     @IBAction fileprivate func onViewAllRequestTapped(_ sender: UIButton) {
         presenter?.showAllRequest(for: self)

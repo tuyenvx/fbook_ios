@@ -1,5 +1,5 @@
 //
-//  WaitingRequestViewController.swift
+//  WaitingBooksViewController.swift
 //  FBook
 //
 //  Created by Huy Pham on 9/18/17.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class WaitingRequestViewController: UIViewController {
+class WaitingBooksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet fileprivate weak var noDataView: NoDataView!
-    fileprivate var configurator = WaitingRequestConfiguratorImplementation()
-    var presenter: WaitingRequestPresenter?
+    fileprivate var configurator = WaitingBooksConfiguratorImplementation()
+    var presenter: WaitingBooksPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class WaitingRequestViewController: UIViewController {
 
 }
 
-extension WaitingRequestViewController: WaitingRequestView {
+extension WaitingBooksViewController: WaitingBooksView {
 
     func hideNoDataView(_ hide: Bool) {
         noDataView.isHidden = hide

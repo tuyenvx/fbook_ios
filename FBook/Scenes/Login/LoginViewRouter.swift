@@ -38,7 +38,7 @@ extension LoginViewRouterImplementation: LoginViewRouter {
     }
 
     func showTabBarController() {
-        loginViewController?.dismiss(animated: false, completion: { 
+        loginViewController?.dismiss(animated: false, completion: {
             application.keyWindow?.rootViewController = UIStoryboard.home.instantiateInitialViewController()
         })
     }

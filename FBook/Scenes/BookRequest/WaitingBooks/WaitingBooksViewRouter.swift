@@ -1,5 +1,5 @@
 //
-//  WaitingRequestViewRouter.swift
+//  WaitingBooksViewRouter.swift
 //  FBook
 //
 //  Created by Huy Pham on 9/18/17.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-protocol WaitingRequestViewRouter {
+protocol WaitingBooksViewRouter {
 
     func showAllRequest(for book: Book)
 }
 
-class WaitingRequestViewRouterImplementation {
+class WaitingBooksViewRouterImplementation {
 
-    fileprivate var viewController: WaitingRequestViewController?
+    fileprivate var viewController: WaitingBooksViewController?
 
-    init(viewController: WaitingRequestViewController) {
+    init(viewController: WaitingBooksViewController) {
         self.viewController = viewController
     }
 }
 
-extension WaitingRequestViewRouterImplementation: WaitingRequestViewRouter {
+extension WaitingBooksViewRouterImplementation: WaitingBooksViewRouter {
 
     func showAllRequest(for book: Book) {
         // TODO: Go to all request screen
