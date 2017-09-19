@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeViewRouter {
     func showSearchScreen()
+    func showLoginScreen()
     func showDetailBook(_ book: Book)
     func showSeeMoreSectionBook(_ sectionBook: SectionBook)
 }
@@ -29,6 +30,12 @@ extension HomeViewRouterImplementation: HomeViewRouter {
     func showSearchScreen() {
         if let searchViewController = UIStoryboard.search.instantiateInitialViewController() {
             viewController?.navigationController?.pushViewController(searchViewController, animated: true)
+        }
+    }
+
+    func showLoginScreen() {
+        if let loginViewController = UIStoryboard.login.instantiateInitialViewController() {
+            viewController?.present(loginViewController, animated: true, completion: nil)
         }
     }
 

@@ -15,6 +15,7 @@ protocol HomeView: class {
 
 protocol HomePresenter {
     func searchButtonTapped()
+    func loginButtonTapped()
     func getListSectionBook()
     func configure(tableView: UITableView)
 }
@@ -24,10 +25,15 @@ class HomePresenterImplementation: NSObject {
     fileprivate weak var view: HomeView?
     fileprivate var router: HomeViewRouter?
     fileprivate var sectionBooks: [SectionBook] = []
+    fileprivate let refreshControl = UIRefreshControl()
+    fileprivate var isLoading = false
 
     init(view: HomeView?, router: HomeViewRouter?) {
         self.view = view
         self.router = router
+        super.init()
+        AlertHelper.showLoading()
+        getListSectionBook()
     }
 
     fileprivate func handleLoadBookSuccess(_ sectionBooks: [SectionBook]) {
@@ -59,20 +65,31 @@ extension HomePresenterImplementation: HomePresenter {
         router?.showSearchScreen()
     }
 
+    func loginButtonTapped() {
+        router?.showLoginScreen()
+    }
+
     func configure(tableView: UITableView) {
         tableView.registerNibCell(type: HomeTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundView = refreshControl
+        refreshControl.addTarget(self, action: #selector(getListSectionBook), for: .valueChanged)
     }
 
     func getListSectionBook() {
-        AlertHelper.showLoading()
+        if isLoading {
+            return
+        }
+        isLoading = true
         weak var weakSelf = self
         HomeProvider.getListSectionBook().on(failed: { error in
-            AlertHelper.hideLoading()
             weakSelf?.handleLoadBookError(error)
         }, completed: {
+        }, disposed: {
             AlertHelper.hideLoading()
+            weakSelf?.refreshControl.endRefreshing()
+            weakSelf?.isLoading = false
         }, value: { sectionBooks in
             weakSelf?.handleLoadBookSuccess(sectionBooks)
         }).start()
