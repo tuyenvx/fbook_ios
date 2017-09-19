@@ -18,10 +18,10 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSearchButton()
+        addLoginButton()
         configurator = HomeConfiguratorImplementation()
         configurator?.configure(viewController: self)
         presenter?.configure(tableView: tableView)
-        presenter?.getListSectionBook()
     }
 
     func addSearchButton() {
@@ -30,8 +30,23 @@ class HomeViewController: BaseViewController {
         navigationItem.leftBarButtonItem = searchButton
     }
 
+    func addLoginButton() {
+        if User.currentUser == nil {
+            let loginButton = UIBarButtonItem(title: "Login", style: .plain, target: self,
+                action: #selector(loginButtonTapped(_:)))
+            loginButton.tintColor = .white
+            var rightButtons = navigationItem.rightBarButtonItems ?? []
+            rightButtons.append(loginButton)
+            navigationItem.rightBarButtonItems = rightButtons
+        }
+    }
+
     func searchButtonTapped(_ sender: Any) {
         presenter?.searchButtonTapped()
+    }
+
+    func loginButtonTapped(_ sender: Any) {
+        presenter?.loginButtonTapped()
     }
 }
 

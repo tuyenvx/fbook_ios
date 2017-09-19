@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol LoginViewRouter {
     func dismiss()
@@ -37,7 +38,9 @@ extension LoginViewRouterImplementation: LoginViewRouter {
     }
 
     func showTabBarController() {
-        // TODO: show tabbar controller
+        loginViewController?.dismiss(animated: false, completion: { 
+            application.keyWindow?.rootViewController = UIStoryboard.home.instantiateInitialViewController()
+        })
     }
 
 }

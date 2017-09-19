@@ -36,7 +36,7 @@ extension BookCollectionViewCell: BookCellView {
         nameLabel.text = book.title
         starLabel.text = String(format: "%.01f", book.averageStar)
         totalViewLabel.text = book.totalView.description
-        thumbnailImageView.setImage(urlString: book.thumbnail)
+        thumbnailImageView.setImage(urlString: book.thumbnail, placeHolder: #imageLiteral(resourceName: "img_placeholder_book"))
     }
 
 }
