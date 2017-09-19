@@ -10,6 +10,9 @@ import UIKit
 
 class MenuSettingViewController: UIViewController {
 
+    @IBOutlet fileprivate weak var menuView: UIView!
+    @IBOutlet fileprivate weak var backgroundButton: UIButton!
+
     var presenter: MenuSettingPresenter?
     var configurator: MenuSettingConfigurator?
 
@@ -18,6 +21,28 @@ class MenuSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator?.configure(self)
+        hideView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animationShowView()
+    }
+
+    fileprivate func hideView() {
+        backgroundButton.alpha = 0.0
+        let viewSize = menuView.frame.size
+        menuView.alpha = 0.5
+        let translateTransform = CGAffineTransform(translationX: viewSize.width / 2, y: -viewSize.height / 2)
+        menuView.transform = translateTransform.scaledBy(x: kZeroFloat, y: kZeroFloat)
+    }
+
+    fileprivate func animationShowView() {
+        UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            self.menuView.transform = .identity
+            self.backgroundButton.alpha = 1
+            self.menuView.alpha = 1
+        }, completion: nil)
     }
 
     @IBAction fileprivate func feedbackButtonTapped(_ sender: Any) {

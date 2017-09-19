@@ -18,6 +18,7 @@ class BookDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButton()
         configurator?.configure(viewController: self)
         presenter?.configure(tableView: detailTableView)
         presenter?.fetchBookDetail()
