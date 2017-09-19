@@ -23,7 +23,7 @@ enum API {
     case getListNotifications
     case bookingBook(BookingBookParams)
     case getFollowInfoOfUser(Int)
-    case getListWaitingApprovedBook
+    case getListWaitingApprovedBook(Int)
     case getBookApproveDetail(Int)
     case approveBook(Int, ApproveBookParams)
     case getCategories
@@ -73,8 +73,8 @@ extension API: TargetType {
             return "/books/booking"
         case .getFollowInfoOfUser(let userId):
             return "/users/follow/info/\(userId)"
-        case .getListWaitingApprovedBook:
-            return "/user/books/waiting_approve"
+        case .getListWaitingApprovedBook(let page):
+            return "/user/books/waiting_approve?page=\(page)"
         case .getBookApproveDetail(let bookId):
             return "/user/\(bookId)/approve/detail"
         case .approveBook(let bookId, _):

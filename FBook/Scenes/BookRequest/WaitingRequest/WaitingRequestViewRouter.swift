@@ -9,6 +9,8 @@
 import Foundation
 
 protocol WaitingRequestViewRouter {
+
+    func showAllRequest(for book: Book)
 }
 
 class WaitingRequestViewRouterImplementation {
@@ -21,4 +23,8 @@ class WaitingRequestViewRouterImplementation {
 }
 
 extension WaitingRequestViewRouterImplementation: WaitingRequestViewRouter {
+
+    func showAllRequest(for book: Book) {
+        // TODO: Go to all request screen
+    }
 }

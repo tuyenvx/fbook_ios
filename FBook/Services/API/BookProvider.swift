@@ -31,8 +31,8 @@ final class BookProvider: BaseProvider {
         return requestJSON(api: .bookingBook(params)).flatMap(.merge, mapBoolean)
     }
 
-    static func getListWaitingApprovedBook() -> BookListSignal {
-        return requestJSON(api: .getListWaitingApprovedBook).flatMap(.merge, mapBookList)
+    static func getListWaitingApprovedBook(page: Int) -> BookListSignal {
+        return requestJSON(api: .getListWaitingApprovedBook(page)).flatMap(.merge, mapBookList)
     }
 
     static func getBookApprovedDetail(bookId: Int) -> BookDetailSignal {
