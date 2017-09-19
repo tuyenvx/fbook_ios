@@ -13,15 +13,20 @@ protocol AccountView: class {
     func displayUserInfo(user: User)
     func displayProfileTab()
     func displayCategoriesTab()
+    func displayFollowingTab()
+    func displayFollowersTab()
 }
 
 protocol AccountPresenter {
     func updateUserInfo()
     func selectProfileButton()
     func selectCategoriesButton()
+    func selectFollowingButton()
+    func selectFollowersButton()
 }
 
 class AccountPresenterImplementation: AccountPresenter {
+
     fileprivate weak var view: AccountView?
 
     init(view: AccountView) {
@@ -39,5 +44,13 @@ class AccountPresenterImplementation: AccountPresenter {
 
     func selectCategoriesButton() {
         view?.displayCategoriesTab()
+    }
+
+    func selectFollowingButton() {
+        view?.displayFollowingTab()
+    }
+
+    func selectFollowersButton() {
+        view?.displayFollowersTab()
     }
 }

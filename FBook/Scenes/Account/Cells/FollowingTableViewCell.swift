@@ -21,4 +21,9 @@ class FollowingTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    func updateCell(user: User) {
+        userNameLabel.text = user.name
+        avatarUserImage.setImage(urlString: user.avatar, placeHolder: kDefaultAvatar)
+    }
+
 }

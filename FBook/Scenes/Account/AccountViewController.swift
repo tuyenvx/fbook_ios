@@ -18,14 +18,18 @@ class AccountViewController: BaseViewController, AccountView {
     var configurator = AccountConfiguratorImplementation()
 
     @IBOutlet weak var userAvatarImage: UIImageView!
-    @IBOutlet weak var headerAccountView: UIView!
     @IBOutlet weak var avatarImage: UIImageView!
-
+    @IBOutlet weak var headerAccountView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var favoriteCategoriesView: UIView!
-
     @IBOutlet weak var followersView: UIView!
     @IBOutlet weak var followingView: UIView!
+
+    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var categoriesButton: UIButton!
+    @IBOutlet weak var followersButton: UIButton!
+    @IBOutlet weak var followingButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradientLayer()
@@ -48,9 +52,6 @@ class AccountViewController: BaseViewController, AccountView {
         userAvatarImage.layer.cornerRadius = userAvatarImage.frame.height/2
     }
 
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var categoriesButton: UIButton!
-
     @IBAction func onButtonProfileClicked(_ sender: Any) {
         presenter?.selectProfileButton()
     }
@@ -59,25 +60,37 @@ class AccountViewController: BaseViewController, AccountView {
         presenter?.selectCategoriesButton()
     }
 
+    @IBAction func onButtonFollowingClicked(_ sender: Any) {
+        presenter?.selectFollowingButton()
+    }
+
+    @IBAction func onButtonFollowersClicked(_ sender: Any) {
+        presenter?.selectFollowersButton()
+    }
+
     func displayProfileTab() {
-        profileView.isHidden = false
-        profileButton.setBackgroundImage(UIImage(named: "background_button_select"), for: .normal)
-        categoriesButton.setBackgroundImage(UIImage(named: "background_button_deselect"), for: .normal)
-        self.favoriteCategoriesView.isHidden = true
+        updateTabView(selectButton: profileButton, selectView: profileView)
     }
 
     func displayCategoriesTab() {
-        profileView.isHidden = true
-        profileButton.setBackgroundImage(UIImage(named: "background_button_deselect"), for: .normal)
-        categoriesButton.setBackgroundImage(UIImage(named: "background_button_select"), for: .normal)
-        self.favoriteCategoriesView.isHidden = false
+        updateTabView(selectButton: categoriesButton,
+                      selectView: self.favoriteCategoriesView)
     }
 
     func displayFollowersTab() {
-
+        updateTabView(selectButton: followersButton, selectView: followersView)
     }
 
     func displayFollowingTab() {
+        updateTabView(selectButton: followingButton, selectView: followingView)
+    }
 
+    fileprivate func updateTabView(selectButton: UIButton?, selectView: UIView?) {
+        [profileButton, categoriesButton, followersButton, followingButton].forEach { button in
+            button?.isSelected = button == selectButton
+        }
+        [profileView, self.favoriteCategoriesView, followingView, followersView].forEach { view in
+            view?.isHidden = view != selectView
+        }
     }
 }

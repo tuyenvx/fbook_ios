@@ -72,7 +72,7 @@ extension API: TargetType {
         case .bookingBook:
             return "/books/booking"
         case .getFollowInfoOfUser(let userId):
-            return "users/follow/info/\(userId)"
+            return "/users/follow/info/\(userId)"
         case .getListWaitingApprovedBook:
             return "/user/books/waiting_approve"
         case .getBookApproveDetail(let bookId):

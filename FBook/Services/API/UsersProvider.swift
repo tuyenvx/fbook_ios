@@ -62,8 +62,8 @@ final class UsersProvider: BaseProvider {
         return requestJSON(api: .getFollowInfoOfUser(userId)).flatMap(.merge, { object -> FollowInfoSignal in
             if let value = object?.value as? [String: Any],
                 let items = value[kItems] as? [String: Any],
-                let followers = items["followedBy"] as? [User] {
-                return FollowInfoSignal(value: followers)
+                let followers = FollowInfo(JSON: items) {
+                return FollowInfoSignal(value: followers.followers)
             }
             return FollowInfoSignal(error: .errorJsonFormat)
         })
@@ -73,8 +73,8 @@ final class UsersProvider: BaseProvider {
         return requestJSON(api: .getFollowInfoOfUser(userId)).flatMap(.merge, { object -> FollowInfoSignal in
             if let value = object?.value as? [String: Any],
                 let items = value[kItems] as? [String: Any],
-                let following = items["following"] as? [User] {
-                return FollowInfoSignal(value: following)
+                let followingUser = FollowInfo(JSON: items) {
+                return FollowInfoSignal(value: followingUser.following)
             }
             return FollowInfoSignal(error: .errorJsonFormat)
         })
