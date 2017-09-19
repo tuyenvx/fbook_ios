@@ -10,14 +10,23 @@ import UIKit
 
 class WaitingRequestViewController: UIViewController {
 
-    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var noDataView: NoDataView!
+    fileprivate var configurator = WaitingRequestConfiguratorImplementation()
     var presenter: WaitingRequestPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurator.configure(viewController: self)
+        presenter?.configureTableView()
+        presenter?.fetchWaitingBook(1)
     }
 
 }
 
 extension WaitingRequestViewController: WaitingRequestView {
+
+    func hideNoDataView(_ hide: Bool) {
+        noDataView.isHidden = hide
+    }
 }
