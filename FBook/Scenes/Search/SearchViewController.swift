@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
 
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButton()
         configurator.configure(viewController: self)
         presenter?.configureTableView()
         presenter?.configureSearchBar()

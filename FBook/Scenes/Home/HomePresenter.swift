@@ -14,6 +14,7 @@ protocol HomeView: class {
 }
 
 protocol HomePresenter {
+    func searchButtonTapped()
     func getListSectionBook()
     func configure(tableView: UITableView)
 }
@@ -53,6 +54,10 @@ class HomePresenterImplementation: NSObject {
 }
 
 extension HomePresenterImplementation: HomePresenter {
+
+    func searchButtonTapped() {
+        router?.showSearchScreen()
+    }
 
     func configure(tableView: UITableView) {
         tableView.registerNibCell(type: HomeTableViewCell.self)

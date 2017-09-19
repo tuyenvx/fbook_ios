@@ -17,12 +17,22 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSearchButton()
         configurator = HomeConfiguratorImplementation()
         configurator?.configure(viewController: self)
         presenter?.configure(tableView: tableView)
         presenter?.getListSectionBook()
     }
 
+    func addSearchButton() {
+        let searchButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self,
+            action: #selector(searchButtonTapped(_:)))
+        navigationItem.leftBarButtonItem = searchButton
+    }
+
+    func searchButtonTapped(_ sender: Any) {
+        presenter?.searchButtonTapped()
+    }
 }
 
 extension HomeViewController: HomeView {

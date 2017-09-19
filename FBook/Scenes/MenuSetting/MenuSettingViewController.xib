@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuSettingViewController" customModule="FBook" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundButton" destination="pOf-wr-Cg8" id="cpS-yN-dy4"/>
+                <outlet property="menuView" destination="uZq-5Z-wU4" id="kTg-Xp-YLD"/>
                 <outlet property="toplayoutConstraint" destination="Zpa-gl-Y2U" id="CvJ-gw-pCU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol HomeViewRouter {
+    func showSearchScreen()
     func showDetailBook(_ book: Book)
     func showSeeMoreSectionBook(_ sectionBook: SectionBook)
 }
@@ -24,6 +25,12 @@ struct HomeViewRouterImplementation {
 }
 
 extension HomeViewRouterImplementation: HomeViewRouter {
+
+    func showSearchScreen() {
+        if let searchViewController = UIStoryboard.search.instantiateInitialViewController() {
+            viewController?.navigationController?.pushViewController(searchViewController, animated: true)
+        }
+    }
 
     func showDetailBook(_ book: Book) {
         guard let detailViewController = UIStoryboard.bookDetail.instantiateInitialViewController()
