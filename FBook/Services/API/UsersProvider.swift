@@ -80,4 +80,8 @@ final class UsersProvider: BaseProvider {
         })
     }
 
+    static func followUser(userId: Int) -> BooleanSignal {
+        return requestJSON(api: .followUser(userId)).flatMap(.merge, mapBoolean)
+    }
+
 }
