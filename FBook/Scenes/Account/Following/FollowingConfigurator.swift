@@ -9,12 +9,22 @@
 import Foundation
 
 protocol FollowingConfigurator {
-    func configure(followingViewCotroller: FollowingViewController)
+    func configure()
 }
 
 class FollowingConfiguratorImplementation: FollowingConfigurator {
-    func configure(followingViewCotroller: FollowingViewController) {
-        let presenter = FollowingPresenterImplementation(view: followingViewCotroller)
-        followingViewCotroller.presenter = presenter
+
+    fileprivate let followingViewController: FollowingViewController
+    fileprivate var user: User
+
+    init(user: User, viewController: FollowingViewController) {
+        self.user = user
+        self.followingViewController = viewController
+    }
+
+    func configure() {
+        let router = FollowingRouterImplementation(view: followingViewController)
+        let presenter = FollowingPresenterImplementation(view: followingViewController, router: router, user: user)
+        followingViewController.presenter = presenter
     }
 }

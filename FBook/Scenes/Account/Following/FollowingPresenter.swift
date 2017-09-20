@@ -17,28 +17,32 @@ protocol FollowingView: class {
 
 protocol FollowingPresenter {
     func getListFollowingUser(tableView: UITableView)
+    func showFollowingUserInfo(tableView: UITableView)
+    var router: FollowingRouter { get }
 }
 
-class FollowingPresenterImplementation: NSObject {
+class FollowingPresenterImplementation: NSObject, FollowingPresenter {
     fileprivate weak var view: FollowingView?
+    internal var router: FollowingRouter
     fileprivate var listFollowing = [User]()
+    fileprivate weak var accountViewController: AccountViewController?
+    fileprivate var user: User
     let disposeBag = DisposeBag()
 
-    init(view: FollowingView) {
+    init(view: FollowingView, router: FollowingRouter, user: User) {
         self.view = view
+        self.router = router
+        self.user = user
     }
 
     fileprivate func handleLoadFollowingUserError(_ error: Error) {
         view?.showLoadFollowingError(message: error.message)
     }
-}
-
-extension FollowingPresenterImplementation: FollowingPresenter {
 
     func getListFollowingUser(tableView: UITableView) {
         weak var weakSelf = self
         AlertHelper.showLoading()
-        UsersProvider.getFollowingOfUser(userId: 1).on(failed: { error in
+        UsersProvider.getFollowingOfUser(userId: user.id).on(failed: { error in
             AlertHelper.hideLoading()
             weakSelf?.handleLoadFollowingUserError(error)
         }, completed: {
@@ -46,10 +50,18 @@ extension FollowingPresenterImplementation: FollowingPresenter {
         }, value: { listUsers in
             Observable.just(listUsers)
                 .bind(to: tableView.rx.items(cellIdentifier: "followingCell",
-                                         cellType: FollowingTableViewCell.self)) { (index, user, cell) in
-                                            cell.updateCell(user: user)
+                                             cellType: FollowingTableViewCell.self)) { (index, user, cell) in
+                                                cell.updateCell(user: user)
                 }
                 .disposed(by: self.disposeBag)
         }).start()
+    }
+
+    func showFollowingUserInfo(tableView: UITableView) {
+        tableView.rx.modelSelected(User.self)
+            .subscribe(onNext: { user in
+                self.router.showFollowingUserInfo(user)
+            })
+            .disposed(by: self.disposeBag)
     }
 }

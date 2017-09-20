@@ -144,6 +144,7 @@
 		77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0341F5FE0B90074A5DB /* BaseTabBarController.swift */; };
 		77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A03C1F5FF8650074A5DB /* ApiProvider.swift */; };
 		77F5A0411F60071B0074A5DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0401F60071B0074A5DB /* API.swift */; };
+		D5243D561F724EC9000DBBDE /* FollowingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5243D551F724EC9000DBBDE /* FollowingRouter.swift */; };
 		D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54028AF1F6B73D60065F937 /* Date+Extensions.swift */; };
 		D559AF3A1F67808400F0ABF7 /* FavoriteCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */; };
 		D56313C41F62938F00BEDFE4 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */; };
@@ -162,6 +163,7 @@
 		D5915FA81F6F85290058E546 /* FollowersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */; };
 		D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */; };
 		D5915FAC1F6FAD7D0058E546 /* FollowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */; };
+		D5A138A61F74A325009F343D /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A138A51F74A325009F343D /* AccountRouter.swift */; };
 		D5CD98F71F6A14170074BC01 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */; };
 		D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CD98F81F6A14310074BC01 /* Notification.storyboard */; };
 		D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */; };
@@ -340,6 +342,7 @@
 		B25D5DC6B1ED2B28EAB4D7AC /* Pods-FBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B416ACA6FFCD9220F9B75A51 /* Pods-FBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.debug.xcconfig"; sourceTree = "<group>"; };
 		CDA0389DECFAD21548DD9198 /* Pods-FBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5243D551F724EC9000DBBDE /* FollowingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingRouter.swift; sourceTree = "<group>"; };
 		D54028AF1F6B73D60065F937 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesViewController.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
 		D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileConfigurator.swift; path = FBook/Scenes/Account/Profile/ProfileConfigurator.swift; sourceTree = SOURCE_ROOT; };
@@ -358,6 +361,7 @@
 		D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersConfigurator.swift; sourceTree = "<group>"; };
 		D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersPresenter.swift; sourceTree = "<group>"; };
 		D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowInfo.swift; sourceTree = "<group>"; };
+		D5A138A51F74A325009F343D /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		D5CD98F81F6A14310074BC01 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -844,6 +848,7 @@
 				D5DB47581F5FCA7A0042B809 /* AccountScreen.storyboard */,
 				D56313C71F629B9100BEDFE4 /* AccountPresenter.swift */,
 				D56313C91F629DD600BEDFE4 /* AccountConfigurator.swift */,
+				D5A138A51F74A325009F343D /* AccountRouter.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -874,6 +879,7 @@
 				D5915F971F6F67F70058E546 /* FollowingViewController.swift */,
 				D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */,
 				D5915FA51F6F85140058E546 /* FollowingPresenter.swift */,
+				D5243D551F724EC9000DBBDE /* FollowingRouter.swift */,
 			);
 			path = Following;
 			sourceTree = "<group>";
@@ -1306,6 +1312,7 @@
 				116C416F1F7350A80040196A /* BookRequest.swift in Sources */,
 				7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */,
 				4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */,
+				D5A138A61F74A325009F343D /* AccountRouter.swift in Sources */,
 				D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */,
 				772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */,
 				D5CD99041F6A8A020074BC01 /* Notification.swift in Sources */,
@@ -1324,6 +1331,7 @@
 				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
 				77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */,
 				4BAB82431F678E8D00E52FB1 /* BookDetailViewRouter.swift in Sources */,
+				D5243D561F724EC9000DBBDE /* FollowingRouter.swift in Sources */,
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */,
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: BaseViewController, ProfileView {
 
     var presenter: ProfilePresenter?
-    var configurator = ProfileConfiguratorImplementation()
+    var configurator: ProfileConfiguratorImplementation?
 
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var emailLabel: UILabel!
@@ -21,7 +21,10 @@ class ProfileViewController: BaseViewController, ProfileView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(profileViewController: self)
+        if configurator == nil, let user = User.currentUser {
+            configurator = ProfileConfiguratorImplementation(user: user, viewController: self)
+        }
+        configurator?.configure()
         presenter?.updateUserProfileView()
     }
 
