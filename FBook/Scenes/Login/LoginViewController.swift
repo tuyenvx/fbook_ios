@@ -28,6 +28,16 @@ class LoginViewController: BaseViewController {
         addObserverUpdateUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        application.statusBarStyle = .default
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        application.statusBarStyle = .lightContent
+    }
+
     fileprivate func updateUI() {
         for textField in [emailTextField, passwordTextField] {
             textField?.layer.borderColor = UIColor.red.cgColor
