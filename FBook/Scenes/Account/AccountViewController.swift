@@ -29,11 +29,13 @@ class AccountViewController: BaseViewController, AccountView {
     @IBOutlet weak var categoriesButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
     @IBOutlet weak var followingButton: UIButton!
+    @IBOutlet weak var followButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createGradientLayer()
         userAvatarImage.layer.zPosition = 1
+        followButton.layer.zPosition = 1
         configurator.configure(accountViewController: self)
         presenter?.updateUserInfo()
     }
@@ -85,6 +87,23 @@ class AccountViewController: BaseViewController, AccountView {
         updateTabView(selectButton: followingButton, selectView: followingView)
     }
 
+    @IBAction func onButtonFollowClicked(_ sender: Any) {
+        presenter?.updateFollowButton(buttonState: !followButton.isSelected)
+    }
+
+    func followButtonEnable() {
+        followButton.isSelected = false
+        followButton.borderColor = .clear
+        followButton.setBackgroundImage(UIImage(named: "background_button_follow"), for: .normal)
+    }
+
+    func unFollowButtonEnable() {
+        followButton.isSelected = true
+        followButton.setBackgroundImage(UIImage(named: ""), for: .normal)
+        followButton.borderWidth = 1
+        followButton.borderColor = .white
+    }
+
     fileprivate func updateTabView(selectButton: UIButton?, selectView: UIView?) {
         [profileButton, categoriesButton, followersButton, followingButton].forEach { button in
             button?.isSelected = button == selectButton
@@ -92,5 +111,13 @@ class AccountViewController: BaseViewController, AccountView {
         [profileView, self.favoriteCategoriesView, followingView, followersView].forEach { view in
             view?.isHidden = view != selectView
         }
+    }
+
+    func showFollowError(message: String) {
+        Utility.shared.showMessage(message: message, completion: nil)
+    }
+
+    func showFollowSuccess(message: Bool) {
+//        TODO: show follow success
     }
 }

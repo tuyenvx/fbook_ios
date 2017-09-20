@@ -31,10 +31,37 @@
                                             <constraint firstAttribute="width" constant="120" id="yJB-fN-O9o"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBE-ab-CiU">
+                                        <rect key="frame" x="157.66666666666669" y="225" width="100.00000000000006" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="d3I-Uq-iEM"/>
+                                            <constraint firstAttribute="width" constant="100" id="y3x-8i-Hcc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Follow" backgroundImage="background_button_follow">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled" backgroundImage="background_button_follow"/>
+                                        <state key="selected" title="Unfollow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onButtonFollowClicked:" destination="4Qz-E0-hQ7" eventType="touchUpInside" id="8Jm-3Z-ZK4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="YBE-ab-CiU" firstAttribute="top" secondItem="gMl-RD-CzX" secondAttribute="bottom" constant="15" id="BOY-kg-JlH"/>
                                     <constraint firstItem="gMl-RD-CzX" firstAttribute="centerY" secondItem="VbY-vZ-W6k" secondAttribute="centerY" id="Nkg-kh-evL"/>
+                                    <constraint firstItem="YBE-ab-CiU" firstAttribute="centerX" secondItem="VbY-vZ-W6k" secondAttribute="centerX" id="UM2-IV-qcn"/>
                                     <constraint firstItem="gMl-RD-CzX" firstAttribute="centerX" secondItem="VbY-vZ-W6k" secondAttribute="centerX" id="UfT-Nv-JN2"/>
                                     <constraint firstAttribute="height" constant="300" id="zOG-hB-e1g"/>
                                 </constraints>
@@ -145,9 +172,9 @@
                     <connections>
                         <outlet property="categoriesButton" destination="dJp-ad-MW7" id="PYR-4U-Kgj"/>
                         <outlet property="favoriteCategoriesView" destination="i9v-X3-onO" id="mdf-X4-6Zu"/>
+                        <outlet property="followButton" destination="YBE-ab-CiU" id="2y5-lK-z1L"/>
                         <outlet property="followersButton" destination="kgF-Bc-Msa" id="LaS-WZ-O9X"/>
                         <outlet property="followersView" destination="RSy-Y9-Ijt" id="yKo-Nr-Inb"/>
-                        <outlet property="followingButton" destination="3q3-CB-bcH" id="Rzc-kl-yEE"/>
                         <outlet property="followingView" destination="ySF-sM-dGM" id="zP5-58-fhj"/>
                         <outlet property="headerAccountView" destination="VbY-vZ-W6k" id="njM-5g-bhC"/>
                         <outlet property="profileButton" destination="od7-Kr-KY1" id="Jxg-1U-GdE"/>
@@ -597,6 +624,7 @@
     </scenes>
     <resources>
         <image name="background_button_deselect" width="23" height="30"/>
+        <image name="background_button_follow" width="70" height="15"/>
         <image name="background_button_select" width="23" height="31"/>
         <image name="icon_code" width="24" height="24"/>
         <image name="icon_email" width="24" height="18"/>
