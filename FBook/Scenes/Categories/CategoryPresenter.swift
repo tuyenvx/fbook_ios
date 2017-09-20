@@ -44,7 +44,7 @@ class CategoryPresenterImplementation: NSObject {
         refreshControl.addTarget(self, action: #selector(refreshing), for: .valueChanged)
     }
 
-    func refreshing() {
+    @objc func refreshing() {
         getListBook()
     }
 

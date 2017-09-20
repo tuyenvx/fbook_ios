@@ -41,11 +41,11 @@ class HomeViewController: BaseViewController {
         }
     }
 
-    func searchButtonTapped(_ sender: Any) {
+    @objc func searchButtonTapped(_ sender: Any) {
         presenter?.searchButtonTapped()
     }
 
-    func loginButtonTapped(_ sender: Any) {
+    @objc func loginButtonTapped(_ sender: Any) {
         presenter?.loginButtonTapped()
     }
 }

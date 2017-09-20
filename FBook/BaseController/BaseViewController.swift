@@ -37,7 +37,7 @@ class BaseViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
     }
 
-    func menuButtonTapped(_ sender: Any) {
+    @objc func menuButtonTapped(_ sender: Any) {
         var senderFrame = CGRect.zero
         if let senderView = sender as? UIView, let window = application.keyWindow {
             senderFrame = senderView.convert(senderView.frame, to: window)
@@ -45,7 +45,7 @@ class BaseViewController: UIViewController {
         basePresenter?.menuButtonTapped(senderFrame: senderFrame)
     }
 
-    func backButtonTapped(_ sender: UIBarButtonItem) {
+    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
         basePresenter?.backButtonTapped()
     }
 
