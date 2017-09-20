@@ -20,23 +20,21 @@ class BaseViewController: UIViewController {
     }
 
     func setDefaultRightButtons() {
-        let menuButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_more"), style: .plain, target: self,
-            action: #selector(menuButtonTapped(_:)))
-        navigationItem.rightBarButtonItems = [getSpacer(), menuButton]
+        guard let heightButton = navigationController?.navigationBar.frame.height else {
+            return
+        }
+        let widthButton: CGFloat = 30
+        let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: widthButton, height: heightButton)))
+        button.setImage(#imageLiteral(resourceName: "ic_more"), for: .normal)
+        button.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
 
     func setBackButton() {
         navigationItem.hidesBackButton = true
         let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self,
             action: #selector(backButtonTapped(_:)))
-        navigationItem.leftBarButtonItems = [getSpacer(), backButton]
-    }
-
-    fileprivate func getSpacer(width: CGFloat = -8) -> UIBarButtonItem {
-        // This is trick to reduce margin
-        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        negativeSpacer.width = width
-        return negativeSpacer
+        navigationItem.leftBarButtonItem = backButton
     }
 
     func menuButtonTapped(_ sender: Any) {
