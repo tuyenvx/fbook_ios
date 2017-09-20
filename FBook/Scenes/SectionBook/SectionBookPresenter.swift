@@ -45,7 +45,7 @@ class SectionBookPresenterImplementation: NSObject {
         refreshControl.addTarget(self, action: #selector(refreshing), for: .valueChanged)
     }
 
-    func refreshing() {
+    @objc func refreshing() {
         if !isLoading {
             isRefreshing = true
             getListBook()

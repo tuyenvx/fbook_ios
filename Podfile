@@ -10,7 +10,6 @@ target 'FBook' do
   pod 'TPKeyboardAvoiding', '1.3.1'
   pod 'Kingfisher', '3.12.1'
   pod 'SVProgressHUD', '2.1.2'
-  pod 'DateToolsSwift', '2.0.3'
   pod 'ObjectMapper', '2.2.8'
   pod 'Fabric', '1.6.12'
   pod 'Crashlytics', '3.8.5'
@@ -18,7 +17,6 @@ target 'FBook' do
   pod 'FBSDKCoreKit', '4.26.0'
   pod 'FBSDKLoginKit', '4.26.0'
   pod 'ReactiveCocoa', '6.0.1'
-  pod 'Permission/Location', '2.0.4'
   pod 'RxSwift', '3.6.1'
   pod 'RxCocoa', '3.6.1'
   pod 'SwiftHEXColors'
@@ -34,6 +32,14 @@ target 'FBook' do
   target 'FBookUITests' do
     inherit! :search_paths
     # Pods for testing
+  end
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '3.2'
+      end
+    end
   end
 
 end

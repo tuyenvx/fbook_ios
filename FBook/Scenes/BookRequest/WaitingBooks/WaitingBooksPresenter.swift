@@ -49,7 +49,7 @@ class WaitingBooksPresenterImplementation: NSObject {
 
 extension WaitingBooksPresenterImplementation: WaitingBooksPresenter {
 
-    func fetchWaitingBook(_ page: Int = 1) {
+    @objc func fetchWaitingBook(_ page: Int = 1) {
         guard !isLoading else {
             return
         }

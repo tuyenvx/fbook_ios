@@ -11,7 +11,6 @@
 		11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EAB1F6286A4002AA6D5 /* SearchPresenter.swift */; };
 		11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EAD1F6286B4002AA6D5 /* SearchViewRouter.swift */; };
 		11076EB01F6286C0002AA6D5 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EAF1F6286C0002AA6D5 /* SearchConfigurator.swift */; };
-		11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11076EB11F628A07002AA6D5 /* Search.storyboard */; };
 		11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11076EB31F6299DE002AA6D5 /* SearchBookCell.swift */; };
 		1125B7111F72150600322CFB /* BookRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125B7101F72150600322CFB /* BookRequestsViewController.swift */; };
 		1125B7131F72152000322CFB /* BookRequestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125B7121F72152000322CFB /* BookRequestsPresenter.swift */; };
@@ -32,6 +31,7 @@
 		118038541F6FB00500945648 /* WaitingBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038531F6FB00500945648 /* WaitingBookCell.swift */; };
 		118038571F6FB17200945648 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118038561F6FB17200945648 /* NoDataView.xib */; };
 		118038591F6FB18900945648 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118038581F6FB18900945648 /* NoDataView.swift */; };
+		11E80B991F724C71008AECCF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11076EB11F628A07002AA6D5 /* Search.storyboard */; };
 		224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F281F604808007BEA04 /* UsersProvider.swift */; };
 		224C0F2B1F604B86007BEA04 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F2A1F604B86007BEA04 /* Office.swift */; };
 		224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C0F2C1F604C10007BEA04 /* OfficeProvider.swift */; };
@@ -953,20 +953,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Framgia;
 				TargetAttributes = {
 					77F59FE11F5F9B1F0074A5DB = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 					77F59FF51F5F9B1F0074A5DB = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 77F59FE11F5F9B1F0074A5DB;
 					};
 					77F5A0001F5F9B1F0074A5DB = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 77F59FE11F5F9B1F0074A5DB;
 					};
@@ -1013,10 +1016,9 @@
 				4BACDBBF1F67704A00881AA0 /* BookDetail.storyboard in Resources */,
 				77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */,
 				7703B35B1F6A587A00CDF69D /* ChooseWorkspaceViewController.xib in Resources */,
-				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
+				11E80B991F724C71008AECCF /* Search.storyboard in Resources */,
 				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
-				11076EB21F628A07002AA6D5 /* Search.storyboard in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
 				772614AA1F669259004D6943 /* HomeHeader.xib in Resources */,
@@ -1174,14 +1176,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
@@ -1198,14 +1198,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
@@ -1431,7 +1429,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1439,7 +1439,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1482,7 +1486,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1490,7 +1496,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1529,7 +1539,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.fbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1547,7 +1558,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.fbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1562,7 +1574,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.FBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBook.app/FBook";
 			};
 			name = Debug;
@@ -1577,7 +1590,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.FBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FBook.app/FBook";
 			};
 			name = Release;
@@ -1591,7 +1605,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.FBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = FBook;
 			};
 			name = Debug;
@@ -1605,7 +1620,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.FBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = FBook;
 			};
 			name = Release;

@@ -77,7 +77,7 @@ extension HomePresenterImplementation: HomePresenter {
         refreshControl.addTarget(self, action: #selector(getListSectionBook), for: .valueChanged)
     }
 
-    func getListSectionBook() {
+    @objc func getListSectionBook() {
         if isLoading {
             return
         }
