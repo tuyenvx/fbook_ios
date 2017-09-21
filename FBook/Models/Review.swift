@@ -17,6 +17,9 @@ struct Review: Mappable {
     var createdAt: Date?
     var user: User?
 
+    init() {
+    }
+
     init?(map: Map) {
         mapping(map: map)
     }

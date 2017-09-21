@@ -16,7 +16,6 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         basePresenter = baseConfigurator.configure(view: self)
-        setDefaultRightButtons()
     }
 
     func setDefaultRightButtons() {
@@ -36,6 +35,10 @@ class BaseViewController: UIViewController {
             senderFrame = senderView.convert(senderView.frame, to: window)
         }
         basePresenter?.menuButtonTapped(senderFrame: senderFrame)
+    }
+
+    func cancelButtonTapped() {
+        basePresenter?.dismiss()
     }
 
 }

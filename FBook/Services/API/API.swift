@@ -29,6 +29,7 @@ enum API {
     case getCategories
     case getBooksInCategory(Int, Int)
     case followUser(Int)
+    case reviewBook(Int, Review)
 }
 
 extension API: TargetType {
@@ -86,12 +87,14 @@ extension API: TargetType {
             return "/books/category/\(categoryId)"
         case .followUser:
             return "/users/follow"
+        case .reviewBook(let bookId, _):
+            return "/books/review/\(bookId)"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login, .homeFilter, .searchBook, .bookingBook, .approveBook, .followUser:
+        case .login, .homeFilter, .searchBook, .bookingBook, .approveBook, .followUser, .reviewBook:
             return .post
         default:
             return .get
@@ -122,6 +125,12 @@ extension API: TargetType {
             return parameters
         case .followUser(let userId):
             return [kItem: ["user_id": userId]]
+        case .reviewBook(_, let review):
+            let params: [String: Any] = [
+                "content": review.content,
+                "star": review.star
+            ]
+            return [kItem: params]
         default:
             return nil
         }

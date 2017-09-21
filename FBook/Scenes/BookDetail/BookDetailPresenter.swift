@@ -15,16 +15,11 @@ protocol BookDetailView: class {
 
 }
 
-protocol BookDetailHeaderDelegate: class {
-
-    func segmentedControlValueDidChange(newValue: Int)
-
-}
-
 protocol BookDetailPresenter {
 
     func fetchBookDetail()
     func configure(tableView: UITableView)
+    func prepare(for segue: UIStoryboardSegue, sender: Any?)
 
 }
 
@@ -61,6 +56,65 @@ class BookDetailPresenterImplementation: NSObject {
         self.book = book
     }
 
+    fileprivate func cellForEmptyRow(in tableView: UITableView, message: String) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: EmptyTableViewCell.self) else {
+            return UITableViewCell()
+        }
+        cell.updateUI(message: message)
+        return cell
+    }
+
+    fileprivate func cellForBasicDetail(in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: BasicDetailTableViewCell.self) else {
+            return UITableViewCell()
+        }
+        cell.updateUI(book: book)
+        return cell
+    }
+
+    fileprivate func cellForMoreDetail(in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        switch currentDetailType {
+        case .reviews:
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableNibCell(type: WriteReviewTableViewCell.self) else {
+                    return UITableViewCell()
+                }
+                cell.writeReviewButtonTapped = { [weak self] in
+                    self?.writeReviewButtonTapped()
+                }
+                return cell
+            }
+            guard let cell = tableView.dequeueReusableNibCell(type: UserReviewTableViewCell.self),
+                  let review = book.detail?.reviews?[safe: indexPath.row - 1] else {
+                return cellForEmptyRow(in: tableView, message: "No reviews.")
+            }
+            cell.updateUI(review: review)
+            return cell
+        case .readingUsers:
+            guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
+                  let user = book.requests?.reading?[safe: indexPath.row] else {
+                return cellForEmptyRow(in: tableView, message: "No users.")
+            }
+            cell.updateUI(user: user, status: "reading")
+            return cell
+        case .waitingUsers:
+            guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
+                  let user = book.requests?.waiting?[safe: indexPath.row] else {
+                return cellForEmptyRow(in: tableView, message: "No users.")
+            }
+            cell.updateUI(user: user, status: "waiting")
+            return cell
+        }
+    }
+
+    fileprivate func writeReviewButtonTapped() {
+        if User.currentUser == nil {
+            router?.presentLoginViewController()
+        } else {
+            router?.presentRatingViewController()
+        }
+    }
+
 }
 
 extension BookDetailPresenterImplementation: BookDetailPresenter {
@@ -69,9 +123,18 @@ extension BookDetailPresenterImplementation: BookDetailPresenter {
         tableView.registerNibCell(type: BasicDetailTableViewCell.self)
         tableView.registerNibCell(type: UserReviewTableViewCell.self)
         tableView.registerNibCell(type: UserTableViewCell.self)
+        tableView.registerNibCell(type: EmptyTableViewCell.self)
+        tableView.registerNibCell(type: WriteReviewTableViewCell.self)
         tableView.registerNibHeaderFooter(type: BookDetailHeaderView.self)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let navigationController = segue.destination as? BaseNavigationController,
+           let ratingViewController = navigationController.viewControllers.first as? RatingViewController {
+            ratingViewController.configurator = RatingConfiguratorImplementation(bookId: 2)
+        }
     }
 
     func fetchBookDetail() {
@@ -105,11 +168,14 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
         case Section.detail.rawValue:
             switch currentDetailType {
             case .reviews:
-                return book.detail?.reviews?.count ?? 0
+                let reviewsCount = book.detail?.reviews?.count ?? 0
+                return reviewsCount == 0 ? 2 : reviewsCount + 1
             case .readingUsers:
-                return book.requests?.reading?.count ?? 0
+                let readingCount = book.requests?.reading?.count ?? 0
+                return readingCount == 0 ? 1 : readingCount
             case .waitingUsers:
-                return book.requests?.waiting?.count ?? 0
+                let waitingCount = book.requests?.waiting?.count ?? 0
+                return waitingCount == 0 ? 1 : waitingCount
             }
         default: return 0
         }
@@ -118,35 +184,9 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case Section.basic.rawValue:
-            guard let cell = tableView.dequeueReusableNibCell(type: BasicDetailTableViewCell.self) else {
-                return UITableViewCell()
-            }
-            cell.updateUI(book: book)
-            return cell
+            return cellForBasicDetail(in: tableView, at: indexPath)
         case Section.detail.rawValue:
-            switch currentDetailType {
-            case .reviews:
-                guard let cell = tableView.dequeueReusableNibCell(type: UserReviewTableViewCell.self),
-                      let review = book.detail?.reviews?[safe: indexPath.row] else {
-                    return UITableViewCell()
-                }
-                cell.updateUI(review: review)
-                return cell
-            case .readingUsers:
-                guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                      let user = book.requests?.reading?[safe: indexPath.row] else {
-                    return UITableViewCell()
-                }
-                cell.updateUI(user: user, status: "reading")
-                return cell
-            case .waitingUsers:
-                guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                      let user = book.requests?.waiting?[safe: indexPath.row] else {
-                    return UITableViewCell()
-                }
-                cell.updateUI(user: user, status: "waiting")
-                return cell
-            }
+            return cellForMoreDetail(in: tableView, at: indexPath)
         default: return UITableViewCell()
         }
     }
@@ -156,7 +196,13 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
         case Section.detail.rawValue:
             let headerView = tableView.dequeueReusableHeaderFooter(type: BookDetailHeaderView.self)
             headerView?.contentView.backgroundColor = .white
-            headerView?.delegate = self
+            headerView?.changeDetailType = { [weak self] selectedIndex in
+                guard let detailType = DetailType(rawValue: selectedIndex) else {
+                    return
+                }
+                self?.currentDetailType = detailType
+                self?.view?.updateUI()
+            }
             return headerView
         default: return nil
         }
@@ -183,18 +229,6 @@ extension BookDetailPresenterImplementation: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return kZeroFloat
-    }
-
-}
-
-extension BookDetailPresenterImplementation: BookDetailHeaderDelegate {
-
-    func segmentedControlValueDidChange(newValue: Int) {
-        guard let detailType = DetailType(rawValue: newValue) else {
-            return
-        }
-        currentDetailType = detailType
-        view?.updateUI()
     }
 
 }

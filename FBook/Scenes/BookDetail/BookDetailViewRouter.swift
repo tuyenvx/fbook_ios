@@ -6,11 +6,12 @@
 //  Copyright © 2017 Framgia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol BookDetailViewRouter {
 
     func presentRatingViewController()
+    func presentLoginViewController()
 
 }
 
@@ -27,7 +28,11 @@ class BookDetailViewRouterImplementation {
 extension BookDetailViewRouterImplementation: BookDetailViewRouter {
 
     func presentRatingViewController() {
-        // TODO: Present rating view controller
+        viewController?.performSegue(withIdentifier: "rating", sender: self)
+    }
+
+    func presentLoginViewController() {
+        viewController?.performSegue(withIdentifier: "login", sender: self)
     }
 
 }
