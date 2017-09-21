@@ -31,10 +31,10 @@ class BaseViewController: UIViewController {
     }
 
     func setBackButton() {
-        navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self,
-            action: #selector(backButtonTapped(_:)))
-        navigationItem.leftBarButtonItem = backButton
+        let backButton = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "ic_back")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "ic_back")
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
     @objc func menuButtonTapped(_ sender: Any) {
@@ -43,10 +43,6 @@ class BaseViewController: UIViewController {
             senderFrame = senderView.convert(senderView.frame, to: window)
         }
         basePresenter?.menuButtonTapped(senderFrame: senderFrame)
-    }
-
-    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
-        basePresenter?.backButtonTapped()
     }
 
 }

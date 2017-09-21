@@ -12,7 +12,6 @@ import UIKit
 protocol BaseViewRouter {
     func showMenuSetting(delegate: MenuSettingPresenterDelegate, senderFrame: CGRect)
     func showWorkspace()
-    func back()
     func showFeedback()
     func showMoreTools()
 }
@@ -42,10 +41,6 @@ extension BaseViewRouterImplementation: BaseViewRouter {
         workspace.configurator = ChooseWorkspaceConfiguratorImplementation(delegate: nil)
         workspace.modalPresentationStyle = .overFullScreen
         view?.present(workspace, animated: false, completion: nil)
-    }
-
-    func back() {
-        _ = view?.navigationController?.popViewController(animated: true)
     }
 
     func showFeedback() {
