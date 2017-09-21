@@ -39,13 +39,13 @@ struct Book: Mappable {
         }
     }
 
-    struct ListUsers: Mappable {
+    struct ListRequests: Mappable {
 
-        var waiting: [User]?
-        var reading: [User]?
-        var returning: [User]?
-        var returned: [User]?
-        var owners: [User]?
+        var waiting: [BookRequest]?
+        var reading: [BookRequest]?
+        var returning: [BookRequest]?
+        var returned: [BookRequest]?
+        var owners: [BookRequest]?
 
         init?(map: Map) {
             mapping(map: map)
@@ -72,7 +72,7 @@ struct Book: Mappable {
     var thumbnail: String?
 
     var detail: Detail?
-    var users: ListUsers?
+    var requests: ListRequests?
 
     init() {}
 
@@ -81,7 +81,7 @@ struct Book: Mappable {
 
     mutating func mapping(map: Map) {
         detail = Detail(map: map)
-        users = ListUsers(map: map)
+        requests = ListRequests(map: map)
         id <- map["id"]
         title <- map["title"]
         description <- map["description"]

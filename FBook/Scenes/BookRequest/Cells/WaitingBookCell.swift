@@ -30,7 +30,7 @@ class WaitingBookCell: UITableViewCell {
         descriptionLabel.text = book.description
         ratingView.rating = book.averageStar
         var listOwners = ""
-        if let owners = book.users?.owners {
+        if let owners = book.requests?.owners {
             for owner in owners {
                 if listOwners == "" {
                     listOwners += owner.name

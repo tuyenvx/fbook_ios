@@ -107,9 +107,9 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
             case .reviews:
                 return book.detail?.reviews?.count ?? 0
             case .readingUsers:
-                return book.users?.reading?.count ?? 0
+                return book.requests?.reading?.count ?? 0
             case .waitingUsers:
-                return book.users?.waiting?.count ?? 0
+                return book.requests?.waiting?.count ?? 0
             }
         default: return 0
         }
@@ -134,14 +134,14 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
                 return cell
             case .readingUsers:
                 guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                      let user = book.users?.reading?[safe: indexPath.row] else {
+                      let user = book.requests?.reading?[safe: indexPath.row] else {
                     return UITableViewCell()
                 }
                 cell.updateUI(user: user, status: "reading")
                 return cell
             case .waitingUsers:
                 guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                      let user = book.users?.waiting?[safe: indexPath.row] else {
+                      let user = book.requests?.waiting?[safe: indexPath.row] else {
                     return UITableViewCell()
                 }
                 cell.updateUI(user: user, status: "waiting")

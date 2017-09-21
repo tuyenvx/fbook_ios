@@ -33,4 +33,10 @@ extension Date {
         let diff = Calendar.current.dateComponents([.weekOfYear], from: self, to: Date()).weekOfYear ?? 0
         return "\(diff) weeks ago"
     }
+
+    func toServerString() -> String {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = kDateServerFormat
+        return dateFormat.string(from: self)
+    }
 }
