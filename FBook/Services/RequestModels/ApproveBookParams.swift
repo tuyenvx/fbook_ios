@@ -14,7 +14,7 @@ enum ApproveType: String {
     case unapprove
 }
 
-class ApproveBookParams {
+struct ApproveBookParams {
 
     var key: ApproveType = .approve
     var userId: Int?

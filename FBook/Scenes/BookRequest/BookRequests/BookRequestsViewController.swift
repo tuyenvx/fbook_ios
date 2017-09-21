@@ -40,7 +40,7 @@ extension BookRequestsViewController: BookRequestsView {
         ratingView.rating = book.averageStar
         countViewLabel.text = "View: \(book.totalView)"
         var listOwners = ""
-        if let owners = book.users?.owners {
+        if let owners = book.requests?.owners {
             for owner in owners {
                 if listOwners == "" {
                     listOwners += owner.name

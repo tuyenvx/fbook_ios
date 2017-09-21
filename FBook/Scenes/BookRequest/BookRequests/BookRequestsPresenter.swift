@@ -25,6 +25,7 @@ protocol BookRequestsPresenter: UITableViewDataSource, UITableViewDelegate {
     func loadBook()
     func configureTableView()
     func changeRequestType(_ type: BookRequestType)
+    func approve(_ request: BookRequest)
 }
 
 extension BookRequestsPresenter {
@@ -41,11 +42,41 @@ class BookRequestsPresenterImplementation: NSObject {
     weak var view: BookRequestsView!
     fileprivate var book: Book
     fileprivate var router: BookRequestsViewRouter
+    fileprivate var requestUsers: [BookRequest] = []
+    fileprivate var currentType: BookRequestType = .waitingAndReading
 
     init(view: BookRequestsView, router: BookRequestsViewRouter, book: Book) {
         self.view = view
         self.router = router
         self.book = book
+        super.init()
+        fetchBook()
+    }
+
+    func fetchBook() {
+        AlertHelper.showLoading()
+        BookProvider.getBookApprovedDetail(bookId: book.id).on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+        }, disposed: {
+            AlertHelper.hideLoading()
+        }, value: { [weak self] book in
+            if let weakSelf = self {
+                weakSelf.book = book
+                weakSelf.fetchRequest(with: weakSelf.currentType)
+            }
+        }).start()
+    }
+
+    func fetchRequest(with type: BookRequestType) {
+        switch type {
+        case .waitingAndReading:
+            requestUsers = book.requests?.waiting ?? []
+            requestUsers.append(contentsOf: book.requests?.reading ?? [])
+        case .returningAndReturned:
+            requestUsers = book.requests?.returning ?? []
+            requestUsers.append(contentsOf: book.requests?.returned ?? [])
+        }
+        view.tableView.reloadData()
     }
 }
 
@@ -56,20 +87,45 @@ extension BookRequestsPresenterImplementation: BookRequestsPresenter {
     }
 
     func changeRequestType(_ type: BookRequestType) {
-        // TODO: Implement when user change request type here
+        currentType = type
+        fetchRequest(with: type)
+    }
+
+    func approve(_ request: BookRequest) {
+        var params = ApproveBookParams()
+        guard let status = BookingStatus(rawValue: request.pivot?.status ?? 0),
+                let bookId = request.pivot?.bookId else {
+            return
+        }
+        if status == .reading {
+            params.key = .unapprove
+        }
+        params.userId = request.pivot?.userId
+        AlertHelper.showLoading()
+        BookProvider.approveBook(bookId: bookId, params: params).on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+            AlertHelper.hideLoading()
+        }, value: { [weak self] success in
+            if success {
+                self?.fetchBook()
+            } else {
+                AlertHelper.hideLoading()
+            }
+        }).start()
     }
 }
 
 extension BookRequestsPresenterImplementation: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: Need change when integrate API
-        return 0
+        return requestUsers.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableNibCell(type: BookRequestCell.self) {
-            // TODO: Configure cell here
+        if let cell = tableView.dequeueReusableNibCell(type: BookRequestCell.self),
+                let request = requestUsers[safe: indexPath.row] {
+            cell.display(request: request)
+            cell.presenter = self
             return cell
         }
         return UITableViewCell()

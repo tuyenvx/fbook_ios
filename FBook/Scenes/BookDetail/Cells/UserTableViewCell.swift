@@ -14,7 +14,7 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet private weak var fullNameLabel: UILabel!
     @IBOutlet private weak var statusLabel: UILabel!
 
-    func updateUI(user: User, status: String) {
+    func updateUI(user: BookRequest, status: String) {
         avatarImageView.setImage(urlString: user.avatar, placeHolder: kDefaultAvatar)
         fullNameLabel.text = user.name
         statusLabel.text = status
