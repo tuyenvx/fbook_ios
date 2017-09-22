@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Qz-E0-hQ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Qz-E0-hQ7">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Account View Controller-->
         <scene sceneID="k4y-0f-Zy1">
@@ -69,25 +75,25 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSy-Y9-Ijt">
                                 <rect key="frame" x="0.0" y="363" width="414" height="373"/>
                                 <connections>
-                                    <segue destination="m4Y-C3-4ZO" kind="embed" id="JUt-aK-r35"/>
+                                    <segue destination="m4Y-C3-4ZO" kind="embed" identifier="followersSegue" id="JUt-aK-r35"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySF-sM-dGM">
                                 <rect key="frame" x="0.0" y="363" width="414" height="373"/>
                                 <connections>
-                                    <segue destination="Op8-iB-UpF" kind="embed" id="hqS-sN-ehS"/>
+                                    <segue destination="Op8-iB-UpF" kind="embed" identifier="followingSegue" id="hqS-sN-ehS"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-X3-onO">
                                 <rect key="frame" x="0.0" y="363" width="414" height="373"/>
                                 <connections>
-                                    <segue destination="oYn-j9-1yJ" kind="embed" id="pfq-H7-0n0"/>
+                                    <segue destination="oYn-j9-1yJ" kind="embed" identifier="categoriesSegue" id="pfq-H7-0n0"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPc-P1-wvk">
                                 <rect key="frame" x="0.0" y="363" width="414" height="373"/>
                                 <connections>
-                                    <segue destination="csX-oP-caE" kind="embed" id="iZg-cf-kb0"/>
+                                    <segue destination="csX-oP-caE" kind="embed" identifier="profileSegue" id="iZg-cf-kb0"/>
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jLD-p0-3n0">
@@ -171,14 +177,15 @@
                     </view>
                     <connections>
                         <outlet property="categoriesButton" destination="dJp-ad-MW7" id="PYR-4U-Kgj"/>
-                        <outlet property="favoriteCategoriesView" destination="i9v-X3-onO" id="mdf-X4-6Zu"/>
+                        <outlet property="favoriteCategoriesView" destination="i9v-X3-onO" id="K7l-ff-RTw"/>
                         <outlet property="followButton" destination="YBE-ab-CiU" id="2y5-lK-z1L"/>
                         <outlet property="followersButton" destination="kgF-Bc-Msa" id="LaS-WZ-O9X"/>
-                        <outlet property="followersView" destination="RSy-Y9-Ijt" id="yKo-Nr-Inb"/>
-                        <outlet property="followingView" destination="ySF-sM-dGM" id="zP5-58-fhj"/>
+                        <outlet property="followersView" destination="RSy-Y9-Ijt" id="HxV-LS-zWr"/>
+                        <outlet property="followingButton" destination="3q3-CB-bcH" id="192-pM-KRY"/>
+                        <outlet property="followingView" destination="ySF-sM-dGM" id="sQR-pe-jhC"/>
                         <outlet property="headerAccountView" destination="VbY-vZ-W6k" id="njM-5g-bhC"/>
                         <outlet property="profileButton" destination="od7-Kr-KY1" id="Jxg-1U-GdE"/>
-                        <outlet property="profileView" destination="UPc-P1-wvk" id="6CK-fh-TKD"/>
+                        <outlet property="profileView" destination="UPc-P1-wvk" id="Gwd-JR-MrX"/>
                         <outlet property="userAvatarImage" destination="gMl-RD-CzX" id="h8A-ns-X3J"/>
                     </connections>
                 </viewController>
@@ -206,7 +213,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xnp-5K-QTT" id="dMx-v5-vzT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTI-n9-VxR">
@@ -251,7 +258,7 @@
         <!--Profile View Controller-->
         <scene sceneID="0yk-M1-GAE">
             <objects>
-                <viewController id="csX-oP-caE" customClass="ProfileViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="csX-oP-caE" customClass="ProfileViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zNQ-3p-7i8"/>
                         <viewControllerLayoutGuide type="bottom" id="noY-df-4Ze"/>
@@ -475,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le8-kN-72m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="399"/>
+            <point key="canvasLocation" x="746" y="585"/>
         </scene>
         <!--Followers View Controller-->
         <scene sceneID="0AL-wD-wfM">
@@ -497,7 +504,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TdR-tq-grQ" id="1EY-0G-rIV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aET-DT-ukb">
@@ -569,7 +576,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tya-hw-3JD" id="Eif-PW-fvO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56v-KV-WRH">

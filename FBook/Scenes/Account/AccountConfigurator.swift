@@ -9,13 +9,15 @@
 import Foundation
 
 protocol AccountConfigurator {
-    func configure(accountViewController: AccountViewController)
+    func configure(accountViewController: AccountViewController, user: User)
 }
 
 class AccountConfiguratorImplementation: AccountConfigurator {
 
-    func configure(accountViewController: AccountViewController) {
-        let presenter = AccountPresenterImplementation(view: accountViewController)
+    func configure(accountViewController: AccountViewController, user: User) {
+        let router = AccountRouterImplementation(accountViewController: accountViewController)
+        let presenter = AccountPresenterImplementation(view: accountViewController, router: router)
+        presenter.user = user
         accountViewController.presenter = presenter
     }
 }

@@ -41,6 +41,8 @@ struct User: Mappable {
         }
     }
 
+    init() {}
+    
     init?(map: Map) {
         mapping(map: map)
     }

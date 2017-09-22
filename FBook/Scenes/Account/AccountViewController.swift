@@ -15,10 +15,9 @@ import Kingfisher
 class AccountViewController: BaseViewController, AccountView {
 
     var presenter: AccountPresenter?
-    var configurator = AccountConfiguratorImplementation()
+    var configurator: AccountConfiguratorImplementation?
 
     @IBOutlet weak var userAvatarImage: UIImageView!
-    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var headerAccountView: UIView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var favoriteCategoriesView: UIView!
@@ -36,7 +35,10 @@ class AccountViewController: BaseViewController, AccountView {
         createGradientLayer()
         userAvatarImage.layer.zPosition = 1
         followButton.layer.zPosition = 1
-        configurator.configure(accountViewController: self)
+        if configurator == nil, let user = User.currentUser {
+            configurator = AccountConfiguratorImplementation()
+            configurator?.configure(accountViewController: self, user: user)
+        }
         presenter?.updateUserInfo()
     }
 
@@ -119,5 +121,9 @@ class AccountViewController: BaseViewController, AccountView {
 
     func showFollowSuccess(message: Bool) {
 //        TODO: show follow success
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        presenter?.router.prepare(for: segue, sender: sender)
     }
 }

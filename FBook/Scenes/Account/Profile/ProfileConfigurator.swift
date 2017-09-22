@@ -9,13 +9,20 @@
 import Foundation
 
 protocol ProfileConfigurator {
-    func configure(profileViewController: ProfileViewController)
+    func configure()
 }
 
 class ProfileConfiguratorImplementation: ProfileConfigurator {
+    fileprivate let profileViewController: ProfileViewController
+    fileprivate var user: User
 
-    func configure(profileViewController: ProfileViewController) {
-        let presenter = ProfilePresenterImplementation(view: profileViewController)
+    init(user: User, viewController: ProfileViewController) {
+        self.user = user
+        self.profileViewController = viewController
+    }
+
+    func configure() {
+        let presenter = ProfilePresenterImplementation(view: profileViewController, user: user)
         profileViewController.presenter = presenter
     }
 }

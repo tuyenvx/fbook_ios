@@ -28,19 +28,40 @@ protocol AccountPresenter {
     func selectFollowingButton()
     func selectFollowersButton()
     func updateFollowButton(buttonState: Bool)
+    var router: AccountRouter { get }
 }
 
 class AccountPresenterImplementation: AccountPresenter {
 
     fileprivate weak var view: AccountView?
+    var user = User()
+    internal let router: AccountRouter
 
-    init(view: AccountView) {
+    init(view: AccountView, router: AccountRouter) {
         self.view = view
+        self.router = router
     }
 
     func updateUserInfo() {
-        guard let currentUser = User.currentUser else {return}
-        view?.displayUserInfo(user: currentUser)
+        if User.currentUser != nil {
+            guard let currentUser = User.currentUser else {return}
+            if currentUser.id != self.user.id || self.user.id == 0 {
+                weak var weakSelf = self
+                AlertHelper.showLoading()
+                UsersProvider.getOtherUserProfile(userId: self.user.id).on(failed: { error in
+                    AlertHelper.hideLoading()
+                }, completed: {
+                    AlertHelper.hideLoading()
+                }, value: { userInfo in
+                    weakSelf?.router.showUserDetail(for: userInfo)
+                }).start()
+            } else {
+                view?.displayUserInfo(user: currentUser)
+            }
+        } else {
+            Utility.shared.showMessage(message: "You must login before action", completion: nil)
+        }
+
     }
 
     func selectProfileButton() {

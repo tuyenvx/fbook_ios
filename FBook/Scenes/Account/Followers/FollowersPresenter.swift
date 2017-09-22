@@ -17,6 +17,7 @@ protocol FollowersView: class {
 
 protocol FollowersPresenter {
     func getListFollowersUser(tableView: UITableView)
+    func showFollowerInfo(tableView: UITableView)
 }
 
 class FollowersPresenterImplementation: NSObject {
@@ -51,5 +52,13 @@ extension FollowersPresenterImplementation: FollowersPresenter {
                 }
                 .disposed(by: self.disposeBag)
         }).start()
+    }
+
+    func showFollowerInfo(tableView: UITableView) {
+        tableView.rx.modelSelected(User.self)
+            .subscribe(onNext: { user in
+//                TODO: show details follower
+            })
+            .addDisposableTo(self.disposeBag)
     }
 }

@@ -18,13 +18,26 @@ protocol ProfilePresenter {
 
 class ProfilePresenterImplementation: ProfilePresenter {
     fileprivate weak var view: ProfileView?
-
-    init(view: ProfileView) {
+    fileprivate var user: User
+    init(view: ProfileView, user: User) {
         self.view = view
+        self.user = user
     }
 
     func updateUserProfileView() {
         guard let currentUser = User.currentUser else {return}
-        view?.displayUser(user: currentUser)
+        if currentUser.id != self.user.id {
+            weak var weakSelf = self
+            AlertHelper.showLoading()
+            UsersProvider.getOtherUserProfile(userId: self.user.id).on(failed: { error in
+                AlertHelper.hideLoading()
+            }, completed: {
+                AlertHelper.hideLoading()
+            }, value: { followingUser in
+                weakSelf?.view?.displayUser(user: followingUser)
+            }).start()
+        } else {
+            view?.displayUser(user: currentUser)
+        }
     }
 }
