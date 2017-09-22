@@ -44,3 +44,6 @@ let kCancelString = "Cancel"
 // Constants for alert message
 let kErrorSystem = "Server error"
 let kErrorNetwork = "Can't connect to server"
+
+let kFeedbackURL = "https://docs.google.com/forms/d/e/1FAIpQLSdk3ldp1VdajkayccYMtOlUHcDnNDYZoJYJcqicmuqCCuGVyg/viewform"
+let kMoreToolsURL = "http://education.framgia.vn/tools"
