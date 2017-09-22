@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 protocol BaseViewRouter {
     func showMenuSetting(delegate: MenuSettingPresenterDelegate, senderFrame: CGRect)
@@ -22,6 +23,15 @@ struct BaseViewRouterImplementation {
 
     init(view: BaseViewController?) {
         self.view = view
+    }
+
+    @discardableResult fileprivate func openSafariViewController(urlString: String) -> Bool {
+        guard let url = URL(string: urlString) else {
+            return false
+        }
+        let safariViewController = FBSafariViewController(url: url)
+        view?.present(safariViewController, animated: true, completion: nil)
+        return true
     }
 
 }
@@ -44,11 +54,11 @@ extension BaseViewRouterImplementation: BaseViewRouter {
     }
 
     func showFeedback() {
-        // TODO: show feedback
+        openSafariViewController(urlString: kFeedbackURL)
     }
 
     func showMoreTools() {
-        // TODO: show more tools
+        openSafariViewController(urlString: kMoreToolsURL)
     }
 
 }

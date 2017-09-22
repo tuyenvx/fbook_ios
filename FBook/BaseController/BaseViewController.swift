@@ -30,13 +30,6 @@ class BaseViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
 
-    func setBackButton() {
-        let backButton = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-        navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "ic_back")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "ic_back")
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-    }
-
     @objc func menuButtonTapped(_ sender: Any) {
         var senderFrame = CGRect.zero
         if let senderView = sender as? UIView, let window = application.keyWindow {

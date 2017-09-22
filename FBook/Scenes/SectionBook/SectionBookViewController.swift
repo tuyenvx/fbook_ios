@@ -18,7 +18,6 @@ class SectionBookViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator?.configure(view: self)
-        setBackButton()
     }
 
 }

@@ -21,7 +21,6 @@ class SearchViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackButton()
         configurator.configure(viewController: self)
         presenter?.configureTableView()
         presenter?.configureSearchBar()

@@ -11,7 +11,6 @@ import UIKit
 
 protocol CategoryRouter {
 
-    func back()
     func showBookDetail(_ book: Book)
 }
 
@@ -26,10 +25,6 @@ struct CategoryRouterImplementation {
 }
 
 extension CategoryRouterImplementation: CategoryRouter {
-
-    func back() {
-        view?.navigationController?.popViewController(animated: true)
-    }
 
     func showBookDetail(_ book: Book) {
         guard let detailViewController = UIStoryboard.bookDetail.instantiateInitialViewController()

@@ -88,6 +88,7 @@
 		775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197921F6FA79B005042D9 /* CategoryConfigurator.swift */; };
 		775197951F6FA7A8005042D9 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197941F6FA7A8005042D9 /* CategoryRouter.swift */; };
 		775197971F6FB113005042D9 /* CategoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197961F6FB113005042D9 /* CategoryProvider.swift */; };
+		775AA75A1F74AFC700F69BBD /* FBSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775AA7591F74AFC700F69BBD /* FBSafariViewController.swift */; };
 		77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6EAC21F68C05300EE384B /* MenuSettingConfigurator.swift */; };
 		77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6EAC31F68C05300EE384B /* MenuSettingPresenter.swift */; };
 		77A6EAC91F68C05300EE384B /* MenuSettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6EAC41F68C05300EE384B /* MenuSettingRouter.swift */; };
@@ -264,6 +265,7 @@
 		775197921F6FA79B005042D9 /* CategoryConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigurator.swift; sourceTree = "<group>"; };
 		775197941F6FA7A8005042D9 /* CategoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
 		775197961F6FB113005042D9 /* CategoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryProvider.swift; sourceTree = "<group>"; };
+		775AA7591F74AFC700F69BBD /* FBSafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBSafariViewController.swift; sourceTree = "<group>"; };
 		77A6EAC21F68C05300EE384B /* MenuSettingConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSettingConfigurator.swift; sourceTree = "<group>"; };
 		77A6EAC31F68C05300EE384B /* MenuSettingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSettingPresenter.swift; sourceTree = "<group>"; };
 		77A6EAC41F68C05300EE384B /* MenuSettingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSettingRouter.swift; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 				77F5A01B1F5FDB2D0074A5DB /* Utility.swift */,
 				77A76E441F627EB1008601E2 /* AlertHelper.swift */,
 				4B8089C81F6A854B0072E0BB /* TimeFormatter.swift */,
+				775AA7591F74AFC700F69BBD /* FBSafariViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1290,6 +1293,7 @@
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,
 				775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
+				775AA75A1F74AFC700F69BBD /* FBSafariViewController.swift in Sources */,
 				4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */,
 				772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */,
 				4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */,
