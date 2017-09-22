@@ -23,6 +23,10 @@ class BookDetailViewController: BaseViewController {
         presenter?.fetchBookDetail()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        presenter?.prepare(for: segue, sender: sender)
+    }
+
 }
 
 extension BookDetailViewController: BookDetailView {

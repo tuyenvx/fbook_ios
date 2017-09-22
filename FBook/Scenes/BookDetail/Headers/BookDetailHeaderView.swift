@@ -10,10 +10,10 @@ import UIKit
 
 class BookDetailHeaderView: UITableViewHeaderFooterView {
 
-    weak var delegate: BookDetailHeaderDelegate?
+    var changeDetailType: (Int) -> Void = { _ in }
 
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        delegate?.segmentedControlValueDidChange(newValue: sender.selectedSegmentIndex)
+        changeDetailType(sender.selectedSegmentIndex)
     }
 
 }

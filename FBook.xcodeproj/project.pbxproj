@@ -41,6 +41,10 @@
 		22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */; };
 		22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A11F61BDD000869A05 /* String+Extensions.swift */; };
 		22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A51F61D15300869A05 /* Error+Extensions.swift */; };
+		4B7376361F70A7C900CC98EF /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */; };
+		4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */; };
+		4B73763B1F70B6F500CC98EF /* WriteReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */; };
+		4B73763C1F70B6F500CC98EF /* WriteReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B73763A1F70B6F500CC98EF /* WriteReviewTableViewCell.xib */; };
 		4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8089C81F6A854B0072E0BB /* TimeFormatter.swift */; };
 		4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BD51F6A633900B74769 /* UserReviewTableViewCell.swift */; };
 		4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F9BD61F6A633900B74769 /* UserReviewTableViewCell.xib */; };
@@ -54,6 +58,10 @@
 		4BAB82431F678E8D00E52FB1 /* BookDetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */; };
 		4BAB82451F678EA300E52FB1 /* BookDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */; };
 		4BACDBBF1F67704A00881AA0 /* BookDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */; };
+		4BC266E91F70EBFF0003FCEF /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC266E81F70EBFF0003FCEF /* RatingViewController.swift */; };
+		4BC266EB1F70EC240003FCEF /* RatingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC266EA1F70EC240003FCEF /* RatingConfigurator.swift */; };
+		4BC266ED1F70EC470003FCEF /* RatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC266EC1F70EC470003FCEF /* RatingPresenter.swift */; };
+		4BC266EF1F70EC510003FCEF /* RatingViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC266EE1F70EC510003FCEF /* RatingViewRouter.swift */; };
 		4BD94DB21F6B657000C0A7F5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */; };
 		4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */; };
 		4F8D65427777E567BBA2A460 /* Pods_FBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */; };
@@ -220,6 +228,10 @@
 		22E076A11F61BDD000869A05 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		22E076A51F61D15300869A05 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
+		4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewTableViewCell.swift; sourceTree = "<group>"; };
+		4B73763A1F70B6F500CC98EF /* WriteReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WriteReviewTableViewCell.xib; sourceTree = "<group>"; };
 		4B8089C81F6A854B0072E0BB /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		4B8F9BD51F6A633900B74769 /* UserReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReviewTableViewCell.swift; sourceTree = "<group>"; };
 		4B8F9BD61F6A633900B74769 /* UserReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserReviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -233,6 +245,10 @@
 		4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewRouter.swift; sourceTree = "<group>"; };
 		4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailConfigurator.swift; sourceTree = "<group>"; };
 		4BACDBBE1F67704A00881AA0 /* BookDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
+		4BC266E81F70EBFF0003FCEF /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		4BC266EA1F70EC240003FCEF /* RatingConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingConfigurator.swift; sourceTree = "<group>"; };
+		4BC266EC1F70EC470003FCEF /* RatingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingPresenter.swift; sourceTree = "<group>"; };
+		4BC266EE1F70EC510003FCEF /* RatingViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewRouter.swift; sourceTree = "<group>"; };
 		4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		7703B3551F6A396A00CDF69D /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
@@ -506,6 +522,10 @@
 				4B8F9BDA1F6A711100B74769 /* BasicDetailTableViewCell.xib */,
 				4BD94DB01F6B657000C0A7F5 /* UserTableViewCell.swift */,
 				4BD94DB11F6B657000C0A7F5 /* UserTableViewCell.xib */,
+				4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */,
+				4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */,
+				4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */,
+				4B73763A1F70B6F500CC98EF /* WriteReviewTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -531,6 +551,17 @@
 				4BAB82441F678EA300E52FB1 /* BookDetailConfigurator.swift */,
 			);
 			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		4BC266E71F70EBC90003FCEF /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				4BC266E81F70EBFF0003FCEF /* RatingViewController.swift */,
+				4BC266EA1F70EC240003FCEF /* RatingConfigurator.swift */,
+				4BC266EC1F70EC470003FCEF /* RatingPresenter.swift */,
+				4BC266EE1F70EC510003FCEF /* RatingViewRouter.swift */,
+			);
+			path = Rating;
 			sourceTree = "<group>";
 		};
 		7703B3571F6A584400CDF69D /* Workspace */ = {
@@ -622,6 +653,7 @@
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4BC266E71F70EBC90003FCEF /* Rating */,
 				7751978B1F6FA615005042D9 /* Categories */,
 				7703B3571F6A584400CDF69D /* Workspace */,
 				77B45D181F6933FD001CB466 /* SectionBook */,
@@ -1007,6 +1039,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				115E74AE1F71247600868E53 /* BookRequestsTypeHeader.xib in Resources */,
+				4B7376361F70A7C900CC98EF /* EmptyTableViewCell.xib in Resources */,
 				7751978F1F6FA6F0005042D9 /* Category.storyboard in Resources */,
 				77A6EACB1F68C05300EE384B /* MenuSettingViewController.xib in Resources */,
 				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
@@ -1026,6 +1059,7 @@
 				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
+				4B73763C1F70B6F500CC98EF /* WriteReviewTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
 				772614AA1F669259004D6943 /* HomeHeader.xib in Resources */,
 			);
@@ -1265,11 +1299,13 @@
 				77DECCC81F625022007E32F5 /* ForgotPasswordViewRouter.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
 				224C0F2B1F604B86007BEA04 /* Office.swift in Sources */,
+				4B73763B1F70B6F500CC98EF /* WriteReviewTableViewCell.swift in Sources */,
 				772614AC1F669259004D6943 /* HomeHeaderPresenter.swift in Sources */,
 				11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */,
 				D5CD99001F6A18AC0074BC01 /* NotificationTableViewCell.swift in Sources */,
 				116C416F1F7350A80040196A /* BookRequest.swift in Sources */,
 				7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */,
+				4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */,
 				D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */,
 				772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */,
 				D5CD99041F6A8A020074BC01 /* Notification.swift in Sources */,
@@ -1294,6 +1330,7 @@
 				775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
 				775AA75A1F74AFC700F69BBD /* FBSafariViewController.swift in Sources */,
+				4BC266EF1F70EC510003FCEF /* RatingViewRouter.swift in Sources */,
 				4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */,
 				772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */,
 				4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */,
@@ -1317,12 +1354,14 @@
 				7751978D1F6FA6E4005042D9 /* CategoryViewController.swift in Sources */,
 				77DECCCA1F625030007E32F5 /* ForgotPasswordConfigurator.swift in Sources */,
 				77A76EED1F629602008601E2 /* HomePresenter.swift in Sources */,
+				4BC266ED1F70EC470003FCEF /* RatingPresenter.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				77B45D201F6934B5001CB466 /* SectionBookRouter.swift in Sources */,
 				77A6EACA1F68C05300EE384B /* MenuSettingViewController.swift in Sources */,
 				7703B35A1F6A587A00CDF69D /* ChooseWorkspaceViewController.swift in Sources */,
 				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
 				4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */,
+				4BC266EB1F70EC240003FCEF /* RatingConfigurator.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
 				22C480611F6040A400DB7A4C /* User.swift in Sources */,
 				118038591F6FB18900945648 /* NoDataView.swift in Sources */,
@@ -1341,6 +1380,7 @@
 				772614881F661ED4004D6943 /* UICollectionView+Extensions.swift in Sources */,
 				77A6EAD01F68C06500EE384B /* BaseViewConfigurator.swift in Sources */,
 				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
+				4BC266E91F70EBFF0003FCEF /* RatingViewController.swift in Sources */,
 				77B45D1C1F693494001CB466 /* SectionBookPresenter.swift in Sources */,
 				77A6EACF1F68C06500EE384B /* BaseViewRouter.swift in Sources */,
 				D5CD98F71F6A14170074BC01 /* NotificationViewController.swift in Sources */,

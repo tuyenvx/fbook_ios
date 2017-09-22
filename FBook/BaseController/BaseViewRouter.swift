@@ -11,10 +11,13 @@ import UIKit
 import SafariServices
 
 protocol BaseViewRouter {
+
     func showMenuSetting(delegate: MenuSettingPresenterDelegate, senderFrame: CGRect)
     func showWorkspace()
+    func dismiss()
     func showFeedback()
     func showMoreTools()
+
 }
 
 struct BaseViewRouterImplementation {
@@ -59,6 +62,10 @@ extension BaseViewRouterImplementation: BaseViewRouter {
 
     func showMoreTools() {
         openSafariViewController(urlString: kMoreToolsURL)
+    }
+
+    func dismiss() {
+        view?.navigationController?.dismiss(animated: true, completion: nil)
     }
 
 }
