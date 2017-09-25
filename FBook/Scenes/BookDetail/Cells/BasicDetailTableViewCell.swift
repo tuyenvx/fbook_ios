@@ -33,4 +33,12 @@ class BasicDetailTableViewCell: UITableViewCell {
         viewsLabel.text = "\(book.totalView)"
     }
 
+    @IBAction private func readButtonTapped(_ sender: Any) {
+        // TODO: Handle want to read button tapped
+    }
+
+    @IBAction private func ownerButtonTapped(_ sender: Any) {
+        // TODO: Handle add owner button tapped
+    }
+
 }
