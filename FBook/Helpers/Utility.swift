@@ -84,4 +84,16 @@ class Utility: NSObject {
         }
     }
 
+    func showActionSheet(in viewController: UIViewController, title: String? = nil, message: String? = nil,
+                         actions: UIAlertAction...) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        actions.forEach({ alertController.addAction($0) })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        let viewController = getPresentableViewController(by: viewController)
+        DispatchQueue.main.async {
+            viewController?.present(alertController, animated: true, completion: nil)
+        }
+    }
+
 }

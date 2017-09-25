@@ -15,7 +15,13 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButton()
         basePresenter = baseConfigurator.configure(view: self)
+    }
+
+    func setBackButton() {
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
     func setDefaultRightButtons() {

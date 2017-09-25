@@ -41,6 +41,12 @@
 		22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C480641F60445A00DB7A4C /* AuthenticationProvider.swift */; };
 		22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A11F61BDD000869A05 /* String+Extensions.swift */; };
 		22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E076A51F61D15300869A05 /* Error+Extensions.swift */; };
+		4B068CC81F7894A900CA03AA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CC61F7894A900CA03AA /* PhotoCollectionViewCell.swift */; };
+		4B068CC91F7894A900CA03AA /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B068CC71F7894A900CA03AA /* PhotoCollectionViewCell.xib */; };
+		4B068CCB1F789CF000CA03AA /* ShareBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CCA1F789CF000CA03AA /* ShareBookViewController.swift */; };
+		4B068CCD1F789D8D00CA03AA /* ShareBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CCC1F789D8D00CA03AA /* ShareBookPresenter.swift */; };
+		4B068CCF1F789DAE00CA03AA /* ShareBookViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CCE1F789DAE00CA03AA /* ShareBookViewRouter.swift */; };
+		4B068CD11F789DBC00CA03AA /* ShareBookConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CD01F789DBC00CA03AA /* ShareBookConfigurator.swift */; };
 		4B7376361F70A7C900CC98EF /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */; };
 		4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */; };
 		4B73763B1F70B6F500CC98EF /* WriteReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */; };
@@ -53,6 +59,7 @@
 		4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BDD1F6A75BF00B74769 /* Array+Extensions.swift */; };
 		4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F9BE01F6A7AF200B74769 /* BookDetailHeaderView.swift */; };
 		4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F9BE21F6A7B5700B74769 /* BookDetailHeaderView.xib */; };
+		4B9731031F74ED4F00D89ADC /* ShareBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9731021F74ED4F00D89ADC /* ShareBook.storyboard */; };
 		4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB823E1F678E4000E52FB1 /* BookDetailViewController.swift */; };
 		4BAB82411F678E5900E52FB1 /* BookDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82401F678E5900E52FB1 /* BookDetailPresenter.swift */; };
 		4BAB82431F678E8D00E52FB1 /* BookDetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */; };
@@ -230,6 +237,12 @@
 		22E076A11F61BDD000869A05 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		22E076A51F61D15300869A05 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		280B89C4A92589F03480A812 /* Pods-FBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.release.xcconfig"; sourceTree = "<group>"; };
+		4B068CC61F7894A900CA03AA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B068CC71F7894A900CA03AA /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		4B068CCA1F789CF000CA03AA /* ShareBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookViewController.swift; sourceTree = "<group>"; };
+		4B068CCC1F789D8D00CA03AA /* ShareBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookPresenter.swift; sourceTree = "<group>"; };
+		4B068CCE1F789DAE00CA03AA /* ShareBookViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookViewRouter.swift; sourceTree = "<group>"; };
+		4B068CD01F789DBC00CA03AA /* ShareBookConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookConfigurator.swift; sourceTree = "<group>"; };
 		4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -242,6 +255,7 @@
 		4B8F9BDD1F6A75BF00B74769 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		4B8F9BE01F6A7AF200B74769 /* BookDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailHeaderView.swift; sourceTree = "<group>"; };
 		4B8F9BE21F6A7B5700B74769 /* BookDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailHeaderView.xib; sourceTree = "<group>"; };
+		4B9731021F74ED4F00D89ADC /* ShareBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShareBook.storyboard; sourceTree = "<group>"; };
 		4BAB823E1F678E4000E52FB1 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		4BAB82401F678E5900E52FB1 /* BookDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailPresenter.swift; sourceTree = "<group>"; };
 		4BAB82421F678E8D00E52FB1 /* BookDetailViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewRouter.swift; sourceTree = "<group>"; };
@@ -517,6 +531,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4B068CC51F78948B00CA03AA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B068CC61F7894A900CA03AA /* PhotoCollectionViewCell.swift */,
+				4B068CC71F7894A900CA03AA /* PhotoCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4B8F9BD41F6A632300B74769 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +564,19 @@
 				4B8F9BE21F6A7B5700B74769 /* BookDetailHeaderView.xib */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		4B9731011F74ED4200D89ADC /* ShareBook */ = {
+			isa = PBXGroup;
+			children = (
+				4B068CC51F78948B00CA03AA /* Cells */,
+				4B9731021F74ED4F00D89ADC /* ShareBook.storyboard */,
+				4B068CCA1F789CF000CA03AA /* ShareBookViewController.swift */,
+				4B068CCC1F789D8D00CA03AA /* ShareBookPresenter.swift */,
+				4B068CCE1F789DAE00CA03AA /* ShareBookViewRouter.swift */,
+				4B068CD01F789DBC00CA03AA /* ShareBookConfigurator.swift */,
+			);
+			path = ShareBook;
 			sourceTree = "<group>";
 		};
 		4BACDBBD1F67703900881AA0 /* BookDetail */ = {
@@ -657,6 +693,7 @@
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4B9731011F74ED4200D89ADC /* ShareBook */,
 				4BC266E71F70EBC90003FCEF /* Rating */,
 				7751978B1F6FA615005042D9 /* Categories */,
 				7703B3571F6A584400CDF69D /* Workspace */,
@@ -1044,6 +1081,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B9731031F74ED4F00D89ADC /* ShareBook.storyboard in Resources */,
 				115E74AE1F71247600868E53 /* BookRequestsTypeHeader.xib in Resources */,
 				4B7376361F70A7C900CC98EF /* EmptyTableViewCell.xib in Resources */,
 				7751978F1F6FA6F0005042D9 /* Category.storyboard in Resources */,
@@ -1064,6 +1102,7 @@
 				11E80B991F724C71008AECCF /* Search.storyboard in Resources */,
 				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
+				4B068CC91F7894A900CA03AA /* PhotoCollectionViewCell.xib in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
 				4B73763C1F70B6F500CC98EF /* WriteReviewTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
@@ -1229,6 +1268,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/QBImagePickerController/QBImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -1251,6 +1291,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QBImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -1297,6 +1338,7 @@
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
 				772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */,
 				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
+				4B068CCD1F789D8D00CA03AA /* ShareBookPresenter.swift in Sources */,
 				D5915F9C1F6F69180058E546 /* FollowingTableViewCell.swift in Sources */,
 				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
 				77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */,
@@ -1321,6 +1363,7 @@
 				115E74A51F710F3F00868E53 /* WaitingBooksConfigurator.swift in Sources */,
 				224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */,
 				775197971F6FB113005042D9 /* CategoryProvider.swift in Sources */,
+				4B068CD11F789DBC00CA03AA /* ShareBookConfigurator.swift in Sources */,
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
 				D56313C61F62943900BEDFE4 /* ProfilePresenter.swift in Sources */,
@@ -1334,9 +1377,11 @@
 				D5243D561F724EC9000DBBDE /* FollowingRouter.swift in Sources */,
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */,
+				4B068CCB1F789CF000CA03AA /* ShareBookViewController.swift in Sources */,
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,
 				775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
+				4B068CC81F7894A900CA03AA /* PhotoCollectionViewCell.swift in Sources */,
 				775AA75A1F74AFC700F69BBD /* FBSafariViewController.swift in Sources */,
 				4BC266EF1F70EC510003FCEF /* RatingViewRouter.swift in Sources */,
 				4B8F9BE11F6A7AF200B74769 /* BookDetailHeaderView.swift in Sources */,
@@ -1400,6 +1445,7 @@
 				77DECCC41F624FFC007E32F5 /* ForgotPasswordViewController.swift in Sources */,
 				D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */,
 				D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */,
+				4B068CCF1F789DAE00CA03AA /* ShareBookViewRouter.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				77A6EAD11F68C06500EE384B /* BaseViewPresenter.swift in Sources */,
 				772614A81F669259004D6943 /* HomeCellConfigurator.swift in Sources */,
@@ -1588,6 +1634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1607,6 +1654,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

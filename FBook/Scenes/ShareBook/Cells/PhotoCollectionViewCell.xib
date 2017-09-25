@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell" customModule="FBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="196" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="196" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_default" translatesAutoresizingMaskIntoConstraints="NO" id="YxO-T3-Mq2">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-vD-Bi0">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DR2-Oq-YtG">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                                <state key="normal" image="icon_add"/>
+                                <connections>
+                                    <action selector="addPhotoButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="I8O-nw-el8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqi-cG-iOz">
+                                <rect key="frame" x="57" y="207.5" width="67.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nqi-cG-iOz" firstAttribute="centerX" secondItem="9dH-vD-Bi0" secondAttribute="centerX" id="8D4-8t-U3z"/>
+                            <constraint firstAttribute="trailing" secondItem="DR2-Oq-YtG" secondAttribute="trailing" id="D7w-pa-4Pq"/>
+                            <constraint firstAttribute="bottom" secondItem="DR2-Oq-YtG" secondAttribute="bottom" id="DwB-nW-7Ve"/>
+                            <constraint firstAttribute="bottom" secondItem="Nqi-cG-iOz" secondAttribute="bottom" constant="16" id="M6c-lE-3gP"/>
+                            <constraint firstItem="DR2-Oq-YtG" firstAttribute="top" secondItem="9dH-vD-Bi0" secondAttribute="top" id="Qdf-mX-f4k"/>
+                            <constraint firstItem="DR2-Oq-YtG" firstAttribute="leading" secondItem="9dH-vD-Bi0" secondAttribute="leading" id="lTL-VG-wKL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YxO-T3-Mq2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DEn-Dc-knF"/>
+                <constraint firstItem="YxO-T3-Mq2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DFG-Fn-UTb"/>
+                <constraint firstItem="9dH-vD-Bi0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Drg-uP-4xu"/>
+                <constraint firstAttribute="trailing" secondItem="YxO-T3-Mq2" secondAttribute="trailing" constant="16" id="NQc-yz-cnD"/>
+                <constraint firstAttribute="bottom" secondItem="YxO-T3-Mq2" secondAttribute="bottom" id="SjA-Vk-83x"/>
+                <constraint firstItem="9dH-vD-Bi0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ifl-oV-OhH"/>
+                <constraint firstAttribute="bottom" secondItem="9dH-vD-Bi0" secondAttribute="bottom" id="o7w-NR-M3X"/>
+                <constraint firstAttribute="trailing" secondItem="9dH-vD-Bi0" secondAttribute="trailing" constant="16" id="vzO-rv-AQb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="108" height="166"/>
+            <connections>
+                <outlet property="addPhotoView" destination="9dH-vD-Bi0" id="HFS-eg-Dqp"/>
+                <outlet property="imageView" destination="YxO-T3-Mq2" id="AVS-ux-xKb"/>
+            </connections>
+            <point key="canvasLocation" x="54" y="110"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_add" width="32" height="32"/>
+        <image name="image_default" width="128" height="128"/>
+    </resources>
+</document>

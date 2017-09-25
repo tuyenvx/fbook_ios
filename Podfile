@@ -21,6 +21,7 @@ target 'FBook' do
   pod 'RxCocoa', '3.6.1'
   pod 'SwiftHEXColors'
   pod 'Cosmos', '~> 11.0'
+  pod 'QBImagePickerController', '~> 3.4.0'
 
   # Pods for FBook
 
