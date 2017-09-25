@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  HeaderTableViewCell.swift
 //  FBook
 //
 //  Created by tran.xuan.diep on 9/22/17.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class HeaderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet weak var avatarUserImage: UIImageView!
+    @IBOutlet weak var followButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,4 +21,7 @@ class CategoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    func displayAvatar(_ user: User) {
+        avatarUserImage.setImage(urlString: user.avatar, placeHolder: kDefaultAvatar)
+    }
 }

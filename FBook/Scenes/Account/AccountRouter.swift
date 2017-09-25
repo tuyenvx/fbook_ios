@@ -7,29 +7,15 @@
 //
 
 import Foundation
-import UIKit
 
 protocol AccountRouter {
-    func showUserDetail(for user: User)
-    func prepare(for segue: UIStoryboardSegue, sender: Any?)
 }
 
 class AccountRouterImplementation: AccountRouter {
-    fileprivate weak var accountViewController: AccountViewController?
-    fileprivate var user = User()
 
-    init(accountViewController: AccountViewController) {
-        self.accountViewController = accountViewController
-    }
+    fileprivate weak var viewController: AccountViewController?
 
-    func showUserDetail(for user: User) {
-        self.user = user
-    }
-
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let profileViewController = segue.destination as? ProfileViewController {
-            profileViewController.configurator =
-                ProfileConfiguratorImplementation(user: user, viewController: profileViewController)
-        }
+    init(viewController: AccountViewController) {
+        self.viewController = viewController
     }
 }

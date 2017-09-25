@@ -101,7 +101,7 @@ extension ShareBookPresenterImpl: ShareBookPresenter {
     
     func displaySelectItems(type: ItemType) {
         currentItemType = type
-        router?.performSeuge(withIdentifier: "selectItems")
+        router?.performSegue(withIdentifier: "selectItems")
     }
 
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {

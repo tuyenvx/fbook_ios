@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="-508" y="-414"/>
         </scene>
-        <!--AccountScreen-->
+        <!--Account-->
         <scene sceneID="Gre-LD-oBH">
             <objects>
-                <viewControllerPlaceholder storyboardName="AccountScreen" id="UFf-sc-izq" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Account" id="UFf-sc-izq" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DLL-hZ-bt6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiA-ux-sPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
