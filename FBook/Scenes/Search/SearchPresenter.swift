@@ -42,7 +42,9 @@ protocol SearchView: class {
 
     var searchBar: UISearchBar! { get }
     var tableView: UITableView! { get }
-    func hideNoDataView(_ show: Bool)
+    func hideNoDataView(_ hide: Bool)
+    func enableTapGesture(_ enable: Bool)
+    func hideFilterSegment(_ hide: Bool)
 }
 
 protocol SearchBookCellView {
@@ -109,6 +111,7 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
     func change(store rawValue: Int) {
         if let store = SearchStore(rawValue: rawValue), self.store != store {
             self.store = store
+            view.hideFilterSegment(store == .google)
         }
     }
 
@@ -117,6 +120,7 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
         guard searchText.value != "" else {
             listBooks = ListItems<Book>()
             view.tableView.reloadData()
+            view.hideNoDataView(false)
             return
         }
         request?.dispose()
@@ -171,6 +175,7 @@ extension SearchPresenterImplementation: UITableViewDataSource {
 extension SearchPresenterImplementation: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
         if row >= 0 && row < listBooks.data.count {
             let book = listBooks.data[row]
@@ -190,6 +195,14 @@ extension SearchPresenterImplementation: UITableViewDelegate {
 }
 
 extension SearchPresenterImplementation: UISearchBarDelegate {
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        view.enableTapGesture(true)
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        view.enableTapGesture(false)
+    }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText.value = searchText
