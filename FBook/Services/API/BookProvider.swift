@@ -14,6 +14,7 @@ final class BookProvider: BaseProvider {
 
     typealias BookDetailSignal = SignalProducer<Book, ErrorResponse>
     typealias BookListSignal = SignalProducer<ListItems<Book>, ErrorResponse>
+    typealias GoogleBookListSignal = SignalProducer<[GoogleBook], ErrorResponse>
 
     static func getBookDetail(bookId: Int) -> BookDetailSignal {
         return requestJSON(api: .getBookDetail(bookId)).flatMap(.merge, mapBook)
@@ -21,6 +22,10 @@ final class BookProvider: BaseProvider {
 
     static func searchBook(officeId: Int?, page: Int, params: SearchBookParams) -> BookListSignal {
         return requestJSON(api: .searchBook(officeId, page, params)).flatMap(.merge, mapBookList)
+    }
+
+    static func searchGoogleBook(maxResults: Int, searchText: String) -> GoogleBookListSignal {
+        return requestJSON(api: .searchGoogleBook(maxResults, searchText)).flatMap(.merge, mapGoogleBookList)
     }
 
     static func getBooks(inSection section: SectionBook, page: Int, officeId: Int?) -> BookListSignal {
@@ -63,4 +68,11 @@ final class BookProvider: BaseProvider {
         return BookDetailSignal(error: .errorJsonFormat)
     }
 
+    fileprivate static let mapGoogleBookList = { (object: ObjectResponse?) -> GoogleBookListSignal in
+        if let value = object?.value as? [String: Any], let items = value[kItems] as? [[String: Any]] {
+            let googleBooks = items.flatMap { GoogleBook(JSON: $0) }
+            return GoogleBookListSignal(value: googleBooks)
+        }
+        return GoogleBookListSignal(error: .errorJsonFormat)
+    }
 }

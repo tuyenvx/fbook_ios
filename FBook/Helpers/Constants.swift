@@ -20,6 +20,8 @@ let kDefaultPlaceHolder = #imageLiteral(resourceName: "image_default")
 let kDefaultAvatar = #imageLiteral(resourceName: "default_avatar")
 let kZeroFloat: CGFloat = 0.0001
 let kDefaultAnimDuration: TimeInterval = 0.3
+let kSearchGoogleBookMax = 40
+let kSearchGoogleBookPerpage = 10
 
 // Constants for UserDefaults
 let kAccessTokenKey = "com.framgia.fbook.access_token"
