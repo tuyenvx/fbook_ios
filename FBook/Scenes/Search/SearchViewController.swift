@@ -64,7 +64,7 @@ extension SearchViewController: SearchView {
             filterSegmentHeight.constant = kFilterSegmentHeight
             filterSegmentTop.constant = kFilterSegmentTop
         }
-        UIView.animate(withDuration: kDefaultAnimDuration) {
+        UIView.animate(withDuration: kDefaultAnimationDuration) {
             self.view.layoutIfNeeded()
         }
     }

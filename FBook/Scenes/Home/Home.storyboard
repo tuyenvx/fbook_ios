@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="djO-80-TJj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="djO-80-TJj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -110,7 +111,7 @@
                 <navigationController id="gDQ-bf-qDa" customClass="BaseNavigationController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home" selectedImage="ic_home_filled" id="2AZ-2G-h4w"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pJg-JZ-SKs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -127,7 +128,7 @@
                 <navigationController id="Q4H-JF-QDs" customClass="BaseNavigationController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My books" image="ic_book" selectedImage="ic_book_filled" id="7AI-Tr-DjB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sx-tH-NVG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -151,11 +152,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My books" id="jFf-RQ-eWS"/>
+                    <navigationItem key="navigationItem" title="My books" id="jFf-RQ-eWS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rl4-8X-Yn9">
+                            <connections>
+                                <segue destination="I7x-sX-htA" kind="show" id="EFa-Kh-BcU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcC-hf-r0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-508" y="-1147"/>
+        </scene>
+        <!--ShareBook-->
+        <scene sceneID="Elb-vY-C2P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShareBook" id="I7x-sX-htA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFf-iY-oHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="-1148"/>
         </scene>
         <!--Notification-->
         <scene sceneID="1QH-yC-hmU">
@@ -163,7 +178,7 @@
                 <navigationController id="3FJ-ih-RmD" customClass="BaseNavigationController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Notification" image="ic_notification" selectedImage="ic_notification_filled" id="we9-EQ-NAX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3qG-xy-LDx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -180,7 +195,7 @@
                 <navigationController id="UzI-LO-qvy" customClass="BaseNavigationController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_profile" selectedImage="ic_profile_filled" id="QNM-FE-EE4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="74s-HR-DdJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

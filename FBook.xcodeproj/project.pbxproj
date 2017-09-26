@@ -48,6 +48,11 @@
 		4B068CCD1F789D8D00CA03AA /* ShareBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CCC1F789D8D00CA03AA /* ShareBookPresenter.swift */; };
 		4B068CCF1F789DAE00CA03AA /* ShareBookViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CCE1F789DAE00CA03AA /* ShareBookViewRouter.swift */; };
 		4B068CD11F789DBC00CA03AA /* ShareBookConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B068CD01F789DBC00CA03AA /* ShareBookConfigurator.swift */; };
+		4B09360E1F7A29D70029155C /* ItemPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B09360D1F7A29D70029155C /* ItemPickerViewController.swift */; };
+		4B0936101F7A36D00029155C /* ItemPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B09360F1F7A36D00029155C /* ItemPickerPresenter.swift */; };
+		4B0936121F7A37B40029155C /* ItemPickerViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0936111F7A37B40029155C /* ItemPickerViewRouter.swift */; };
+		4B0936141F7A3B0F0029155C /* ItemPickerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0936131F7A3B0F0029155C /* ItemPickerConfigurator.swift */; };
+		4B546A621F79EC5600EB34B2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B546A611F79EC5600EB34B2 /* CustomTextField.swift */; };
 		4B7376361F70A7C900CC98EF /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */; };
 		4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */; };
 		4B73763B1F70B6F500CC98EF /* WriteReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */; };
@@ -245,6 +250,11 @@
 		4B068CCC1F789D8D00CA03AA /* ShareBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookPresenter.swift; sourceTree = "<group>"; };
 		4B068CCE1F789DAE00CA03AA /* ShareBookViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookViewRouter.swift; sourceTree = "<group>"; };
 		4B068CD01F789DBC00CA03AA /* ShareBookConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBookConfigurator.swift; sourceTree = "<group>"; };
+		4B09360D1F7A29D70029155C /* ItemPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPickerViewController.swift; sourceTree = "<group>"; };
+		4B09360F1F7A36D00029155C /* ItemPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPickerPresenter.swift; sourceTree = "<group>"; };
+		4B0936111F7A37B40029155C /* ItemPickerViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPickerViewRouter.swift; sourceTree = "<group>"; };
+		4B0936131F7A3B0F0029155C /* ItemPickerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPickerConfigurator.swift; sourceTree = "<group>"; };
+		4B546A611F79EC5600EB34B2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		4B7376371F70B14200CC98EF /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -542,6 +552,25 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4B09360C1F7A299A0029155C /* ItemPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4B09360D1F7A29D70029155C /* ItemPickerViewController.swift */,
+				4B09360F1F7A36D00029155C /* ItemPickerPresenter.swift */,
+				4B0936111F7A37B40029155C /* ItemPickerViewRouter.swift */,
+				4B0936131F7A3B0F0029155C /* ItemPickerConfigurator.swift */,
+			);
+			path = ItemPicker;
+			sourceTree = "<group>";
+		};
+		4B546A601F79EC1900EB34B2 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4B546A611F79EC5600EB34B2 /* CustomTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		4B8F9BD41F6A632300B74769 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +724,7 @@
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4B09360C1F7A299A0029155C /* ItemPicker */,
 				4B9731011F74ED4200D89ADC /* ShareBook */,
 				4BC266E71F70EBC90003FCEF /* Rating */,
 				7751978B1F6FA615005042D9 /* Categories */,
@@ -762,6 +792,7 @@
 		77F59FE41F5F9B1F0074A5DB /* FBook */ = {
 			isa = PBXGroup;
 			children = (
+				4B546A601F79EC1900EB34B2 /* CustomView */,
 				77F59FE51F5F9B1F0074A5DB /* AppDelegate.swift */,
 				77DECCB31F623E31007E32F5 /* Scenes */,
 				22E076A01F61BDC300869A05 /* Extensions */,
@@ -1355,6 +1386,7 @@
 				11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */,
 				D5CD99001F6A18AC0074BC01 /* NotificationTableViewCell.swift in Sources */,
 				116C416F1F7350A80040196A /* BookRequest.swift in Sources */,
+				4B09360E1F7A29D70029155C /* ItemPickerViewController.swift in Sources */,
 				7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */,
 				4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */,
 				D5A138A61F74A325009F343D /* AccountRouter.swift in Sources */,
@@ -1410,6 +1442,7 @@
 				11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */,
 				7751978D1F6FA6E4005042D9 /* CategoryViewController.swift in Sources */,
 				77DECCCA1F625030007E32F5 /* ForgotPasswordConfigurator.swift in Sources */,
+				4B0936141F7A3B0F0029155C /* ItemPickerConfigurator.swift in Sources */,
 				77A76EED1F629602008601E2 /* HomePresenter.swift in Sources */,
 				4BC266ED1F70EC470003FCEF /* RatingPresenter.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
@@ -1447,11 +1480,14 @@
 				77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */,
 				77F5A0411F60071B0074A5DB /* API.swift in Sources */,
 				77DECCC41F624FFC007E32F5 /* ForgotPasswordViewController.swift in Sources */,
+				4B0936121F7A37B40029155C /* ItemPickerViewRouter.swift in Sources */,
 				D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */,
+				4B0936101F7A36D00029155C /* ItemPickerPresenter.swift in Sources */,
 				D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */,
 				4B068CCF1F789DAE00CA03AA /* ShareBookViewRouter.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				77A6EAD11F68C06500EE384B /* BaseViewPresenter.swift in Sources */,
+				4B546A621F79EC5600EB34B2 /* CustomTextField.swift in Sources */,
 				772614A81F669259004D6943 /* HomeCellConfigurator.swift in Sources */,
 				D57D40E51F666DA3009F0801 /* FavoriteCategoriesPresenter.swift in Sources */,
 				D559AF3A1F67808400F0ABF7 /* FavoriteCategoriesViewController.swift in Sources */,

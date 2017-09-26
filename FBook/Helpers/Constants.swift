@@ -19,9 +19,10 @@ let kDateFormatYMD = "yyyy-MM-dd"
 let kDefaultPlaceHolder = #imageLiteral(resourceName: "image_default")
 let kDefaultAvatar = #imageLiteral(resourceName: "default_avatar")
 let kZeroFloat: CGFloat = 0.0001
-let kDefaultAnimDuration: TimeInterval = 0.3
 let kSearchGoogleBookMax = 40
 let kSearchGoogleBookPerpage = 10
+let kDefaultAnimationDuration: TimeInterval = 0.3
+let kGrayColor = UIColor(hexString: "#c7c7cd")
 
 // Constants for UserDefaults
 let kAccessTokenKey = "com.framgia.fbook.access_token"
