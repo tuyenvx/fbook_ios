@@ -49,7 +49,8 @@ protocol SearchView: class {
 
 protocol SearchBookCellView {
 
-    func display(book: Book?)
+    func display(book: Book)
+    func display(googleBook: GoogleBook)
 }
 
 // MARK: - Presenter
@@ -81,6 +82,7 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
 
     weak var view: SearchView!
     fileprivate var listBooks = ListItems<Book>()
+    fileprivate var googleBooks: [GoogleBook] = []
     fileprivate var store: SearchStore = .internal
     fileprivate var router: SearchViewRouter
     fileprivate var searchParams = SearchBookParams()
@@ -97,7 +99,14 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
     func configureObserver() {
         self.searchText.asObservable().throttle(1.0, scheduler: MainScheduler.instance)
                 .subscribe(onNext: { [weak self] _ in
-            self?.search()
+            if let weakSelf = self {
+                switch weakSelf.store {
+                case .internal:
+                    weakSelf.search()
+                case .google:
+                    weakSelf.searchGoogle()
+                }
+            }
         }).addDisposableTo(bag)
     }
 
@@ -112,22 +121,29 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
         if let store = SearchStore(rawValue: rawValue), self.store != store {
             self.store = store
             view.hideFilterSegment(store == .google)
+            switch store {
+            case .internal:
+                listBooks.data.removeAll()
+                search()
+            case .google:
+                googleBooks.removeAll()
+                searchGoogle()
+            }
+            view.tableView.reloadData()
+            view.hideNoDataView(false)
         }
     }
 
     func search(_ page: Int = 1) {
-        searchParams.keyword = searchText.value
-        guard searchText.value != "" else {
-            listBooks = ListItems<Book>()
-            view.tableView.reloadData()
-            view.hideNoDataView(false)
+        guard validateSearchText() else {
             return
         }
+        searchParams.keyword = searchText.value
         request?.dispose()
         request = BookProvider.searchBook(officeId: Office.currentId, page: page, params: searchParams)
                 .on(failed: { error in
             Utility.shared.showMessage(message: error.message, completion: nil)
-        }, value: { [weak self] (listBooks) in
+        }, value: { [weak self] listBooks in
             if page == 1 {
                 self?.listBooks = listBooks
             } else {
@@ -142,6 +158,36 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
         }).start()
     }
 
+    func searchGoogle(_ maxResults: Int = kSearchGoogleBookPerpage) {
+        guard validateSearchText() else {
+            return
+        }
+        request?.dispose()
+        request = BookProvider.searchGoogleBook(maxResults: maxResults, searchText: searchText.value)
+                .on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+        }, value: { [weak self] books in
+            self?.googleBooks.removeAll()
+            self?.googleBooks = books
+            if let count = self?.googleBooks.count, count > 0 {
+                self?.view.hideNoDataView(true)
+            } else {
+                self?.view.hideNoDataView(false)
+            }
+            self?.view.tableView.reloadData()
+        }).start()
+    }
+
+    func validateSearchText() -> Bool {
+        guard searchText.value != "" else {
+            listBooks = ListItems<Book>()
+            view.tableView.reloadData()
+            view.hideNoDataView(false)
+            return false
+        }
+        return true
+    }
+
     func dismissKeyboard() {
         if view.searchBar.isFirstResponder {
             view.searchBar.resignFirstResponder()
@@ -153,7 +199,12 @@ class SearchPresenterImplementation: NSObject, SearchPresenter {
 extension SearchPresenterImplementation: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listBooks.data.count
+        switch store {
+        case .internal:
+            return listBooks.data.count
+        case .google:
+            return googleBooks.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -162,11 +213,15 @@ extension SearchPresenterImplementation: UITableViewDataSource {
             return UITableViewCell()
         }
         let row = indexPath.row
-        if row >= 0 && row < listBooks.data.count {
-            let book = listBooks.data[row]
-            cell.display(book: book)
-        } else {
-            cell.display(book: nil)
+        switch store {
+        case .internal:
+            if let book = listBooks.data[safe: row] {
+                cell.display(book: book)
+            }
+        case .google:
+            if let book = googleBooks[safe: row] {
+                cell.display(googleBook: book)
+            }
         }
         return cell
     }
@@ -177,15 +232,22 @@ extension SearchPresenterImplementation: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
-        if row >= 0 && row < listBooks.data.count {
-            let book = listBooks.data[row]
+        if store == .internal, let book = listBooks.data[safe: row] {
             router.showDetail(book: book)
         }
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == listBooks.data.count - 1, let nextPage = listBooks.nextPage {
-            search(nextPage)
+        switch store {
+        case .internal:
+            if indexPath.row == listBooks.data.count - 1, let nextPage = listBooks.nextPage {
+                search(nextPage)
+            }
+        case .google:
+            let nextMaxResult = googleBooks.count + kSearchGoogleBookPerpage
+            if indexPath.row == googleBooks.count - 1 && nextMaxResult < kSearchGoogleBookMax {
+                searchGoogle(nextMaxResult)
+            }
         }
     }
 

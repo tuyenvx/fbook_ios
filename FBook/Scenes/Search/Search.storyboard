@@ -120,7 +120,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_eye" translatesAutoresizingMaskIntoConstraints="NO" id="j0E-Ja-src">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="j0E-Ja-src">
                                                     <rect key="frame" x="93" y="52" width="14" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="K2u-ri-e5S"/>
@@ -145,7 +145,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="HoR-Q6-seS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_eye" translatesAutoresizingMaskIntoConstraints="NO" id="HoR-Q6-seS">
                                                     <rect key="frame" x="165.33333333333334" y="51.666666666666671" width="14" height="14.000000000000014"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HoR-Q6-seS" secondAttribute="height" multiplier="1:1" id="VN4-ad-IB6"/>
@@ -182,8 +182,10 @@
                                             <outlet property="descriptionLabel" destination="zAE-xT-3vi" id="cfm-cf-FcM"/>
                                             <outlet property="nameLabel" destination="bJP-GA-pvZ" id="d8z-8e-q24"/>
                                             <outlet property="photoImageView" destination="Xai-6T-7TB" id="h2T-Z9-UZR"/>
-                                            <outlet property="starLabel" destination="xpc-1E-jhk" id="28e-u1-NbG"/>
-                                            <outlet property="viewCountLabel" destination="tua-f6-Fv8" id="A6l-bG-rgq"/>
+                                            <outlet property="starIcon" destination="j0E-Ja-src" id="T8J-zp-US8"/>
+                                            <outlet property="starLabel" destination="tua-f6-Fv8" id="72w-ix-Tev"/>
+                                            <outlet property="viewCountLabel" destination="xpc-1E-jhk" id="p18-qh-Pld"/>
+                                            <outlet property="viewIcon" destination="HoR-Q6-seS" id="RKl-nD-4O8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

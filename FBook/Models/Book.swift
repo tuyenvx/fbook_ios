@@ -93,5 +93,4 @@ struct Book: Mappable {
         averageStar <- map["avg_star"]
         thumbnail <- map["image.mobile.thumbnail_path"]
     }
-
 }

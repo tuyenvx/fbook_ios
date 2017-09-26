@@ -19,6 +19,7 @@ enum API {
     case getListOffice
     case getBookDetail(Int)
     case searchBook(Int?, Int, SearchBookParams)
+    case searchGoogleBook(Int, String)
     case getBookInSection(Int?, Int, SectionBook)
     case getListNotifications
     case bookingBook(BookingBookParams)
@@ -67,6 +68,8 @@ extension API: TargetType {
                 path.append("&office_id=\(id)")
             }
             return path
+        case .searchGoogleBook:
+            return "/search-books"
         case .getBookInSection:
             return "/books"
         case .getListNotifications:
@@ -107,6 +110,8 @@ extension API: TargetType {
             return ["email": email, "password": password]
         case .searchBook(_, _, let params):
             return params.toRequestJSON()
+        case .searchGoogleBook(let maxResults, let searchText):
+            return ["maxResults": maxResults, "q": searchText]
         case .getBookInSection(let officeId, let page, let sectionBook):
             var parameters: [String : Any] = ["page": page, "field": sectionBook.key]
             if let officeId = officeId {
