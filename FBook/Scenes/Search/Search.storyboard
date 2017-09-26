@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yUa-ZF-k7f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yUa-ZF-k7f">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,18 +23,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNa-f5-9yr" userLabel="Filter View">
-                                <rect key="frame" x="0.0" y="44" width="414" height="124"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="124"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" placeholder="Enter words..." translatesAutoresizingMaskIntoConstraints="NO" id="bpf-uI-VC0">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="6RV-d6-wFc"/>
-                                        </constraints>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="yUa-ZF-k7f" id="Z6K-zh-HjR"/>
-                                        </connections>
-                                    </searchBar>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="197-yO-lJ9">
                                         <rect key="frame" x="8" y="52" width="399" height="29"/>
                                         <constraints>
@@ -64,6 +55,16 @@
                                             <action selector="onStoreChanged:" destination="yUa-ZF-k7f" eventType="valueChanged" id="07p-lW-UvJ"/>
                                         </connections>
                                     </segmentedControl>
+                                    <searchBar contentMode="redraw" placeholder="Enter words..." translatesAutoresizingMaskIntoConstraints="NO" id="bpf-uI-VC0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="6RV-d6-wFc"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="yUa-ZF-k7f" id="Z6K-zh-HjR"/>
+                                        </connections>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -78,14 +79,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qwa-lW-rMb" userLabel="Line">
-                                <rect key="frame" x="8" y="168" width="398" height="0.66666666666665719"/>
+                                <rect key="frame" x="8" y="188" width="398" height="0.66666666666665719"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="GpN-bv-Xdj"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9CQ-L2-lXb">
-                                <rect key="frame" x="0.0" y="168.66666666666669" width="414" height="567.33333333333326"/>
+                                <rect key="frame" x="0.0" y="188.66666666666669" width="414" height="547.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="95" minY="0.0" maxX="8" maxY="0.0"/>
                                 <prototypes>
@@ -93,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97W-3z-lxp" id="S0s-wD-98B">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="94.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xai-6T-7TB">
@@ -186,13 +187,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="yUa-ZF-k7f" id="tdw-6e-69O"/>
-                                    <outlet property="delegate" destination="yUa-ZF-k7f" id="5Oe-AS-Yrz"/>
-                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuE-15-HzY" customClass="NoDataView" customModule="FBook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="168" width="414" height="567.33333333333337"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="547.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -224,10 +221,12 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="filterSegmentHeight" destination="DX4-WN-ksQ" id="8Go-Ek-0p1"/>
+                        <outlet property="filterSegmentTop" destination="2vA-x7-3C3" id="nV5-vi-yVR"/>
                         <outlet property="noDataView" destination="zuE-15-HzY" id="sGg-Da-0c7"/>
                         <outlet property="searchBar" destination="bpf-uI-VC0" id="VIr-F1-Otm"/>
-                        <outlet property="segmentControl" destination="2YI-Dn-4fz" id="enD-9S-x4A"/>
                         <outlet property="tableView" destination="9CQ-L2-lXb" id="nPS-GB-CHn"/>
+                        <outlet property="tapGestureRecognizer" destination="5yK-rp-cBF" id="9Wk-V6-OfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avm-73-vl2" userLabel="First Responder" sceneMemberID="firstResponder"/>

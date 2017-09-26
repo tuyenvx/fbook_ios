@@ -6,7 +6,7 @@
 //  Copyright © 2017 Framgia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol SearchViewRouter {
 
@@ -25,6 +25,11 @@ class SearchViewRouterImplementation {
 extension SearchViewRouterImplementation: SearchViewRouter {
 
     func showDetail(book: Book) {
-        // TODO: Show detail of book
+        guard let detailViewController = UIStoryboard.bookDetail.instantiateInitialViewController()
+                as? BookDetailViewController else {
+            return
+        }
+        detailViewController.configurator = BookDetailConfiguratorImplementation(book: book)
+        viewController?.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
