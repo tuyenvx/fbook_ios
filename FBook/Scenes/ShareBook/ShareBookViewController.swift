@@ -14,6 +14,11 @@ class ShareBookViewController: BaseViewController {
     var configurator: ShareBookConfiguratorImpl?
 
     @IBOutlet fileprivate weak var photosCollectionView: UICollectionView!
+    @IBOutlet fileprivate weak var titleTextField: CustomTextField!
+    @IBOutlet fileprivate weak var authorTextField: CustomTextField!
+    @IBOutlet fileprivate weak var categoryTextField: CustomTextField!
+    @IBOutlet fileprivate weak var publishDateTextField: CustomTextField!
+    @IBOutlet fileprivate weak var officeTextField: CustomTextField!
     @IBOutlet fileprivate weak var collectionViewHeightConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -21,8 +26,26 @@ class ShareBookViewController: BaseViewController {
         configurator = ShareBookConfiguratorImpl()
         configurator?.configure(viewController: self)
         presenter?.configure(collectionView: photosCollectionView, height: collectionViewHeightConstraint)
+        presenter?.configure(textFields: categoryTextField, publishDateTextField, officeTextField)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        presenter?.prepare(for: segue, sender: sender)
+    }
+
+    // MARK: - IBAction
+
+    @IBAction func categoryTextFieldTapped(_ sender: Any) {
+    	presenter?.displaySelectItems(type: .category)
+    }
+
+    @IBAction func publishDateTextFieldTapped(_ sender: Any) {
+    	presenter?.displaySelectItems(type: .publishDate)
+    }
+
+    @IBAction func officeTextFieldTapped(_ sender: Any) {
+    	presenter?.displaySelectItems(type: .office)
+    }
 }
 
 extension ShareBookViewController: ShareBookView {

@@ -10,6 +10,14 @@ import UIKit
 import Photos
 import QBImagePickerController
 
+enum ItemType {
+
+    case category
+    case publishDate
+    case office
+
+}
+
 protocol ShareBookView: class {
 
     func updateUI()
@@ -20,8 +28,11 @@ protocol ShareBookView: class {
 protocol ShareBookPresenter {
 
     func configure(collectionView: UICollectionView, height: NSLayoutConstraint)
+    func configure(textFields: UITextField...)
     func openCamera()
     func openPhotoLibrary()
+    func displaySelectItems(type: ItemType)
+    func prepare(for segue: UIStoryboardSegue, sender: Any?)
 
 }
 
@@ -35,6 +46,7 @@ class ShareBookPresenterImpl: NSObject {
     let photoRatio: CGFloat = 3.0 / 4.0
     var cellWidth: CGFloat = 0.0
     var cellHeight: CGFloat = 0.0
+    var currentItemType = ItemType.category
 
     init(view: ShareBookView, router: ShareBookViewRouter) {
         self.view = view
@@ -60,6 +72,10 @@ extension ShareBookPresenterImpl: ShareBookPresenter {
         height.constant = cellHeight
     }
 
+    func configure(textFields: UITextField...) {
+        textFields.forEach({ $0.delegate = self })
+    }
+
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePickerController = UIImagePickerController()
@@ -80,6 +96,24 @@ extension ShareBookPresenterImpl: ShareBookPresenter {
             router?.present(viewControllerToPresent: imagePickerController)
         } else {
             // TODO: Display photo library error message
+        }
+    }
+    
+    func displaySelectItems(type: ItemType) {
+        currentItemType = type
+        router?.performSeuge(withIdentifier: "selectItems")
+    }
+
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let itemPickerViewController = segue.destination as? ItemPickerViewController {
+            // TODO: Add items
+            let items: [String] = []
+            switch currentItemType {
+            case .category: break
+            case .publishDate: break
+            case .office: break
+            }
+            itemPickerViewController.configurator = ItemPickerConfiguratorImpl(items: items)
         }
     }
 
@@ -157,8 +191,9 @@ extension ShareBookPresenterImpl: QBImagePickerControllerDelegate {
             guard let asset = $0 as? PHAsset else {
                 return
             }
-            imageManager.requestImage(for: asset, targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight),
-                contentMode: .aspectFit, options: options) { [weak self] (image, _) in
+            let imageSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+            imageManager.requestImage(for: asset, targetSize: imageSize, contentMode: .aspectFit,
+                options: options) { [weak self] (image, _) in
                     guard let image = image else {
                         return
                     }
@@ -170,4 +205,14 @@ extension ShareBookPresenterImpl: QBImagePickerControllerDelegate {
         }
     }
 
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ShareBookPresenterImpl: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return false
+    }
+    
 }
