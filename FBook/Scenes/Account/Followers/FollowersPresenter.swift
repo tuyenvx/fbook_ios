@@ -47,7 +47,7 @@ extension FollowersPresenterImplementation: FollowersPresenter {
         }, value: { listUsers in
             Observable.just(listUsers)
                 .bind(to: tableView.rx.items(cellIdentifier: "followerCell",
-                                             cellType: FollowerTableViewCell.self)) { (index, user, cell) in
+                                             cellType: FollowerTableViewCell.self)) { (_, user, cell) in
                                                 cell.updateCell(user: user)
                 }
                 .disposed(by: self.disposeBag)
@@ -56,7 +56,7 @@ extension FollowersPresenterImplementation: FollowersPresenter {
 
     func showFollowerInfo(tableView: UITableView) {
         tableView.rx.modelSelected(User.self)
-            .subscribe(onNext: { user in
+            .subscribe(onNext: { _ in
 //                TODO: show details follower
             })
             .addDisposableTo(self.disposeBag)

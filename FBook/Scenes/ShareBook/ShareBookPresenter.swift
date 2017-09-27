@@ -98,7 +98,7 @@ extension ShareBookPresenterImpl: ShareBookPresenter {
             // TODO: Display photo library error message
         }
     }
-    
+
     func displaySelectItems(type: ItemType) {
         currentItemType = type
         router?.performSegue(withIdentifier: "selectItems")
@@ -199,7 +199,7 @@ extension ShareBookPresenterImpl: QBImagePickerControllerDelegate {
                     }
                     self?.photos.append(image)
                 }
-        })
+            })
         imagePickerController.dismiss(animated: true) {
             self.view?.updateUI()
         }
@@ -210,9 +210,9 @@ extension ShareBookPresenterImpl: QBImagePickerControllerDelegate {
 // MARK: - UITextFieldDelegate
 
 extension ShareBookPresenterImpl: UITextFieldDelegate {
-    
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return false
     }
-    
+
 }

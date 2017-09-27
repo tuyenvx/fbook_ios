@@ -232,8 +232,15 @@ extension SearchPresenterImplementation: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
-        if store == .internal, let book = listBooks.data[safe: row] {
-            router.showDetail(book: book)
+        switch store {
+        case .internal:
+            if let book = listBooks.data[safe: row] {
+                router.showDetail(book: book)
+            }
+        case .google:
+            if let book = googleBooks[safe: row] {
+                router.showDetail(googleBook: book)
+            }
         }
     }
 

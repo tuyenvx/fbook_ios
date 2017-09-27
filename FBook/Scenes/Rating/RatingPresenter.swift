@@ -49,9 +49,9 @@ extension RatingPresenterImplementation: RatingPresenter {
             // TODO: Display error message
         }, completed: {
             AlertHelper.hideLoading()
-        }) { _ in
+        }, value: { _ in
             // TODO: Handle write review successfully
-        }.start()
+        }).start()
     }
 
 }

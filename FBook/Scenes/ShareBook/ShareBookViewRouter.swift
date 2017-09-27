@@ -30,7 +30,7 @@ extension ShareBookViewRouterImpl: ShareBookViewRouter {
     func present(viewControllerToPresent: UIViewController) {
         viewController?.present(viewControllerToPresent, animated: true, completion: nil)
     }
-    
+
     func performSegue(withIdentifier: String) {
         viewController?.performSegue(withIdentifier: withIdentifier, sender: self)
     }

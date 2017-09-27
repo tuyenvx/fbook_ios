@@ -50,7 +50,7 @@ class FollowingPresenterImplementation: NSObject, FollowingPresenter {
         }, value: { listUsers in
             Observable.just(listUsers)
                 .bind(to: tableView.rx.items(cellIdentifier: "followingCell",
-                                             cellType: FollowingTableViewCell.self)) { (index, user, cell) in
+                                             cellType: FollowingTableViewCell.self)) { (_, user, cell) in
                                                 cell.updateCell(user: user)
                 }
                 .disposed(by: self.disposeBag)
