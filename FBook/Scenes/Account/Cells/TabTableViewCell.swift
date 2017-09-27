@@ -22,31 +22,28 @@ class TabTableViewCell: UITableViewCell {
     @IBOutlet weak var followersButton: UIButton!
     @IBOutlet weak var followingButton: UIButton!
 
-    var handleButtonProfileTapped: () -> Void = { }
-    var handleButtonCategoriesTapped: () -> Void = { }
-    var handleButtonFollowersTapped: () -> Void = { }
-    var handleButtonFollowingTapped: () -> Void = { }
+    var handleButtonTapped: (Tab) -> Void = { _ in }
 
     var selectedTab = Tab.profile
 
     @IBAction func onButtonProfileTapped(_ sender: Any) {
         updateButtonView(tab: .profile)
-        handleButtonProfileTapped()
+        handleButtonTapped(.profile)
     }
 
     @IBAction func onButtonCategoriesTapped(_ sender: Any) {
         updateButtonView(tab: .categories)
-        handleButtonCategoriesTapped()
+        handleButtonTapped(.categories)
     }
 
     @IBAction func onButtonFollowersTapped(_ sender: Any) {
         updateButtonView(tab: .followers)
-        handleButtonFollowersTapped()
+        handleButtonTapped(.followers)
     }
 
     @IBAction func onButtonFollowingTapped(_ sender: Any) {
         updateButtonView(tab: .following)
-        handleButtonFollowingTapped()
+        handleButtonTapped(.following)
     }
 
     func updateButtonView(tab: Tab) {

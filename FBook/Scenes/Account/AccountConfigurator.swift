@@ -23,6 +23,5 @@ class AccountConfiguratorImplementation: AccountConfigurator {
         let router = AccountRouterImplementation(viewController: viewController)
         let presenter = AccountPresenterImplementation(view: viewController, router: router, user: user)
         viewController.presenter = presenter
-
     }
 }
