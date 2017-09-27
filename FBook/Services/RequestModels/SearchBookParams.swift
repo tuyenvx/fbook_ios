@@ -41,6 +41,17 @@ enum SortType: String {
     case title = "title"
     case publishDate = "publish_date"
     case author = "author"
+
+    func getTitle() -> String {
+        switch self {
+        case .countView: return "Count view"
+        case .avgStar: return "Average star"
+        case .createdAt: return "Create date"
+        case .title: return "Title"
+        case .publishDate: return "Publish date"
+        case .author: return "Author"
+        }
+    }
 }
 
 enum OrderBy: String {
