@@ -44,14 +44,13 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
         tableView.registerNibCell(type: ProfileTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-
     }
 
     func fetchUserInfo() {
         weak var weakSelf = self
         AlertHelper.showLoading()
 //        TODO after send userId after comment line when click
-        UsersProvider.getOtherUserProfile(userId: 1).on(failed: { error in
+        UsersProvider.getOtherUserProfile(userId: 1).on(failed: { _ in
             AlertHelper.hideLoading()
         }, completed: {
             AlertHelper.hideLoading()
@@ -131,20 +130,20 @@ extension AccountPresenterImplementation: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
+
     fileprivate func handleButtonProfileTapped() {
-        
+
     }
 
     fileprivate func handleButtonCategoriesTapped() {
-        
+
     }
 
     fileprivate func handleButtonFollowersTapped() {
-        
+
     }
 
     fileprivate func handleButtonFollowingTapped() {
-        
+
     }
 }

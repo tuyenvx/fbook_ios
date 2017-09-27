@@ -11,6 +11,7 @@ import UIKit
 protocol SearchViewRouter {
 
     func showDetail(book: Book)
+    func showDetail(googleBook: GoogleBook)
 }
 
 class SearchViewRouterImplementation {
@@ -31,5 +32,13 @@ extension SearchViewRouterImplementation: SearchViewRouter {
         }
         detailViewController.configurator = BookDetailConfiguratorImplementation(book: book)
         viewController?.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+
+    func showDetail(googleBook: GoogleBook) {
+        guard let url = URL(string: googleBook.infoLink) else {
+            return
+        }
+        let safariViewController = FBSafariViewController(url: url)
+        viewController?.present(safariViewController, animated: true, completion: nil)
     }
 }

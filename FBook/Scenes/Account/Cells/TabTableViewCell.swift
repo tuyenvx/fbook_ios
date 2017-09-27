@@ -21,7 +21,7 @@ class TabTableViewCell: UITableViewCell {
     @IBOutlet weak var categoriesButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
     @IBOutlet weak var followingButton: UIButton!
-    
+
     var handleButtonProfileTapped: () -> Void = { }
     var handleButtonCategoriesTapped: () -> Void = { }
     var handleButtonFollowersTapped: () -> Void = { }

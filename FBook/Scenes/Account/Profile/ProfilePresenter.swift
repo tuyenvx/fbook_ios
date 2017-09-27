@@ -29,7 +29,7 @@ class ProfilePresenterImplementation: ProfilePresenter {
         if currentUser.id != self.user.id {
             weak var weakSelf = self
             AlertHelper.showLoading()
-            UsersProvider.getOtherUserProfile(userId: self.user.id).on(failed: { error in
+            UsersProvider.getOtherUserProfile(userId: self.user.id).on(failed: { _ in
                 AlertHelper.hideLoading()
             }, completed: {
                 AlertHelper.hideLoading()
