@@ -2,7 +2,7 @@
 //  FollowerTableViewCell.swift
 //  FBook
 //
-//  Created by tran.xuan.diep on 9/18/17.
+//  Created by tran.xuan.diep on 9/22/17.
 //  Copyright © 2017 Framgia. All rights reserved.
 //
 
@@ -20,10 +20,5 @@ class FollowerTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
-    func updateCell(user: User) {
-        userNameLabel.text = user.name
-        avatarUserImage.setImage(urlString: user.avatar, placeHolder: kDefaultAvatar)
-    }
-
+    
 }

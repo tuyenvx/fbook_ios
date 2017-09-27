@@ -157,35 +157,31 @@
 		77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0341F5FE0B90074A5DB /* BaseTabBarController.swift */; };
 		77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A03C1F5FF8650074A5DB /* ApiProvider.swift */; };
 		77F5A0411F60071B0074A5DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0401F60071B0074A5DB /* API.swift */; };
-		D5243D561F724EC9000DBBDE /* FollowingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5243D551F724EC9000DBBDE /* FollowingRouter.swift */; };
 		D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54028AF1F6B73D60065F937 /* Date+Extensions.swift */; };
-		D559AF3A1F67808400F0ABF7 /* FavoriteCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */; };
-		D56313C41F62938F00BEDFE4 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */; };
-		D56313C61F62943900BEDFE4 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */; };
-		D56313C81F629B9100BEDFE4 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56313C71F629B9100BEDFE4 /* AccountPresenter.swift */; };
-		D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56313C91F629DD600BEDFE4 /* AccountConfigurator.swift */; };
-		D57D40E11F665449009F0801 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D40E01F665449009F0801 /* CategoryTableViewCell.swift */; };
-		D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */; };
-		D57D40E51F666DA3009F0801 /* FavoriteCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */; };
-		D5915F981F6F67F70058E546 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F971F6F67F70058E546 /* FollowingViewController.swift */; };
-		D5915F9A1F6F68110058E546 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F991F6F68110058E546 /* FollowersViewController.swift */; };
-		D5915F9C1F6F69180058E546 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */; };
-		D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */; };
-		D5915FA41F6F85050058E546 /* FollowingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */; };
-		D5915FA61F6F85140058E546 /* FollowingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA51F6F85140058E546 /* FollowingPresenter.swift */; };
-		D5915FA81F6F85290058E546 /* FollowersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */; };
-		D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */; };
+		D54CFC711F750DAB00D4B4F1 /* TabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54CFC6F1F750DAB00D4B4F1 /* TabTableViewCell.swift */; };
+		D54CFC721F750DAB00D4B4F1 /* TabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54CFC701F750DAB00D4B4F1 /* TabTableViewCell.xib */; };
+		D583EACE1F78944D003915FA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D583EACC1F78944D003915FA /* ProfileTableViewCell.swift */; };
+		D583EACF1F78944D003915FA /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D583EACD1F78944D003915FA /* ProfileTableViewCell.xib */; };
+		D58C705A1F75035F0059D3BE /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C70591F75035F0059D3BE /* Account.storyboard */; };
+		D58C705C1F7503BC0059D3BE /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C705B1F7503BC0059D3BE /* AccountViewController.swift */; };
+		D58C705E1F7504ED0059D3BE /* AccountConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C705D1F7504ED0059D3BE /* AccountConfigurator.swift */; };
+		D58C70601F75051A0059D3BE /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C705F1F75051A0059D3BE /* AccountPresenter.swift */; };
+		D58C70621F75052D0059D3BE /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C70611F75052D0059D3BE /* AccountRouter.swift */; };
+		D58C70661F75062B0059D3BE /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C70641F75062B0059D3BE /* FollowingTableViewCell.swift */; };
+		D58C70671F75062B0059D3BE /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C70651F75062B0059D3BE /* FollowingTableViewCell.xib */; };
+		D58C706A1F7506450059D3BE /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C70681F7506450059D3BE /* FollowerTableViewCell.swift */; };
+		D58C706B1F7506450059D3BE /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C70691F7506450059D3BE /* FollowerTableViewCell.xib */; };
+		D58C706E1F75065D0059D3BE /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C706C1F75065D0059D3BE /* CategoryTableViewCell.swift */; };
+		D58C706F1F75065D0059D3BE /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C706D1F75065D0059D3BE /* CategoryTableViewCell.xib */; };
+		D58C70721F7506DF0059D3BE /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C70701F7506DF0059D3BE /* HeaderTableViewCell.swift */; };
+		D58C70731F7506DF0059D3BE /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C70711F7506DF0059D3BE /* HeaderTableViewCell.xib */; };
 		D5915FAC1F6FAD7D0058E546 /* FollowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */; };
-		D5A138A61F74A325009F343D /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A138A51F74A325009F343D /* AccountRouter.swift */; };
 		D5CD98F71F6A14170074BC01 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */; };
 		D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CD98F81F6A14310074BC01 /* Notification.storyboard */; };
 		D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */; };
 		D5CD98FD1F6A15000074BC01 /* NotificationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98FC1F6A15000074BC01 /* NotificationConfigurator.swift */; };
 		D5CD99001F6A18AC0074BC01 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD98FF1F6A18AC0074BC01 /* NotificationTableViewCell.swift */; };
 		D5CD99041F6A8A020074BC01 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD99031F6A8A020074BC01 /* Notification.swift */; };
-		D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DB47581F5FCA7A0042B809 /* AccountScreen.storyboard */; };
-		D5DB475C1F5FCABC0042B809 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DB475A1F5FCABC0042B809 /* AccountViewController.swift */; };
-		D5DB475F1F5FCF090042B809 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */; };
 		E1966237C1E45CB1DCC29E23 /* Pods_FBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0C30664FE5265A54D7B243 /* Pods_FBookUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -368,35 +364,31 @@
 		B25D5DC6B1ED2B28EAB4D7AC /* Pods-FBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B416ACA6FFCD9220F9B75A51 /* Pods-FBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.debug.xcconfig"; sourceTree = "<group>"; };
 		CDA0389DECFAD21548DD9198 /* Pods-FBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D5243D551F724EC9000DBBDE /* FollowingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingRouter.swift; sourceTree = "<group>"; };
 		D54028AF1F6B73D60065F937 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesViewController.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
-		D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileConfigurator.swift; path = FBook/Scenes/Account/Profile/ProfileConfigurator.swift; sourceTree = SOURCE_ROOT; };
-		D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = FBook/Scenes/Account/Profile/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
-		D56313C71F629B9100BEDFE4 /* AccountPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
-		D56313C91F629DD600BEDFE4 /* AccountConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountConfigurator.swift; sourceTree = "<group>"; };
-		D57D40E01F665449009F0801 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesConfigurator.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesConfigurator.swift; sourceTree = SOURCE_ROOT; };
-		D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteCategoriesPresenter.swift; path = FBook/Scenes/Account/FavoriteCategories/FavoriteCategoriesPresenter.swift; sourceTree = SOURCE_ROOT; };
-		D5915F971F6F67F70058E546 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingViewController.swift; path = FBook/Scenes/Account/Following/FollowingViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5915F991F6F68110058E546 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowersViewController.swift; path = FBook/Scenes/Account/Followers/FollowersViewController.swift; sourceTree = SOURCE_ROOT; };
-		D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
-		D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
-		D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingConfigurator.swift; sourceTree = "<group>"; };
-		D5915FA51F6F85140058E546 /* FollowingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingPresenter.swift; sourceTree = "<group>"; };
-		D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersConfigurator.swift; sourceTree = "<group>"; };
-		D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersPresenter.swift; sourceTree = "<group>"; };
+		D54CFC6F1F750DAB00D4B4F1 /* TabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTableViewCell.swift; sourceTree = "<group>"; };
+		D54CFC701F750DAB00D4B4F1 /* TabTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabTableViewCell.xib; sourceTree = "<group>"; };
+		D583EACC1F78944D003915FA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		D583EACD1F78944D003915FA /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		D58C70591F75035F0059D3BE /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		D58C705B1F7503BC0059D3BE /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		D58C705D1F7504ED0059D3BE /* AccountConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountConfigurator.swift; sourceTree = "<group>"; };
+		D58C705F1F75051A0059D3BE /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		D58C70611F75052D0059D3BE /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		D58C70641F75062B0059D3BE /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		D58C70651F75062B0059D3BE /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
+		D58C70681F7506450059D3BE /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		D58C70691F7506450059D3BE /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
+		D58C706C1F75065D0059D3BE /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		D58C706D1F75065D0059D3BE /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		D58C70701F7506DF0059D3BE /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D58C70711F7506DF0059D3BE /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		D5915FAB1F6FAD7D0058E546 /* FollowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowInfo.swift; sourceTree = "<group>"; };
-		D5A138A51F74A325009F343D /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
 		D5CD98F61F6A14170074BC01 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		D5CD98F81F6A14310074BC01 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		D5CD98FA1F6A14EB0074BC01 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
 		D5CD98FC1F6A15000074BC01 /* NotificationConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationConfigurator.swift; sourceTree = "<group>"; };
 		D5CD98FF1F6A18AC0074BC01 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		D5CD99031F6A8A020074BC01 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		D5DB47581F5FCA7A0042B809 /* AccountScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountScreen.storyboard; sourceTree = "<group>"; };
-		D5DB475A1F5FCABC0042B809 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = FBook/Scenes/Account/Profile/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		DE86A6CBBAFF37FC4EEBB418 /* Pods_FBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF6286C009F1B08335662F4 /* Pods-FBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBookUITests/Pods-FBookUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -726,6 +718,7 @@
 			children = (
 				4B09360C1F7A299A0029155C /* ItemPicker */,
 				4B9731011F74ED4200D89ADC /* ShareBook */,
+				D58C70581F75031C0059D3BE /* Account */,
 				4BC266E71F70EBC90003FCEF /* Rating */,
 				7751978B1F6FA615005042D9 /* Categories */,
 				7703B3571F6A584400CDF69D /* Workspace */,
@@ -733,7 +726,6 @@
 				D5CD98F51F6A13840074BC01 /* Notification */,
 				4BACDBBD1F67703900881AA0 /* BookDetail */,
 				1180384D1F6FA7DB00945648 /* BookRequest */,
-				D543F05C1F6249BA005EB1A3 /* Account */,
 				11076EA61F6285AD002AA6D5 /* Search */,
 				77A76EDF1F62956F008601E2 /* Home */,
 				77DECCB41F623E31007E32F5 /* Login */,
@@ -907,72 +899,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D543F05C1F6249BA005EB1A3 /* Account */ = {
+		D58C70581F75031C0059D3BE /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				D5915FA21F6F720E0058E546 /* FavoriteCategories */,
-				D5915FA11F6F71AC0058E546 /* Profile */,
-				D5915FA01F6F71680058E546 /* Following */,
-				D5915F9F1F6F70EB0058E546 /* Followers */,
-				D559AF3B1F67898800F0ABF7 /* Cells */,
-				D5DB475A1F5FCABC0042B809 /* AccountViewController.swift */,
-				D5DB47581F5FCA7A0042B809 /* AccountScreen.storyboard */,
-				D56313C71F629B9100BEDFE4 /* AccountPresenter.swift */,
-				D56313C91F629DD600BEDFE4 /* AccountConfigurator.swift */,
-				D5A138A51F74A325009F343D /* AccountRouter.swift */,
+				D58C70631F75054A0059D3BE /* Cells */,
+				D58C70591F75035F0059D3BE /* Account.storyboard */,
+				D58C705B1F7503BC0059D3BE /* AccountViewController.swift */,
+				D58C705D1F7504ED0059D3BE /* AccountConfigurator.swift */,
+				D58C705F1F75051A0059D3BE /* AccountPresenter.swift */,
+				D58C70611F75052D0059D3BE /* AccountRouter.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
 		};
-		D559AF3B1F67898800F0ABF7 /* Cells */ = {
+		D58C70631F75054A0059D3BE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D57D40E01F665449009F0801 /* CategoryTableViewCell.swift */,
-				D5915F9B1F6F69180058E546 /* FollowingTableViewCell.swift */,
-				D5915F9D1F6F69290058E546 /* FollowerTableViewCell.swift */,
+				D58C70641F75062B0059D3BE /* FollowingTableViewCell.swift */,
+				D58C70651F75062B0059D3BE /* FollowingTableViewCell.xib */,
+				D58C70681F7506450059D3BE /* FollowerTableViewCell.swift */,
+				D58C70691F7506450059D3BE /* FollowerTableViewCell.xib */,
+				D58C706C1F75065D0059D3BE /* CategoryTableViewCell.swift */,
+				D58C706D1F75065D0059D3BE /* CategoryTableViewCell.xib */,
+				D58C70701F7506DF0059D3BE /* HeaderTableViewCell.swift */,
+				D58C70711F7506DF0059D3BE /* HeaderTableViewCell.xib */,
+				D54CFC6F1F750DAB00D4B4F1 /* TabTableViewCell.swift */,
+				D54CFC701F750DAB00D4B4F1 /* TabTableViewCell.xib */,
+				D583EACC1F78944D003915FA /* ProfileTableViewCell.swift */,
+				D583EACD1F78944D003915FA /* ProfileTableViewCell.xib */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		D5915F9F1F6F70EB0058E546 /* Followers */ = {
-			isa = PBXGroup;
-			children = (
-				D5915F991F6F68110058E546 /* FollowersViewController.swift */,
-				D5915FA71F6F85290058E546 /* FollowersConfigurator.swift */,
-				D5915FA91F6F853D0058E546 /* FollowersPresenter.swift */,
-			);
-			path = Followers;
-			sourceTree = "<group>";
-		};
-		D5915FA01F6F71680058E546 /* Following */ = {
-			isa = PBXGroup;
-			children = (
-				D5915F971F6F67F70058E546 /* FollowingViewController.swift */,
-				D5915FA31F6F85050058E546 /* FollowingConfigurator.swift */,
-				D5915FA51F6F85140058E546 /* FollowingPresenter.swift */,
-				D5243D551F724EC9000DBBDE /* FollowingRouter.swift */,
-			);
-			path = Following;
-			sourceTree = "<group>";
-		};
-		D5915FA11F6F71AC0058E546 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				D5DB475E1F5FCF090042B809 /* ProfileViewController.swift */,
-				D56313C31F62938F00BEDFE4 /* ProfileConfigurator.swift */,
-				D56313C51F62943900BEDFE4 /* ProfilePresenter.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		D5915FA21F6F720E0058E546 /* FavoriteCategories */ = {
-			isa = PBXGroup;
-			children = (
-				D57D40E21F666D91009F0801 /* FavoriteCategoriesConfigurator.swift */,
-				D57D40E41F666DA3009F0801 /* FavoriteCategoriesPresenter.swift */,
-				D559AF391F67808400F0ABF7 /* FavoriteCategoriesViewController.swift */,
-			);
-			path = FavoriteCategories;
 			sourceTree = "<group>";
 		};
 		D5CD98F51F6A13840074BC01 /* Notification */ = {
@@ -1121,10 +1077,14 @@
 				11361F151F7A4AEE00125108 /* NoDataView.xib in Resources */,
 				7751978F1F6FA6F0005042D9 /* Category.storyboard in Resources */,
 				77A6EACB1F68C05300EE384B /* MenuSettingViewController.xib in Resources */,
-				D5DB47591F5FCA7A0042B809 /* AccountScreen.storyboard in Resources */,
+				D54CFC721F750DAB00D4B4F1 /* TabTableViewCell.xib in Resources */,
 				4B8F9BE31F6A7B5700B74769 /* BookDetailHeaderView.xib in Resources */,
 				77F59FF01F5F9B1F0074A5DB /* LaunchScreen.storyboard in Resources */,
+				D58C705A1F75035F0059D3BE /* Account.storyboard in Resources */,
+				D58C70671F75062B0059D3BE /* FollowingTableViewCell.xib in Resources */,
 				D5CD98F91F6A14310074BC01 /* Notification.storyboard in Resources */,
+				D58C706F1F75065D0059D3BE /* CategoryTableViewCell.xib in Resources */,
+				D583EACF1F78944D003915FA /* ProfileTableViewCell.xib in Resources */,
 				4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */,
 				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
 				1180384F1F6FA7DB00945648 /* BookRequest.storyboard in Resources */,
@@ -1137,8 +1097,10 @@
 				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
 				4B068CC91F7894A900CA03AA /* PhotoCollectionViewCell.xib in Resources */,
+				D58C70731F7506DF0059D3BE /* HeaderTableViewCell.xib in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
 				4B73763C1F70B6F500CC98EF /* WriteReviewTableViewCell.xib in Resources */,
+				D58C706B1F7506450059D3BE /* FollowerTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
 				772614AA1F669259004D6943 /* HomeHeader.xib in Resources */,
 			);
@@ -1221,7 +1183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6BA7FB357913453C8E850BE5 /* [CP] Copy Pods Resources */ = {
@@ -1267,7 +1229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		874F2F142A4FA15E1EF23A06 /* [CP] Embed Pods Frameworks */ = {
@@ -1356,7 +1318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1367,14 +1329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5915FAC1F6FAD7D0058E546 /* FollowInfo.swift in Sources */,
-				D5915F981F6F67F70058E546 /* FollowingViewController.swift in Sources */,
 				77A76E451F627EB1008601E2 /* AlertHelper.swift in Sources */,
 				77F5A01C1F5FDB2D0074A5DB /* Utility.swift in Sources */,
 				772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */,
 				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
 				4B068CCD1F789D8D00CA03AA /* ShareBookPresenter.swift in Sources */,
-				D5915F9C1F6F69180058E546 /* FollowingTableViewCell.swift in Sources */,
 				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
+				D58C706E1F75065D0059D3BE /* CategoryTableViewCell.swift in Sources */,
 				77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */,
 				4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */,
 				77A76EEC1F629602008601E2 /* HomeConfigurator.swift in Sources */,
@@ -1389,7 +1350,6 @@
 				4B09360E1F7A29D70029155C /* ItemPickerViewController.swift in Sources */,
 				7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */,
 				4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */,
-				D5A138A61F74A325009F343D /* AccountRouter.swift in Sources */,
 				D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */,
 				772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */,
 				D5CD99041F6A8A020074BC01 /* Notification.swift in Sources */,
@@ -1401,15 +1361,14 @@
 				4B068CD11F789DBC00CA03AA /* ShareBookConfigurator.swift in Sources */,
 				77F5A0261F5FDF340074A5DB /* NetworkReachability.swift in Sources */,
 				77F59FE61F5F9B1F0074A5DB /* AppDelegate.swift in Sources */,
-				D56313C61F62943900BEDFE4 /* ProfilePresenter.swift in Sources */,
+				D58C70601F75051A0059D3BE /* AccountPresenter.swift in Sources */,
 				7703B3631F6A62DB00CDF69D /* ChooseWorkspaceTableViewCell.swift in Sources */,
-				D5915F9A1F6F68110058E546 /* FollowersViewController.swift in Sources */,
 				77F5A0241F5FDEC50074A5DB /* ObjectResponse.swift in Sources */,
 				115E74AC1F71246600868E53 /* BookRequestsTypeHeader.swift in Sources */,
 				77F4E26E1F60F73E00C68BA8 /* BookProvider.swift in Sources */,
 				77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */,
 				4BAB82431F678E8D00E52FB1 /* BookDetailViewRouter.swift in Sources */,
-				D5243D561F724EC9000DBBDE /* FollowingRouter.swift in Sources */,
+				D583EACE1F78944D003915FA /* ProfileTableViewCell.swift in Sources */,
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */,
 				4B068CCB1F789CF000CA03AA /* ShareBookViewController.swift in Sources */,
@@ -1427,16 +1386,16 @@
 				77DECCC11F6247C7007E32F5 /* LoginViewRouter.swift in Sources */,
 				4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
-				D5915FA61F6F85140058E546 /* FollowingPresenter.swift in Sources */,
 				11361F141F7A4AEE00125108 /* NoDataView.swift in Sources */,
 				77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */,
-				D5915FA81F6F85290058E546 /* FollowersConfigurator.swift in Sources */,
 				77A76EEF1F629602008601E2 /* HomeViewRouter.swift in Sources */,
 				77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */,
 				115E74A81F710F3F00868E53 /* WaitingBooksViewRouter.swift in Sources */,
 				4BAB82451F678EA300E52FB1 /* BookDetailConfigurator.swift in Sources */,
 				77F4E2661F60EB4300C68BA8 /* Category.swift in Sources */,
+				D58C70721F7506DF0059D3BE /* HeaderTableViewCell.swift in Sources */,
 				1125B7131F72152000322CFB /* BookRequestsPresenter.swift in Sources */,
+				D58C70661F75062B0059D3BE /* FollowingTableViewCell.swift in Sources */,
 				11076EA81F62867D002AA6D5 /* SearchViewController.swift in Sources */,
 				115E74A61F710F3F00868E53 /* WaitingBooksPresenter.swift in Sources */,
 				11076EAC1F6286A4002AA6D5 /* SearchPresenter.swift in Sources */,
@@ -1445,6 +1404,7 @@
 				4B0936141F7A3B0F0029155C /* ItemPickerConfigurator.swift in Sources */,
 				77A76EED1F629602008601E2 /* HomePresenter.swift in Sources */,
 				4BC266ED1F70EC470003FCEF /* RatingPresenter.swift in Sources */,
+				D58C705E1F7504ED0059D3BE /* AccountConfigurator.swift in Sources */,
 				77F5A0331F5FE0960074A5DB /* BaseNavigationController.swift in Sources */,
 				77B45D201F6934B5001CB466 /* SectionBookRouter.swift in Sources */,
 				77A6EACA1F68C05300EE384B /* MenuSettingViewController.swift in Sources */,
@@ -1454,10 +1414,11 @@
 				4BC266EB1F70EC240003FCEF /* RatingConfigurator.swift in Sources */,
 				77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */,
 				22C480611F6040A400DB7A4C /* User.swift in Sources */,
+				D54CFC711F750DAB00D4B4F1 /* TabTableViewCell.swift in Sources */,
 				22E076A61F61D15300869A05 /* Error+Extensions.swift in Sources */,
 				77A6EAC91F68C05300EE384B /* MenuSettingRouter.swift in Sources */,
-				D5915FA41F6F85050058E546 /* FollowingConfigurator.swift in Sources */,
-				D57D40E31F666D91009F0801 /* FavoriteCategoriesConfigurator.swift in Sources */,
+				D58C705C1F7503BC0059D3BE /* AccountViewController.swift in Sources */,
+				D58C70621F75052D0059D3BE /* AccountRouter.swift in Sources */,
 				77B45D1A1F693486001CB466 /* SectionBookViewController.swift in Sources */,
 				775197951F6FA7A8005042D9 /* CategoryRouter.swift in Sources */,
 				114F9C351F68C5A60098674E /* ListItems.swift in Sources */,
@@ -1465,33 +1426,27 @@
 				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
 				77B45D1E1F6934A1001CB466 /* SectionBookConfigurator.swift in Sources */,
 				1125B7191F72155E00322CFB /* BookRequestsConfigurator.swift in Sources */,
-				D56313C41F62938F00BEDFE4 /* ProfileConfigurator.swift in Sources */,
 				772614881F661ED4004D6943 /* UICollectionView+Extensions.swift in Sources */,
 				112351E31F7A276800A00DD4 /* GoogleBook.swift in Sources */,
 				77A6EAD01F68C06500EE384B /* BaseViewConfigurator.swift in Sources */,
 				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
 				4BC266E91F70EBFF0003FCEF /* RatingViewController.swift in Sources */,
+				D58C706A1F7506450059D3BE /* FollowerTableViewCell.swift in Sources */,
 				77B45D1C1F693494001CB466 /* SectionBookPresenter.swift in Sources */,
 				77A6EACF1F68C06500EE384B /* BaseViewRouter.swift in Sources */,
 				D5CD98F71F6A14170074BC01 /* NotificationViewController.swift in Sources */,
 				1125B7111F72150600322CFB /* BookRequestsViewController.swift in Sources */,
 				7726148A1F661F14004D6943 /* UINib+Extensions.swift in Sources */,
-				D57D40E11F665449009F0801 /* CategoryTableViewCell.swift in Sources */,
 				77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */,
 				77F5A0411F60071B0074A5DB /* API.swift in Sources */,
 				77DECCC41F624FFC007E32F5 /* ForgotPasswordViewController.swift in Sources */,
 				4B0936121F7A37B40029155C /* ItemPickerViewRouter.swift in Sources */,
-				D56313CA1F629DD600BEDFE4 /* AccountConfigurator.swift in Sources */,
 				4B0936101F7A36D00029155C /* ItemPickerPresenter.swift in Sources */,
-				D5915FAA1F6F853D0058E546 /* FollowersPresenter.swift in Sources */,
 				4B068CCF1F789DAE00CA03AA /* ShareBookViewRouter.swift in Sources */,
 				77F5A01A1F5FDAC80074A5DB /* Constants.swift in Sources */,
 				77A6EAD11F68C06500EE384B /* BaseViewPresenter.swift in Sources */,
 				4B546A621F79EC5600EB34B2 /* CustomTextField.swift in Sources */,
 				772614A81F669259004D6943 /* HomeCellConfigurator.swift in Sources */,
-				D57D40E51F666DA3009F0801 /* FavoriteCategoriesPresenter.swift in Sources */,
-				D559AF3A1F67808400F0ABF7 /* FavoriteCategoriesViewController.swift in Sources */,
-				D56313C81F629B9100BEDFE4 /* AccountPresenter.swift in Sources */,
 				D5CD98FD1F6A15000074BC01 /* NotificationConfigurator.swift in Sources */,
 				772614A91F669259004D6943 /* HomeCellPresenter.swift in Sources */,
 				772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */,
@@ -1502,19 +1457,16 @@
 				1125B7171F72155100322CFB /* BookRequestsViewRouter.swift in Sources */,
 				D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */,
 				224C0F291F604808007BEA04 /* UsersProvider.swift in Sources */,
-				D5915F9E1F6F69290058E546 /* FollowerTableViewCell.swift in Sources */,
 				77A76EEE1F629602008601E2 /* HomeViewController.swift in Sources */,
 				772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */,
 				7703B35D1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift in Sources */,
 				115E74A71F710F3F00868E53 /* WaitingBooksViewController.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */,
-				D5DB475F1F5FCF090042B809 /* ProfileViewController.swift in Sources */,
 				7703B35F1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift in Sources */,
 				4B8F9BDB1F6A711100B74769 /* BasicDetailTableViewCell.swift in Sources */,
 				77DECCBF1F62478B007E32F5 /* LoginConfigurator.swift in Sources */,
 				775197911F6FA786005042D9 /* CategoryPresenter.swift in Sources */,
-				D5DB475C1F5FCABC0042B809 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftHEXColors
 
 let application = UIApplication.shared
 let appDelegate = application.delegate as? AppDelegate
