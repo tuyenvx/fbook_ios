@@ -20,4 +20,9 @@ class FollowingTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    func updateCell(_ user: User?) {
+        avatarUserImage.setImage(urlString: user?.avatar, placeHolder: kDefaultAvatar)
+        userNameLabel.text = user?.name
+    }
 }

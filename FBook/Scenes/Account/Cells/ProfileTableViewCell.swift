@@ -24,11 +24,11 @@ class ProfileTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func displayProfile(_ user: User) {
-        userNameLabel?.text = user.name
-        emailLabel?.text = user.email
-        phoneLabel?.text = user.phone
-        codeLabel?.text = user.code
-        positionLabel?.text = user.position
+    func displayProfile(_ user: User?) {
+        userNameLabel?.text = user?.name
+        emailLabel?.text = user?.email
+        phoneLabel?.text = user?.phone
+        codeLabel?.text = user?.code
+        positionLabel?.text = user?.position
     }
 }

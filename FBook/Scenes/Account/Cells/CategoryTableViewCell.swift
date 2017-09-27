@@ -20,4 +20,7 @@ class CategoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    func updateCell(categoryName: String?) {
+        self.categoryName.text = categoryName
+    }
 }

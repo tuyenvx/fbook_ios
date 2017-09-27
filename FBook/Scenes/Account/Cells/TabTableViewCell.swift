@@ -27,7 +27,7 @@ class TabTableViewCell: UITableViewCell {
     var handleButtonFollowersTapped: () -> Void = { }
     var handleButtonFollowingTapped: () -> Void = { }
 
-    var selectedTab: ((Tab) -> Void)?
+    var selectedTab = Tab.profile
 
     @IBAction func onButtonProfileTapped(_ sender: Any) {
         updateButtonView(tab: .profile)
@@ -55,13 +55,17 @@ class TabTableViewCell: UITableViewCell {
         }
         switch tab {
         case .profile:
-             profileButton.isSelected = true
+            profileButton.isSelected = true
+            selectedTab = .profile
         case .categories:
             categoriesButton.isSelected = true
+            selectedTab = .categories
         case .followers:
             followersButton.isSelected = true
+            selectedTab = .followers
         case .following:
             followingButton.isSelected = true
+            selectedTab = .following
         }
     }
 }
