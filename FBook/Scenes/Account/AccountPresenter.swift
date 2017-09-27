@@ -19,15 +19,23 @@ protocol AccountPresenter {
     func configure(tableView: UITableView)
     func fetchUserInfo()
     func fetchFavoriteCategoriesOfUser()
-    func fetchFollowInfo()
+    func fetchFollowers()
+    func fetchFollowingUsers()
+    func handleLoadCategoriesSuccess(_ categories: [Category])
+    func handleLoadUsersSuccess(_ users: [User])
+    func handleLoadUserInfoSuccess()
 
 }
 
 class AccountPresenterImplementation: NSObject, AccountPresenter {
+
     fileprivate weak var view: AccountView?
     fileprivate var router: AccountRouter?
     fileprivate var user: User
     var selectedTab: Tab?
+    fileprivate var listCategories = [Category]()
+    fileprivate var listUsers = [User]()
+    fileprivate var currentTab = Tab.profile
 
     init(view: AccountView?, router: AccountRouter?, user: User) {
         self.view = view
@@ -49,21 +57,71 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
     func fetchUserInfo() {
         weak var weakSelf = self
         AlertHelper.showLoading()
-//        TODO after send userId after comment line when click
-        UsersProvider.getOtherUserProfile(userId: 1).on(failed: { _ in
+//        TODO check userID when push navigation
+        UsersProvider.getOtherUserProfile(userId: user.id).on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
             AlertHelper.hideLoading()
         }, completed: {
             AlertHelper.hideLoading()
         }, value: { user in
             weakSelf?.user = user
+            weakSelf?.handleLoadUserInfoSuccess()
         }).start()
     }
 
     func fetchFavoriteCategoriesOfUser() {
-
+        //        TODO check userID when push navigation
+        AlertHelper.showLoading()
+        UsersProvider.getFavoriteCategoriesOfCurrentUser(userId: user.id).on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+            AlertHelper.hideLoading()
+        }, completed: {
+            AlertHelper.hideLoading()
+        }, value: { categories in
+            self.handleLoadCategoriesSuccess(categories)
+        }).start()
     }
 
-    func fetchFollowInfo() {
+    func fetchFollowers() {
+        //        TODO check userID when push navigation
+        AlertHelper.showLoading()
+        UsersProvider.getFollowersOfUser(userId: user.id).on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+            AlertHelper.hideLoading()
+        }, completed: {
+            AlertHelper.hideLoading()
+        }, value: { users in
+            self.handleLoadUsersSuccess(users)
+        }).start()
+    }
+
+    func fetchFollowingUsers() {
+        //        TODO check userID when push navigation
+        AlertHelper.showLoading()
+        UsersProvider.getFollowingOfUser(userId: user.id).on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+            AlertHelper.hideLoading()
+        }, completed: {
+            AlertHelper.hideLoading()
+        }, value: { users in
+            self.handleLoadUsersSuccess(users)
+        }).start()
+    }
+
+    func handleLoadCategoriesSuccess(_ categories: [Category]) {
+        listCategories.removeAll()
+        listCategories.append(contentsOf: categories)
+        self.view?.refreshAccount()
+    }
+
+    func handleLoadUsersSuccess(_ users: [User]) {
+        listUsers.removeAll()
+        listUsers.append(contentsOf: users)
+        self.view?.refreshAccount()
+    }
+
+    func handleLoadUserInfoSuccess() {
+        self.view?.refreshAccount()
     }
 
 }
@@ -74,7 +132,21 @@ extension AccountPresenterImplementation: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch section {
+        case 2:
+            switch currentTab {
+            case .profile:
+                return 1
+            case .categories:
+                return listCategories.count
+            case .following:
+                return listUsers.count
+            case .followers:
+                return listUsers.count
+            }
+        default:
+            return 1
+        }
     }
 }
 
@@ -86,7 +158,12 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         case 1:
             return 50
         case 2:
-            return 300
+            switch currentTab {
+            case .profile: return 300
+            case .categories: return 50
+            case .followers: return 70
+            case .following: return 70
+            }
         default:
             return 0
         }
@@ -106,44 +183,85 @@ extension AccountPresenterImplementation: UITableViewDataSource {
             }
             cell.handleButtonProfileTapped = { [weak self] in
                 self?.handleButtonProfileTapped()
+                self?.currentTab = cell.selectedTab
             }
 
             cell.handleButtonCategoriesTapped = { [weak self] in
                 self?.handleButtonCategoriesTapped()
+                self?.currentTab = cell.selectedTab
             }
 
             cell.handleButtonFollowersTapped = { [weak self] in
                 self?.handleButtonFollowersTapped()
+                self?.currentTab = cell.selectedTab
             }
 
             cell.handleButtonFollowingTapped = { [weak self] in
                 self?.handleButtonFollowingTapped()
+                self?.currentTab = cell.selectedTab
             }
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableNibCell(type: ProfileTableViewCell.self) else {
-                return UITableViewCell()
+            switch currentTab {
+            case .profile:
+                return loadProfileTab(tableView: tableView)
+            case .categories:
+                return loadCategoriesTab(tableView: tableView, indexPath: indexPath)
+            case .followers:
+                return loadFollowersTab(tableView: tableView, indexPath: indexPath)
+            case .following:
+                return loadFollowingTab(tableView: tableView, indexPath: indexPath)
             }
-            cell.displayProfile(user)
-            return cell
         default:
             return UITableViewCell()
         }
     }
 
     fileprivate func handleButtonProfileTapped() {
-
+        fetchUserInfo()
     }
 
     fileprivate func handleButtonCategoriesTapped() {
-
+        fetchFavoriteCategoriesOfUser()
     }
 
     fileprivate func handleButtonFollowersTapped() {
-
+        fetchFollowers()
     }
 
     fileprivate func handleButtonFollowingTapped() {
+        fetchFollowingUsers()
+    }
 
+    fileprivate func loadProfileTab(tableView: UITableView) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: ProfileTableViewCell.self) else {
+            return UITableViewCell()
+        }
+        cell.displayProfile(user)
+        return cell
+    }
+
+    fileprivate func loadCategoriesTab(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: CategoryTableViewCell.self) else {
+            return UITableViewCell()
+        }
+        cell.updateCell(categoryName: listCategories[indexPath.row].name)
+        return cell
+    }
+
+    fileprivate func loadFollowersTab(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: FollowerTableViewCell.self) else {
+            return UITableViewCell()
+        }
+        cell.updateCell(listUsers[indexPath.row])
+        return cell
+    }
+
+    fileprivate func loadFollowingTab(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: FollowingTableViewCell.self) else {
+            return UITableViewCell()
+        }
+        cell.updateCell(listUsers[indexPath.row])
+        return cell
     }
 }
