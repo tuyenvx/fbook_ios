@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryPickerViewController" customModule="FBook" customModuleProvider="target">
+            <connections>
+                <outlet property="heightTableConstraint" destination="9JI-f3-Hbc" id="eRb-7C-Lbq"/>
+                <outlet property="loadingIndicatorView" destination="PbA-jW-TJL" id="fu1-Cy-UvL"/>
+                <outlet property="tableView" destination="UyT-4h-Jmx" id="8Tn-wc-Fmn"/>
+                <outlet property="view" destination="XXc-fu-RJ1" id="vbI-es-37H"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XXc-fu-RJ1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPu-s2-GHF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="YB6-Hv-92V"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UyT-4h-Jmx">
+                    <rect key="frame" x="42.5" y="283.5" width="290" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="9JI-f3-Hbc"/>
+                        <constraint firstAttribute="width" constant="290" id="wKD-Ry-mZD"/>
+                    </constraints>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-jW-TJL">
+                    <rect key="frame" x="169.5" y="315.5" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PbA-jW-TJL" firstAttribute="centerY" secondItem="UyT-4h-Jmx" secondAttribute="centerY" id="740-uj-WUR"/>
+                <constraint firstAttribute="trailing" secondItem="gPu-s2-GHF" secondAttribute="trailing" id="7xR-JP-Je9"/>
+                <constraint firstItem="UyT-4h-Jmx" firstAttribute="centerX" secondItem="XXc-fu-RJ1" secondAttribute="centerX" id="FOh-jB-yn1"/>
+                <constraint firstAttribute="bottom" secondItem="gPu-s2-GHF" secondAttribute="bottom" id="Yyw-Pw-DyY"/>
+                <constraint firstItem="PbA-jW-TJL" firstAttribute="centerX" secondItem="UyT-4h-Jmx" secondAttribute="centerX" id="jTF-NZ-iy1"/>
+                <constraint firstItem="gPu-s2-GHF" firstAttribute="top" secondItem="XXc-fu-RJ1" secondAttribute="top" id="oQ4-WW-45i"/>
+                <constraint firstItem="gPu-s2-GHF" firstAttribute="leading" secondItem="XXc-fu-RJ1" secondAttribute="leading" id="sNC-eZ-pPC"/>
+                <constraint firstItem="UyT-4h-Jmx" firstAttribute="centerY" secondItem="XXc-fu-RJ1" secondAttribute="centerY" id="w6D-RS-gbu"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Mrd-bY-EeQ"/>
+            <point key="canvasLocation" x="5" y="-162"/>
+        </view>
+    </objects>
+</document>
