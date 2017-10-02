@@ -134,6 +134,11 @@
 		77B45D1C1F693494001CB466 /* SectionBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B45D1B1F693494001CB466 /* SectionBookPresenter.swift */; };
 		77B45D1E1F6934A1001CB466 /* SectionBookConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B45D1D1F6934A1001CB466 /* SectionBookConfigurator.swift */; };
 		77B45D201F6934B5001CB466 /* SectionBookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B45D1F1F6934B5001CB466 /* SectionBookRouter.swift */; };
+		77B7C39F1F7BAFA6006483C1 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7C39D1F7BAFA6006483C1 /* CategoryPickerViewController.swift */; };
+		77B7C3A01F7BAFA6006483C1 /* CategoryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B7C39E1F7BAFA6006483C1 /* CategoryPickerViewController.xib */; };
+		77B7C3A21F7BAFDC006483C1 /* CategoryPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7C3A11F7BAFDC006483C1 /* CategoryPickerPresenter.swift */; };
+		77B7C3A41F7BAFF7006483C1 /* CategoryPickerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7C3A31F7BAFF7006483C1 /* CategoryPickerConfigurator.swift */; };
+		77B7C3A61F7BB003006483C1 /* CategoryPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7C3A51F7BB003006483C1 /* CategoryPickerRouter.swift */; };
 		77DECCB81F623E31007E32F5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DECCB51F623E31007E32F5 /* Login.storyboard */; };
 		77DECCB91F623E31007E32F5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DECCB61F623E31007E32F5 /* LoginPresenter.swift */; };
 		77DECCBA1F623E31007E32F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DECCB71F623E31007E32F5 /* LoginViewController.swift */; };
@@ -337,6 +342,11 @@
 		77B45D1B1F693494001CB466 /* SectionBookPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBookPresenter.swift; sourceTree = "<group>"; };
 		77B45D1D1F6934A1001CB466 /* SectionBookConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBookConfigurator.swift; sourceTree = "<group>"; };
 		77B45D1F1F6934B5001CB466 /* SectionBookRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBookRouter.swift; sourceTree = "<group>"; };
+		77B7C39D1F7BAFA6006483C1 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		77B7C39E1F7BAFA6006483C1 /* CategoryPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPickerViewController.xib; sourceTree = "<group>"; };
+		77B7C3A11F7BAFDC006483C1 /* CategoryPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerPresenter.swift; sourceTree = "<group>"; };
+		77B7C3A31F7BAFF7006483C1 /* CategoryPickerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerConfigurator.swift; sourceTree = "<group>"; };
+		77B7C3A51F7BB003006483C1 /* CategoryPickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerRouter.swift; sourceTree = "<group>"; };
 		77DECCB51F623E31007E32F5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		77DECCB61F623E31007E32F5 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		77DECCB71F623E31007E32F5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -741,9 +751,22 @@
 			path = SectionBook;
 			sourceTree = "<group>";
 		};
+		77B7C39C1F7BAF6A006483C1 /* CategoryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				77B7C39D1F7BAFA6006483C1 /* CategoryPickerViewController.swift */,
+				77B7C39E1F7BAFA6006483C1 /* CategoryPickerViewController.xib */,
+				77B7C3A11F7BAFDC006483C1 /* CategoryPickerPresenter.swift */,
+				77B7C3A31F7BAFF7006483C1 /* CategoryPickerConfigurator.swift */,
+				77B7C3A51F7BB003006483C1 /* CategoryPickerRouter.swift */,
+			);
+			path = CategoryPicker;
+			sourceTree = "<group>";
+		};
 		77DECCB31F623E31007E32F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				77B7C39C1F7BAF6A006483C1 /* CategoryPicker */,
 				7712B0921F7B4178001C8D9C /* SortBookPicker */,
 				4B09360C1F7A299A0029155C /* ItemPicker */,
 				4B9731011F74ED4200D89ADC /* ShareBook */,
@@ -1116,6 +1139,7 @@
 				7712B09B1F7B4178001C8D9C /* PickerTableViewCell.xib in Resources */,
 				D583EACF1F78944D003915FA /* ProfileTableViewCell.xib in Resources */,
 				4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */,
+				77B7C3A01F7BAFA6006483C1 /* CategoryPickerViewController.xib in Resources */,
 				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
 				1180384F1F6FA7DB00945648 /* BookRequest.storyboard in Resources */,
 				772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */,
@@ -1385,6 +1409,7 @@
 				772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */,
 				D5CD99041F6A8A020074BC01 /* Notification.swift in Sources */,
 				77F5A0311F5FE0630074A5DB /* BaseViewController.swift in Sources */,
+				77B7C3A21F7BAFDC006483C1 /* CategoryPickerPresenter.swift in Sources */,
 				118038491F6F9EBE00945648 /* ApproveBookParams.swift in Sources */,
 				115E74A51F710F3F00868E53 /* WaitingBooksConfigurator.swift in Sources */,
 				224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */,
@@ -1404,6 +1429,7 @@
 				77F4E26A1F60F28E00C68BA8 /* SectionBook.swift in Sources */,
 				117162B61F6B89600045A59E /* BookingBookParams.swift in Sources */,
 				4B068CCB1F789CF000CA03AA /* ShareBookViewController.swift in Sources */,
+				77B7C3A61F7BB003006483C1 /* CategoryPickerRouter.swift in Sources */,
 				11712DB91F6A0E260093C5FF /* SearchBookParams.swift in Sources */,
 				775197931F6FA79B005042D9 /* CategoryConfigurator.swift in Sources */,
 				772614961F6660BB004D6943 /* UIImageView+Extensions.swift in Sources */,
@@ -1467,6 +1493,7 @@
 				77A6EAD01F68C06500EE384B /* BaseViewConfigurator.swift in Sources */,
 				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
 				4BC266E91F70EBFF0003FCEF /* RatingViewController.swift in Sources */,
+				77B7C39F1F7BAFA6006483C1 /* CategoryPickerViewController.swift in Sources */,
 				D58C706A1F7506450059D3BE /* FollowerTableViewCell.swift in Sources */,
 				77B45D1C1F693494001CB466 /* SectionBookPresenter.swift in Sources */,
 				77A6EACF1F68C06500EE384B /* BaseViewRouter.swift in Sources */,
@@ -1497,6 +1524,7 @@
 				772614861F661EC8004D6943 /* UITableView+Extensions.swift in Sources */,
 				7703B35D1F6A5AB700CDF69D /* ChooseWorkspacePresenter.swift in Sources */,
 				115E74A71F710F3F00868E53 /* WaitingBooksViewController.swift in Sources */,
+				77B7C3A41F7BAFF7006483C1 /* CategoryPickerConfigurator.swift in Sources */,
 				77DECCC61F62500F007E32F5 /* ForgotPasswordPresenter.swift in Sources */,
 				7703B3561F6A396A00CDF69D /* UIStoryboard+Extensions.swift in Sources */,
 				7703B35F1F6A5ACB00CDF69D /* ChooseWorkspaceConfigurator.swift in Sources */,
