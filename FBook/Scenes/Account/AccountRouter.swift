@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AccountRouter {
+    func showUserDetail(_ user: User)
 }
 
 class AccountRouterImplementation: AccountRouter {
@@ -17,5 +19,15 @@ class AccountRouterImplementation: AccountRouter {
 
     init(viewController: AccountViewController) {
         self.viewController = viewController
+    }
+
+    func showUserDetail(_ user: User) {
+        guard let accountViewController = UIStoryboard.account.instantiateInitialViewController()
+            as? AccountViewController else {
+                return
+        }
+        accountViewController.configurator = AccountConfiguratorImplementation(user: user)
+        accountViewController.configurator?.configure(viewController: accountViewController)
+        viewController?.navigationController?.pushViewController(accountViewController, animated: true)
     }
 }
