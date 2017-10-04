@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PBu-oW-aFx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PBu-oW-aFx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-wb-5nw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cV5-UO-jt0">
                                     <size key="itemSize" width="50" height="50"/>
@@ -31,13 +32,33 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKM-2o-NjR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr2-ux-jiy">
+                                        <rect key="frame" x="321" y="8" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wS-Na-YzC">
+                                        <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G2j-6y-iAN" firstAttribute="top" secondItem="jEU-wb-5nw" secondAttribute="bottom" id="KVa-eK-vav"/>
                             <constraint firstItem="jEU-wb-5nw" firstAttribute="leading" secondItem="edt-F7-ZQZ" secondAttribute="leading" id="VIy-W6-06U"/>
-                            <constraint firstItem="jEU-wb-5nw" firstAttribute="top" secondItem="ncM-BH-My1" secondAttribute="bottom" id="cS4-Ax-O3t"/>
+                            <constraint firstItem="jEU-wb-5nw" firstAttribute="top" secondItem="ncM-BH-My1" secondAttribute="bottom" constant="44" id="cS4-Ax-O3t"/>
+                            <constraint firstItem="FKM-2o-NjR" firstAttribute="top" secondItem="ncM-BH-My1" secondAttribute="bottom" id="fag-n2-x8r"/>
+                            <constraint firstItem="jEU-wb-5nw" firstAttribute="top" secondItem="FKM-2o-NjR" secondAttribute="bottom" id="hqh-wm-Mgr"/>
+                            <constraint firstAttribute="trailing" secondItem="FKM-2o-NjR" secondAttribute="trailing" id="nb9-Ry-eh1"/>
                             <constraint firstAttribute="trailing" secondItem="jEU-wb-5nw" secondAttribute="trailing" id="suK-Ub-KcP"/>
+                            <constraint firstItem="FKM-2o-NjR" firstAttribute="leading" secondItem="edt-F7-ZQZ" secondAttribute="leading" id="zC6-2p-6AP"/>
                         </constraints>
                     </view>
                     <connections>
