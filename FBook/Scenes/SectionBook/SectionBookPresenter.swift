@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 import ReactiveSwift
+import RxSwift
 
 protocol SectionBookView: class {
     weak var collectionView: UICollectionView! { get }
+    weak var categoryButton: UIButton! { get }
+    weak var sortButton: UIButton! { get }
     func showLoadBooksError(_ message: String)
 }
 
@@ -27,6 +30,9 @@ class SectionBookPresenterImplementation: NSObject {
     fileprivate var isLoading = false
     fileprivate var isRefreshing = false
     fileprivate var refreshControl = UIRefreshControl()
+    fileprivate var category = Variable<Category?>(nil)
+    fileprivate var sort = Variable<SortType>(.countView)
+    fileprivate let disposeBag = DisposeBag()
 
     init(router: SectionBookRouter?, view: SectionBookView?, sectionBook: SectionBook) {
         self.router = router
@@ -35,6 +41,29 @@ class SectionBookPresenterImplementation: NSObject {
         super.init()
         configureCollectionView()
         getListBook()
+        guard let categoryButton = view?.categoryButton, let sortButton = view?.sortButton else {
+            return
+        }
+        // Observable when button tapped
+        categoryButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.router?.showCategoryPicker(delegate: weakSelf, currentCategory: weakSelf.category.value)
+        }).disposed(by: disposeBag)
+        sortButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.router?.showSortBook(delegate: weakSelf, currentSort: weakSelf.sort.value)
+        }).disposed(by: disposeBag)
+        // Observable when variable change value
+        category.asObservable().map { category in
+            return category?.name ?? "All"
+        }.bind(to: categoryButton.rx.title()).disposed(by: disposeBag)
+        sort.asObservable().map { sort in
+            return sort.getTitle()
+        }.bind(to: sortButton.rx.title()).disposed(by: disposeBag)
     }
 
     fileprivate func configureCollectionView() {
@@ -113,4 +142,20 @@ extension SectionBookPresenterImplementation: UICollectionViewDataSource {
         return cell
     }
 
+}
+
+extension SectionBookPresenterImplementation: CategoryPickerPresenterDelegate {
+
+    func categoryPickerPresenter(didSelect category: Category?) {
+        self.category.value = category
+        refreshing()
+    }
+}
+
+extension SectionBookPresenterImplementation: SortBookPresenterDelegate {
+
+    func sortBookPresenter(didSelect sort: SortType) {
+        self.sort.value = sort
+        refreshing()
+    }
 }

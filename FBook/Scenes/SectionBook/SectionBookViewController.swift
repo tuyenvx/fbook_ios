@@ -11,6 +11,8 @@ import UIKit
 class SectionBookViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var sortButton: UIButton!
 
     var presenter: SectionBookPresenter?
     var configurator: SectionBookConfigurator?
