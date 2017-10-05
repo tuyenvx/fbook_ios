@@ -21,23 +21,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMl-KM-EmC">
-                        <rect key="frame" x="23" y="38" width="236" height="21"/>
+                        <rect key="frame" x="44" y="38" width="270" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqV-FQ-ItL">
+                        <rect key="frame" x="18" y="41" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Ylh-oc-cgn"/>
+                            <constraint firstAttribute="width" constant="16" id="f10-XW-o6E"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="unchecked_checkbox"/>
+                        <state key="selected" image="icon_checked" backgroundImage="unchecked_checkbox"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="qMl-KM-EmC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="17J-wE-ojU"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="qMl-KM-EmC" secondAttribute="trailing" constant="70" id="dYX-XX-uqn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qMl-KM-EmC" secondAttribute="trailing" constant="15" id="dYX-XX-uqn"/>
+                    <constraint firstItem="bqV-FQ-ItL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="fLu-gK-gZo"/>
                     <constraint firstItem="qMl-KM-EmC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="huT-NT-IGF"/>
+                    <constraint firstItem="bqV-FQ-ItL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jsH-Dx-bXd"/>
+                    <constraint firstItem="qMl-KM-EmC" firstAttribute="leading" secondItem="bqV-FQ-ItL" secondAttribute="trailing" constant="10" id="l6G-c0-Lqn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryName" destination="qMl-KM-EmC" id="dO9-bD-Hea"/>
+                <outlet property="checkBoxButton" destination="bqV-FQ-ItL" id="cZa-02-5Ec"/>
             </connections>
             <point key="canvasLocation" x="16.5" y="79"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_checked" width="12" height="16"/>
+        <image name="unchecked_checkbox" width="13" height="13"/>
+    </resources>
 </document>

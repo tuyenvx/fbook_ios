@@ -13,6 +13,7 @@ struct Category: Mappable {
 
     var id = 0
     var name = ""
+    var description = ""
 
     init?(map: Map) {
         mapping(map: map)
@@ -21,6 +22,7 @@ struct Category: Mappable {
     mutating func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
+        description <- map["description"]
     }
 
 }

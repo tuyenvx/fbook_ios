@@ -62,7 +62,7 @@ struct User: Mappable {
         updatedAt <- (map["updated_at"], dateTransform)
         deletedAt <- (map["deleted_at"], dateTransform)
         avatar <- map["avatar"]
-        favoriteCategories <- map["categories"]
+        favoriteCategories <- map["favorite_categories"]
     }
 
 }
