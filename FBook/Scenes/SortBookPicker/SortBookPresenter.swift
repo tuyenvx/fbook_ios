@@ -56,10 +56,10 @@ extension SortBookPresenterImplementation: SortBookPresenter {
                 return
             }
             self?.currentSelectedSort = sortType
-            self?.delegate?.sortBookPresenter(didSelect: sortType)
             tableView.reloadData()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                 self?.router.dismiss()
+                self?.delegate?.sortBookPresenter(didSelect: sortType)
             }
         }.disposed(by: disposeBag)
     }

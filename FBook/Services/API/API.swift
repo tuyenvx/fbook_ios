@@ -21,6 +21,7 @@ enum API {
     case searchBook(Int?, Int, SearchBookParams)
     case searchGoogleBook(Int, String)
     case getBookInSection(Int?, Int, SectionBook)
+    case getBookFilterSortInSection(Int?, Int, SectionBook, FilterSortBookParams)
     case getListNotifications
     case bookingBook(BookingBookParams)
     case getFollowInfoOfUser(Int)
@@ -72,6 +73,12 @@ extension API: TargetType {
             return "/search-books"
         case .getBookInSection:
             return "/books"
+        case .getBookFilterSortInSection(let officeId, let page, let sectionBook, _):
+            var path = "/books/filters?page=\(page)&condition=\(sectionBook.key)"
+            if let id = officeId {
+                path.append("&office_id=\(id)")
+            }
+            return path
         case .getListNotifications:
             return "/notifications"
         case .bookingBook:
@@ -97,7 +104,8 @@ extension API: TargetType {
 
     public var method: Moya.Method {
         switch self {
-        case .login, .homeFilter, .searchBook, .bookingBook, .approveBook, .followUser, .reviewBook:
+        case .login, .homeFilter, .searchBook, .bookingBook, .approveBook, .followUser, .reviewBook,
+                 .getBookFilterSortInSection:
             return .post
         default:
             return .get
@@ -118,6 +126,8 @@ extension API: TargetType {
                 parameters["office_id"] = officeId
             }
             return parameters
+        case .getBookFilterSortInSection(_, _, _, let params):
+            return params.toRequestJSON()
         case .bookingBook(let params):
             return params.toRequestJSON()
         case .approveBook(_, let params):

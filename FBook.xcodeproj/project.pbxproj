@@ -110,6 +110,7 @@
 		772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614A71F669259004D6943 /* HomeTableViewCell.xib */; };
 		772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772614B21F669264004D6943 /* BookCollectionViewCell.swift */; };
 		772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772614B31F669264004D6943 /* BookCollectionViewCell.xib */; };
+		7741DAA41F85C29100FFE1C0 /* FilterSortBookParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741DAA31F85C29100FFE1C0 /* FilterSortBookParams.swift */; };
 		7751978D1F6FA6E4005042D9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7751978C1F6FA6E4005042D9 /* CategoryViewController.swift */; };
 		7751978F1F6FA6F0005042D9 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7751978E1F6FA6F0005042D9 /* Category.storyboard */; };
 		775197911F6FA786005042D9 /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775197901F6FA785005042D9 /* CategoryPresenter.swift */; };
@@ -319,6 +320,7 @@
 		772614A71F669259004D6943 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		772614B21F669264004D6943 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		772614B31F669264004D6943 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		7741DAA31F85C29100FFE1C0 /* FilterSortBookParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSortBookParams.swift; sourceTree = "<group>"; };
 		7751978C1F6FA6E4005042D9 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		7751978E1F6FA6F0005042D9 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		775197901F6FA785005042D9 /* CategoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				11712DB81F6A0E260093C5FF /* SearchBookParams.swift */,
+				7741DAA31F85C29100FFE1C0 /* FilterSortBookParams.swift */,
 				117162B51F6B89600045A59E /* BookingBookParams.swift */,
 				118038481F6F9EBE00945648 /* ApproveBookParams.swift */,
 			);
@@ -1398,6 +1401,7 @@
 				4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */,
 				77A76EEC1F629602008601E2 /* HomeConfigurator.swift in Sources */,
 				77DECCC81F625022007E32F5 /* ForgotPasswordViewRouter.swift in Sources */,
+				7741DAA41F85C29100FFE1C0 /* FilterSortBookParams.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
 				224C0F2B1F604B86007BEA04 /* Office.swift in Sources */,
 				4B73763B1F70B6F500CC98EF /* WriteReviewTableViewCell.swift in Sources */,

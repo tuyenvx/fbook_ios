@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import RxSwift
+import RxCocoa
 
 protocol SectionBookView: class {
     weak var collectionView: UICollectionView! { get }
     weak var categoryButton: UIButton! { get }
     weak var sortButton: UIButton! { get }
     func showLoadBooksError(_ message: String)
+    func displayLoading(isLoading: Bool)
 }
 
 protocol SectionBookPresenter: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -28,7 +30,6 @@ class SectionBookPresenterImplementation: NSObject {
     fileprivate let sectionBook: SectionBook
     fileprivate var listItems = ListItems<Book>()
     fileprivate var isLoading = false
-    fileprivate var isRefreshing = false
     fileprivate var refreshControl = UIRefreshControl()
     fileprivate var category = Variable<Category?>(nil)
     fileprivate var sort = Variable<SortType>(.countView)
@@ -75,29 +76,33 @@ class SectionBookPresenterImplementation: NSObject {
     }
 
     @objc func refreshing() {
-        if !isLoading {
-            isRefreshing = true
-            getListBook()
-        }
+        getListBook()
     }
 
     fileprivate func getListBook(page: Int = 1) {
         weak var weakSelf = self
+        if isLoading {
+            return
+        }
         isLoading = true
-        BookProvider.getBooks(inSection: sectionBook, page: page, officeId: Office.currentId).on(failed: { error in
-            weakSelf?.view?.showLoadBooksError(error.message)
-        }, completed: {
-        }, disposed: {
-            weakSelf?.isLoading = false
-            weakSelf?.isRefreshing = false
-            weakSelf?.refreshControl.endRefreshing()
-        }, value: { listItems in
-            if weakSelf?.isRefreshing == false {
-                weakSelf?.listItems.append(listItems)
-            } else {
-                weakSelf?.listItems = listItems
-            }
-            weakSelf?.view?.collectionView.reloadData()
+        let param = FilterSortBookParams()
+        param.categories = category.value
+        param.sort = sort.value
+        BookProvider.getBooksFilterSort(inSection: sectionBook, params: param, page: page, officeId: Office.currentId)
+            .on(failed: { error in
+                weakSelf?.view?.showLoadBooksError(error.message)
+            }, completed: {
+            }, disposed: {
+                weakSelf?.isLoading = false
+                weakSelf?.refreshControl.endRefreshing()
+                weakSelf?.view?.displayLoading(isLoading: false)
+            }, value: { listItems in
+                if page != 1 {
+                    weakSelf?.listItems.append(listItems)
+                } else {
+                    weakSelf?.listItems = listItems
+                }
+                weakSelf?.view?.collectionView.reloadData()
         }).start()
     }
 }
@@ -118,8 +123,7 @@ extension SectionBookPresenterImplementation: UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-        if indexPath.row == listItems.total - 1, isLoading == false, isRefreshing == false,
-                let nextPage = listItems.nextPage {
+        if indexPath.row == listItems.total - 1, let nextPage = listItems.nextPage {
             getListBook(page: nextPage)
         }
     }
@@ -148,6 +152,7 @@ extension SectionBookPresenterImplementation: CategoryPickerPresenterDelegate {
 
     func categoryPickerPresenter(didSelect category: Category?) {
         self.category.value = category
+        view?.displayLoading(isLoading: true)
         refreshing()
     }
 }
@@ -156,6 +161,7 @@ extension SectionBookPresenterImplementation: SortBookPresenterDelegate {
 
     func sortBookPresenter(didSelect sort: SortType) {
         self.sort.value = sort
+        view?.displayLoading(isLoading: true)
         refreshing()
     }
 }
