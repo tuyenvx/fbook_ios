@@ -58,10 +58,10 @@ class CategoryPickerPresenterImplementation: NSObject {
             }.disposed(by: disposeBag)
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] index in
             self?.currentSelectedCategory = listCategory[index.row]
-            self?.delegate?.categoryPickerPresenter(didSelect: self?.currentSelectedCategory)
             tableView.reloadData()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                 self?.router.dismiss()
+                self?.delegate?.categoryPickerPresenter(didSelect: self?.currentSelectedCategory)
             }
         }).disposed(by: disposeBag)
     }

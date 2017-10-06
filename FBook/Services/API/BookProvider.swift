@@ -32,6 +32,12 @@ final class BookProvider: BaseProvider {
         return requestJSON(api: .getBookInSection(officeId, page, section)).flatMap(.merge, mapBookList)
     }
 
+    static func getBooksFilterSort(inSection section: SectionBook, params: FilterSortBookParams,
+                                   page: Int, officeId: Int?) -> BookListSignal {
+        return requestJSON(api: .getBookFilterSortInSection(officeId, page, section, params))
+            .flatMap(.merge, mapBookList)
+    }
+
     static func bookingBook(params: BookingBookParams) -> BooleanSignal {
         return requestJSON(api: .bookingBook(params)).flatMap(.merge, mapBoolean)
     }

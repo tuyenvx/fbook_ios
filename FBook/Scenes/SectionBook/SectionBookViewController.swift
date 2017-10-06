@@ -13,6 +13,7 @@ class SectionBookViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var sortButton: UIButton!
+    @IBOutlet fileprivate weak var loadingIndicatorView: UIActivityIndicatorView!
 
     var presenter: SectionBookPresenter?
     var configurator: SectionBookConfigurator?
@@ -30,4 +31,7 @@ extension SectionBookViewController: SectionBookView {
         Utility.shared.showMessage(inViewController: self, message: message, completion: nil)
     }
 
+    func displayLoading(isLoading: Bool) {
+        loadingIndicatorView.isHidden = !isLoading
+    }
 }
