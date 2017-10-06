@@ -15,6 +15,8 @@ import RxCocoa
 protocol AccountView: class {
     func refreshAccount()
     func showLoadAccountError(message: String)
+    func addEditButton()
+    func addSaveButton()
 }
 
 protocol AccountPresenter {
@@ -28,6 +30,8 @@ protocol AccountPresenter {
     func handleLoadCategoriesSuccess(_ categories: [Category])
     func handleLoadUsersSuccess(_ users: [User])
     func handleLoadUserInfoSuccess()
+    func editButtonTapped(_ sender: Any)
+    func saveButtonTapped(_ sender: Any)
 
 }
 
@@ -62,9 +66,9 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
             return
         }
         weak var weakSelf = self
-        if currentUser.id != self.user.id {
+        if currentUser.id != user.id {
             AlertHelper.showLoading()
-            UsersProvider.getOtherUserProfile(userId: self.user.id).on(failed: { error in
+            UsersProvider.getOtherUserProfile(userId: user.id).on(failed: { error in
                 Utility.shared.showMessage(message: error.message, completion: nil)
             }, disposed: {
                 AlertHelper.hideLoading()
@@ -81,7 +85,7 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
         guard let currentUser = User.currentUser else {
             return
         }
-        if currentUser.id != self.user.id {
+        if currentUser.id != user.id {
             AlertHelper.showLoading()
             UsersProvider.getFavoriteCategoriesOfCurrentUser(userId: user.id).on(failed: { error in
                 Utility.shared.showMessage(message: error.message, completion: nil)
@@ -91,7 +95,7 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
                 self.handleLoadCategoriesSuccess(categories)
             }).start()
         } else {
-            self.handleLoadCategoriesSuccess(currentUser.favoriteCategories)
+            handleLoadCategoriesSuccess(currentUser.favoriteCategories)
         }
     }
 
@@ -145,6 +149,14 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
         self.view?.refreshAccount()
     }
 
+    func editButtonTapped(_ sender: Any) {
+//      TODO edit profile
+    }
+
+    func saveButtonTapped(_ sender: Any) {
+//      TODO save favorite categories
+    }
+
 }
 
 extension AccountPresenterImplementation: UITableViewDelegate {
@@ -179,7 +191,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         case 1:
             return 50
         case 2:
-            switch self.currentTab {
+            switch currentTab {
             case .profile: return 300
             case .categories: return 50
             case .followers: return 70
@@ -197,6 +209,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setBackgroundCell()
+            checkStateFollowButton(cell)
             cell.displayUser(user)
             cell.handleButtonFollowTapped = { _ in
                 self.handleButtonFollowTapped(cell: cell)
@@ -231,7 +244,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         case 2:
             switch currentTab {
             case .categories:
-                handleCategoriesCellItemTapped(indexPath: indexPath)
+                handleCategoriesCellItemTapped(tableView: tableView, indexPath: indexPath)
             case .followers:
                 handleFollowersCellItemTapped(indexPath: indexPath)
             case .following:
@@ -248,8 +261,10 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         self.currentTab = selectedTab
         switch selectedTab {
         case .profile:
+            view?.addEditButton()
             fetchUserInfo()
         case .categories:
+            view?.addSaveButton()
             fetchFavoriteCategoriesOfUser()
         case .followers:
             fetchFollowers()
@@ -296,11 +311,20 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         } else {
             cell.unfollowButtonEnable()
         }
-        self.updateFollow()
+        updateFollow()
     }
 
-    fileprivate func handleCategoriesCellItemTapped(indexPath: IndexPath) {
-//      TODO handle tap to item in list categories
+    fileprivate func handleCategoriesCellItemTapped(tableView: UITableView, indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell else {
+            return
+        }
+        if cell.checkBoxButton.isSelected {
+            cell.checkBoxButton.isSelected = false
+//          TODO handle unchecked
+        } else {
+            cell.checkBoxButton.isSelected = true
+//          TODO handle checked
+        }
     }
 
     fileprivate func handleFollowersCellItemTapped(indexPath: IndexPath) {
@@ -310,4 +334,13 @@ extension AccountPresenterImplementation: UITableViewDataSource {
     fileprivate func handleFollowingCellItemTapped(indexPath: IndexPath) {
         router?.showUserDetail(listUsers[indexPath.row])
     }
+
+    fileprivate func checkStateFollowButton(_ cell: HeaderTableViewCell) {
+        if User.currentUser?.id != user.id {
+            cell.unfollowButtonEnable()
+        } else {
+            cell.followButton.isHidden = true
+        }
+    }
+
 }
