@@ -23,11 +23,11 @@ protocol AccountPresenter {
 
     func configure(tableView: UITableView)
     func fetchUserInfo()
-    func fetchFavoriteCategoriesOfUser()
+    func fetchCategories(_ tableView: UITableView)
     func fetchFollowers()
     func fetchFollowingUsers()
     func updateFollow()
-    func handleLoadCategoriesSuccess(_ categories: [Category])
+    func handleLoadCategoriesSuccess(_ categories: [Category], _ tableView: UITableView)
     func handleLoadUsersSuccess(_ users: [User])
     func handleLoadUserInfoSuccess()
     func editButtonTapped(_ sender: Any)
@@ -42,6 +42,7 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
     fileprivate var user: User
     fileprivate var listCategories = [Category]()
     fileprivate var listUsers = [User]()
+    fileprivate var listFavoriteCategories = [Category]()
     fileprivate var currentTab = Tab.profile
 
     init(view: AccountView?, router: AccountRouter?, user: User) {
@@ -81,21 +82,32 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
         }
     }
 
-    func fetchFavoriteCategoriesOfUser() {
+    func fetchCategories(_ tableView: UITableView) {
+        fetchFavoriteCategories()
+        AlertHelper.showLoading()
+        CategoryProvider.getCategories().on(failed: { error in
+            Utility.shared.showMessage(message: error.message, completion: nil)
+        }, disposed: {
+            AlertHelper.hideLoading()
+        }, value: { categories in
+            self.handleLoadCategoriesSuccess(categories, tableView)
+        }).start()
+    }
+
+    func fetchFavoriteCategories() {
+        listFavoriteCategories.removeAll()
         guard let currentUser = User.currentUser else {
             return
         }
         if currentUser.id != user.id {
-            AlertHelper.showLoading()
             UsersProvider.getFavoriteCategoriesOfCurrentUser(userId: user.id).on(failed: { error in
                 Utility.shared.showMessage(message: error.message, completion: nil)
             }, disposed: {
-                AlertHelper.hideLoading()
             }, value: { categories in
-                self.handleLoadCategoriesSuccess(categories)
+                self.listFavoriteCategories.append(contentsOf: categories)
             }).start()
         } else {
-            handleLoadCategoriesSuccess(currentUser.favoriteCategories)
+            listFavoriteCategories.append(contentsOf: currentUser.favoriteCategories)
         }
     }
 
@@ -133,10 +145,16 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
         }).start()
     }
 
-    func handleLoadCategoriesSuccess(_ categories: [Category]) {
+    func handleLoadCategoriesSuccess(_ categories: [Category], _ tableView: UITableView) {
         listCategories.removeAll()
         listCategories.append(contentsOf: categories)
         self.view?.refreshAccount()
+        for category in listFavoriteCategories {
+            if let index = categories.index(where: {$0.id == category.id}),
+                let cell = tableView.cellForRow(at: [2, index]) as? CategoryTableViewCell {
+                cell.checkBoxButton.isSelected = true
+            }
+        }
     }
 
     func handleLoadUsersSuccess(_ users: [User]) {
@@ -220,7 +238,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.handleButtonTapped = { tab in
-                self.handleButtonTapped(tab)
+                self.handleButtonTapped(tab, tableView)
             }
             return cell
         case 2:
@@ -257,7 +275,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         }
     }
 
-    fileprivate func handleButtonTapped(_ selectedTab: Tab) {
+    fileprivate func handleButtonTapped(_ selectedTab: Tab, _ tableView: UITableView) {
         self.currentTab = selectedTab
         switch selectedTab {
         case .profile:
@@ -265,7 +283,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
             fetchUserInfo()
         case .categories:
             view?.addSaveButton()
-            fetchFavoriteCategoriesOfUser()
+            fetchCategories(tableView)
         case .followers:
             fetchFollowers()
         case .following:
