@@ -11,6 +11,14 @@ import PKHUD
 
 extension UIViewController {
     
+    var mainTabbarController: TabBarController? {
+        if let _mainTabbarController = self.tabBarController as? TabBarController {
+            return _mainTabbarController
+        }
+        
+        return self.view.window?.rootViewController as? TabBarController
+    }
+    
     func showAlertError(error: Error, title: String = "") {
         if let error = error as? ResponseError {
             self.showAlert(message: error.description, andTitle: title)
@@ -63,4 +71,11 @@ extension UIViewController {
             HUD.hide(animated: true)
         }
     }
+    
+    static func fromStoryboard(_ storyboardID: StoryboardID) -> UIViewController {
+        let identifier = String(describing: self)
+        let storyboard = storyboardID.getStoryboard()
+        return storyboard.instantiateViewController(withIdentifier: identifier)
+    }
+    
 }

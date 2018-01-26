@@ -9,28 +9,47 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
 
     enum TabBarIndex: Int {
         case TAB_HOME = 0, TAB_USER
     }
     
-    var isLogin = false
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func awakeFromNib() {
+        gotoStartView()
     }
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.delegate = self
-        self.setTabBarItem()
+//        super.viewDidLoad()
+//        self.delegate = self
+//        self.setTabBarItem()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
+    // MARK:- Setup
+    func gotoStartView() {
+        let startViewController = StartViewController.fromStoryboard(.main)
+        viewControllers = [startViewController]
+        hideTabbar(hide: true)
+    }
+    func gotoHome() {
+        dismiss(animated: true, completion: nil)
+        guard let homeNavigationCtl = StoryboardID.home.getStoryboard().instantiateInitialViewController() else { return }
+        guard let profileNavigationCtl = StoryboardID.profile.getStoryboard().instantiateInitialViewController() else { return  }
+        viewControllers = [homeNavigationCtl, profileNavigationCtl]
+        selectedIndex = 0
+        setTabBarItem()
+        hideTabbar(hide: false)
+    }
+    func gotoLogin() {
+        let loginVC = LoginViewController.fromStoryboard(.login)
+        present(loginVC, animated: true, completion: nil)
+    }
+    func hideTabbar(hide: Bool?, animated: Bool = false) {
+        self.tabBar.isHidden = hide ?? false
+    }
     private func setTabBarItem() {
         
         let tintColor = AppColors.tintColor
@@ -96,18 +115,18 @@ class TabBarController: UITabBarController {
 }
 
 extension TabBarController : UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if tabBarController.viewControllers?.index(of: viewController) == TabBarIndex.TAB_USER.rawValue {
-            if isLogin == false {
-                isLogin = true
-                self.showLogin()
-                return false
-            }
-            else {
-                return true
-            }
-            
-        }
-        return true
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        if tabBarController.viewControllers?.index(of: viewController) == TabBarIndex.TAB_USER.rawValue {
+//            if isLogin == false {
+//                isLogin = true
+//                self.showLogin()
+//                return false
+//            }
+//            else {
+//                return true
+//            }
+//
+//        }
+//        return true
+//    }
 }

@@ -35,6 +35,12 @@ class ProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    func logout() {
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+        mainTabbarController?.gotoLogin()
+    }
 }
 
 extension ProfileViewController : UITableViewDataSource, UITableViewDelegate {
@@ -69,7 +75,9 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row == 4 {
+            logout()
+        }
     }
 }
 

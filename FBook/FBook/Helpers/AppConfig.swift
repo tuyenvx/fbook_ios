@@ -65,3 +65,13 @@ struct AppStoryboards {
     static let segueIdentifierShowChooseFilter = "showChooseFilter"
     static let segueIdentifierShowChooseSort = "showChooseSort"
 }
+enum StoryboardID: String {
+    case main = "Main"
+    case login = "Login"
+    case home = "Home"
+    case profile = "Profile"
+    
+    func getStoryboard() -> UIStoryboard {
+        return UIStoryboard.init(name: self.rawValue, bundle: nil)
+    }
+}
