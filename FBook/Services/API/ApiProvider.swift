@@ -32,7 +32,7 @@ public struct ApiProvider {
             NetworkActivityPlugin(networkActivityClosure: networkActivityClosure)
         ]
         if let token = token {
-            plugins.append(AccessTokenPlugin(token: token))
+            plugins.append(CustomAccessTokenPlugin(token: token))
         }
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 15
@@ -68,6 +68,42 @@ public struct ApiProvider {
         return defaultProvider
     }
 
+}
+
+// MARK: - AccessTokenAuthorizable
+
+/// A protocol for controlling the behavior of `AccessTokenPlugin`.
+public protocol AccessTokenAuthorizable {
+    /// Declares whether or not `AccessTokenPlugin` should add an authorization header
+    /// to requests.
+    var shouldAuthorize: Bool { get }
+}
+
+// MARK: - AccessTokenPlugin
+
+public struct CustomAccessTokenPlugin: PluginType {
+    /// The access token to be applied in the header.
+    public let token: String
+
+    public init(token: String) {
+        self.token = token
+    }
+    /**
+     Prepare a request by adding an authorization header if necessary.
+     
+     - parameters:
+     - request: The request to modify.
+     - target: The target of the request.
+     - returns: The modified `URLRequest`.
+     */
+    public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        if let authorizable = target as? AccessTokenAuthorizable, authorizable.shouldAuthorize == false {
+            return request
+        }
+        var request = request
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        return request
+    }
 }
 
 func url(_ route: TargetType) -> String {
