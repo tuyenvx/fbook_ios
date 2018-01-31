@@ -11,6 +11,7 @@ import Foundation
 protocol HomeHeaderView: class {
     func displayConfigurator(_ configurator: HomeHeaderConfigurator)
     func displayTitle(_ title: String)
+    func sholdShowMoreButton(_ isHidden: Bool)
 }
 
 protocol HomeHeaderViewDelegate: class {
@@ -32,7 +33,6 @@ class HomeHeaderPresenterImplementation {
         self.delegate = delegate
         self.section = section
     }
-
 }
 
 extension HomeHeaderPresenterImplementation: HomeHeaderPresenter {

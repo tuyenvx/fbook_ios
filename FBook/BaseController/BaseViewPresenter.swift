@@ -13,10 +13,7 @@ protocol BaseView: class {
 }
 
 protocol BasePresenter {
-
-    func menuButtonTapped(senderFrame: CGRect)
     func dismiss()
-
 }
 
 class BasePresenterImplementation {
@@ -32,29 +29,7 @@ class BasePresenterImplementation {
 }
 
 extension BasePresenterImplementation: BasePresenter {
-
-    func menuButtonTapped(senderFrame: CGRect) {
-        router?.showMenuSetting(delegate: self, senderFrame: senderFrame)
-    }
-
     func dismiss() {
         router?.dismiss()
     }
-
-}
-
-extension BasePresenterImplementation: MenuSettingPresenterDelegate {
-
-    func didSelectFeedback() {
-        router?.showFeedback()
-    }
-
-    func didSelectMoreTools() {
-        router?.showMoreTools()
-    }
-
-    func didSelectWorkspace() {
-        router?.showWorkspace()
-    }
-
 }

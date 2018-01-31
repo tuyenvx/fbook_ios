@@ -18,6 +18,8 @@ protocol HomePresenter {
     func loginButtonTapped()
     func getListSectionBook()
     func configure(tableView: UITableView)
+    func didChoseOffice()
+    func menuButtonTapped(senderFrame: CGRect)
 }
 
 class HomePresenterImplementation: NSObject {
@@ -27,6 +29,7 @@ class HomePresenterImplementation: NSObject {
     fileprivate var sectionBooks: [SectionBook] = []
     fileprivate let refreshControl = UIRefreshControl()
     fileprivate var isLoading = false
+    fileprivate let distanceBetweenCell: CGFloat = 10
 
     init(view: HomeView?, router: HomeViewRouter?) {
         self.view = view
@@ -54,8 +57,14 @@ class HomePresenterImplementation: NSObject {
 
     fileprivate func configure(header: HomeHeaderView, section: Int) {
         let configurator = HomeHeaderConfiguratorImplementation(delegate: self, section: section)
+        let books = sectionBooks[section].books ?? []
+        header.sholdShowMoreButton(books.count == 0)
         header.displayConfigurator(configurator)
         header.displayTitle(sectionBooks[section].title)
+    }
+    
+    fileprivate func getBooks(_ index: Int) -> [Book] {
+        return sectionBooks[index].books ?? []
     }
 }
 
@@ -95,11 +104,23 @@ extension HomePresenterImplementation: HomePresenter {
         }).start()
     }
 
+    func didChoseOffice() {
+        getListSectionBook()
+    }
+
+    func menuButtonTapped(senderFrame: CGRect) {
+        router?.showMenuSetting(delegate: self, senderFrame: senderFrame)
+    }
+
 }
 
 extension HomePresenterImplementation: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let books = sectionBooks[indexPath.section].books ?? []
+        if books.count == 0 {
+            return distanceBetweenCell
+        }
         let sizeTable = tableView.frame.size
         let cellBookSize = BookCollectionViewCell.fitSizeItem(withSize: CGSize(width: sizeTable.width - 40,
             height: sizeTable.height))
@@ -149,4 +170,20 @@ extension HomePresenterImplementation: HomeHeaderViewDelegate {
     func didSelectSeeMore(atSection section: Int) {
         router?.showSeeMoreSectionBook(sectionBooks[section])
     }
+}
+
+extension HomePresenterImplementation: MenuSettingPresenterDelegate {
+
+    func didSelectFeedback() {
+        router?.showFeedback()
+    }
+
+    func didSelectMoreTools() {
+        router?.showMoreTools()
+    }
+
+    func didSelectWorkspace() {
+        router?.showWorkspace()
+    }
+
 }

@@ -15,7 +15,7 @@ protocol ChooseWorkspaceView: class {
     func updateHeightTableView(height: CGFloat)
 }
 
-protocol ChooseWorkspacePresenterDelegate: class {
+protocol ChooseWorkspacePresenterDelegate: AnyObject {
     func didSelect(office: Office?)
 }
 
