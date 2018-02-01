@@ -21,7 +21,7 @@ enum API {
     case searchBook(Int?, Int, SearchBookParams)
     case searchGoogleBook(Int, String)
     case getBookInSection(Int?, Int, SectionBook)
-    case getBookFilterSortInSection(Int?, Int, SectionBook, FilterSortBookParams)
+    case getBookFilterSortInSection(Int?, Int, FilterSortBookParams)
     case getListNotifications
     case bookingBook(BookingBookParams)
     case getFollowInfoOfUser(Int)
@@ -77,11 +77,12 @@ extension API: TargetType {
             return "/search-books"
         case .getBookInSection:
             return "/books"
-        case .getBookFilterSortInSection(let officeId, let page, let sectionBook, _):
-            var path = "/books/filters?page=\(page)&condition=\(sectionBook.key)"
+        case .getBookFilterSortInSection(let officeId, let page, let param):
+            var path = "/books/filters?page=\(page)&condition=\(param.sort.rawValue)"
             if let id = officeId {
                 path.append("&office_id=\(id)")
             }
+            print("PATH \(path)")
             return path
         case .getListNotifications:
             return "/notifications"
@@ -130,7 +131,8 @@ extension API: TargetType {
                 parameters["office_id"] = officeId
             }
             return parameters
-        case .getBookFilterSortInSection(_, _, _, let params):
+        case .getBookFilterSortInSection(_, _, let params):
+            print("PARAM \(params.toRequestJSON())")
             return params.toRequestJSON()
         case .bookingBook(let params):
             return params.toRequestJSON()

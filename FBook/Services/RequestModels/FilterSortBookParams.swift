@@ -14,6 +14,7 @@ protocol Parameter {
 
 class FilterSortBookParams {
 
+    var section = ""
     var sort = SortType.countView
     var categories: Category?
     var order: OrderBy = .desc
@@ -26,7 +27,8 @@ extension FilterSortBookParams: Parameter {
             category?.id.description
         }
         return [
-            "filters": ["category": categriesId],
+            "field": section,
+            "filters": [["category": categriesId]],
             "sort": [
                 "by": sort.rawValue,
                 "order_by": order.rawValue
