@@ -11,6 +11,8 @@ import UIKit
 class HomeHeader: UIView {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var seemoreButton: UIButton!
+    @IBOutlet weak var moreIconImageView: UIImageView!
 
     var presenter: HomeHeaderPresenter?
     var configurator: HomeHeaderConfigurator?
@@ -40,6 +42,11 @@ extension HomeHeader: HomeHeaderView {
 
     func displayTitle(_ title: String) {
         titleLabel.text = title
+    }
+
+    func sholdShowMoreButton(_ isHidden: Bool) {
+        seemoreButton.isHidden = isHidden
+        moreIconImageView.isHidden = isHidden
     }
 
 }

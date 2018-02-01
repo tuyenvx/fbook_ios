@@ -11,13 +11,7 @@ import UIKit
 import SafariServices
 
 protocol BaseViewRouter {
-
-    func showMenuSetting(delegate: MenuSettingPresenterDelegate, senderFrame: CGRect)
-    func showWorkspace()
     func dismiss()
-    func showFeedback()
-    func showMoreTools()
-
 }
 
 struct BaseViewRouterImplementation {
@@ -40,32 +34,7 @@ struct BaseViewRouterImplementation {
 }
 
 extension BaseViewRouterImplementation: BaseViewRouter {
-
-    func showMenuSetting(delegate: MenuSettingPresenterDelegate, senderFrame: CGRect) {
-        let menu = MenuSettingViewController(nibName: "MenuSettingViewController", bundle: nil)
-        menu.modalPresentationStyle = .overFullScreen
-        let configurator = MenuConfiguratorImplementation(delegate: delegate, senderFrame: senderFrame)
-        menu.configurator = configurator
-        view?.present(menu, animated: false, completion: nil)
-    }
-
-    func showWorkspace() {
-        let workspace = ChooseWorkspaceViewController(nibName: "ChooseWorkspaceViewController", bundle: nil)
-        workspace.configurator = ChooseWorkspaceConfiguratorImplementation(delegate: nil)
-        workspace.modalPresentationStyle = .overFullScreen
-        view?.present(workspace, animated: false, completion: nil)
-    }
-
-    func showFeedback() {
-        openSafariViewController(urlString: kFeedbackURL)
-    }
-
-    func showMoreTools() {
-        openSafariViewController(urlString: kMoreToolsURL)
-    }
-
     func dismiss() {
         view?.navigationController?.dismiss(animated: true, completion: nil)
     }
-
 }

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeHeader" customModule="FBook" customModuleProvider="target">
             <connections>
+                <outlet property="moreIconImageView" destination="UTb-eV-jcN" id="lOF-oU-9VU"/>
+                <outlet property="seemoreButton" destination="afi-KQ-Opn" id="610-Ei-xwh"/>
                 <outlet property="titleLabel" destination="gNJ-uS-QuS" id="PFQ-7e-0ES"/>
             </connections>
         </placeholder>
@@ -56,7 +59,7 @@
                 <constraint firstItem="afi-KQ-Opn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hxg-og-ueL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-295.5" y="-117"/>
+            <point key="canvasLocation" x="-417" y="-108"/>
         </view>
     </objects>
     <resources>

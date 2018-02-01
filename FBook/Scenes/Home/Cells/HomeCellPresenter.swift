@@ -13,7 +13,7 @@ protocol HomeCellView: class {
     func refreshBooks()
 }
 
-protocol HomeCellPresenterDelegate: class {
+protocol HomeCellPresenterDelegate: AnyObject {
     func didSelectBook(_ book: Book)
 }
 

@@ -24,25 +24,6 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
-    func setDefaultRightButtons() {
-        guard let heightButton = navigationController?.navigationBar.frame.height else {
-            return
-        }
-        let widthButton: CGFloat = 30
-        let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: widthButton, height: heightButton)))
-        button.setImage(#imageLiteral(resourceName: "ic_more"), for: .normal)
-        button.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-    }
-
-    @objc func menuButtonTapped(_ sender: Any) {
-        var senderFrame = CGRect.zero
-        if let senderView = sender as? UIView, let window = application.keyWindow {
-            senderFrame = senderView.convert(senderView.frame, to: window)
-        }
-        basePresenter?.menuButtonTapped(senderFrame: senderFrame)
-    }
-
     func cancelButtonTapped() {
         basePresenter?.dismiss()
     }

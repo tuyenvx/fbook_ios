@@ -52,7 +52,11 @@ extension API: TargetType {
         case .login:
             return "/login"
         case .home:
-            return "/home"
+            var path = "/home"
+            if let id = Office.currentId {
+                path.append("/?office_id=\(id)")
+            }
+            return path
         case .homeFilter:
             return "/home/filters"
         case .getUserProfile:
