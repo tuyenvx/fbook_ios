@@ -25,6 +25,7 @@ class CustomButtonArrowDown: UIButton {
     }
 
     func initView() {
+        backgroundColor = .white
         arrowDownImageView.image = #imageLiteral(resourceName: "icon_arrow_down")
         addSubview(arrowDownImageView)
         layer.cornerRadius = 3.0

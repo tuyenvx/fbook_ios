@@ -16,6 +16,7 @@ protocol SectionBookView: class {
     weak var collectionView: UICollectionView! { get }
     weak var categoryButton: UIButton! { get }
     weak var sortButton: UIButton! { get }
+    weak var orderButton: UIButton! { get }
     func showLoadBooksError(_ message: String)
     func displayLoading(isLoading: Bool)
 }
@@ -33,6 +34,17 @@ class SectionBookPresenterImplementation: NSObject {
     fileprivate var refreshControl = UIRefreshControl()
     fileprivate var category = Variable<Category?>(nil)
     fileprivate var sort = Variable<SortType>(.countView)
+    fileprivate var orderBy: OrderBy = .desc {
+        didSet {
+            if orderBy == .asc {
+                view?.orderButton.setImage(#imageLiteral(resourceName: "ic_up"), for: .normal)
+                view?.orderButton.setTitle(orderBy.rawValue + " ", for: .normal)
+            } else {
+                view?.orderButton.setImage(#imageLiteral(resourceName: "ic_down"), for: .normal)
+                view?.orderButton.setTitle(orderBy.rawValue, for: .normal)
+            }
+        }
+    }
     fileprivate let disposeBag = DisposeBag()
 
     init(router: SectionBookRouter?, view: SectionBookView?, sectionBook: SectionBook) {
@@ -41,8 +53,8 @@ class SectionBookPresenterImplementation: NSObject {
         self.sectionBook = sectionBook
         super.init()
         configureCollectionView()
-        getListBook()
-        guard let categoryButton = view?.categoryButton, let sortButton = view?.sortButton else {
+        getBooks()
+        guard let categoryButton = view?.categoryButton, let sortButton = view?.sortButton, let orderButton = view?.orderButton else {
             return
         }
         // Observable when button tapped
@@ -57,6 +69,13 @@ class SectionBookPresenterImplementation: NSObject {
                 return
             }
             weakSelf.router?.showSortBook(delegate: weakSelf, currentSort: weakSelf.sort.value)
+        }).disposed(by: disposeBag)
+        orderButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.orderBy.invert()
+            weakSelf.refreshing()
         }).disposed(by: disposeBag)
         // Observable when variable change value
         category.asObservable().map { category in
@@ -76,9 +95,38 @@ class SectionBookPresenterImplementation: NSObject {
     }
 
     @objc func refreshing() {
-        getListBook()
+        getBooks()
     }
-
+    private func getBooks(page: Int = 1) {
+        if category.value != nil {
+            getListBook(page: page)
+        } else {
+            getBookInSection(page: page)
+        }
+    }
+    fileprivate func getBookInSection(page: Int = 1) {
+        weak var weakSelf = self
+        if isLoading {
+            return
+        }
+        isLoading = true
+        BookProvider.getBooks(inSection: sectionBook, page: page, officeId: Office.currentId)
+            .on(failed: { error in
+                weakSelf?.view?.showLoadBooksError(error.message)
+            }, completed: {
+            }, disposed: {
+                weakSelf?.isLoading = false
+                weakSelf?.refreshControl.endRefreshing()
+                weakSelf?.view?.displayLoading(isLoading: false)
+            }, value: { listItems in
+                if page != 1 {
+                    weakSelf?.listItems.append(listItems)
+                } else {
+                    weakSelf?.listItems = listItems
+                }
+                weakSelf?.view?.collectionView.reloadData()
+            }).start()
+    }
     fileprivate func getListBook(page: Int = 1) {
         weak var weakSelf = self
         if isLoading {
@@ -88,7 +136,9 @@ class SectionBookPresenterImplementation: NSObject {
         let param = FilterSortBookParams()
         param.categories = category.value
         param.sort = sort.value
-        BookProvider.getBooksFilterSort(inSection: sectionBook, params: param, page: page, officeId: Office.currentId)
+        param.section = sectionBook.key
+        param.order = orderBy
+        BookProvider.getBooksFilterSort( params: param, page: page, officeId: Office.currentId)
             .on(failed: { error in
                 weakSelf?.view?.showLoadBooksError(error.message)
             }, completed: {
@@ -124,7 +174,7 @@ extension SectionBookPresenterImplementation: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         if indexPath.row == listItems.total - 1, let nextPage = listItems.nextPage {
-            getListBook(page: nextPage)
+            getBooks(page: nextPage)
         }
     }
 
@@ -155,6 +205,7 @@ extension SectionBookPresenterImplementation: CategoryPickerPresenterDelegate {
         view?.displayLoading(isLoading: true)
         refreshing()
     }
+
 }
 
 extension SectionBookPresenterImplementation: SortBookPresenterDelegate {

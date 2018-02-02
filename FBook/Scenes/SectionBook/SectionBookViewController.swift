@@ -13,6 +13,7 @@ class SectionBookViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var sortButton: UIButton!
+    @IBOutlet weak var orderButton: UIButton!
     @IBOutlet fileprivate weak var loadingIndicatorView: UIActivityIndicatorView!
 
     var presenter: SectionBookPresenter?

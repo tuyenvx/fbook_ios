@@ -55,7 +55,15 @@ enum SortType: String {
 }
 
 enum OrderBy: String {
-
+    
     case desc
     case asc
+
+    mutating func invert() {
+        if self == .desc {
+            self = .asc
+        } else {
+            self = .desc
+        }
+    }
 }
