@@ -28,19 +28,11 @@ class BookDetailPresenterImplementation: NSObject {
     enum Section: Int {
 
         case basic
-        case detail
+        case owner
 
         static var count: Int {
-            return Section.detail.rawValue + 1
+            return Section.owner.rawValue + 1
         }
-
-    }
-
-    enum DetailType: Int {
-
-        case reviews
-        case readingUsers
-        case waitingUsers
 
     }
 
@@ -48,7 +40,6 @@ class BookDetailPresenterImplementation: NSObject {
     fileprivate weak var view: BookDetailView?
 
     fileprivate var book: Book
-    fileprivate var currentDetailType = DetailType.reviews
 
     init(view: BookDetailView, router: BookDetailViewRouter, book: Book) {
         self.view = view
@@ -72,59 +63,23 @@ class BookDetailPresenterImplementation: NSObject {
         return cell
     }
 
-    fileprivate func cellForMoreDetail(in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        switch currentDetailType {
-        case .reviews:
-            if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableNibCell(type: WriteReviewTableViewCell.self) else {
-                    return UITableViewCell()
-                }
-                cell.writeReviewButtonTapped = { [weak self] in
-                    self?.writeReviewButtonTapped()
-                }
-                return cell
-            }
-            guard let cell = tableView.dequeueReusableNibCell(type: UserReviewTableViewCell.self),
-                  let review = book.detail?.reviews?[safe: indexPath.row - 1] else {
-                return cellForEmptyRow(in: tableView, message: "No reviews.")
-            }
-            cell.updateUI(review: review)
-            return cell
-        case .readingUsers:
-            guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                  let user = book.requests?.reading?[safe: indexPath.row] else {
-                return cellForEmptyRow(in: tableView, message: "No users.")
-            }
-            cell.updateUI(user: user, status: "reading")
-            return cell
-        case .waitingUsers:
-            guard let cell = tableView.dequeueReusableNibCell(type: UserTableViewCell.self),
-                  let user = book.requests?.waiting?[safe: indexPath.row] else {
-                return cellForEmptyRow(in: tableView, message: "No users.")
-            }
-            cell.updateUI(user: user, status: "waiting")
-            return cell
+    fileprivate func cellForShareBy(in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableNibCell(type: ShareByTableViewCell.self) else {
+            return UITableViewCell()
         }
+        let owners = book.requests?.owners ?? []
+        let configutor = ShareByTableViewCellConfiguratorImplement.init(owners: owners, delegate: nil)
+        cell.displayConfigurator(configutor)
+        return cell
     }
-
-    fileprivate func writeReviewButtonTapped() {
-        if User.currentUser == nil {
-            router?.presentLoginViewController()
-        } else {
-            router?.presentRatingViewController()
-        }
-    }
-
 }
 
 extension BookDetailPresenterImplementation: BookDetailPresenter {
 
     func configure(tableView: UITableView) {
         tableView.registerNibCell(type: BasicDetailTableViewCell.self)
-        tableView.registerNibCell(type: UserReviewTableViewCell.self)
-        tableView.registerNibCell(type: UserTableViewCell.self)
+        tableView.registerNibCell(type: ShareByTableViewCell.self)
         tableView.registerNibCell(type: EmptyTableViewCell.self)
-        tableView.registerNibCell(type: WriteReviewTableViewCell.self)
         tableView.registerNibHeaderFooter(type: BookDetailHeaderView.self)
         tableView.delegate = self
         tableView.dataSource = self
@@ -165,18 +120,7 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case Section.basic.rawValue: return 1
-        case Section.detail.rawValue:
-            switch currentDetailType {
-            case .reviews:
-                let reviewsCount = book.detail?.reviews?.count ?? 0
-                return reviewsCount == 0 ? 2 : reviewsCount + 1
-            case .readingUsers:
-                let readingCount = book.requests?.reading?.count ?? 0
-                return readingCount == 0 ? 1 : readingCount
-            case .waitingUsers:
-                let waitingCount = book.requests?.waiting?.count ?? 0
-                return waitingCount == 0 ? 1 : waitingCount
-            }
+        case Section.owner.rawValue: return 1
         default: return 0
         }
     }
@@ -185,29 +129,11 @@ extension BookDetailPresenterImplementation: UITableViewDataSource {
         switch indexPath.section {
         case Section.basic.rawValue:
             return cellForBasicDetail(in: tableView, at: indexPath)
-        case Section.detail.rawValue:
-            return cellForMoreDetail(in: tableView, at: indexPath)
+        case Section.owner.rawValue:
+            return cellForShareBy(in: tableView, at: indexPath)
         default: return UITableViewCell()
         }
     }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case Section.detail.rawValue:
-            let headerView = tableView.dequeueReusableHeaderFooter(type: BookDetailHeaderView.self)
-            headerView?.contentView.backgroundColor = .white
-            headerView?.changeDetailType = { [weak self] selectedIndex in
-                guard let detailType = DetailType(rawValue: selectedIndex) else {
-                    return
-                }
-                self?.currentDetailType = detailType
-                self?.view?.updateUI()
-            }
-            return headerView
-        default: return nil
-        }
-    }
-
 }
 
 extension BookDetailPresenterImplementation: UITableViewDelegate {
@@ -217,13 +143,13 @@ extension BookDetailPresenterImplementation: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case Section.detail.rawValue: return 60.0
-        default: return kZeroFloat
+        switch indexPath.section {
+        case Section.basic.rawValue:
+            return UITableViewAutomaticDimension
+        case Section.owner.rawValue:
+            return 130
+        default:
+            return 0
         }
     }
 

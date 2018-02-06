@@ -62,7 +62,7 @@ class HomePresenterImplementation: NSObject {
         header.displayConfigurator(configurator)
         header.displayTitle(sectionBooks[section].title)
     }
-    
+
     fileprivate func getBooks(_ index: Int) -> [Book] {
         return sectionBooks[index].books ?? []
     }

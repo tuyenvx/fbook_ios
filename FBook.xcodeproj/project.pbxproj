@@ -171,6 +171,13 @@
 		77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0341F5FE0B90074A5DB /* BaseTabBarController.swift */; };
 		77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A03C1F5FF8650074A5DB /* ApiProvider.swift */; };
 		77F5A0411F60071B0074A5DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0401F60071B0074A5DB /* API.swift */; };
+		CC75A2CD2027EE6F000E299E /* CustomActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A2CC2027EE6F000E299E /* CustomActivityButton.swift */; };
+		CC75A2D620282B6A000E299E /* ShareByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A2D420282B6A000E299E /* ShareByTableViewCell.swift */; };
+		CC75A2D720282B6A000E299E /* ShareByTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC75A2D520282B6A000E299E /* ShareByTableViewCell.xib */; };
+		CC9389ED2028514600BEF3A1 /* ShareByTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9389EC2028514600BEF3A1 /* ShareByTableViewCellPresenter.swift */; };
+		CC9389EF2028548C00BEF3A1 /* ShareByTableViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9389EE2028548C00BEF3A1 /* ShareByTableViewCellConfigurator.swift */; };
+		CC9389F2202863FC00BEF3A1 /* OwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9389F0202863FC00BEF3A1 /* OwnerCollectionViewCell.swift */; };
+		CC9389F3202863FC00BEF3A1 /* OwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9389F1202863FC00BEF3A1 /* OwnerCollectionViewCell.xib */; };
 		D54028B01F6B73D60065F937 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54028AF1F6B73D60065F937 /* Date+Extensions.swift */; };
 		D54CFC711F750DAB00D4B4F1 /* TabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54CFC6F1F750DAB00D4B4F1 /* TabTableViewCell.swift */; };
 		D54CFC721F750DAB00D4B4F1 /* TabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54CFC701F750DAB00D4B4F1 /* TabTableViewCell.xib */; };
@@ -391,6 +398,13 @@
 		93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25D5DC6B1ED2B28EAB4D7AC /* Pods-FBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B416ACA6FFCD9220F9B75A51 /* Pods-FBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBook/Pods-FBook.debug.xcconfig"; sourceTree = "<group>"; };
+		CC75A2CC2027EE6F000E299E /* CustomActivityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityButton.swift; sourceTree = "<group>"; };
+		CC75A2D420282B6A000E299E /* ShareByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareByTableViewCell.swift; sourceTree = "<group>"; };
+		CC75A2D520282B6A000E299E /* ShareByTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareByTableViewCell.xib; sourceTree = "<group>"; };
+		CC9389EC2028514600BEF3A1 /* ShareByTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareByTableViewCellPresenter.swift; sourceTree = "<group>"; };
+		CC9389EE2028548C00BEF3A1 /* ShareByTableViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareByTableViewCellConfigurator.swift; sourceTree = "<group>"; };
+		CC9389F0202863FC00BEF3A1 /* OwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC9389F1202863FC00BEF3A1 /* OwnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnerCollectionViewCell.xib; sourceTree = "<group>"; };
 		CDA0389DECFAD21548DD9198 /* Pods-FBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D54028AF1F6B73D60065F937 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D54CFC6F1F750DAB00D4B4F1 /* TabTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTableViewCell.swift; sourceTree = "<group>"; };
@@ -589,6 +603,7 @@
 			children = (
 				4B546A611F79EC5600EB34B2 /* CustomTextField.swift */,
 				77C1D3811F8224D300C15A49 /* CustomButtonArrowDown.swift */,
+				CC75A2CC2027EE6F000E299E /* CustomActivityButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -606,6 +621,12 @@
 				4B7376341F70A7C900CC98EF /* EmptyTableViewCell.xib */,
 				4B7376391F70B6F500CC98EF /* WriteReviewTableViewCell.swift */,
 				4B73763A1F70B6F500CC98EF /* WriteReviewTableViewCell.xib */,
+				CC75A2D420282B6A000E299E /* ShareByTableViewCell.swift */,
+				CC75A2D520282B6A000E299E /* ShareByTableViewCell.xib */,
+				CC9389EC2028514600BEF3A1 /* ShareByTableViewCellPresenter.swift */,
+				CC9389EE2028548C00BEF3A1 /* ShareByTableViewCellConfigurator.swift */,
+				CC9389F0202863FC00BEF3A1 /* OwnerCollectionViewCell.swift */,
+				CC9389F1202863FC00BEF3A1 /* OwnerCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1155,11 +1176,13 @@
 				7703B35B1F6A587A00CDF69D /* ChooseWorkspaceViewController.xib in Resources */,
 				7712B0A01F7B4178001C8D9C /* SortBookViewController.xib in Resources */,
 				11E80B991F724C71008AECCF /* Search.storyboard in Resources */,
+				CC75A2D720282B6A000E299E /* ShareByTableViewCell.xib in Resources */,
 				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
 				4B068CC91F7894A900CA03AA /* PhotoCollectionViewCell.xib in Resources */,
 				D58C70731F7506DF0059D3BE /* HeaderTableViewCell.xib in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
+				CC9389F3202863FC00BEF3A1 /* OwnerCollectionViewCell.xib in Resources */,
 				4B73763C1F70B6F500CC98EF /* WriteReviewTableViewCell.xib in Resources */,
 				D58C706B1F7506450059D3BE /* FollowerTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
@@ -1404,8 +1427,10 @@
 				7741DAA41F85C29100FFE1C0 /* FilterSortBookParams.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
 				224C0F2B1F604B86007BEA04 /* Office.swift in Sources */,
+				CC9389EF2028548C00BEF3A1 /* ShareByTableViewCellConfigurator.swift in Sources */,
 				4B73763B1F70B6F500CC98EF /* WriteReviewTableViewCell.swift in Sources */,
 				772614AC1F669259004D6943 /* HomeHeaderPresenter.swift in Sources */,
+				CC9389ED2028514600BEF3A1 /* ShareByTableViewCellPresenter.swift in Sources */,
 				11076EAE1F6286B4002AA6D5 /* SearchViewRouter.swift in Sources */,
 				D5CD99001F6A18AC0074BC01 /* NotificationTableViewCell.swift in Sources */,
 				116C416F1F7350A80040196A /* BookRequest.swift in Sources */,
@@ -1420,6 +1445,7 @@
 				77B7C3A21F7BAFDC006483C1 /* CategoryPickerPresenter.swift in Sources */,
 				118038491F6F9EBE00945648 /* ApproveBookParams.swift in Sources */,
 				115E74A51F710F3F00868E53 /* WaitingBooksConfigurator.swift in Sources */,
+				CC75A2CD2027EE6F000E299E /* CustomActivityButton.swift in Sources */,
 				224C0F2D1F604C10007BEA04 /* OfficeProvider.swift in Sources */,
 				775197971F6FB113005042D9 /* CategoryProvider.swift in Sources */,
 				4B068CD11F789DBC00CA03AA /* ShareBookConfigurator.swift in Sources */,
@@ -1450,6 +1476,7 @@
 				772614AD1F669259004D6943 /* HomeHeaderView.swift in Sources */,
 				4BAB823F1F678E4000E52FB1 /* BookDetailViewController.swift in Sources */,
 				11570A951F71FA2D000DE9EA /* BookRequestCell.swift in Sources */,
+				CC75A2D620282B6A000E299E /* ShareByTableViewCell.swift in Sources */,
 				118038541F6FB00500945648 /* WaitingBookCell.swift in Sources */,
 				77DECCC11F6247C7007E32F5 /* LoginViewRouter.swift in Sources */,
 				4B8089C91F6A854B0072E0BB /* TimeFormatter.swift in Sources */,
@@ -1502,6 +1529,7 @@
 				77F4E2621F60E27A00C68BA8 /* Book.swift in Sources */,
 				4BC266E91F70EBFF0003FCEF /* RatingViewController.swift in Sources */,
 				77B7C39F1F7BAFA6006483C1 /* CategoryPickerViewController.swift in Sources */,
+				CC9389F2202863FC00BEF3A1 /* OwnerCollectionViewCell.swift in Sources */,
 				D58C706A1F7506450059D3BE /* FollowerTableViewCell.swift in Sources */,
 				77B45D1C1F693494001CB466 /* SectionBookPresenter.swift in Sources */,
 				77A6EACF1F68C06500EE384B /* BaseViewRouter.swift in Sources */,

@@ -9,6 +9,14 @@
 import Foundation
 import ObjectMapper
 
+struct BookActivities {
+    static let review = 0
+    static let waiting = 1
+    static let reading = 2
+    static let returning = 3
+    static let returned = 4
+}
+
 struct Book: Mappable {
 
     struct Detail: Mappable {
@@ -27,6 +35,7 @@ struct Book: Mappable {
         }
 
         mutating func mapping(map: Map) {
+
             code <- map["code"]
             media <- map["media"]
             reviews <- map["reviews_detail"]
