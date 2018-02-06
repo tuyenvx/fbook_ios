@@ -15,8 +15,6 @@ import RxCocoa
 protocol AccountView: class {
     func refreshAccount()
     func showLoadAccountError(message: String)
-    func addEditButton()
-    func addSaveButton()
 }
 
 protocol AccountPresenter {
@@ -30,8 +28,6 @@ protocol AccountPresenter {
     func handleLoadCategoriesSuccess(_ categories: [Category], _ tableView: UITableView)
     func handleLoadUsersSuccess(_ users: [User])
     func handleLoadUserInfoSuccess()
-    func editButtonTapped(_ sender: Any)
-    func saveButtonTapped(_ sender: Any)
 
 }
 
@@ -53,6 +49,7 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
 
     func configure(tableView: UITableView) {
         tableView.registerNibCell(type: HeaderTableViewCell.self)
+        tableView.registerNibCell(type: ProfilCell.self)
         tableView.registerNibCell(type: TabTableViewCell.self)
         tableView.registerNibCell(type: CategoryTableViewCell.self)
         tableView.registerNibCell(type: FollowerTableViewCell.self)
@@ -140,7 +137,6 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
         }, disposed: {
             AlertHelper.hideLoading()
         }, value: { status in
-//          TODO Show message when follow/unfollow success(has not key "description" with status code: 200)
             Utility.shared.showMessage(message: "\(status)", completion: nil)
         }).start()
     }
@@ -179,25 +175,11 @@ class AccountPresenterImplementation: NSObject, AccountPresenter {
 
 extension AccountPresenterImplementation: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 2:
-            switch currentTab {
-            case .profile:
-                return 1
-            case .categories:
-                return listCategories.count
-            case .following:
-                return listUsers.count
-            case .followers:
-                return listUsers.count
-            }
-        default:
-            return 1
-        }
+        return 1
     }
 }
 
@@ -207,14 +189,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         case 0:
             return 270
         case 1:
-            return 50
-        case 2:
-            switch currentTab {
-            case .profile: return 300
-            case .categories: return 50
-            case .followers: return 70
-            case .following: return 70
-            }
+            return 350
         default:
             return 0
         }
@@ -234,60 +209,13 @@ extension AccountPresenterImplementation: UITableViewDataSource {
             }
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableNibCell(type: TabTableViewCell.self) else {
+            guard let cell = tableView.dequeueReusableNibCell(type: ProfilCell.self) else {
                 return UITableViewCell()
             }
-            cell.handleButtonTapped = { tab in
-                self.handleButtonTapped(tab, tableView)
-            }
+            cell.delegate = self
             return cell
-        case 2:
-            switch self.currentTab {
-            case .profile:
-                return loadProfileTab(tableView: tableView)
-            case .categories:
-                return loadCategoriesTab(tableView: tableView, indexPath: indexPath)
-            case .followers:
-                return loadFollowersTab(tableView: tableView, indexPath: indexPath)
-            case .following:
-                return loadFollowingTab(tableView: tableView, indexPath: indexPath)
-            }
         default:
             return UITableViewCell()
-        }
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 2:
-            switch currentTab {
-            case .categories:
-                handleCategoriesCellItemTapped(tableView: tableView, indexPath: indexPath)
-            case .followers:
-                handleFollowersCellItemTapped(indexPath: indexPath)
-            case .following:
-                handleFollowingCellItemTapped(indexPath: indexPath)
-            case .profile:
-                break
-            }
-        default:
-            break
-        }
-    }
-
-    fileprivate func handleButtonTapped(_ selectedTab: Tab, _ tableView: UITableView) {
-        self.currentTab = selectedTab
-        switch selectedTab {
-        case .profile:
-            view?.addEditButton()
-            fetchUserInfo()
-        case .categories:
-            view?.addSaveButton()
-            fetchCategories(tableView)
-        case .followers:
-            fetchFollowers()
-        case .following:
-            fetchFollowingUsers()
         }
     }
 
@@ -332,27 +260,6 @@ extension AccountPresenterImplementation: UITableViewDataSource {
         updateFollow()
     }
 
-    fileprivate func handleCategoriesCellItemTapped(tableView: UITableView, indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell else {
-            return
-        }
-        if cell.checkBoxButton.isSelected {
-            cell.checkBoxButton.isSelected = false
-//          TODO handle unchecked
-        } else {
-            cell.checkBoxButton.isSelected = true
-//          TODO handle checked
-        }
-    }
-
-    fileprivate func handleFollowersCellItemTapped(indexPath: IndexPath) {
-        router?.showUserDetail(listUsers[indexPath.row])
-    }
-
-    fileprivate func handleFollowingCellItemTapped(indexPath: IndexPath) {
-        router?.showUserDetail(listUsers[indexPath.row])
-    }
-
     fileprivate func checkStateFollowButton(_ cell: HeaderTableViewCell) {
         if User.currentUser?.id != user.id {
             cell.unfollowButtonEnable()
@@ -360,5 +267,10 @@ extension AccountPresenterImplementation: UITableViewDataSource {
             cell.followButton.isHidden = true
         }
     }
+}
 
+extension AccountPresenterImplementation: ProfileCellDelegate{
+    func didSelectPersonal() {
+        router?.showPersonal()
+    }
 }

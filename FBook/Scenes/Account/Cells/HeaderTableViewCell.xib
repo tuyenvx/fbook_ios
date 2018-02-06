@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,8 +25,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="405" height="269.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eCW-xv-m29">
+                        <rect key="frame" x="0.0" y="0.0" width="405" height="270"/>
+                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="a7Z-xW-bzQ">
-                        <rect key="frame" x="142" y="28" width="120" height="120"/>
+                        <rect key="frame" x="142" y="31" width="120" height="120"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="120" id="6Cb-2P-9kZ"/>
                             <constraint firstAttribute="width" constant="120" id="oUZ-dv-mur"/>
@@ -38,16 +41,16 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcD-WI-jrz">
-                        <rect key="frame" x="77" y="168" width="250" height="22.5"/>
+                        <rect key="frame" x="77" y="171" width="250" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="py1-UH-vwY"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04g-m5-A2i">
-                        <rect key="frame" x="152" y="210.5" width="100" height="40"/>
+                        <rect key="frame" x="152" y="217" width="100" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="EXj-AK-hSW"/>
@@ -73,6 +76,10 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="eCW-xv-m29" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3t2-SX-p0s"/>
+                    <constraint firstItem="eCW-xv-m29" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BxD-Ue-LFS"/>
+                    <constraint firstAttribute="trailing" secondItem="eCW-xv-m29" secondAttribute="trailing" id="CXE-IF-1VW"/>
+                    <constraint firstAttribute="bottom" secondItem="eCW-xv-m29" secondAttribute="bottom" id="F28-BI-V6f"/>
                     <constraint firstItem="a7Z-xW-bzQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="QOg-ag-eYl"/>
                     <constraint firstItem="04g-m5-A2i" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="b5m-2q-6P2"/>
                     <constraint firstItem="a7Z-xW-bzQ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="eiY-mo-bm4"/>
@@ -84,10 +91,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarUserImage" destination="a7Z-xW-bzQ" id="qC2-ah-ApV"/>
+                <outlet property="backgroundImage" destination="eCW-xv-m29" id="fNa-R2-rDS"/>
                 <outlet property="followButton" destination="04g-m5-A2i" id="FD6-hz-dvt"/>
                 <outlet property="userNameLabel" destination="WcD-WI-jrz" id="cM7-wd-ob4"/>
             </connections>
-            <point key="canvasLocation" x="23.5" y="34.5"/>
+            <point key="canvasLocation" x="-183.5" y="13"/>
         </tableViewCell>
     </objects>
     <resources>

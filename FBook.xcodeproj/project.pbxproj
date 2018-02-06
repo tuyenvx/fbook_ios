@@ -171,6 +171,17 @@
 		77F5A0351F5FE0B90074A5DB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0341F5FE0B90074A5DB /* BaseTabBarController.swift */; };
 		77F5A03D1F5FF8650074A5DB /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A03C1F5FF8650074A5DB /* ApiProvider.swift */; };
 		77F5A0411F60071B0074A5DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5A0401F60071B0074A5DB /* API.swift */; };
+		863DB54C202956890099DD1A /* PersonalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863DB54B202956890099DD1A /* PersonalPresenter.swift */; };
+		86556B692027FF70008BFB2F /* ProfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86556B672027FF70008BFB2F /* ProfilCell.swift */; };
+		86556B6A2027FF70008BFB2F /* ProfilCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86556B682027FF70008BFB2F /* ProfilCell.xib */; };
+		86556B7220283CBA008BFB2F /* TabInforTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86556B7020283CBA008BFB2F /* TabInforTableViewCell.swift */; };
+		86556B7320283CBA008BFB2F /* TabInforTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86556B7120283CBA008BFB2F /* TabInforTableViewCell.xib */; };
+		86556B76202846E3008BFB2F /* InforPerssonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86556B74202846E3008BFB2F /* InforPerssonTableViewCell.swift */; };
+		86556B77202846E3008BFB2F /* InforPerssonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86556B75202846E3008BFB2F /* InforPerssonTableViewCell.xib */; };
+		86556B81202852FB008BFB2F /* PersonalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86556B80202852FB008BFB2F /* PersonalConfigurator.swift */; };
+		86556B83202853C6008BFB2F /* PersonalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86556B82202853C6008BFB2F /* PersonalRouter.swift */; };
+		86556B8820285767008BFB2F /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86556B8620285767008BFB2F /* PersonalViewController.swift */; };
+		86556B8920285767008BFB2F /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86556B8720285767008BFB2F /* PersonalViewController.xib */; };
 		CC75A2CD2027EE6F000E299E /* CustomActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A2CC2027EE6F000E299E /* CustomActivityButton.swift */; };
 		CC75A2D620282B6A000E299E /* ShareByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A2D420282B6A000E299E /* ShareByTableViewCell.swift */; };
 		CC75A2D720282B6A000E299E /* ShareByTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC75A2D520282B6A000E299E /* ShareByTableViewCell.xib */; };
@@ -394,6 +405,17 @@
 		77F5A0341F5FE0B90074A5DB /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		77F5A03C1F5FF8650074A5DB /* ApiProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		77F5A0401F60071B0074A5DB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		863DB54B202956890099DD1A /* PersonalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPresenter.swift; sourceTree = "<group>"; };
+		86556B672027FF70008BFB2F /* ProfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilCell.swift; sourceTree = "<group>"; };
+		86556B682027FF70008BFB2F /* ProfilCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilCell.xib; sourceTree = "<group>"; };
+		86556B7020283CBA008BFB2F /* TabInforTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInforTableViewCell.swift; sourceTree = "<group>"; };
+		86556B7120283CBA008BFB2F /* TabInforTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabInforTableViewCell.xib; sourceTree = "<group>"; };
+		86556B74202846E3008BFB2F /* InforPerssonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InforPerssonTableViewCell.swift; sourceTree = "<group>"; };
+		86556B75202846E3008BFB2F /* InforPerssonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InforPerssonTableViewCell.xib; sourceTree = "<group>"; };
+		86556B80202852FB008BFB2F /* PersonalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalConfigurator.swift; sourceTree = "<group>"; };
+		86556B82202853C6008BFB2F /* PersonalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalRouter.swift; sourceTree = "<group>"; };
+		86556B8620285767008BFB2F /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		86556B8720285767008BFB2F /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
 		8B0C30664FE5265A54D7B243 /* Pods_FBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B87F1A25FE163B3B4DFFD4 /* Pods_FBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25D5DC6B1ED2B28EAB4D7AC /* Pods-FBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBookTests/Pods-FBookTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -968,6 +990,18 @@
 			path = BaseController;
 			sourceTree = "<group>";
 		};
+		86556B6B20282E25008BFB2F /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				86556B80202852FB008BFB2F /* PersonalConfigurator.swift */,
+				86556B82202853C6008BFB2F /* PersonalRouter.swift */,
+				86556B8620285767008BFB2F /* PersonalViewController.swift */,
+				863DB54B202956890099DD1A /* PersonalPresenter.swift */,
+				86556B8720285767008BFB2F /* PersonalViewController.xib */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
 		D1102CD32C6B7D69F43EB89C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +1015,7 @@
 		D58C70581F75031C0059D3BE /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				86556B6B20282E25008BFB2F /* Personal */,
 				D58C70631F75054A0059D3BE /* Cells */,
 				D58C70591F75035F0059D3BE /* Account.storyboard */,
 				D58C705B1F7503BC0059D3BE /* AccountViewController.swift */,
@@ -1006,6 +1041,12 @@
 				D54CFC701F750DAB00D4B4F1 /* TabTableViewCell.xib */,
 				D583EACC1F78944D003915FA /* ProfileTableViewCell.swift */,
 				D583EACD1F78944D003915FA /* ProfileTableViewCell.xib */,
+				86556B672027FF70008BFB2F /* ProfilCell.swift */,
+				86556B682027FF70008BFB2F /* ProfilCell.xib */,
+				86556B7020283CBA008BFB2F /* TabInforTableViewCell.swift */,
+				86556B7120283CBA008BFB2F /* TabInforTableViewCell.xib */,
+				86556B74202846E3008BFB2F /* InforPerssonTableViewCell.swift */,
+				86556B75202846E3008BFB2F /* InforPerssonTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1168,6 +1209,7 @@
 				4BD94DB31F6B657000C0A7F5 /* UserTableViewCell.xib in Resources */,
 				77B7C3A01F7BAFA6006483C1 /* CategoryPickerViewController.xib in Resources */,
 				772614941F6637AD004D6943 /* Home.storyboard in Resources */,
+				86556B7320283CBA008BFB2F /* TabInforTableViewCell.xib in Resources */,
 				1180384F1F6FA7DB00945648 /* BookRequest.storyboard in Resources */,
 				772614B71F669264004D6943 /* BookCollectionViewCell.xib in Resources */,
 				77F59FED1F5F9B1F0074A5DB /* Assets.xcassets in Resources */,
@@ -1179,13 +1221,16 @@
 				CC75A2D720282B6A000E299E /* ShareByTableViewCell.xib in Resources */,
 				7703B3671F6A658F00CDF69D /* ChooseWorkspaceTableViewCell.xib in Resources */,
 				4B8F9BD81F6A633900B74769 /* UserReviewTableViewCell.xib in Resources */,
+				86556B77202846E3008BFB2F /* InforPerssonTableViewCell.xib in Resources */,
 				4B068CC91F7894A900CA03AA /* PhotoCollectionViewCell.xib in Resources */,
 				D58C70731F7506DF0059D3BE /* HeaderTableViewCell.xib in Resources */,
 				4B8F9BDC1F6A711100B74769 /* BasicDetailTableViewCell.xib in Resources */,
 				CC9389F3202863FC00BEF3A1 /* OwnerCollectionViewCell.xib in Resources */,
+				86556B6A2027FF70008BFB2F /* ProfilCell.xib in Resources */,
 				4B73763C1F70B6F500CC98EF /* WriteReviewTableViewCell.xib in Resources */,
 				D58C706B1F7506450059D3BE /* FollowerTableViewCell.xib in Resources */,
 				772614AF1F669259004D6943 /* HomeTableViewCell.xib in Resources */,
+				86556B8920285767008BFB2F /* PersonalViewController.xib in Resources */,
 				772614AA1F669259004D6943 /* HomeHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1267,7 +1312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6BA7FB357913453C8E850BE5 /* [CP] Copy Pods Resources */ = {
@@ -1313,7 +1358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		874F2F142A4FA15E1EF23A06 /* [CP] Embed Pods Frameworks */ = {
@@ -1402,7 +1447,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1418,11 +1463,13 @@
 				772614AE1F669259004D6943 /* HomeTableViewCell.swift in Sources */,
 				77F4E2681F60F02500C68BA8 /* Media.swift in Sources */,
 				4B068CCD1F789D8D00CA03AA /* ShareBookPresenter.swift in Sources */,
+				86556B83202853C6008BFB2F /* PersonalRouter.swift in Sources */,
 				77F4E26C1F60F32100C68BA8 /* HomeProvider.swift in Sources */,
 				D58C706E1F75065D0059D3BE /* CategoryTableViewCell.swift in Sources */,
 				77A6EAC81F68C05300EE384B /* MenuSettingPresenter.swift in Sources */,
 				4B8F9BDE1F6A75BF00B74769 /* Array+Extensions.swift in Sources */,
 				77A76EEC1F629602008601E2 /* HomeConfigurator.swift in Sources */,
+				86556B76202846E3008BFB2F /* InforPerssonTableViewCell.swift in Sources */,
 				77DECCC81F625022007E32F5 /* ForgotPasswordViewRouter.swift in Sources */,
 				7741DAA41F85C29100FFE1C0 /* FilterSortBookParams.swift in Sources */,
 				22C480651F60445A00DB7A4C /* AuthenticationProvider.swift in Sources */,
@@ -1438,9 +1485,11 @@
 				77C1D3821F8224D300C15A49 /* CustomButtonArrowDown.swift in Sources */,
 				7726148C1F6625AE004D6943 /* UIView+Extensions.swift in Sources */,
 				4B7376381F70B14200CC98EF /* EmptyTableViewCell.swift in Sources */,
+				86556B8820285767008BFB2F /* PersonalViewController.swift in Sources */,
 				D5CD98FB1F6A14EB0074BC01 /* NotificationPresenter.swift in Sources */,
 				772614AB1F669259004D6943 /* HomeHeaderConfigurator.swift in Sources */,
 				D5CD99041F6A8A020074BC01 /* Notification.swift in Sources */,
+				863DB54C202956890099DD1A /* PersonalPresenter.swift in Sources */,
 				77F5A0311F5FE0630074A5DB /* BaseViewController.swift in Sources */,
 				77B7C3A21F7BAFDC006483C1 /* CategoryPickerPresenter.swift in Sources */,
 				118038491F6F9EBE00945648 /* ApproveBookParams.swift in Sources */,
@@ -1483,6 +1532,7 @@
 				7712B09F1F7B4178001C8D9C /* SortBookViewController.swift in Sources */,
 				22C480631F6043F800DB7A4C /* BaseProvider.swift in Sources */,
 				7712B09A1F7B4178001C8D9C /* PickerTableViewCell.swift in Sources */,
+				86556B692027FF70008BFB2F /* ProfilCell.swift in Sources */,
 				11361F141F7A4AEE00125108 /* NoDataView.swift in Sources */,
 				77A6EAC71F68C05300EE384B /* MenuSettingConfigurator.swift in Sources */,
 				77A76EEF1F629602008601E2 /* HomeViewRouter.swift in Sources */,
@@ -1517,8 +1567,10 @@
 				D58C705C1F7503BC0059D3BE /* AccountViewController.swift in Sources */,
 				D58C70621F75052D0059D3BE /* AccountRouter.swift in Sources */,
 				77B45D1A1F693486001CB466 /* SectionBookViewController.swift in Sources */,
+				86556B7220283CBA008BFB2F /* TabInforTableViewCell.swift in Sources */,
 				775197951F6FA7A8005042D9 /* CategoryRouter.swift in Sources */,
 				114F9C351F68C5A60098674E /* ListItems.swift in Sources */,
+				86556B81202852FB008BFB2F /* PersonalConfigurator.swift in Sources */,
 				4BD94DB21F6B657000C0A7F5 /* UserTableViewCell.swift in Sources */,
 				77F4E2641F60E7DB00C68BA8 /* Review.swift in Sources */,
 				77B45D1E1F6934A1001CB466 /* SectionBookConfigurator.swift in Sources */,

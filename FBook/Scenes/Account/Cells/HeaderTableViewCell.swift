@@ -10,7 +10,8 @@ import UIKit
 import SwiftHEXColors
 
 class HeaderTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var avatarUserImage: UIImageView!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -49,5 +50,9 @@ class HeaderTableViewCell: UITableViewCell {
         followButton.setBackgroundImage(UIImage(named: ""), for: .normal)
         followButton.borderWidth = 1
         followButton.borderColor = .white
+    }
+    
+    func changeBackground() {
+        self.backgroundImage.image = UIImage(named: "background_profile_user")
     }
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol HomeHeaderViewDelegate: class {
+    func didSelectSeeMore(atSection section: Int)
+}
+
 class HomeHeader: UIView {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
