@@ -8,15 +8,16 @@
 
 import Foundation
 
+
 protocol HomeHeaderView: class {
     func displayConfigurator(_ configurator: HomeHeaderConfigurator)
     func displayTitle(_ title: String)
     func sholdShowMoreButton(_ isHidden: Bool)
 }
 
-protocol HomeHeaderViewDelegate: class {
-    func didSelectSeeMore(atSection section: Int)
-}
+
+
+
 
 protocol HomeHeaderPresenter {
     func didSelectSeeMore()

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,15 +22,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXs-b5-pOI">
                         <rect key="frame" x="0.0" y="0.0" width="490" height="299.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_username" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-cz-jzd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ruby" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-cz-jzd">
                                 <rect key="frame" x="25" y="20" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Dnq-lv-OdF"/>
                                     <constraint firstAttribute="height" constant="24" id="NZa-k9-GCa"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVa-aV-mQJ">
-                                <rect key="frame" x="69" y="10" width="45" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVa-aV-mQJ">
+                                <rect key="frame" x="69" y="10" width="28" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,11 +44,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_email" translatesAutoresizingMaskIntoConstraints="NO" id="pYZ-SP-Qx8">
-                                <rect key="frame" x="25" y="80" width="24" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ruby" translatesAutoresizingMaskIntoConstraints="NO" id="pYZ-SP-Qx8">
+                                <rect key="frame" x="25" y="74" width="24" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="8ML-RJ-yOM"/>
-                                    <constraint firstAttribute="height" constant="18" id="i6Z-4w-ZY3"/>
+                                    <constraint firstAttribute="height" constant="25" id="i6Z-4w-ZY3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIO-lQ-WiI">
@@ -66,15 +66,15 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Oqt-hF-RiL">
-                                <rect key="frame" x="25" y="134" width="24" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ruby" translatesAutoresizingMaskIntoConstraints="NO" id="Oqt-hF-RiL">
+                                <rect key="frame" x="25" y="135" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="O2v-Qn-gCc"/>
                                     <constraint firstAttribute="height" constant="24" id="grN-Nu-dJy"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7e-jO-Jmu">
-                                <rect key="frame" x="69" y="127" width="49" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điện thoại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7e-jO-Jmu">
+                                <rect key="frame" x="69" y="127" width="77" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,15 +88,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_code" translatesAutoresizingMaskIntoConstraints="NO" id="Tyv-1g-KMg">
-                                <rect key="frame" x="25" y="194" width="24" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ruby" translatesAutoresizingMaskIntoConstraints="NO" id="Tyv-1g-KMg">
+                                <rect key="frame" x="25" y="195" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="8U5-XO-T8D"/>
                                     <constraint firstAttribute="width" constant="24" id="ube-wF-Fda"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-gu-nFW">
-                                <rect key="frame" x="69" y="185.5" width="41" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mã nhân viên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-gu-nFW">
+                                <rect key="frame" x="69" y="185.5" width="101.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -110,15 +110,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_location" translatesAutoresizingMaskIntoConstraints="NO" id="ZcV-kQ-QQV">
-                                <rect key="frame" x="25" y="254" width="24" height="24"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ruby" translatesAutoresizingMaskIntoConstraints="NO" id="ZcV-kQ-QQV">
+                                <rect key="frame" x="25" y="255" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="0Wz-Wa-kGY"/>
                                     <constraint firstAttribute="height" constant="24" id="r7k-4p-dd1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbz-e6-p3k">
-                                <rect key="frame" x="69" y="244" width="61" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chức vụ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbz-e6-p3k">
+                                <rect key="frame" x="69" y="244" width="63.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -158,7 +158,7 @@
                             <constraint firstItem="PTh-gh-4za" firstAttribute="leading" secondItem="pYZ-SP-Qx8" secondAttribute="trailing" constant="20" id="azM-pt-H7g"/>
                             <constraint firstItem="sAv-mO-VRc" firstAttribute="leading" secondItem="ZcV-kQ-QQV" secondAttribute="trailing" constant="20" id="ceP-uw-368"/>
                             <constraint firstItem="1WE-gu-nFW" firstAttribute="leading" secondItem="Tyv-1g-KMg" secondAttribute="trailing" constant="20" id="fNy-Vl-zm2"/>
-                            <constraint firstItem="pYZ-SP-Qx8" firstAttribute="top" secondItem="KzP-cz-jzd" secondAttribute="bottom" constant="36" id="fZJ-3W-zi4"/>
+                            <constraint firstItem="pYZ-SP-Qx8" firstAttribute="top" secondItem="KzP-cz-jzd" secondAttribute="bottom" constant="30" id="fZJ-3W-zi4"/>
                             <constraint firstItem="PTh-gh-4za" firstAttribute="top" secondItem="PIO-lQ-WiI" secondAttribute="bottom" constant="5" id="fvd-mv-TJX"/>
                             <constraint firstItem="PIO-lQ-WiI" firstAttribute="top" secondItem="DVa-aV-mQJ" secondAttribute="bottom" constant="38" id="g0r-Wx-zGq"/>
                             <constraint firstItem="KzP-cz-jzd" firstAttribute="top" secondItem="EXs-b5-pOI" secondAttribute="top" constant="20" id="mdv-cD-U8S"/>
@@ -166,6 +166,17 @@
                             <constraint firstItem="ZcV-kQ-QQV" firstAttribute="leading" secondItem="EXs-b5-pOI" secondAttribute="leading" constant="25" id="pc2-gl-JKu"/>
                             <constraint firstItem="T7e-jO-Jmu" firstAttribute="top" secondItem="PIO-lQ-WiI" secondAttribute="bottom" constant="38" id="yf7-dj-lgb"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -174,6 +185,17 @@
                     <constraint firstItem="EXs-b5-pOI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="S2e-Ip-5fx"/>
                     <constraint firstAttribute="bottom" secondItem="EXs-b5-pOI" secondAttribute="bottom" id="vW6-81-JU5"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="10"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                        <color key="value" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                        <real key="value" value="0.0"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
@@ -187,10 +209,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_code" width="24" height="24"/>
-        <image name="icon_email" width="24" height="18"/>
-        <image name="icon_location" width="24" height="24"/>
-        <image name="icon_phone" width="24" height="24"/>
-        <image name="icon_username" width="24" height="24"/>
+        <image name="ic_ruby" width="400" height="512"/>
     </resources>
 </document>

@@ -23,7 +23,6 @@ struct HomeHeaderConfiguratorImplementation {
     }
 
 }
-
 extension HomeHeaderConfiguratorImplementation: HomeHeaderConfigurator {
     func configure(view: HomeHeader) {
         let presenter = HomeHeaderPresenterImplementation(view: view, delegate: delegate, section: section)

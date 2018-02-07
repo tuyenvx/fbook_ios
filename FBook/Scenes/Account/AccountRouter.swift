@@ -11,6 +11,7 @@ import UIKit
 
 protocol AccountRouter {
     func showUserDetail(_ user: User)
+    func showPersonal()
 }
 
 class AccountRouterImplementation: AccountRouter {
@@ -29,5 +30,11 @@ class AccountRouterImplementation: AccountRouter {
         accountViewController.configurator = AccountConfiguratorImplementation(user: user)
         accountViewController.configurator?.configure(viewController: accountViewController)
         viewController?.navigationController?.pushViewController(accountViewController, animated: true)
+    }
+    
+    func showPersonal() {
+        let personalViewController = PersonalViewController()
+        personalViewController.hidesBottomBarWhenPushed = true
+        self.viewController?.navigationController?.pushViewController(personalViewController, animated: true)
     }
 }
