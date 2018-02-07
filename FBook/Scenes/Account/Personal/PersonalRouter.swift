@@ -16,7 +16,7 @@ protocol PersonalRouter {
 class PersonalRouterImplementation: PersonalRouter {
     
     fileprivate weak var viewController: PersonalViewController?
-    
+
     init(viewController: PersonalViewController) {
         self.viewController = viewController
     }

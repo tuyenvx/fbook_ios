@@ -55,9 +55,19 @@ struct Book: Mappable {
         var returning: [BookRequest]?
         var returned: [BookRequest]?
         var owners: [BookRequest]?
+        var reviews: [Review]?
 
         init?(map: Map) {
             mapping(map: map)
+        }
+
+        init() {
+            waiting = []
+            reading = []
+            returning = []
+            returned = []
+            owners = []
+            reviews = []
         }
 
         mutating func mapping(map: Map) {
@@ -66,6 +76,7 @@ struct Book: Mappable {
             returning <- map["users_returning"]
             returned <- map["users_returned"]
             owners <- map["owners"]
+            reviews <- map["reviews_detail"]
         }
     }
 

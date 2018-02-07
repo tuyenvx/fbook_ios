@@ -15,5 +15,5 @@ extension UIStoryboard {
     static let search = UIStoryboard(name: "Search", bundle: .main)
     static let login = UIStoryboard(name: "Login", bundle: .main)
     static let account = UIStoryboard(name: "Account", bundle: .main)
-
+    static let bookActivities = UIStoryboard(name: "BookActivities", bundle: .main)
 }

@@ -82,9 +82,6 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="readButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h9R-17-1UR"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LT-ZQ-g6O">
                                 <rect key="frame" x="195.5" y="190.5" width="164.5" height="35"/>
@@ -104,9 +101,6 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ownerButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jLh-kc-f5d"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLY-yV-nNK" userLabel="Horizontal Separator">
                                 <rect key="frame" x="16" y="240.5" width="343" height="0.5"/>
@@ -141,6 +135,9 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didSelectedActivities:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bPq-gE-bAM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0a-UI-HGn" customClass="CustomActivityButton" customModule="FBook" customModuleProvider="target">
                                                 <rect key="frame" x="69" y="0.0" width="69" height="74.5"/>
@@ -153,6 +150,9 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didSelectedActivities:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rXy-4j-Obz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-ll-qmf" customClass="CustomActivityButton" customModule="FBook" customModuleProvider="target">
                                                 <rect key="frame" x="138" y="0.0" width="69" height="74.5"/>
@@ -165,6 +165,9 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didSelectedActivities:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WDo-XZ-upd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBZ-OM-Xvn" customClass="CustomActivityButton" customModule="FBook" customModuleProvider="target">
                                                 <rect key="frame" x="207" y="0.0" width="69" height="74.5"/>
@@ -177,10 +180,13 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didSelectedActivities:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="toW-ME-dLl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K76-ac-tbl" customClass="CustomActivityButton" customModule="FBook" customModuleProvider="target">
                                                 <rect key="frame" x="276" y="0.0" width="69" height="74.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="Returned" image="ic_activities">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -189,6 +195,9 @@
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didSelectedActivities:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yvH-X4-sNN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

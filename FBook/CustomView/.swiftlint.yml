@@ -3,11 +3,13 @@ disabled_rules: # rule identifiers to exclude from running
   - file_length
   - type_name
   - identifier_name
+  - line_length
+  - type_body_length
 
 excluded: # paths to ignore during linting. overridden by `included`.
   - Carthage
   - Pods
-  - FBook/CustomView/GLViewControllerForSwift.swift
+  - GLViewControllerForSwift.swift
 
 identifier_name:
   max_length: 60

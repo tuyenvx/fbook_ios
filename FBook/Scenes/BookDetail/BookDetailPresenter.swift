@@ -60,6 +60,7 @@ class BookDetailPresenterImplementation: NSObject {
             return UITableViewCell()
         }
         cell.updateUI(book: book)
+        cell.delegate = self
         return cell
     }
 
@@ -68,7 +69,7 @@ class BookDetailPresenterImplementation: NSObject {
             return UITableViewCell()
         }
         let owners = book.requests?.owners ?? []
-        let configutor = ShareByTableViewCellConfiguratorImplement.init(owners: owners, delegate: nil)
+        let configutor = ShareByTableViewCellConfiguratorImplement.init(owners: owners, delegate: self)
         cell.displayConfigurator(configutor)
         return cell
     }
@@ -109,6 +110,20 @@ extension BookDetailPresenterImplementation: BookDetailPresenter {
         }).start()
     }
 
+}
+
+extension BookDetailPresenterImplementation: ShareByTableViewCellDelegate {
+
+    func didSelectedOwner(_ owner: BookRequest) {
+        
+    }
+}
+
+extension BookDetailPresenterImplementation: BasicDetailTableViewCellDelegate {
+
+    func didSelectedActivities(_ activites: Int) {
+        router?.showBookActivitiesViewController(listRequest: Book.ListRequests.init(), index: activites)
+    }
 }
 
 extension BookDetailPresenterImplementation: UITableViewDataSource {

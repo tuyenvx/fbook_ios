@@ -269,7 +269,7 @@ extension AccountPresenterImplementation: UITableViewDataSource {
     }
 }
 
-extension AccountPresenterImplementation: ProfileCellDelegate{
+extension AccountPresenterImplementation: ProfileCellDelegate {
     func didSelectPersonal() {
         router?.showPersonal()
     }

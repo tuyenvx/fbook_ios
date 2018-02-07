@@ -13,7 +13,7 @@
         <!--Book detail-->
         <scene sceneID="rdB-wD-Y9d">
             <objects>
-                <viewController id="9Gw-O4-Fgs" customClass="BookDetailViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="9Gw-O4-Fgs" customClass="BookDetailViewController" customModule="FBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZYY-7f-Lw3"/>
                         <viewControllerLayoutGuide type="bottom" id="Eap-p5-wy0"/>

@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E1E-Ik-JuF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E1E-Ik-JuF">
                         <rect key="frame" x="15" y="0.0" width="70" height="70"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="1gO-0F-rGY"/>
@@ -57,7 +57,7 @@
                 <outlet property="ownerAvatarImageView" destination="E1E-Ik-JuF" id="KWh-KN-43a"/>
                 <outlet property="ownerNameLabel" destination="8aT-UY-lGv" id="1nV-qy-X5z"/>
             </connections>
-            <point key="canvasLocation" x="62" y="91"/>
+            <point key="canvasLocation" x="-7" y="29"/>
         </collectionViewCell>
     </objects>
 </document>
