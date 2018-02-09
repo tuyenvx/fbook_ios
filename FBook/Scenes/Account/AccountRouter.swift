@@ -31,7 +31,7 @@ class AccountRouterImplementation: AccountRouter {
         accountViewController.configurator?.configure(viewController: accountViewController)
         viewController?.navigationController?.pushViewController(accountViewController, animated: true)
     }
-    
+
     func showPersonal() {
         let personalViewController = PersonalViewController()
         personalViewController.hidesBottomBarWhenPushed = true

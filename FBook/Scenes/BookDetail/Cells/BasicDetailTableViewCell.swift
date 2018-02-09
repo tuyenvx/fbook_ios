@@ -9,6 +9,10 @@
 import UIKit
 import Cosmos
 
+protocol BasicDetailTableViewCellDelegate: AnyObject {
+    func didSelectedActivities(_ activites: Int)
+}
+
 class BasicDetailTableViewCell: UITableViewCell {
 
     @IBOutlet fileprivate weak var thumbnailImageView: UIImageView!
@@ -19,6 +23,7 @@ class BasicDetailTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var stackView: UIStackView!
     @IBOutlet fileprivate weak var createdTimeLabel: UILabel!
     @IBOutlet fileprivate weak var viewsLabel: UILabel!
+    weak var delegate: BasicDetailTableViewCellDelegate?
 
     func updateUI(book: Book) {
         updateRequests(book: book)
@@ -53,12 +58,7 @@ class BasicDetailTableViewCell: UITableViewCell {
             }
         }
     }
-    @IBAction private func readButtonTapped(_ sender: Any) {
-        // TODO: Handle want to read button tapped
+    @IBAction private func didSelectedActivities(_ sender: UIButton) {
+        delegate?.didSelectedActivities(sender.tag)
     }
-
-    @IBAction private func ownerButtonTapped(_ sender: Any) {
-        // TODO: Handle add owner button tapped
-    }
-
 }

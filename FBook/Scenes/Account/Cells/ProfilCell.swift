@@ -21,23 +21,23 @@ class ProfilCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
     }
     @IBAction func pressPersonal(_ sender: UIButton) {
       self.delegate?.didSelectPersonal()
     }
-    
+
     @IBAction func pressApproved(_ sender: UIButton) {
     }
     @IBAction func pressShare(_ sender: UIButton) {
-        
+
     }
-    
+
     @IBAction func pressSetting(_ sender: UIButton) {
-        
+
     }
-    
+
     @IBAction func pressLogOut(_ sender: UIButton) {
-        
+
     }
 }
