@@ -122,7 +122,11 @@ extension BookDetailPresenterImplementation: ShareByTableViewCellDelegate {
 extension BookDetailPresenterImplementation: BasicDetailTableViewCellDelegate {
 
     func didSelectedActivities(_ activites: Int) {
-        router?.showBookActivitiesViewController(listRequest: Book.ListRequests.init(), index: activites)
+        guard let requests = book.requests else {
+            // show notifi
+            return
+        }
+        router?.showBookActivitiesViewController(listRequest: requests, index: activites)
     }
 }
 

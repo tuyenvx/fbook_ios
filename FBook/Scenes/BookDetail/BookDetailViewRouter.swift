@@ -39,6 +39,9 @@ class BookDetailViewRouterImplementation {
                 as? BookActivitiesViewController else {
             return BookActivitiesViewController()
         }
+        // ReViewVC
+        let reviewConfigurator = UserReviewConfiguratorImplement(reviews: listRequest.reviews)
+        userReviewVC.config(configurator: reviewConfigurator)
         let viewControllers = [userReviewVC, userWaitingVC, userReadingVC, userReturningVC, userReturnedVC]
         let titles = ["User Review", "User Waiting", "User Reading", "User Returning", "User Returned"]
         let configurator = BookActivitiesConfiguratorImplement.init(viewControllers: viewControllers, currentIndex: 0, titles: titles, requests: listRequest)

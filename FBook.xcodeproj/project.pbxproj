@@ -195,6 +195,8 @@
 		CC0F5E0E202C310600B24CCB /* UIViewController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0F5E0D202C310600B24CCB /* UIViewController+Extention.swift */; };
 		CC24381D202D411F004519FD /* GLViewPagerViewControllerForSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24381C202D411F004519FD /* GLViewPagerViewControllerForSwift.swift */; };
 		CC24381F202D8923004519FD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24381E202D8922004519FD /* UIColor+Extension.swift */; };
+		CC7398F120329B3E00BF19AD /* UserReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7398F020329B3E00BF19AD /* UserReviewPresenter.swift */; };
+		CC7398F320329B5C00BF19AD /* UserReviewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7398F220329B5C00BF19AD /* UserReviewConfigurator.swift */; };
 		CC75A2CD2027EE6F000E299E /* CustomActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A2CC2027EE6F000E299E /* CustomActivityButton.swift */; };
 		CC75A2D620282B6A000E299E /* ShareByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A2D420282B6A000E299E /* ShareByTableViewCell.swift */; };
 		CC75A2D720282B6A000E299E /* ShareByTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC75A2D520282B6A000E299E /* ShareByTableViewCell.xib */; };
@@ -446,6 +448,8 @@
 		CC0F5E0D202C310600B24CCB /* UIViewController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extention.swift"; sourceTree = "<group>"; };
 		CC24381C202D411F004519FD /* GLViewPagerViewControllerForSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLViewPagerViewControllerForSwift.swift; sourceTree = "<group>"; };
 		CC24381E202D8922004519FD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CC7398F020329B3E00BF19AD /* UserReviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewPresenter.swift; sourceTree = "<group>"; };
+		CC7398F220329B5C00BF19AD /* UserReviewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewConfigurator.swift; sourceTree = "<group>"; };
 		CC75A2CC2027EE6F000E299E /* CustomActivityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityButton.swift; sourceTree = "<group>"; };
 		CC75A2D420282B6A000E299E /* ShareByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareByTableViewCell.swift; sourceTree = "<group>"; };
 		CC75A2D520282B6A000E299E /* ShareByTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareByTableViewCell.xib; sourceTree = "<group>"; };
@@ -1045,6 +1049,8 @@
 				CC0F5E02202C283C00B24CCB /* UserReadingViewController.swift */,
 				CC0F5E04202C285200B24CCB /* UserReturningViewController.swift */,
 				CC0F5E06202C286100B24CCB /* UserReturnedViewController.swift */,
+				CC7398F020329B3E00BF19AD /* UserReviewPresenter.swift */,
+				CC7398F220329B5C00BF19AD /* UserReviewConfigurator.swift */,
 			);
 			name = BookActivities;
 			path = "New Group1";
@@ -1613,6 +1619,7 @@
 				77A6EACA1F68C05300EE384B /* MenuSettingViewController.swift in Sources */,
 				7703B35A1F6A587A00CDF69D /* ChooseWorkspaceViewController.swift in Sources */,
 				CC0F5DFB202BF94D00B24CCB /* PageViewController.swift in Sources */,
+				CC7398F120329B3E00BF19AD /* UserReviewPresenter.swift in Sources */,
 				22E076A21F61BDD000869A05 /* String+Extensions.swift in Sources */,
 				4B8F9BD71F6A633900B74769 /* UserReviewTableViewCell.swift in Sources */,
 				4BC266EB1F70EC240003FCEF /* RatingConfigurator.swift in Sources */,
@@ -1660,6 +1667,7 @@
 				772614A91F669259004D6943 /* HomeCellPresenter.swift in Sources */,
 				CC0F5E07202C286100B24CCB /* UserReturnedViewController.swift in Sources */,
 				772614B61F669264004D6943 /* BookCollectionViewCell.swift in Sources */,
+				CC7398F320329B5C00BF19AD /* UserReviewConfigurator.swift in Sources */,
 				11076EB41F6299DE002AA6D5 /* SearchBookCell.swift in Sources */,
 				CC0F5E0A202C292200B24CCB /* BookActivitiesPresenter.swift in Sources */,
 				7703B3611F6A5AD400CDF69D /* ChooseWorkspaceRouter.swift in Sources */,
