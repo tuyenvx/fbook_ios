@@ -40,17 +40,11 @@ class BookActivitiesViewController: GLViewPagerViewController {
 
 extension BookActivitiesViewController: GLViewPagerViewControllerDataSource {
     func numberOfTabsForViewPager(_ viewPager: GLViewPagerViewController) -> Int {
-        return presenter?.getViewControllers().count ?? 0
+        return presenter?.numberOfTab() ?? 0
     }
 
     func viewForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> UIView {
-        let label: UILabel = UILabel.init()
-        label.text = presenter?.getTitles()[index] ?? ""
-        label.textColor = .darkGray
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textAlignment = NSTextAlignment.center
-        label.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.9)
-        return label
+        return presenter?.viewForTabAtIndex(index) ?? UIView()
     }
 
     func contentViewControllerForTabAtIndex(_ viewPager: GLViewPagerViewController, index: Int) -> UIViewController {
@@ -60,36 +54,15 @@ extension BookActivitiesViewController: GLViewPagerViewControllerDataSource {
 
 extension BookActivitiesViewController: GLViewPagerViewControllerDelegate {
     func didChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int) {
-        guard let prevLabel: UILabel = viewPager.tabViewAtIndex(index: fromTabIndex) as? UILabel,
-            let currentLabel: UILabel = viewPager.tabViewAtIndex(index: index) as? UILabel else {
-                return
-        }
-        prevLabel.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
-        currentLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
-        prevLabel.textColor = UIColor.darkGray
-        currentLabel.textColor = .mainColor
+        presenter?.didChangeTabToIndex(viewPager, index, fromTabIndex)
     }
 
     func willChangeTabToIndex(_ viewPager: GLViewPagerViewController, index: Int, fromTabIndex: Int, progress: CGFloat) {
-        if fromTabIndex == index {
-            return
-        }
-
-        guard let prevLabel: UILabel = viewPager.tabViewAtIndex(index: fromTabIndex) as? UILabel,
-            let currentLabel: UILabel = viewPager.tabViewAtIndex(index: index) as? UILabel else {
-                return }
-        prevLabel.transform = CGAffineTransform.identity.scaledBy(x: 1.0 - (0.1 * progress), y: 1.0 - (0.1 * progress))
-        currentLabel.transform = CGAffineTransform.identity.scaledBy(x: 0.9 + (0.1 * progress), y: 0.9 + (0.1 * progress))
-        currentLabel.textColor =  .mainColor
-        prevLabel.textColor = UIColor.darkGray
+        presenter?.willChangeTabToIndex(viewPager, index, fromTabIndex, progress)
     }
 
     func widthForTabIndex(_ viewPager: GLViewPagerViewController, index: Int) -> CGFloat {
-        let prototypeLabel: UILabel = UILabel.init()
-        prototypeLabel.text = presenter?.getTitles()[index] ?? ""
-        prototypeLabel.textAlignment = NSTextAlignment.center
-        prototypeLabel.font = UIFont.systemFont(ofSize: 16.0)
-        return prototypeLabel.intrinsicContentSize.width
+        return presenter?.widthForTabIndex(index) ?? 138
     }
 }
 
